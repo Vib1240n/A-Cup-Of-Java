@@ -10,7 +10,7 @@ app.use("/", indexRouter);
 //static files
 app.use(express.static("Assets"));
 app.use("/css", express.static(__dirname + "Assets/css"))
-app.use("/Images", express.static(__dirname+ "/Images"))
+app.use("/images", express.static(__dirname+ "Assets/images"))
 
 //templates
 app.set("views", __dirname + "/views");
