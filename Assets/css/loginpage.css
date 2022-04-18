@@ -1,0 +1,112 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/* This function allows the items in navbar to display horizontally */
+.navbar li {
+    display: inline-block;
+}
+/* Center the text in nav bar*/
+.navbar ul {
+    list-style: none;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+}
+
+/* Add background color to nav bar */
+.navbar {
+    background-color: #3A3B3C;
+    position: fixed;
+    opacity: 0.90;
+    /* Set the position of the nav bar to top of the page */
+    top: 0; 
+    right: 0;
+    left: 0;
+    width: 100%; /* Set nav bar to full width */
+}
+
+/* Style the links (Home, Services, Appointments, etc.) */
+.navbar a {
+    float: left;
+    color: #000000;
+    text-align: center;
+    padding: 15px 20px;
+    text-decoration: none;
+    font-family: fantasy, "Papyrus";
+    font-size: 25px;
+    font-weight: 200;
+}
+
+/* Style navbar links when user hover over links */
+.navbar a:hover {
+    background-color:#d4cece;
+    color: black;
+}
+
+/* Add background image */
+.background{
+
+    position: fixed; 
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.background::before{
+      content: "";
+      background-image: url("BarbershopBackground.png");
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-attachment: scroll;
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      bottom: 0px;
+      left: 0px;
+      opacity: 0.70;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    width: 20rem;
+   min-height: 17rem;
+    
+    border: 1px solid black;
+    padding: 1rem;
+}
+.loginBtn{
+    margin-top: 1rem;
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    padding: 10px 0px;
+    outline: none;
+    border: none;
+    margin-bottom: 1rem;
+}
+.container label{
+    margin: 0.7rem 0;
+}
+.container input{
+    margin: 0.2rem 0;
+    padding: 0.5rem;
+}
+/* Center Ace's Barber Shop logo */
+.logo {
+    bottom: 0;
+    left: 0;
+    height: 300px;
+    margin: auto;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    top: 0;
+    width: 100%;    
+}    
+
+
+
