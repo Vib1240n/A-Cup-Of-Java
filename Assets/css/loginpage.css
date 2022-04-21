@@ -58,7 +58,7 @@ body {
 
 .background::before{
       content: "";
-      background-image: url("BarbershopBackground.png");
+      background-image: url("/images/BarbershopBackground.png");
       background-size: 100%;
       background-repeat: no-repeat;
       background-attachment: scroll;
