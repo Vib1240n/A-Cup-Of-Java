@@ -28,7 +28,7 @@
     "express": "^4.17.3",
     "express-ejs-layouts": "^2.5.1",
     "hbs": "^4.2.0",
-    "mongoose": "^6.2.9",
+    "mongoose": "^6.3.0",
     "swig": "^0.14.0"
   },
   "devDependencies": {
