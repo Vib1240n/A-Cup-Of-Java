@@ -19,12 +19,12 @@ app.set("layout", "layouts/layout");
 app.use(expressLayouts);
 
 //connect to database
-mongoose
-  .connect("mongodb://http://127.0.0.1:5501", {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  })
-  .then(() => console.log("connected to database"))
-  .catch(console.error);
+// mongoose
+//   .connect("mongodb://http://127.0.0.1:5501", {
+//     useNewUrlParser: true,
+//     useUnifiedTopology: true,
+//   })
+//   .then(() => console.log("connected to database"))
+//   .catch(console.error);
 
 app.listen(process.env.PORT || 5500);
