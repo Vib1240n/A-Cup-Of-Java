@@ -4,31 +4,31 @@ body {
 }
 
 /* This function allows the items in navbar to display horizontally */
-.navbar li {
+/* .navbar li {
     display: inline-block;
 }
 /* Center the text in nav bar*/
-.navbar ul {
+/* .navbar ul {
     list-style: none;
     text-align: center;
     padding: 0;
     margin: 0;
-}
+} */
 
 /* Add background color to nav bar */
-.navbar {
+/* .navbar {
     background-color: #3A3B3C;
     position: fixed;
     opacity: 0.90;
-    /* Set the position of the nav bar to top of the page */
+    /* Set the position of the nav bar to top of the page 
     top: 0; 
     right: 0;
     left: 0;
-    width: 100%; /* Set nav bar to full width */
-}
+    width: 100%; 
+} */
 
 /* Style the links (Home, Services, Appointments, etc.) */
-.navbar a {
+/* .navbar a {
     float: left;
     color: #000000;
     text-align: center;
@@ -37,18 +37,18 @@ body {
     font-family: fantasy, "Papyrus";
     font-size: 25px;
     font-weight: 200;
-}
+} */
 
 /* Style navbar links when user hover over links */
-.navbar a:hover {
+/* .navbar a:hover {
     background-color:#d4cece;
     color: black;
-}
+} */ */
 
 /* Add background image */
 .background{
 
-    position: fixed; 
+    position: relative; 
     height: 100%;
     width: 100%;
     display: flex;
