@@ -1,0 +1,51 @@
+body {
+    background-image: url("https://thumbs.dreamstime.com/z/barbershop-theme-hairstylist-barber-shop-interior-black-white-barber-shop-chair-stylish-vintage-barber-chair-barbershop-189402842.jpg");
+  }
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  li {
+    display: inline;
+    border-left: 2px solid black;
+    padding: 30px;
+  }
+  
+  li a {
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+  }
+  
+  .firstDiv {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+  .secondDiv {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+  }
+  .card {
+    margin-top: 20px;
+    padding: 10px;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  
+    background-color: grey;
+  
+    border-radius: 3px;
+    font-size: 25px;
+  }
+  img {
+    height: 70%;
+    width: 100%;
+    margin-top: 20px;
+  }
+  

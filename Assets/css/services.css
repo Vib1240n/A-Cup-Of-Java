@@ -1,0 +1,175 @@
+/* 
+These functions below are used to style the overall skeleton of the webpage
+*/
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/* This function allows the items in navbar to display horizontally */
+.navbar li {
+    display: inline-block;
+}
+/* Center the text in nav bar*/
+.navbar ul {
+    list-style: none;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+}
+
+/* Add background color to nav bar */
+.navbar {
+    background-color: #3A3B3C;
+    position: fixed;
+    opacity: 0.90;
+    /* Set the position of the nav bar to top of the page */
+    top: 0; 
+    right: 0;
+    left: 0;
+    width: 100%; /* Set nav bar to full width */
+    position: sticky; /* Navbar will stick to the top when you scroll */
+    top: 0;
+    z-index: 100;
+}
+
+/* Style the links (Home, Services, Appointments, etc.) */
+.navbar a {
+    float: left;
+    color: #000000;
+    text-align: center;
+    padding: 15px 20px;
+    text-decoration: none;
+    font-family: fantasy, "Papyrus"; 
+    font-size: 25px;
+    font-weight: 200;
+}
+
+/* Style navbar links when user hover over links */
+.navbar a:hover {
+    background-color:#686868;
+    color: black;
+}
+
+/* Add background image */
+.background{
+    position: fixed; 
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.background::before{
+      content: "";
+      background-image: url("/images/BarbershopBackground.png");
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-attachment: scroll;
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      bottom: 0px;
+      left: 0px;
+      opacity: 0.70;
+}
+
+/*
+This section will style the services boxes
+*/
+
+/* Adjust the size and style for header service box */
+.header-box {
+    /* Adjust sizing and positioning of box */
+    margin: auto;
+    position: relative;
+    overflow: visible;
+    width: 600px;
+    height: 200px;
+    /* Change the box color and border*/
+    text-align: center;
+    background: #D3D3D3;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+/* Style font for header name */
+.header-name {
+    color: #000000;
+    font-family: fantasy, "Papyrus";
+    font-weight: 200;
+    font-size: 50px;
+    position: relative;
+    text-align: center;
+    top: 20px;
+}
+/* Smaller font for the description */
+.header-description {
+    color: #000000;
+    font-family: Times New Roman;
+    font-style: oblique;
+    font-size: 30px;
+    text-align: center;
+}
+
+/* Adjust the positioning of the containers for each service */
+.services-container {
+    /* Adjust positioning of the container */
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    position: relative;
+    width: 1200px;
+    height: 100px;
+    margin: 240px auto;
+    top: -200px;
+}
+
+/* Style and adjust size of the service boxes and containers */
+.services-container .services-box {
+    /* Adjust size of box */
+    position: relative;
+    width: 550px;
+    height: 700px;
+    /* Change the box color and border*/
+    background: #D3D3D3;
+    float: left;
+    margin: 20px;
+    box-sizing: border-box;
+    border-radius: 30px;
+}
+
+/* Adjust the default font and styles of the service names */
+.services-container .services-box .services-name {
+    position: relative;
+    top: 10px;
+    left: 0;
+    color: #000000;
+    text-align: center;
+    font-family: fantasy, "Papyrus";
+    font-size: 40px;
+    margin: auto;
+    
+}
+
+/* Slightly different font and styles for the description of each service */
+.service-description {
+    top: 10px;
+    text-align: left;
+    padding-left: 150px;
+    color: #000000;
+    font-family: Times New Roman;
+    font-size: 40px;
+    font-style: oblique;
+}
+
+
+/* Change size of each image */
+.img {
+    padding-top: 20px;
+    width: 200px;
+    height: 214px;
+    margin: 10px;
+    border-radius: 30px;
+}
