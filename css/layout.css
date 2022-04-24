@@ -1,5 +1,11 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
 .navbar li {
     display: inline-block;
+    display: flexbox;
 }
 /* Center the text in nav bar*/
 .navbar ul {
@@ -11,9 +17,9 @@
 
 /* Add background color to nav bar */
 .navbar {
-    background-color: #3A3B3C;
+    background-color: #000000;
     position: fixed;
-    opacity: 0.90;
+    opacity: 1;
     /* Set the position of the nav bar to top of the page */
     top: 0; 
     right: 0;
@@ -28,7 +34,7 @@
     text-align: center;
     padding: 15px 20px;
     text-decoration: none;
-    font-family: fantasy, "Papyrus";
+    font-family: fantasy;
     font-size: 25px;
     font-weight: 200;
 }
