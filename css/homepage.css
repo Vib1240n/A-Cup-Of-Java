@@ -3,17 +3,17 @@ body {
     padding: 0;
 }
 
-/* This function allows the items in navbar to display horizontally */
-/* .navbar li {
+/*This function allows the items in navbar to display horizontally */
+.navbar li {
     display: inline-block;
 }
 /* Center the text in nav bar*/
-/* .navbar ul {
+.navbar ul {
     list-style: none;
     text-align: center;
     padding: 0;
     margin: 0;
-} */
+}
 
 /* Add background color to nav bar */
 /* .navbar {
@@ -28,7 +28,7 @@ body {
 } */
 
 /* Style the links (Home, Services, Appointments, etc.) */
-/* .navbar a {
+.navbar a {
     float: left;
     color: #000000;
     text-align: center;
@@ -37,13 +37,14 @@ body {
     font-family: fantasy, "Papyrus";
     font-size: 25px;
     font-weight: 200;
-} */
+}
 
-/* Style navbar links when user hover over links */
-/* .navbar a:hover {
+/*Style navbar links when user hover over links */
+
+.navbar a:hover {
     background-color:#d4cece;
     color: black;
-} */ */
+}
 
 /* Add background image */
 .background{
