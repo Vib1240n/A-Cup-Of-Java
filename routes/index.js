@@ -17,21 +17,5 @@ router.get("/signup", async (req, res) => {
   res.render("signup");
 });
 
-router.get("/barbers", async (req, res) =>{
-  res.render("barbers")
-})
-
-router.get("/appointments", async(req, res) =>{
-  res.render("appointments")
-})
-
-router.get("/services", async (req, res) => {
-  res.render("services");
-});
-
-router.get("/about", async (req, res) => {
-  res.render("about");
-});
-
 
 module.exports = router;
