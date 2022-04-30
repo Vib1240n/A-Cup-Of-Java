@@ -22,11 +22,14 @@ app.set("layout", "layouts/layout");
 app.use(expressLayouts);
 
 mongoose
-  .connect(URL, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  })
+  .connect(
+    "mongodb+srv://vib:TestPassword@cluster0.zfduz.mongodb.net/Cluster0?retryWrites=true&w=majority",
+    {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    }
+  )
   .then(() => console.log("connected to database"))
   .catch(console.error);
 
-app.listen(process.env.PORT || 5500);
+app.listen(process.env.PORT);
