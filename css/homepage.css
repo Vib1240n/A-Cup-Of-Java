@@ -16,16 +16,16 @@ body {
 }
 
 /* Add background color to nav bar */
-/* .navbar {
+.navbar {
     background-color: #3A3B3C;
     position: fixed;
     opacity: 0.90;
-    /* Set the position of the nav bar to top of the page 
+    /* Set the position of the nav bar to top of the page  */
     top: 0; 
     right: 0;
     left: 0;
     width: 100%; 
-} */
+}
 
 /* Style the links (Home, Services, Appointments, etc.) */
 .navbar a {

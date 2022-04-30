@@ -1,4 +1,5 @@
 body {
+
     margin: 0;
     padding: 0;
 }
@@ -6,8 +7,8 @@ body {
 .navbar li {
     display: inline-block;
     display: flexbox;
-}
-/* Center the text in nav bar*/
+} 
+
 .navbar ul {
     list-style: none;
     text-align: center;
@@ -15,19 +16,19 @@ body {
     margin: 0;
 }
 
-/* Add background color to nav bar */
+
 .navbar {
-    background-color: #000000;
+    background-color: blue;
     position: fixed;
     opacity: 1;
-    /* Set the position of the nav bar to top of the page */
+
     top: 0; 
     right: 0;
     left: 0;
-    width: 100%; /* Set nav bar to full width */
+    width: 100%;
 }
 
-/* Style the links (Home, Services, Appointments, etc.) */
+
 .navbar a {
     float: left;
     color: #000000;
@@ -39,8 +40,11 @@ body {
     font-weight: 200;
 }
 
-/* Style navbar links when user hover over links */
+
 .navbar a:hover {
     background-color:#d4cece;
     color: black;
-}
+} 
+
+
+
