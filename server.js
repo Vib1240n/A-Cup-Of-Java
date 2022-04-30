@@ -1,6 +1,7 @@
 const express = require("express");
 const expressLayouts = require("express-ejs-layouts");
 const app = express();
+var bodyparser = require("body-parser");
 const mongoose = require("mongoose");
 require("dotenv").config();
 
@@ -20,6 +21,9 @@ app.set("views", __dirname + "/views");
 app.set("view engine", "ejs");
 app.set("layout", "layouts/layout");
 app.use(expressLayouts);
+
+app.use(bodyparser.urlencoded({ extended: false }));
+app.use(bodyparser.json());
 
 mongoose
   .connect(
