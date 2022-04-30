@@ -1,20 +1,22 @@
 const express = require("express");
 const router = express.Router();
-const passhash = require("../js/passwordHash");
+//rsconst passhash = require("../js/passwordHash");
 const user = require("../model/user");
 
-router.post("/", async (req, res) => {
+router.get("/", async (req, res) => {
   res.render("home");
   //200
 });
 
-router.post("/home", async (req, res) => {
+router.get("/home", async (req, res) => {
   res.render("home");
 });
-router.post("/login", async (req, res) => {
+router.get("/login", async (req, res) => {
   res.render("login");
 });
-
+router.get("/signup", async (req, res) => {
+  res.render("signup");
+});
 router.post("/signup", async (req, res) => {
   const User = new user({
     name: req.body.name,
@@ -31,19 +33,19 @@ router.post("/signup", async (req, res) => {
 
 });
 
-router.post("/barbers", async (req, res) => {
+router.get("/barbers", async (req, res) => {
   res.render("barbers");
 });
 
-router.post("/appointments", async (req, res) => {
+router.get("/appointments", async (req, res) => {
   res.render("appointments");
 });
 
-router.post("/services", async (req, res) => {
+router.get("/services", async (req, res) => {
   res.render("services");
 });
 
-router.post("/about", async (req, res) => {
+router.get("/about", async (req, res) => {
   res.render("about");
 });
 
