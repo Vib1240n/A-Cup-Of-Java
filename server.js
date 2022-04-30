@@ -19,10 +19,13 @@ app.set("layout", "layouts/layout");
 app.use(expressLayouts);
 
 mongoose
-  .connect("mongodb://http://127.0.0.1:5500", {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  })
+  .connect(
+    "mongodb+srv://admin:<password>@cluster0.zfduz.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
+    {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    }
+  )
   .then(() => console.log("connected to database"))
   .catch(console.error);
 
