@@ -25,9 +25,11 @@
     </div>
     <div class="signup">
       <h1>Sign Up</h1>
-      <form>
-        <input type="email" class="inputBox" placeholder="Email">
-        <input type="password" class="inputBox" placeholder="Password">
+      <form action = "/login" method = "post">
+        <% var email%>
+        <% var password %>
+        <input type="email" class="inputBox" placeholder="Email" name = "email">
+        <input type="password" class="inputBox" placeholder="Password" name = "password">
         <p><button type="button" class="submitButton">Submit</button></p>
         <p>Already a member? <a href="login">Log in</a></p>
       </form>
