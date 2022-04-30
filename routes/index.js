@@ -2,34 +2,35 @@ const express = require("express");
 const router = express.Router();
 const user = require("../model/user");
 
-router.get("/", async (req, res) => {
+router.post("/", async (req, res) => {
   res.render("home");
+  //200
 });
 
-router.get("/home", async (req, res) => {
+router.post("/home", async (req, res) => {
     res.render("home")
 })
-router.get("/login", async (req, res) => {
+router.post("/login", async (req, res) => {
   res.render("login");
 });
 
-router.get("/signup", async (req, res) => {
+router.post("/signup", async (req, res) => {
   res.render("signup");
 });
 
-router.get("/barbers", async (req, res) =>{
+router.post("/barbers", async (req, res) =>{
   res.render("barbers")
 })
 
-router.get("/appointments", async(req, res) =>{
+router.post("/appointments", async(req, res) =>{
   res.render("appointments")
 })
 
-router.get("/services", async (req, res) => {
+router.post("/services", async (req, res) => {
   res.render("services");
 });
 
-router.get("/about", async (req, res) => {
+router.post("/about", async (req, res) => {
   res.render("about");
 });
 
