@@ -18,16 +18,8 @@ app.set("view engine", "ejs");
 app.set("layout", "layouts/layout");
 app.use(expressLayouts);
 
-//connect to database
-// mongoose
-//   .connect("mongodb://http://127.0.0.1:5501", {
-//     useNewUrlParser: true,
-//     useUnifiedTopology: true,
-//   })
-//   .then(() => console.log("connected to database"))
-//   .catch(console.error);
 mongoose
-  .connect("mongodb://http://127.0.0.1:5501", {
+  .connect("mongodb://http://127.0.0.1:5500", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
