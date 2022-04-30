@@ -1,34 +1,43 @@
 const express = require("express");
 const router = express.Router();
-const passhash = require("../js/passwordHash");
+var bodyParser = require("body-parser");
+//const passhash = require("../js/passwordHash");
 const user = require("../model/user");
 
-router.post("/", async (req, res) => {
+router.get("/", async (req, res) => {
   res.render("home");
   //200
 });
 
-router.post("/home", async (req, res) => {
+router.get("/home", async (req, res) => {
   res.render("home");
 });
+router.get("/login", async (req, res) => {
+  res.render("login");
+});
+
 router.post("/login", async (req, res) => {
   res.render("login");
 });
 
+router.get("/signup", async (req, res) => {
+  res.render("signup");
+});
+
 router.post("/signup", async (req, res) => {
-  const User = new user({
-    name: req.body.name,
+  const User = await new user({
     email: req.body.email,
-    password: req.body.password
-  })
-  try{
+    password: req.body.password,
+  });
+  console.log(req.body.email);
+  console.log(req.body.password);
+  try {
     const saved = await User.save();
-  }catch(err){
-    res.status(400).send(err)
+  } catch (err) {
+    res.status(400).send(err);
   }
   const { error } = validation(User);
   if (error) return res.status(400).send("Email already exist");
-
 });
 
 router.post("/barbers", async (req, res) => {

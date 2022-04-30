@@ -22,6 +22,7 @@
   "homepage": "https://github.com/Vib1240n/A-Cup-Of-Java#readme",
   "dependencies": {
     "bcrypt": "^5.0.1",
+    "body-parser": "^1.20.0",
     "consolidate": "^0.16.0",
     "dotenv": "^16.0.0",
     "ejs": "^3.1.6",
