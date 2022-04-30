@@ -2,7 +2,7 @@
 ## *Introduction*
 This repository is for the Senior Project at CSUS Spring 2022. Our goal is to help Ace's Barbershop have a new and well designed website to help with their business. 
 
-### *Class***
+### *Class*
 CSC-190/191 Project Repository
 
 ## *Collaborators*
