@@ -1,5 +1,6 @@
 const express = require("express");
 const expressLayouts = require("express-ejs-layouts");
+const dotenv = require("dotenv").config();
 const app = express();
 const mongoose = require("mongoose");
 
