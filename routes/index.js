@@ -45,4 +45,7 @@ router.get("/services", async (req, res) => {
 router.get("/about", async (req, res) => {
   res.render("about");
 });
+router.get("/userprofile", async (req, res) => {
+  res.render("userprofile");
+});
 module.exports = router;
