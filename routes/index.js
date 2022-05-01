@@ -17,6 +17,7 @@ router.get("/", async (req, res) => {
 router.get("/home", async (req, res) => {
   res.render("home");
 });
+
 router.get("/login", async (req, res) => {
   res.render("login");
 });
