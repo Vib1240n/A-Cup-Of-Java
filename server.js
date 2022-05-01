@@ -21,7 +21,7 @@ app.use(expressLayouts);
 //connect to database
 mongoose
   .connect(
-    "mongodb+srv://vib:TestPassword@cluster0.zfduz.mongodb.net/Cluster0?retryWrites=true&w=majority",
+    process.env.ADMIN_URI,
     {
       useNewUrlParser: true,
       useUnifiedTopology: true,
@@ -30,4 +30,4 @@ mongoose
   .then(() => console.log("connected to database"))
   .catch(console.error);
 
-app.listen(process.env.PORT || 5500);
+app.listen(process.env.PORT);
