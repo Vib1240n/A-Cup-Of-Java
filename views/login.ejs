@@ -7,7 +7,8 @@
     <meta name="robots" content="index, follow" />
     <link
     rel="stylesheet"
-    href="css/loginpage.css"/>
+    href="/css/loginpage.css"
+    <!--Ico files to change the icon on the tabs-->
     <link rel="icon" href="/images/Barberpole.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
   </head>
@@ -16,43 +17,28 @@
     <div class="navbar">
       <ul>
         <li><a href="home"> Home</a></li>
-        <li><a href="services"> Services</a></li>
-        <li><a href="appointments"> Appointments</a></li>
-        <li><a href="barbers"> Barbers</a></li>
+        <li><a href="#"> Products/Services</a></li>
+        <li><a href="#"> Appointments</a></li>
+        <li><a href="#"> Barbers</a></li>
         <li><a href="login"> Log In</a></li>
-        <li><a href="about"> About Us</a></li>
+        <li><a href="#"> About Us</a></li>
       </ul>
     </div>
-    <div class = "login">
-      <label for="username"><b>Username</b></label>
-	    		<input type="text" placeholder="Enter Username" name="username" required>
-	    		<label for="pw"><b>Password</b></label>
-	    		<input type="password" placeholder="Enter Password" name="pw" required>
-	    		<button type="submit">Login</button>
-          <button type="signup"><a href = "signup.ejs">Sign Up</a></button>
-      </label>
-    </div>
-    <div class="SignUp">
-      <!-- Sign Up Code should be here-->
-      <a href="signup"> Sign Up </a>
-    </div>
-    <div class="Forgot Password">
-      <!-- Forgot password Code should be here-->
-      <a href="#"> Forgot Password </a>
-    </div>
-    <footer>
-      <p align="right" style="font-size: 120%">
-        FIND ME ON
-        <button>
-          <a href="" ariel-label="Twitter"
-            ><i class="fab fa-twitter fa-3x"> </i>
-          </a>
-        </button>
-        <button>
-          <a href="" ariel-label="Instagram"
-            ><i class="fab fa-instagram fa-3x"> </i>
-          </a>
-        </button>
-      </p>
+    <form>
+      <h3>Login Here</h3>
 
-    </footer>
+      <label for="username">Username</label>
+      <input type="text" placeholder="Email or Phone" id="username">
+
+      <label for="password">Password</label>
+      <input type="password" placeholder="Password" id="password">
+
+      <button>Log In</button>
+      <button>Sign Up</button>
+      <div class="social">
+        <div class="ig"><i class="fab fa-insta"></i>  Instagram</div>
+        <div class="fb"><i class="fab fa-facebook"></i>  Facebook</div>
+      </div>    
+  </form>
+  </body>
+  </html>
