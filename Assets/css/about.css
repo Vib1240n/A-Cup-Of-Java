@@ -1,51 +1,127 @@
-body {
-    background-image: url("https://thumbs.dreamstime.com/z/barbershop-theme-hairstylist-barber-shop-interior-black-white-barber-shop-chair-stylish-vintage-barber-chair-barbershop-189402842.jpg");
-  }
+
+body{
+
+  margin: 0;
+  padding: 0;
+
   
-  ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: space-between;
-  }
+}
+
+
+/* Add background image */
+.background{
+
+  position: fixed; 
+  height: 100%;
+  width: 100%;
+
   
-  li {
-    display: inline;
-    border-left: 2px solid black;
-    padding: 30px;
-  }
+}
+
+.background::before{
+    content: "";
+    background-image: url("bg.jpeg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 0.70;
+}
+
+
+/* This function allows the items in navbar to display horizontally */
+.navbar li {
+  display: inline-block;
+}
+/* Center the text in nav bar*/
+.navbar ul {
+  list-style: none;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
+
+/* Add background color to nav bar */
+.navbar {
+  background-color: #3A3B3C;
+  position: fixed;
+  opacity: 0.90;
+  /* Set the position of the nav bar to top of the page */
+  top: 0; 
+  right: 0;
+  left: 0;
+  width: 100%; /* Set nav bar to full width */
+}
+
+/* Style the links (Home, Services, Appointments, etc.) */
+.navbar a {
+  float: left;
+  color: #000000;
+  text-align: center;
+  padding: 15px 20px;
+  text-decoration: none;
+  font-family: fantasy, "Papyrus";
+  font-size: 25px;
+  font-weight: 200;
+}
+
+/* Style navbar links when user hover over links */
+.navbar a:hover {
+  background-color:#d4cece;
+  color: black;
+}
+
+
+
+
+
+.firstDiv {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+
+  margin-top: 60px;
+}
+.secondDiv {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
+}
+.card {
+  margin-top: 20px;
+  padding: 10px;
   
-  li a {
-    text-decoration: none;
-    color: black;
-    font-size: 20px;
-  }
+
+  background-color: grey;
+  opacity: 0.8;
+  color: black;
+  font-family: 'Poppins',sans-serif;
+  border-radius: 3px;
+  font-size: 25px;
+}
+.image {
+
+  filter: brightness(0.8);
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-top: 20px;
+  background: blue;
+  width: 100%;
+
+  background-size: 100%;
+  height: 100%;
+  background-image: url('map.jpeg');
+}
+.text{
+
+  font-size: 30px;
+  font-family: 'Poppins',sans-serif;
+  color: black;
   
-  .firstDiv {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-  }
-  .secondDiv {
-    display: flex;
-    justify-content: space-evenly;
-    flex-direction: row;
-  }
-  .card {
-    margin-top: 20px;
-    padding: 10px;
-    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  
-    background-color: grey;
-  
-    border-radius: 3px;
-    font-size: 25px;
-  }
-  img {
-    height: 70%;
-    width: 100%;
-    margin-top: 20px;
-  }
-  
+  font-weight:600;
+}
