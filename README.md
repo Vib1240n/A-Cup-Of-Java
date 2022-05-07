@@ -19,9 +19,9 @@ Creating a website with all the barbers listed with their schedules and speciali
 
 ## Prototype
 <p float="left">
-  <img src="" width="200" />
-  <img src="/img2.png" width="100" /> 
-  <img src="/img3.png" width="100" />
+  <img src="/Assets/images/FIGMA Prototype Main View.png" width="450" height="400" />
+  <img src="/Assets/images/FIGMA Prototype Appointments View.png" width="450" height="400"/> 
+  <img src="/Assets/images/FIGMA Protoype Sign in View.png" width="450" height="400"/>
 </p>
 
 FIGMA PROTOTYPE
