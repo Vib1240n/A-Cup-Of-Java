@@ -65,7 +65,7 @@ body{
 
 .background::before{
       content: "";
-      background-image: url("/Assets/images/BarbershopBackground.png");
+      background-image: url("/images/BarbershopBackground.png");
       background-size: 100%;
       background-repeat: no-repeat;
       background-attachment: scroll;
@@ -91,11 +91,11 @@ body{
 .container{
     max-width: 700px;
     width: 100%;
-    background-color: white;
+    background-color: rgba(240, 233, 233, 0.74);
     padding: 25px 30px;
-    border-radius: 5px;
     box-shadow: 0 5px 10px rgba(0, 0, 0, .7);
     position: relative;
+    border-radius: 30px;
 
 }
 .container .title{
