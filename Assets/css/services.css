@@ -90,7 +90,7 @@ This section will style the services boxes
     height: 200px;
     /* Change the box color and border*/
     text-align: center;
-    background: #D3D3D3;
+    background: rgba(240, 233, 233, 0.74);
     box-sizing: border-box;
     border-radius: 10px;
 }
@@ -133,7 +133,7 @@ This section will style the services boxes
     width: 550px;
     height: 700px;
     /* Change the box color and border*/
-    background: #D3D3D3;
+    background: rgba(240, 233, 233, 0.74);
     float: left;
     margin: 20px;
     box-sizing: border-box;

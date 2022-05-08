@@ -20,7 +20,7 @@ body{
 
 .background::before{
     content: "";
-    background-image: url("bg.jpeg");
+    background-image: url("/images/BarbershopBackground.png");
     background-size: 100%;
     background-repeat: no-repeat;
     background-attachment: scroll;
@@ -84,7 +84,7 @@ body{
   justify-content: center;
   flex-direction: column;
   align-items: center;
-
+  font-family: fantasy, "Papyrus";
   margin-top: 60px;
 }
 .secondDiv {
@@ -97,11 +97,12 @@ body{
   padding: 10px;
   
 
-  background-color: grey;
-  opacity: 0.8;
+  background-color: rgba(240, 233, 233, 0.74);
+  opacity: 0.9;
   color: black;
-  font-family: 'Poppins',sans-serif;
-  border-radius: 3px;
+  font-family: Times New Roman;
+  font-style: oblique;
+  border-radius: 30px;
   font-size: 25px;
 }
 .image {

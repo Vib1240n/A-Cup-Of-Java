@@ -86,12 +86,13 @@ body {
 .signup {
     width: 300px;
     box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
-    background: rgb(141, 136, 136);
+    background: rgba(240, 233, 233, 0.74);
     padding: 20px;
     margin: 8% auto 0;
     text-align: center;
     position: center;
     position: relative;
+    border-radius: 30px;
 }
 
 .inputBox {
