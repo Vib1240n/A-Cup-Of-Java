@@ -60,4 +60,38 @@ April 18 2022, AJC Sprint 04
 
 Presented our progress on our project, our thought process on how and why we developed the website the way we did, and our plans for future sprints. We also ironed out some issues with our login and about us views, updated our services and barber views, continued setting up our database, created the edit/view profile view, and linked all of our views together. 
 
+BACKEND DEVELOPMENT
 
+September 05, 2022, AJC Sprint 05
+
+In our first sprint back from summer break will be mainly focused on our backend of the website, which consists of implementing the models of our database, creating the hashing algorithm for our login email addresses and passwords, and restructuring our file structure. We will also implement social media links to our barber's profile view.
+
+VIEW POLISHING
+
+September 19, 2022, AJC Sprint 06
+
+We will polish the views of our website to make the overall presentation of the website to be smoother.
+
+GOOGLE CALENDER & MAPS API IMPLEMENTATION
+
+October 03, 2022, AJC Sprint 07
+
+We will implement the Google Calendar API for our about us view so it directs the user to the location of Ace's Barbershop and the Google Maps API into our appointment view to provide an user friendly scheduling service to our users.
+
+ADMIN PROFILE
+
+October 17, 2022, AJC Sprint 08
+
+We will add admin functionality to the website, allowing the admin to modifyand update various features of the website.
+
+DEPLOYMENT
+
+October 31, 2022, AJC Sprint 09
+
+We will deploy our website onto our server and ensure that it functioning properly.
+
+TESTING PHASE
+
+November 14, 2022, AJC Sprint 10
+
+We will be constructing various tests on our views as users to locate and fix any errors to guarantee the safety of our user's information and integrity of our website.
