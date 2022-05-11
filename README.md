@@ -1,3 +1,7 @@
+
+![Logo](https://raw.githubusercontent.com/Vib1240n/A-Cup-Of-Java/main/Assets/images/ACOJ%20Logo.jpg)
+
+
 # A-Cup-Of-Java
 CSC-190/191 Project 
 
