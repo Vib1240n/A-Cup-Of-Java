@@ -1,5 +1,8 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/Vib1240n/A-Cup-Of-Java/main/Assets/images/Resized%20Logo.jpg" />
+  <img src="https://raw.githubusercontent.com/Vib1240n/A-Cup-Of-Java/main/Assets/images/WhiteBackgroundLogo.png" />
+</p>
+<p align="center">
+<img src="https://raw.githubusercontent.com/Vib1240n/A-Cup-Of-Java/main/Assets/images/TransparentLogo.png" />
 </p>
 
 
