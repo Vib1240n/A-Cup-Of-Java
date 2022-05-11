@@ -9,9 +9,9 @@ var jsonparser = bodyParser.json();
 var urlencodedparser = bodyParser.urlencoded({ extended: false });
 const user = require("../model/User");
 
-
 router.get("/", async (req, res) => {
   res.render("home");
+  //200
 });
 
 router.get("/home", async (req, res) => {
@@ -41,7 +41,7 @@ router.post("/signup", urlencodedparser, async (req, res) => {
   // if (error) return res.status(400).send("Email already exist");
   try {
     const saved = await newUser.save();
-    console.log("User saved")
+    console.log("User saved");
   } catch (err) {
     res.status(400).send(err);
   }
