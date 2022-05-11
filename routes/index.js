@@ -30,6 +30,23 @@ router.get("/signup", async (req, res) => {
   res.render("signup");
 });
 
+router.post("/signup", urlencodedparser, async (req, res) => {
+  req.body.password = await bcrypt.hash(req.body.password, parseInt(salt));
+  const newUser = await new user({
+    name: req.body.name,
+    email: req.body.email,
+    password: req.body.password,
+  });
+  // const { error } = validation(newUser);
+  // if (error) return res.status(400).send("Email already exist");
+  try {
+    const saved = await newUser.save();
+    console.log("User saved");
+  } catch (err) {
+    res.status(400).send(err);
+  }
+});
+
 router.get("/barbers", async (req, res) => {
   res.render("barbers");
 });
@@ -45,7 +62,5 @@ router.get("/services", async (req, res) => {
 router.get("/about", async (req, res) => {
   res.render("about");
 });
-router.get("/userprofile", async (req, res) => {
-  res.render("userprofile");
-});
+
 module.exports = router;
