@@ -1,19 +1,21 @@
-
-![Logo](https://raw.githubusercontent.com/Vib1240n/A-Cup-Of-Java/main/Assets/images/ACOJ%20Logo.jpg)
+<p align="center">
+  <img src="https://raw.githubusercontent.com/Vib1240n/A-Cup-Of-Java/main/Assets/images/Resized%20Logo.jpg" />
+</p>
 
 
 # A-Cup-Of-Java
 CSC-190/191 Project 
 
 ## Team Members
-* Thomas Nguyen
-* Valentin Bakalor
-* Faizan Ul Islam
-* Kenny Nguyen
-* Alex Smith
-* Theo McDonald
-* Bunpheng Chhay
-* Vibhore Sagar
+- [@Thomas Nguyen](https://github.com/NguyenSt3r)
+- [@Valentin Bakalor](https://github.com/Val2049)
+- [@Faizan Ul Islam](https://github.com/FizzyPop007)
+- [@Kenny Nguyen](https://github.com/Kennypnguyen)
+- [@Alex Smith](https://github.com/arsmith97)
+- [@Theo McDonald](https://github.com/TheoMcDonald)
+- [@Bunpheng Chhay](https://github.com/Bunphengchhay)
+- [@Vibhore Sagar](https://github.com/Vib1240n)
+
 
 ## Background
 Ace’s Barbershop – Fairly new barbershop in West Sacramento, Now that they have developed their clients relations they want to take their barbershop into new direction. They are finally going online for bookings, pricings and services available.
