@@ -5,35 +5,37 @@
 <img src="/Assets/images/TransparentLogo.png" />
 </p>
 
-# A-Cup-Of-Java
+A-Cup-Of-Java
+----
+---
 CSC-190/191 Project
 
 - [A-Cup-Of-Java](#a-cup-of-java)
-  - [## Team Members](#-team-members)
-  - [## Background](#-background)
-  - [## Solution](#-solution)
-  - [## Prototype](#-prototype)
-  - [#### FIGMA PROTOTYPE](#-figma-prototype)
-  - [## Timeline](#-timeline)
-      - [PROJECT CHARTER/PROPOSAL](#project-charterproposal)
-      - [USER STORIES CREATION](#user-stories-creation)
-      - [PROTOTYPE/FIRST CODING SPRINT](#prototypefirst-coding-sprint)
-      - [WEBSITE VIEWS CREATION](#website-views-creation)
-      - [PRESENTATION](#presentation)
-      - [BACKEND DEVELOPMENT](#backend-development)
-      - [VIEW POLISHING](#view-polishing)
-      - [GOOGLE CALENDER & MAPS API IMPLEMENTATION](#google-calender--maps-api-implementation)
-      - [ADMIN PROFILE](#admin-profile)
-      - [DEPLOYMENT](#deployment)
-      - [TESTING PHASE](#testing-phase)
-  - [## Developer Instructions](#-developer-instructions)
-    - [**Terminal**](#terminal)
-    - [**Command Prompt**](#command-prompt)
-    - [**Run Server**](#run-server)
-      - [To run using Nodemon and have Developer control run](#to-run-using-nodemon-and-have-developer-control-run)
-      - [To launch the app run](#to-launch-the-app-run)
+- [Team Members](#team-members)
+- [Background](#background)
+- [Solution](#solution)
+- [Prototype](#prototype)
+- [Timeline](#timeline)
+    - [PROJECT CHARTER/PROPOSAL](#project-charterproposal)
+    - [USER STORIES CREATION](#user-stories-creation)
+    - [PROTOTYPE/FIRST CODING SPRINT](#prototypefirst-coding-sprint)
+    - [WEBSITE VIEWS CREATION](#website-views-creation)
+    - [PRESENTATION](#presentation)
+    - [BACKEND DEVELOPMENT](#backend-development)
+    - [VIEW POLISHING](#view-polishing)
+    - [GOOGLE CALENDER & MAPS API IMPLEMENTATION](#google-calender--maps-api-implementation)
+    - [ADMIN PROFILE](#admin-profile)
+    - [DEPLOYMENT](#deployment)
+    - [TESTING PHASE](#testing-phase)
+- [Developer Instructions](#developer-instructions)
+  - [**Terminal**](#terminal)
+  - [**Command Prompt**](#command-prompt)
+  - [**Run Server**](#run-server)
+    - [To run using Nodemon and have Developer control run](#to-run-using-nodemon-and-have-developer-control-run)
+    - [To launch the app run](#to-launch-the-app-run)
 
-## Team Members
+Team Members
+---
 ---
 
 - [@Thomas Nguyen](https://github.com/NguyenSt3r)
@@ -45,17 +47,20 @@ CSC-190/191 Project
 - [@Bunpheng Chhay](https://github.com/Bunphengchhay)
 - [@Vibhore Sagar](https://github.com/Vib1240n)
 
-## Background
+Background
+---
 ---
 
 Ace’s Barbershop – Fairly new barbershop in West Sacramento, Now that they have developed their clients relations they want to take their barbershop into new direction. They are finally going online for bookings, pricings and services available.
 
-## Solution
+Solution
+---
 ---
 
 Creating a website with all the barbers listed with their schedules and specialities. Customers get to see the recent haircuts from the barbers and be able to make appointments right from the website instead of calling the shop to verify.
 
-## Prototype
+Prototype
+---
 ---
 
 <p float="left">
@@ -64,12 +69,13 @@ Creating a website with all the barbers listed with their schedules and speciali
   <img src="/Assets/images/FIGMA Protoype Sign in View.png" width="450" height="400"/>
 </p>
 
-#### FIGMA PROTOTYPE
-----
-
+<h4>FIGMA PROTOTYPE</h4>
+<hr>
+<br>
 As part of our designing phase, we developed a figma clickable prototype that showcases all the views of Ace’s Barbershop website. When designing our prototype, we wanted to make sure we included all the features the client requested. To achieve this, we developed each feature as a view for the website. For example, we created an appointments view that will allow customers with an account to schedule an appointment which is one the features the client wishes to have. Another feature that was incorporated into a view of the website was the sign in feature. We created a view that would allow customers to sign in to their account so that they can schedule their appointment. They are also giving the option to sign up if they are new. To implement all these views together, we incorporated a navigation bar on the top of the website that links all the views of the website. Within our prototype, we were able to make the navigation bar clickable so that our client will be able to see all the views and experience the flow of the website. The goal of this prototype was to present an idea of the website to our client and then receive feedback on things they liked and disliked.
 
-## Timeline
+Timeline
+---
 ---
 
 #### PROJECT CHARTER/PROPOSAL
@@ -138,8 +144,9 @@ We will deploy our website onto our server and ensure that it functioning proper
 
 We will be constructing various tests on our views as users to locate and fix any errors to guarantee the safety of our user's information and integrity of our website.
 
-## Developer Instructions
+ Developer Instructions
 ---
+<hr>
 <br>
 Clone the repository to run the project locally using
 
