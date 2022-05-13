@@ -3,11 +3,12 @@ const router = express.Router();
 const async = require("hbs/lib/async");
 const bcrypt = require("bcrypt");
 const salt = bcrypt.genSalt(10);
+const hash = require("../js/passwordHash")
 
 var bodyParser = require("body-parser");
 var jsonparser = bodyParser.json();
 var urlencodedparser = bodyParser.urlencoded({ extended: false });
-const user = require("../model/User");
+const { user, validation } = require("../model/User");
 
 router.get("/", async (req, res) => {
   res.render("home");
@@ -31,19 +32,27 @@ router.get("/signup", async (req, res) => {
 });
 
 router.post("/signup", urlencodedparser, async (req, res) => {
-  req.body.password = await bcrypt.hash(req.body.password, parseInt(salt));
-  const newUser = await new user({
-    name: req.body.name,
-    email: req.body.email,
-    password: req.body.password,
-  });
-  // const { error } = validation(newUser);
-  // if (error) return res.status(400).send("Email already exist");
-  try {
-    const saved = await newUser.save();
-    console.log("User saved")
-  } catch (err) {
-    res.status(400).send(err);
+  req.body.password = await hash(req.body.password);
+  const { error } = validation(req.body);
+  if (error) {
+    return res.status(400).send(error.details[0].message);
+  }
+
+  let newUser = user.findOne({ email: req.body.email });
+  if (newUser) {
+    return res.status(400).send("Email already exisits!");
+  } else {
+    newUser = await new user({
+      name: req.body.name,
+      email: req.body.email,
+      password: req.body.password,
+    });
+    try {
+      const saved = await newUser.save();
+      console.log("User saved");
+    } catch (err) {
+      res.status(400).send(err);
+    }
   }
 });
 
