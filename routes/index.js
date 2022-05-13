@@ -42,6 +42,9 @@ router.post("/signup", urlencodedparser, async (req, res) => {
   try {
     const saved = await newUser.save();
     console.log("User saved");
+    if (saved) {
+      res.render("userprofile-2");
+    }
   } catch (err) {
     res.status(400).send(err);
   }
