@@ -34,10 +34,6 @@
     "swig": "^0.14.0"
   },
   "devDependencies": {
-<<<<<<< HEAD
-    "nodemon": "^2.0.16"
-=======
     "nodemon": "^2.0.19"
->>>>>>> temp_vib
   }
 }
