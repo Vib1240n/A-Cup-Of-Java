@@ -11,14 +11,14 @@ const indexRouter = require("../Server/routes/index");
 app.use("/", indexRouter);
 
 //Static files
-app.use(express.static("/Public/Assets"));
-app.use("/css", express.static(__dirname + "./Public/Assets/css"));
-app.use("/images", express.static(__dirname + "./Public/Assets/images"));
+app.use(express.static("./Public/Assets"));
+app.use("/css", express.static("./Public/Assets/css"));
+app.use("/images", express.static("./Public/Assets/images"));
 
 //Templates
-app.set("views", __dirname + "./Public/views");
+app.set("views", "./Public/views");
 app.set("view engine", "ejs");
-app.set("layout", "layouts/layout");
+app.set("layout", "./Public/views/layouts/layout");
 app.use(expressLayouts);
 
 app.use(bodyparser.urlencoded({ extended: false }));

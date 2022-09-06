@@ -10,7 +10,7 @@ var jsonparser = bodyParser.json();
 var urlencodedparser = bodyParser.urlencoded({ extended: false });
 const { user, validation } = require("../model/user");
 
-router.get("/", async (req, res) => {
+router.get("/", async (req, res, next) => {
   res.render("home");
   //200
 });
