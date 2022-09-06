@@ -4,7 +4,7 @@ const app = express();
 var bodyparser = require("body-parser");
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
-dotenv.config({ path:"./Private/.env"});
+dotenv.config({ path: "./Private/.env" });
 
 //Create route
 const indexRouter = require("../Server/routes/index");
@@ -23,7 +23,6 @@ app.use(expressLayouts);
 
 app.use(bodyparser.urlencoded({ extended: false }));
 app.use(bodyparser.json());
-
 
 //Database connection process
 mongoose
