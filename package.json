@@ -2,10 +2,10 @@
   "name": "a-cup-of-java",
   "version": "1.0.0",
   "description": "CSC-190/191 Project Repository",
-  "main": "index.js",
+  "main": "./Server/routes/index.js",
   "scripts": {
-    "start": "node server.js",
-    "devStart": "nodemon server.js"
+    "start": "node ./Server/server.js",
+    "devStart": "nodemon ./Server/server.js"
   },
   "repository": {
     "type": "git",
@@ -22,16 +22,22 @@
   "homepage": "https://github.com/Vib1240n/A-Cup-Of-Java#readme",
   "dependencies": {
     "bcrypt": "^5.0.1",
+    "body-parser": "^1.20.0",
     "consolidate": "^0.16.0",
     "dotenv": "^16.0.0",
     "ejs": "^3.1.6",
     "express": "^4.17.3",
     "express-ejs-layouts": "^2.5.1",
     "hbs": "^4.2.0",
+    "joi": "^17.6.0",
     "mongoose": "^6.3.0",
     "swig": "^0.14.0"
   },
   "devDependencies": {
+<<<<<<< HEAD
     "nodemon": "^2.0.16"
+=======
+    "nodemon": "^2.0.19"
+>>>>>>> temp_vib
   }
 }

@@ -1,0 +1,50 @@
+body {
+
+    margin: 0;
+    padding: 0;
+}
+
+.navbar li {
+    display: inline-block;
+    display: flexbox;
+} 
+
+.navbar ul {
+    list-style: none;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+}
+
+
+.navbar {
+    background-color: blue;
+    position: fixed;
+    opacity: 1;
+
+    top: 0; 
+    right: 0;
+    left: 0;
+    width: 100%;
+}
+
+
+.navbar a {
+    float: left;
+    color: #000000;
+    text-align: center;
+    padding: 15px 20px;
+    text-decoration: none;
+    font-family: fantasy;
+    font-size: 25px;
+    font-weight: 200;
+}
+
+
+.navbar a:hover {
+    background-color:#d4cece;
+    color: black;
+} 
+
+
+
