@@ -1,0 +1,163 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/* This function allows the items in navbar to display horizontally */
+.navbar li {
+    display: inline-block;
+}
+/* Center the text in nav bar*/
+.navbar ul {
+    list-style: none;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+}
+
+/* Add background color to nav bar */
+.navbar {
+    background-color: #3A3B3C;
+    position: fixed;
+    opacity: 0.90;
+    /* Set the position of the nav bar to top of the page */
+    top: 0; 
+    right: 0;
+    left: 0;
+    width: 100%; /* Set nav bar to full width */
+}
+
+/* Style the links (Home, Services, Appointments, etc.) */
+.navbar a {
+    float: left;
+    color: #000000;
+    text-align: center;
+    padding: 15px 20px;
+    text-decoration: none;
+    font-family: fantasy, "Papyrus";
+    font-size: 25px;
+    font-weight: 200;
+}
+
+/* Style navbar links when user hover over links */
+.navbar a:hover {
+    background-color:#d4cece;
+    color: black;
+}
+
+/* Add background image */
+.background{
+
+    position: fixed; 
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.background::before{
+      content: "";
+      background-image: url("BarbershopBackground.png");
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-attachment: scroll;
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      bottom: 0px;
+      left: 0px;
+      opacity: 0.70;
+}
+
+/* Center Ace's Barber Shop logo */
+.logo {
+    bottom: 0;
+    left: 0;
+    height: 300px;
+    margin: auto;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    top: 0;
+    width: 100%;    
+}  
+
+/* Create Barber Profile */
+.barberProfile {
+    position: relative;
+    background-color: rgba(0,0,0,.3);
+    color: black;
+    border: 5px solid black;
+    border-radius: 20px;
+    margin: 20px;
+    padding: 20px;
+    width: 1250px;
+    height: 120px;
+    word-wrap: break-word;
+    left: 100px;
+    top: 100px;
+    
+}
+
+/* Location of Barber's Profile Picture */
+.barberImage {
+    position: absolute;
+    color: black;
+    border-radius: 5px 5px 5px 5px;
+    height: 100px;
+    width: 100px;
+    top: 0px;
+    left: 0px;
+}
+
+/* Location of Barber's Name */
+.barberName{
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    text-align: center;
+    margin-right: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Location of Barber's Bio */
+.barberBio{
+    position: absolute;
+    top: 0px;
+    left: 150px;
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    word-wrap: break-word;
+
+}
+
+/* Location of Twitter Link */
+.barberTwitter{
+    position: absolute;
+    bottom: 0px;
+    left: 5px;
+    height: 30px;
+    width: 30px;
+
+}
+
+/* Location of Facebook Link */
+.barberFacebook{
+    position: absolute;
+    bottom: 5px;
+    left: 50px;
+    height: 30px;
+    width: 30px;
+
+}
+
+/* Location of Instagram Link */
+.barberInstagram{
+    position: absolute;
+    bottom: 0px;
+    left: 90px;
+    height: 43px;
+    width: 50px;
+
+}
