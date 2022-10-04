@@ -14,9 +14,11 @@ export default class Login extends Component {
     this.onChangeUserEmail = this.onChangeUserEmail.bind(this);
     this.onChangePasswordLogIn = this.onChangePasswordLogIn.bind(this);
     this.onChangePasswordSignUp = this.onChangePasswordSignUp.bind(this);
+    this.onChangeConfirmPassword = this.onChangeConfirmPassword.bind(this);
     this.onChangeFirstName = this.onChangeFirstName.bind(this);
     this.onChangeUserLastName = this.onChangeUserLastName.bind(this);
     this.onSubmitLogIn = this.onSubmitLogIn.bind(this);
+    this.onSubmitSignUp = this.onSubmitSignUp.bind(this);
     this.state = {
       username: "",
       passwordLogIn: "",
@@ -61,7 +63,12 @@ export default class Login extends Component {
   }
   onChangePasswordSignUp(e) {
     this.setState({
-      password: e.target.value,
+      passwordSignUp: e.target.value,
+    });
+  }
+  onChangeConfirmPassword(e) {
+    this.setState({
+      confirmPassword: e.target.value,
     });
   }
 
@@ -78,8 +85,8 @@ export default class Login extends Component {
       .post("http://localhost:5500/api/login", user)
       .then((res) => {
         console.log(res.data);
-        if (res.data.redirect === "/home") {
-          window.location = "/home";
+        if (res.data.redirect === "/MyProfile") {
+          window.location = "/MyProfile";
         }
       })
       .catch((err) => console.log(err));
@@ -90,10 +97,10 @@ export default class Login extends Component {
       email: this.state.email,
       firstName: this.state.firstName,
       lastName: this.state.lastName,
-      password: this.state.password,
+      password: this.state.passwordSignUp,
     };
     axios
-      .post("/signup", user)
+      .post("http://localhost:5500/api/signup", user)
       .then((res) => {
         console.log(res.data);
         if (res.data.redirect === "/home") {
@@ -112,7 +119,7 @@ export default class Login extends Component {
         <div class="inup-info">
           <div class="inup-signUp">
             <p id="inup-font"> SIGN UP </p>
-            <form onSubmit={this.onSubmit}>
+            <form onSubmit={this.onSubmitSignUp}>
               <input
                 id="inup-boxshadow"
                 type="text"
@@ -140,9 +147,9 @@ export default class Login extends Component {
               <input
                 id="inup-boxshadow"
                 type="text"
-                placeholder=" Passwords"
-                value={this.state.password}
-                onChange={this.onChangeUserPassword}
+                placeholder=" Password"
+                value={this.state.passwordSignUp}
+                onChange={this.onChangePasswordSignUp}
               ></input>
               <br />
               <input
@@ -150,9 +157,12 @@ export default class Login extends Component {
                 type="text"
                 placeholder=" Confirm Password"
                 value={this.state.confirmPassword}
-                onChange={this.onChangeUserPassword}
+                onChange={this.onChangeConfirmPassword}
               ></input>
               <br />
+              <button id="inup-boxshadow" type="submit">
+                Sign Up
+              </button>
             </form>
           </div>
           <div class="inup-signIn">
@@ -171,8 +181,8 @@ export default class Login extends Component {
                   id="inup-boxshadow"
                   type="text"
                   placeholder=" Passwords"
-                  value={this.state.password}
-                  onChange={this.onChangeUserPassword}
+                  value={this.state.passwordLogIn}
+                  onChange={this.onChangePasswordLogIn}
                 ></input>
                 <button id="inup-submit-button" type="submit">
                   SIGN IN
@@ -187,9 +197,6 @@ export default class Login extends Component {
               </a>
             </div>
           </div>
-        </div>
-        <div class="inup-submit">
-          <button id="inup-submitButton"> SUBMIT </button>
         </div>
       </div>
     );
