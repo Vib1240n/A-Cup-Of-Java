@@ -1,0 +1,50 @@
+{
+  "name": "a-cup-of-java",
+  "version": "1.0.0",
+  "description": "CSC-190/191 Project Repository",
+  "main": "./Server/routes/index.js",
+  "scripts": {
+    "start": "node ./Server/server.js",
+    "devStart": "nodemon ./Server/server.js",
+    "react": "npm start --prefix client",
+    "dev": "concurrently \"cd ../client && npm run build\" \"npm run start\" "
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Vib1240n/A-Cup-Of-Java.git"
+  },
+  "keywords": [
+    "[]"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Vib1240n/A-Cup-Of-Java/issues"
+  },
+  "homepage": "https://github.com/Vib1240n/A-Cup-Of-Java#readme",
+  "dependencies": {
+    "axios": "^0.27.2",
+    "bcrypt": "^5.0.1",
+    "body-parser": "^1.20.0",
+    "concurrently": "^7.4.0",
+    "consolidate": "^0.16.0",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.3",
+    "express-ejs-layouts": "^2.5.1",
+    "express-session": "^1.17.3",
+    "hbs": "^4.2.0",
+    "joi": "^17.6.0",
+    "mongoose": "^6.3.0",
+    "passport": "^0.6.0",
+    "passport-local": "^1.0.0",
+    "passport-local-mongoose": "^7.1.2",
+    "react-scroll": "^1.8.7",
+    "swig": "^0.14.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.19"
+  }
+}

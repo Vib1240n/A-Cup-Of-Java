@@ -1,11 +1,11 @@
-<<<<<<< HEAD
 <p align="center">
   <img src="/Assets/images/WhiteBackgroundLogo.png" />
 </p>
 
-
-----
 ---
+
+---
+
 CSC-190/191 Project
 
 - [Team Members](#team-members)
@@ -20,8 +20,8 @@ CSC-190/191 Project
     - [To run using Nodemon and have Developer control run](#to-run-using-nodemon-and-have-developer-control-run)
     - [To launch the app run](#to-launch-the-app-run)
 
-Team Members
----
+## Team Members
+
 ---
 
 - [@Thomas Nguyen](https://github.com/NguyenSt3r)
@@ -33,20 +33,20 @@ Team Members
 - [@Bunpheng Chhay](https://github.com/Bunphengchhay)
 - [@Vibhore Sagar](https://github.com/Vib1240n)
 
-Background
----
+## Background
+
 ---
 
 Ace’s Barbershop – Fairly new barbershop in West Sacramento, Now that they have developed their clients relations they want to take their barbershop into new direction. They are finally going online for bookings, pricings and services available.
 
-Solution
----
+## Solution
+
 ---
 
 Creating a website with all the barbers listed with their schedules and specialities. Customers get to see the recent haircuts from the barbers and be able to make appointments right from the website instead of calling the shop to verify.
 
-Prototype
----
+## Prototype
+
 ---
 
 <p align="center">
@@ -58,15 +58,16 @@ Prototype
 <br>
 As part of our designing phase, we developed a figma clickable prototype that showcases all the views of Ace’s Barbershop website. When designing our prototype, we wanted to make sure we included all the features the client requested. To achieve this, we developed each feature as a view for the website. For example, we created an appointments view that will allow customers with an account to schedule an appointment which is one the features the client wishes to have. Another feature that was incorporated into a view of the website was the sign in feature. We created a view that would allow customers to sign in to their account so that they can schedule their appointment. They are also giving the option to sign up if they are new. To implement all these views together, we incorporated a navigation bar on the top of the website that links all the views of the website. Within our prototype, we were able to make the navigation bar clickable so that our client will be able to see all the views and experience the flow of the website. The goal of this prototype was to present an idea of the website to our client and then receive feedback on things they liked and disliked.
 
-Timeline
+## Timeline
+
 ---
----
+
 <p align="center">
 <img src="https://raw.githubusercontent.com/Vib1240n/A-Cup-Of-Java/8538fde5ca9a74c3b2e5aea240dd365454112c43/Assets/images/COJ%20Timeline.png" />
 </p>
 
- Developer Instructions
----
+## Developer Instructions
+
 <hr>
 <br>
 Clone the repository to run the project locally using
@@ -98,7 +99,9 @@ After installing dependancies run<br>
 ```
 npm run devStart
 ```
+
 #### To launch the app run
+
 ```
 node server.js
 ```
@@ -106,23 +109,3 @@ node server.js
 As of right now the server will run the website on
 
 > http://localhost:5500
-
-
-=======
-# **A-Cup-Of-Java**
-## *Introduction*
-This repository is for the Senior Project at CSUS Spring 2022. Our goal is to help Ace's Barbershop have a new and well designed website to help with their business. 
-
-### *Class*
-CSC-190/191 Project Repository
-
-## *Collaborators*
-1. Kenny Nyugen
-2. Thomas Nguyen
-3. Valentin Bakalor
-4. Faizan Ul Islam
-5. Alex Smith
-6. Theo McDonald
-7. Bunpheng Chhay
-8. Vibhore Sagar
->>>>>>> temp_vib
