@@ -1,93 +1,197 @@
-import React, { useState } from "react";
+import React, { Component } from "react";
 import axios from "axios";
 import "../asset/css/signin.css";
+import googleIcon from "../asset/images/GoogleLogo.png";
 
-function SignIn() {
-  const [loginUsername, setLoginUsername] = useState("");
-  const [loginPassword, setLoginPassword] = useState("");
-  // const config = {
-  //   headers: {
-  //     "content-type": "application/json",
-  //     "Access-Control-Allow-Origin": "*",
-  //     "access-control-allow-credentials": "true",
-  //   },
-  // };
-  // const data = {
-  //   username: loginUsername,
-  //   password: loginPassword,
-  // };
-  // const URL = "http://localhost:5500/api/login";
+export default class Login extends Component {
+  /*
+  Constructor for the login page
+  Initialize the state of the login page
+  */
+  constructor(props) {
+    super(props);
+    this.onChangeUserName = this.onChangeUserName.bind(this);
+    this.onChangeUserEmail = this.onChangeUserEmail.bind(this);
+    this.onChangePasswordLogIn = this.onChangePasswordLogIn.bind(this);
+    this.onChangePasswordSignUp = this.onChangePasswordSignUp.bind(this);
+    this.onChangeFirstName = this.onChangeFirstName.bind(this);
+    this.onChangeUserLastName = this.onChangeUserLastName.bind(this);
+    this.onSubmitLogIn = this.onSubmitLogIn.bind(this);
+    this.state = {
+      username: "",
+      passwordLogIn: "",
+      email: "",
+      firstName: "",
+      lastName: "",
+      passwordSignUp: "",
+      confirmPassword: "",
+    };
+  }
+  /* 
+  On change function events for the login page
+  */
 
-  const login = () => {
-    axios({
-      method: "POST",
-      url: "api/login",
-      data: {
-        username: loginUsername,
-        password: loginPassword,
-      },
-      withCredentials: true,
-    }).then((res) => console.log(res.data));
-    // axios
-    //   .post(URL, data, config)
-    //   .then((res) => console.log(res))
-    //   .catch((err) => console.log(err));
-  };
-  return (
-    <div className="SignIn">
-      <h1 className="heading">Sign In</h1>
-      <div className="container">
-        <div className="form">
-          <form>
-            <input
-              type="text"
-              name="username"
-              id="username"
-              placeholder="Username"
-              onChange={(e) => setLoginUsername(e.target.value)}
-            />
-            <input
-              type="password"
-              name="password"
-              id="password"
-              placeholder="Password"
-              onChange={(e) => setLoginPassword(e.target.value)}
-            />
-            <button id="submit-button" type="submit" onClick={login}>
-              SIGN IN
-            </button>
-          </form>
-        </div>
-      </div>
-    </div>
-  );
-}
-export default SignIn;
+  //onchange function for login page
+  onChangeUserName(e) {
+    this.setState({
+      username: e.target.value,
+    });
+  }
+  onChangePasswordLogIn(e) {
+    this.setState({
+      passwordLogIn: e.target.value,
+    });
+  }
 
-{
-  /*<div>
-      <h1>Let's SignIn and get reward</h1>
-      //create button for signup page
-      <div className="container">
-        <div className="row">
-          <div className="col-md-6">
-            <h2>Sign Up</h2>
-            <a href="/signup" className="btn btn-primary">
-              Sign Up
-            </a>
+  //onchange function for signup page
+  onChangeUserEmail(e) {
+    this.setState({
+      email: e.target.value,
+    });
+  }
+  onChangeFirstName(e) {
+    this.setState({
+      firstName: e.target.value,
+    });
+  }
+  onChangeUserLastName(e) {
+    this.setState({
+      lastName: e.target.value,
+    });
+  }
+  onChangePasswordSignUp(e) {
+    this.setState({
+      password: e.target.value,
+    });
+  }
+
+  /*  
+  on Submit function for the login page  
+  */
+  onSubmitLogIn(e) {
+    e.preventDefault();
+    const user = {
+      username: this.state.username,
+      password: this.state.password,
+    };
+    axios
+      .post("http://localhost:5500/api/login", user)
+      .then((res) => {
+        console.log(res.data);
+        if (res.data.redirect === "/home") {
+          window.location = "/home";
+        }
+      })
+      .catch((err) => console.log(err));
+  }
+  onSubmitSignUp(e) {
+    e.preventDefault();
+    const user = {
+      email: this.state.email,
+      firstName: this.state.firstName,
+      lastName: this.state.lastName,
+      password: this.state.password,
+    };
+    axios
+      .post("/signup", user)
+      .then((res) => {
+        console.log(res.data);
+        if (res.data.redirect === "/home") {
+          window.location = "/home";
+        }
+      })
+      .catch((err) => console.log(err));
+  }
+
+  /*
+  Render function for the login page
+  */
+  render() {
+    return (
+      <div class="inup-wrapper">
+        <div class="inup-info">
+          <div class="inup-signUp">
+            <p id="inup-font"> SIGN UP </p>
+            <form onSubmit={this.onSubmit}>
+              <input
+                id="inup-boxshadow"
+                type="text"
+                placeholder=" First Name"
+                value={this.state.firstName}
+                onChange={this.onChangeFirstName}
+              ></input>
+              <br />
+              <input
+                id="inup-boxshadow"
+                type="text"
+                placeholder=" Last Name"
+                value={this.state.lastName}
+                onChange={this.onChangeUserLastName}
+              ></input>
+              <br />
+              <input
+                id="inup-boxshadow"
+                type="text"
+                placeholder=" Email"
+                value={this.state.email}
+                onChange={this.onChangeUserEmail}
+              ></input>
+              <br />
+              <input
+                id="inup-boxshadow"
+                type="text"
+                placeholder=" Passwords"
+                value={this.state.password}
+                onChange={this.onChangeUserPassword}
+              ></input>
+              <br />
+              <input
+                id="inup-boxshadow"
+                type="text"
+                placeholder=" Confirm Password"
+                value={this.state.confirmPassword}
+                onChange={this.onChangeUserPassword}
+              ></input>
+              <br />
+            </form>
+          </div>
+          <div class="inup-signIn">
+            <div class="input-signInUpper">
+              <p id="inup-font"> SIGN IN</p>
+              <form onSubmit={this.onSubmitLogIn}>
+                <input
+                  id="inup-boxshadow"
+                  type="text"
+                  placeholder=" Email"
+                  value={this.state.username}
+                  onChange={this.onChangeUserName}
+                ></input>
+                <br />
+                <input
+                  id="inup-boxshadow"
+                  type="text"
+                  placeholder=" Passwords"
+                  value={this.state.password}
+                  onChange={this.onChangeUserPassword}
+                ></input>
+                <button id="inup-submit-button" type="submit">
+                  SIGN IN
+                </button>
+              </form>
+              <br />
+            </div>
+            <div class="inup-signInLower">
+              <div class="inup-line"> OR </div>
+              <a href="https://www.google.com">
+                <img src={googleIcon} alt="Google Icon" id="inup-googleIcon" />
+              </a>
+            </div>
           </div>
         </div>
+        <div class="inup-submit">
+          <button id="inup-submitButton"> SUBMIT </button>
+        </div>
       </div>
-    </div>
-    <div>
-       <h1>Login</h1>
-      <input
-        placeholder="username"
-        onChange={(e) => setLoginUsername(e.target.value)}
-      />
-      <input
-        placeholder="password"
-        onChange={(e) => setLoginPassword(e.target.value)}
-      />
-      <button onClick={login}>Submit</button> */
+    );
+  }
 }

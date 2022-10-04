@@ -34,6 +34,7 @@
     "ejs": "^3.1.6",
     "express": "^4.17.3",
     "express-ejs-layouts": "^2.5.1",
+    "express-flash": "^0.0.2",
     "express-session": "^1.17.3",
     "hbs": "^4.2.0",
     "joi": "^17.6.0",
