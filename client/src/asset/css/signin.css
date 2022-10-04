@@ -1,4 +1,4 @@
-.SignIn {
+/* .SignIn {
   background-color: #f5f5f5;
   padding: 15px;
   margin: 0 auto;
@@ -39,4 +39,77 @@
   margin-top: 10px;
   background-color: rgb(210, 208, 208);
   border-color: black;
+} */
+.inup-wrapper {
+  margin-top: 7vw;
+  padding-top: 2vw;
+  align-items: center;
+  margin-left: 5vw;
+  margin-right: 5vw;
+  /* columns: 2; */
+  box-shadow: 0 2px 2px 3px rgba(0, 0, 0, 0.2);
+  /* column-rule: solid black; */
+}
+.inup-info {
+  columns: 2;
+  column-rule: solid black;
+}
+
+#inup-font {
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.inup-signUp {
+  margin-left: 4vw;
+}
+.inup-signIn {
+  margin-left: 4vw;
+  margin-top: 5vw;
+  padding-top: 0.1vw;
+}
+#inup-boxshadow {
+  background-color: whitesmoke;
+  box-shadow: 0 2px 2px 3px rgba(0, 0, 0, 0.2);
+  padding: 0.3vw;
+  width: 35vw;
+  margin: 1vw;
+}
+/* .inup-signInLower{
+    margin-left: 40%;
+    
+} */
+#inup-googleIcon {
+  width: 5vw;
+  height: 5vw;
+  margin-top: 5vw;
+  margin-left: 39%;
+}
+.inup-line {
+  /* height: 1px;
+    max-width: 80%;
+    margin: 10rem 10rem 0 10rem ;
+    margin-top: 15vw;
+    margin-left: 10vw;
+    margin-right: 5vw;
+    margin-bottom: 5vw; */
+
+  height: 1px;
+  background: black;
+  /* align-items: center; */
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-top: 3vw;
+  max-width: 90%;
+}
+.inup-submit {
+  padding-top: 3vw;
+  padding-bottom: 3vw;
+  padding-left: 45.5%;
+}
+#inup-submitButton {
+  padding-left: 2vw;
+  padding-right: 2vw;
+  padding-top: 0.5vw;
+  padding-bottom: 0.5vw;
+  background-color: #dba554;
 }

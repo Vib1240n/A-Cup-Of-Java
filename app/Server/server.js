@@ -1,4 +1,5 @@
 const express = require("express");
+const flash = require("express-flash");
 const expressLayouts = require("express-ejs-layouts");
 const app = express();
 const cors = require("cors");
@@ -15,6 +16,19 @@ app.use(cors());
 app.use(express.static("../client/build"));
 app.use(bodyparser.urlencoded({ extended: true }));
 app.use(bodyparser.json());
+app.use(cookieParser("secret"));
+app.use(
+  session({
+    secret: "secret",
+    resave: true,
+    saveUninitialized: true,
+  })
+);
+// Middleware for passport
+app.use(flash());
+app.use(passport.initialize());
+app.use(passport.session());
+require("./Authentication/passport")(passport);
 
 //Database connection process
 mongoose
@@ -25,19 +39,6 @@ mongoose
   .then(() => console.log("connected to database"))
   .catch(console.error);
 
-//Port to listen to
-app.listen(process.env.PORT, () => console.log("Server connected and running"));
-
-// Express-session
-app.use(cookieParser("secret"));
-app.use(
-  session({
-    secret: "secret",
-    resave: true,
-    saveUninitialized: true,
-  })
-);
-
 //Route creation
 const indexRouter = require("./routes/index");
 app.use("/api", indexRouter);
@@ -47,7 +48,5 @@ app.get("*", (req, res) => {
     require("path").join(__dirname, "..", "..", "client", "build", "index.html")
   );
 });
-// Middleware for passport
-app.use(passport.initialize());
-app.use(passport.session());
-require("./Authentication/passport")(passport);
+
+app.listen(port, () => console.log("Server connected and running"));
