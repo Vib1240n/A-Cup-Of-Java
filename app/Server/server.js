@@ -6,7 +6,7 @@ const cors = require("cors");
 var bodyparser = require("body-parser");
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
-const passport = require("passport");
+const passport = require("./Authentication/passportConfig");
 const session = require("express-session");
 const cookieParser = require("cookie-parser");
 dotenv.config({ path: "../app/Private/.env" });
@@ -28,7 +28,6 @@ app.use(
 app.use(flash());
 app.use(passport.initialize());
 app.use(passport.session());
-require("./Authentication/passport")(passport);
 
 //Database connection process
 mongoose
