@@ -79,7 +79,7 @@ export default class Login extends Component {
     e.preventDefault();
     const user = {
       username: this.state.username,
-      password: this.state.password,
+      password: this.state.passwordLogIn,
     };
     axios
       .post("http://localhost:5500/api/login", user)
@@ -87,6 +87,8 @@ export default class Login extends Component {
         console.log(res.data);
         if (res.data.redirect === "/MyProfile") {
           window.location = "/MyProfile";
+        } else {
+          window.location = "/home";
         }
       })
       .catch((err) => console.log(err));
@@ -94,7 +96,7 @@ export default class Login extends Component {
   onSubmitSignUp(e) {
     e.preventDefault();
     const user = {
-      email: this.state.email,
+      username: this.state.email,
       firstName: this.state.firstName,
       lastName: this.state.lastName,
       password: this.state.passwordSignUp,
@@ -103,8 +105,8 @@ export default class Login extends Component {
       .post("http://localhost:5500/api/signup", user)
       .then((res) => {
         console.log(res.data);
-        if (res.data.redirect === "/home") {
-          window.location = "/home";
+        if (res.data.redirect === "/MyProfile") {
+          window.location = "/MyProfile";
         }
       })
       .catch((err) => console.log(err));

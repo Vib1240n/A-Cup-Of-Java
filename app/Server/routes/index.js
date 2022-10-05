@@ -1,12 +1,8 @@
 const express = require("express");
+const { session } = require("../Authentication/passportConfig");
 const router = express.Router();
-const async = require("hbs/lib/async");
-const bcrypt = require("bcrypt");
-const salt = bcrypt.genSalt(10);
-const hash = require("../Authentication/passwordHash");
-const bycrpt = require("bcrypt");
 const passport = require("../Authentication/passportConfig");
-const passportLocal = require("passport-local").Strategy;
+
 const User = require("../model/user");
 // const {
 //   giveAuthentication,
@@ -19,41 +15,32 @@ router.post("/login", passport.authenticate("local"), (req, res, next) => {
     var redir = { redirect: "/MyProfile" };
     return res.json(redir);
   } else {
-    var redir = { redirect: "/login" };
+    var redir = { redirect: "/home" };
     return res.json(redir);
   }
 });
 
-router.post("/signup", async (req, res, next) => {
-  passport.authenticate("local-signup", function (err, user, info) {
-    if (err) {
-      console.log(err);
-    }
-    req.logIn(user, function (err, data) {
-      if (err) {
-        console.log(err);
-        var redir = { redirect: "/login" };
-        return res.json(redir);
-      }
-      return res.json(user);
-    });
-  })(req, res);
+router.post("/signup", passport.authenticate("local-signup"), (req, res) => {
+  if (req.user) {
+    var redir = { redirect: "/MyProfile" };
+    return res.json(redir);
+  } else {
+    var redir = { redirect: "/home" };
+    return res.json(redir);
+  }
 });
 
 router.get("/MyProfile", (req, res) => {
-  User.findOne(
-    { username: req.session.passport.user.username },
-    function (err, user) {
-      if (err) console.log(err);
+  User.find({ user: req.user }, function (err, user) {
+    if (err) console.log(err);
 
-      const { firstName, lastName, username } = user;
+    const { firstName, lastName, username } = user;
 
-      res.status(200).send({
-        firstName,
-        lastName,
-        username,
-      });
-    }
-  );
+    res.status(200).send({
+      username: username,
+      firstName: firstName,
+      lastName: lastName,
+    });
+  });
 });
 module.exports = router;

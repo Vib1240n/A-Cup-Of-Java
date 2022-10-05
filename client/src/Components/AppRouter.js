@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Routes, Route} from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "../views/home";
 import About from "../views/about";
 import Appointment from "../views/appointment";
@@ -20,7 +20,7 @@ class AppRouter extends React.Component {
           <Route path="/barber" element={<Barber />} />
           <Route path="/services" element={<Services />} />
           <Route path="/appointment" element={<Appointment />} />
-          <Route path="/myprofile" element={<MyProfile />} />
+          <Route path="/MyProfile" element={<MyProfile />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<SignUp />} />
         </Routes>
