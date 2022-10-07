@@ -2,7 +2,7 @@ import React from "react";
 import { slide as Menu } from "react-burger-menu";
 import "../asset/css/style.css";
 
-export default (sidebar) => {
+export default () => {
   return (
     <Menu>
       <a className="Home" href="/home">
@@ -23,13 +23,11 @@ export default (sidebar) => {
       <a className="Appointment" href="/appointment">
         Appointment
       </a>
-
-      <a className="SignUp" href="/signup">
-        Sign Up
-      </a>
-
       <a className="MyProfile" href="/myprofile">
         My Profile
+      </a>
+      <a className="LoginPage" href="/loginPage">
+        Login Page
       </a>
       {/* <AppRouter/> */}
     </Menu>
