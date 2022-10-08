@@ -5,14 +5,14 @@
 
 module.exports = {
   checkAuthentication: function (req, res, next) {
-    if (req.isAuthenticated()) {
+    if (req.user) {
       return next();
     }
     req.flash("error_message", "User must be logged in");
     res.redirect("/login");
   },
   giveAuthentication: function (req, res, next) {
-    if (!req.isAuthenticated()) {
+    if (!req.user) {
       return next();
     }
     res.redircect("/home_page");

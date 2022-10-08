@@ -4,10 +4,7 @@ const router = express.Router();
 const passport = require("../Authentication/passportConfig");
 
 const User = require("../model/user");
-// const {
-//   giveAuthentication,
-//   checkAuthentication,
-// } = require("../Authentication/Auth");
+const { giveAuthentication, checkAuthentication } = require("../Authentication/Authentication");
 const user = require("../model/user");
 
 router.post("/login", passport.authenticate("local"), (req, res, next) => {
@@ -30,17 +27,7 @@ router.post("/signup", passport.authenticate("local-signup"), (req, res) => {
   }
 });
 
-router.get("/MyProfile", (req, res) => {
-  User.find({ user: req.user }, function (err, user) {
-    if (err) console.log(err);
-
-    const { firstName, lastName, username } = user;
-
-    res.status(200).send({
-      username: username,
-      firstName: firstName,
-      lastName: lastName,
-    });
-  });
+router.get("/profile", checkAuthentication, function(req, res) {
+  res.send(req.user);
 });
 module.exports = router;
