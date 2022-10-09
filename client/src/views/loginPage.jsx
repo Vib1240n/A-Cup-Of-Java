@@ -1,7 +1,8 @@
 import React, { Component } from "react";
-import Box from "@mui/material/box";
-import TextField from "@mui/material/TextField";
+import { Box, TextField, Button, FormControl, Step } from "@mui/material";
 import axios from "axios";
+import background from "../asset/images/grooming1.png";
+// import "../asset/css/loginPage.css";
 
 export default class loginPage extends Component {
   /*
@@ -117,17 +118,173 @@ export default class loginPage extends Component {
   */
   render() {
     return (
-      <Box
-        component="form"
-        sx={{
-          "& > :not(style)": { m: 5, width: "30ch" },
+      <div
+        style={{
+          backgroundColor: "gray",
+          backgroundRepeat: "repeat",
         }}
-        autoComplete="off"
       >
-        <TextField id="outlined-basic" label="Outlined" variant="outlined" />
-        <TextField id="filled-basic" label="Filled" variant="filled" />
-        <TextField id="standard-basic" label="Standard" variant="standard" />
-      </Box>
+        <Box
+          component="div"
+          sx={{
+            width: 700,
+            height: 700,
+            marginLeft: "auto",
+            marginRight: "auto",
+            marginTop: "50px",
+            //backgroundImage: `url(${background})`,
+            backgroundRepeat: "no-repeat",
+            backgroundPosition: "center",
+            backgroundSize: "cover",
+            borderRadius: "10px",
+            borderRadius: 5,
+            boxShadow: 5,
+            display: "-ms-grid",
+            flexDirection: "inherit",
+            justifyContent: "center",
+            position: "unset",
+            location: "center",
+            backfaceVisibility: "hidden",
+            "&:hover": {
+              boxShadow: 19,
+              backfaceVisibility: "revert",
+              blur: 10,
+              backgroundColor: "#909090",
+            },
+          }}
+          autoComplete="on"
+        >
+          <FormControl required={true}>
+            <TextField
+              id="outlined-basic"
+              label="Name"
+              variant="outlined"
+              component="div"
+              required={true}
+              sx={{
+                width: 300,
+                height: 50,
+                marginTop: 7,
+                marginLeft: 20,
+                marginRight: 20,
+                fontStyle: "italic",
+                padding: 1,
+                borderRadius: 1,
+                borderStyle: "solid",
+                color: "white",
+                boxShadow: 7,
+                "& label": {
+                  color: "primary.secondary",
+                  border: "white",
+                  margenLeft: 1,
+                  margenRight: 1,
+                },
+                "& label.Mui-focused": {
+                  color: "Black",
+                  display: "block",
+                },
+                "& .MuiOutlinedInput-root": {
+                  "& fieldset": {
+                    borderColor: "black",
+                  },
+                  "& fieldset.Mui-focused": {
+                    borderColor: "black",
+                  },
+                },
+              }}
+              inputMode="text"
+              inputProps={{
+                style: { color: "white", fontSize: 22, fontStyle: "normal" },
+              }}
+            />
+            <TextField
+              id="filled-basic"
+              label="Email"
+              variant="outlined"
+              component="div"
+              required={true}
+              sx={{
+                width: 300,
+                height: 50,
+                marginTop: 25,
+                marginLeft: 20,
+                marginRight: 20,
+                fontStyle: "italic",
+                padding: 1,
+                borderRadius: 1,
+                borderStyle: "solid",
+                color: "white",
+                boxShadow: 7,
+                "& label": {
+                  color: "primary.secondary",
+                  border: "white",
+                  margenLeft: 1,
+                  margenRight: 1,
+                },
+                "& label.Mui-focused": {
+                  color: "Black",
+                  display: "block",
+                },
+                "& .MuiOutlinedInput-root": {
+                  "& fieldset": {
+                    borderColor: "black",
+                  },
+                  "& fieldset.Mui-focused": {
+                    borderColor: "black",
+                  },
+                },
+              }}
+              inputProps={{
+                style: { color: "white", fontSize: 22, fontStyle: "normal" },
+              }}
+            />
+            <div>
+              <TextField
+                sx={{
+                  width: 300,
+                  height: 50,
+                  marginTop: 25,
+                  marginLeft: 20,
+                  marginRight: 20,
+                  fontStyle: "italic",
+                  padding: 1,
+                  borderRadius: 1,
+                  borderStyle: "solid",
+                  color: "white",
+                  boxShadow: 7,
+                  "& label": {
+                    color: "primary.secondary",
+                    border: "white",
+                    margenLeft: 1,
+                    margenRight: 1,
+                  },
+                  "& label.Mui-focused": {
+                    color: "Black",
+                    display: "block",
+                  },
+                  "& .MuiOutlinedInput-root": {
+                    "& fieldset": {
+                      borderColor: "black",
+                    },
+                    "& fieldset.Mui-focused": {
+                      borderColor: "black",
+                    },
+                  },
+                }}
+                id="standard-basic"
+                label="Password"
+                variant="outlined"
+                type="password"
+                required={true}
+                component="div"
+                inputProps={{
+                  style: { color: "white", fontSize: 22, fontStyle: "normal" },
+                }}
+              />
+            </div>
+          </FormControl>
+        </Box>
+      </div>
     );
   }
 }
