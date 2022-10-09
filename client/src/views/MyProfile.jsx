@@ -21,6 +21,17 @@ const fetchUserData = () => {
       console.log(err);
     });
 };
+
+const logout = () => {
+  axios.post("http://localhost:5500/api/logout").then((res) => {
+    console.log(res.data);
+    if (res.data.redirect === "/home") {
+      window.location = "/home";
+    }
+  })
+  .catch((err) => console.log(err));
+};
+
   return (
     <div className="MyProfile">
         <h1 className="heading">Your Profile Information</h1>
@@ -28,7 +39,7 @@ const fetchUserData = () => {
           <div className="firstName">First Name: {userData.firstname}</div>
           <div className="firstName">Last Name: {userData.lastname}</div>
           <div className="firstName">Email: {userData.username}</div>
-          <button type="submit">Sign Out</button>
+          <button onClick={logout}>Sign Out</button>
         </div>
       </div>
    );

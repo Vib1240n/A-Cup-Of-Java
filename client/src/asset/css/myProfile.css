@@ -59,3 +59,8 @@
     background: #DBA554;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
+
+.MyProfile button:hover {
+    background-color:rgb(255, 207, 134);
+    transition: 0.7s;
+}

@@ -30,4 +30,15 @@ router.post("/signup", passport.authenticate("local-signup"), (req, res) => {
 router.get("/profile", checkAuthentication, function(req, res) {
   res.send(req.user);
 });
+
+router.post("/logout", function(req, res, next) {
+  req.logout(function(err) {
+    if (err) {
+      return next(err);
+    }
+    var redir = { redirect: "/home" };
+    return res.json(redir);
+  });
+});
+
 module.exports = router;
