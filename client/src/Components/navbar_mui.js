@@ -12,6 +12,8 @@ import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
+import Pole from "../asset/images/Barberpole.ico";
+import Sidebar from "./sidebar_mui";
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
 const ResponsiveAppBar = () => {
@@ -20,6 +22,7 @@ const ResponsiveAppBar = () => {
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
+    // <Sidebar setState={({ ...this.state, [this.anchor]: this.open })} /> ;
   };
   const handleOpenUserMenu = (event) => {
     setAnchorElUser(event.currentTarget);
@@ -54,8 +57,12 @@ const ResponsiveAppBar = () => {
               fontFamily: "monospace",
               fontWeight: 700,
               letterSpacing: ".3rem",
-              color: "White",
+              position: "sticky",
+              top: "0px",
+              color: "inherit",
+              right: "750px",
               textDecoration: "none",
+              zIndex: "5",
               "&:hover": {
                 color: "black",
                 padding: "0.5rem",
@@ -93,27 +100,25 @@ const ResponsiveAppBar = () => {
               sx={{
                 display: { xs: "block", md: "none" },
               }}
-            >
-            </Menu>
+            ></Menu>
           </Box>
-          <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
           <Typography
             variant="h5"
             noWrap
             component="a"
-            href=""
+            href="/home"
             sx={{
               mr: 2,
               display: { xs: "flex", md: "none" },
               flexGrow: 1,
               fontFamily: "monospace",
               fontWeight: 700,
-              letterSpacing: ".3rem",
+              letterSpacing: ".1rem",
               color: "inherit",
               textDecoration: "none",
             }}
           >
-            LOGO
+            Ace's BarberShop
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             <Button>
@@ -132,6 +137,7 @@ const ResponsiveAppBar = () => {
                   textDecoration: "none",
                   "&:hover": {
                     color: "black !important",
+                    backgroundColor: "White",
                   },
                 }}
               >
@@ -143,7 +149,7 @@ const ResponsiveAppBar = () => {
                 variant="h7"
                 noWrap
                 component="a"
-                href="/Services"
+                href="/about"
                 sx={{
                   mr: 2,
                   display: { xs: "none", md: "flex" },
@@ -154,6 +160,7 @@ const ResponsiveAppBar = () => {
                   textDecoration: "none",
                   "&:hover": {
                     color: "black !important",
+                    backgroundColor: "White",
                   },
                 }}
               >
@@ -165,7 +172,7 @@ const ResponsiveAppBar = () => {
                 variant="h7"
                 noWrap
                 component="a"
-                href="/Services"
+                href="/appointment"
                 sx={{
                   mr: 2,
                   display: { xs: "none", md: "flex" },
@@ -176,6 +183,7 @@ const ResponsiveAppBar = () => {
                   textDecoration: "none",
                   "&:hover": {
                     color: "black !important",
+                    backgroundColor: "White",
                   },
                 }}
               >
