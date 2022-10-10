@@ -2,6 +2,7 @@ import "./App.css";
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar_mui from "./Components/navbar_mui";
+import Sidebar from "./Components/sidebar_mui";
 import Home from "./views/home";
 import About from "./views/about";
 import Appointment from "./views/appointment";
@@ -17,6 +18,7 @@ function App() {
     <>
       <Router>
         <Navbar_mui />
+        <Sidebar />
         <Routes>
           <Route path="/" exact element={<Home />} />
           <Route path="/home" element={<Home />} />
