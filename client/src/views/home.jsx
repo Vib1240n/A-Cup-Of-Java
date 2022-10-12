@@ -1,9 +1,11 @@
 import React from "react";
-import "../asset/css/style.css";
+import * as mui from "@mui/material";
+//import "../asset/css/style.css";
 import { useNavigate } from "react-router-dom";
 import Appointment from "./appointment";
 import InstagramIcon from "../asset/images/Instagram-Icon.png";
 import Facebookicon from "../asset/images/facebookiconcolor1.png";
+import Background from "../asset/images/BarbershopBackground.png";
 
 function Home() {
   let navigate = useNavigate();
@@ -11,38 +13,48 @@ function Home() {
     navigate("/appointment");
   };
   return (
-    <>
-      <div className="home-background">
-        <div className="home-title">Welcome To Ace's Barbershop</div>
-        <div className="home-secondtitle">
-          We provided all in one services including Haircute & Grooming
-        </div>
-        <br />
-        <button className="home-button" onClick={handleChange}>
-          <a>Book Now</a>
-        </button>
-
-        <div className="home-middleblock">
-          <div className="home-line-1"></div>
-          <h1 id="home-font"> Find Us On </h1>
-          <div className="home-twoicon">
-            <a href="https://www.instagram.com">
-              <img src={InstagramIcon} alt="Instagram Icon" id="home-igicon" />
-            </a>
-            <a href="https://www.facebook.com">
-              <img src={Facebookicon} alt="Instagram Icon" id="home-fbicon" />
-            </a>
-          </div>
-          <div className="home-line-2" />
-          <div className="home-line22" id="home-font">
-            <p id="home-contact"> Contact Us: 123 456789</p>
-            <p id="home-address">
-              1049 Jefferson Blvd, West Sacramento, CA 95691
-            </p>
-          </div>
-        </div>
-      </div>
-    </>
+    <mui.Box
+      sx={{
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+        height: "100vh",
+        width: "100vw",
+        backgroundImage: `url(${Background})`,
+        backgroundPosition: "center",
+        backgroundSize: "cover",
+        backgroundRepeat: "no-repeat",
+        backgroundBlendMode: "overlay",
+      }}
+    >
+      <mui.Button
+        variant="contained"
+        href="/appointment"
+        sx={{
+          backgroundColor: "#000000",
+          backdropFilter: "blur(10px)",
+          color: "#ffffff",
+          width: "200px",
+          height: "50px",
+          fontSize: "10px",
+          fontWeight: "bold",
+          borderRadius: "10px",
+          marginTop: "20px",
+          position: "fixed",
+          top: "195px",
+          "&:hover": {
+            backgroundColor: "gray",
+            color: "#ffffff",
+            backdropFilter: "blur(10px)",
+            padding: "10px",
+            shadow: "10px",
+          },
+        }}
+      >
+        Book Appointment
+      </mui.Button>
+    </mui.Box>
   );
 }
 

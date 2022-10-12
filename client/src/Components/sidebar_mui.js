@@ -96,6 +96,8 @@ export default function Sidebar() {
               fontWeight: 700,
               color: "inherit",
               zIndex: 1,
+              position: "fixed",
+              top: 15,
             }}
           >
             <MenuIcon />
