@@ -11,9 +11,6 @@ import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
-import AdbIcon from "@mui/icons-material/Adb";
-import Pole from "../asset/images/Barberpole.ico";
-import Sidebar from "./sidebar_mui";
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
 const ResponsiveAppBar = () => {
@@ -41,6 +38,10 @@ const ResponsiveAppBar = () => {
       position="static"
       sx={{
         background: "linear-gradient(45deg, #909090 30%, #151515 70%)",
+        height: "70px",
+        top: 0,
+        left: 0,
+        position: "fixed",
       }}
     >
       <Container maxWidth="xl">
@@ -73,16 +74,6 @@ const ResponsiveAppBar = () => {
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
-            <IconButton
-              size="large"
-              aria-label="account of current user"
-              aria-controls="menu-appbar"
-              aria-haspopup="true"
-              onClick={handleOpenNavMenu}
-              color="inherit"
-            >
-              <MenuIcon />
-            </IconButton>
             <Menu
               id="menu-appbar"
               anchorEl={anchorElNav}
