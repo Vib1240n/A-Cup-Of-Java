@@ -10,12 +10,14 @@
         padding-top: 1.5vh;
         height: 3vh;
         font-family:  Helvetica, Arial, sans-serif;
-        font-size:medium;
-        font-size: 2.5vw;
+        /* font-size:medium; */
+        /* font-size: 2.5vw; */
+        font-size: 32px;
         text-align: right;
         box-shadow: 0 2px 2px 3px rgba(0,0,0,.2);
         /* margin-bottom: 0.2vw; */
-        padding-bottom: 6vw;
+        /* padding-bottom: 6vw; */
+        padding-bottom: 60px;
        
 }
 a+a{
@@ -73,11 +75,14 @@ a:visited {
   } */
     .bm-burger-button {
     position: fixed;
-    width : 2.5vh;
-    height: 2vh;
+    /* width : 2.5vh;
+    height: 2vh; */
+    width: 36px;
+    height: 30px;
     left: 6vw;
-    top:1vw;
-    margin-top: 1.5vw;
+    /* top:1vw; */
+    /* margin-top: 1.5vw; */
+    margin-top: 20px;
    
   }
   

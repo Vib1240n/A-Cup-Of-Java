@@ -40,23 +40,27 @@
 }
 .barber-footer{
     /* columns: 2; */
-    align-items: center;
+    /* align-items: center; */
     text-align: center;
 }
 #barber-footerinfo{
     font-family:  Helvetica, Arial, sans-serif;
-    font-size:medium;
-    font-size: 1vh;
+    /* font-size:medium; */
+    /* font-size: 1vh; */
+    font-size: 10px;
     font-weight: bold;
     /* padding-left: 17vw; */
 }
 #barber-ig{
     /* margin-left: 10vw; */
     width: 4.5vw;
-    margin-left: 1.5vh;
+    margin-right: 1.5vw;
+    /* margin-right: 2em; */
 }
 #barber-fb{
-    margin-left: 2vw;
+    /* margin-left: 2vw; */
     width: 4.4vw;
+    margin-left: 1.5vw;
+    
 }
 
