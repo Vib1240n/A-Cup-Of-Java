@@ -3,115 +3,73 @@ import * as mui from "@mui/material";
 import Background from "../asset/images/ACOJ-Logo.jpg";
 
 export default function Appointment() {
+  const styles = {
+    root: {
+      backgroundImage: `url(${Background})`,
+      backgroundRepeat: "no-repeat",
+      backgroundSize: "contain",
+      backgroundPosition: "center",
+      height: "100vh",
+      width: "100vw",
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+    },
+  };
   return (
-    <mui.Container
-      sx={{
-        display: "block inline",
-        position: "fixed",
-        width: "100%",
-        top: "70px",
-        height: "100%",
-        alignItems: "center",
-        justifyContent: "center",
-        backgroundImage: `url(${Background})`,
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-        // backdropFilter: "blur(10px)",
-      }}
-    >
-      <mui.Box
-        sx={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          justifyContent: "center",
-          height: "100vh",
-          width: "100vw",
-          background: "transparent",
-          backdropFilter: "blur(5px)",
-          backgroundPosition: "center",
-          backgroundSize: "cover",
-          backgroundRepeat: "no-repeat",
-          backgroundBlendMode: "overlay",
-        }}
-      >
-        <mui.Typography
-          variant="h1"
+    <div className="background-parent" style={styles.root}>
+      <mui.Box>
+        <mui.Paper
+          elevation={5}
           sx={{
-            color: "#Black",
-            fontSize: "50px",
-            fontWeight: "bold",
-            marginTop: "20px",
-            position: "fixed",
-            top: "195px",
-          }}
-        >
-          Book Appointment
-        </mui.Typography>
-        <mui.TextField>
-          <mui.Input
-            aria-label="First Name"
-            sx={{
-              width: "200px",
-              height: "50px",
-              top: "1px",
-              bottom: "1px",
-              fontSize: "10px",
-              fontWeight: "bold",
-              borderRadius: "10px",
-            }}
-          />
-        </mui.TextField>
-        <mui.Button
-          variant="contained"
-          href="/appointment"
-          sx={{
-            backgroundColor: "#000000",
+            backgroundColor: "transparent",
             backdropFilter: "blur(10px)",
-            color: "#ffffff",
-            width: "100px",
-            height: "50px",
-            fontSize: "10px",
-            fontWeight: "bold",
             borderRadius: "10px",
-            position: "fixed",
-            top: "300px",
-            top: "alignItems",
+            padding: "20px",
+            width: "50vw",
+            height: "70vh",
+            display: "block",
+            flexDirection: "column",
+            justifyContent: "center",
+            alignItems: "center",
+            marginBottom: "auto",
             "&:hover": {
-              backgroundColor: "gray",
-              color: "#ffffff",
-              backdropFilter: "blur(10px)",
-              padding: "10px",
-              shadow: "10px",
+              backdropFilter: "blur(50px) brightness(0.9)",
             },
           }}
         >
-          Submit
-        </mui.Button>
+          <mui.Typography
+            variant="h3"
+            sx={{
+              color: "black",
+              fontWeight: "bold",
+              fontSize: "3rem",
+              fontFamily: "Roboto",
+              textAlign: "center",
+              overflowWrap: "break-word",
+              "@media (max-width: 1000px and 200px)": {
+                fontSize: "2rem",
+              },
+              "@media (max-width: 100px)": {
+                fontSize: "2rem",
+              },
+            }}
+          >
+            Let's make an Appointment
+            <mui.TextField
+              id="outlined-basic"
+              label="Name"
+              variant="outlined"
+              sx={{
+                width: "100",
+                marginTop: "20px",
+                height: "50px",
+                padding: "10px",
+              }}
+            />
+          </mui.Typography>
+        </mui.Paper>
       </mui.Box>
-    </mui.Container>
+    </div>
   );
 }
-// import * as React from "react";
-
-// import TextField from "@mui/material/TextField";
-// import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
-// import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
-// import { DatePicker } from "@mui/x-date-pickers/DatePicker";
-
-// export default function BasicDatePicker() {
-//   const [value, setValue] = React.useState(null);
-
-//   return (
-//     <LocalizationProvider dateAdapter={AdapterDayjs}>
-//       <DatePicker
-//         label="Basic example"
-//         value={value}
-//         onChange={(newValue) => {
-//           setValue(newValue);
-//         }}
-//         renderInput={(params) => <TextField {...params} />}
-//       />
-//     </LocalizationProvider>
-//   );
-// }

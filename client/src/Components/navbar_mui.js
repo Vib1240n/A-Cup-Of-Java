@@ -35,13 +35,14 @@ const ResponsiveAppBar = () => {
 
   return (
     <AppBar
-      position="static"
       sx={{
         background: "linear-gradient(45deg, #909090 30%, #151515 70%)",
-        height: "70px",
+        height: "75px",
         top: 0,
         left: 0,
-        position: "fixed",
+        position: "static",
+        width: "100%",
+        display: "inline-block",
       }}
     >
       <Container maxWidth="xl">
@@ -53,7 +54,7 @@ const ResponsiveAppBar = () => {
             component="a"
             href="/"
             sx={{
-              mr: 2,
+              mr: 10,
               display: { xs: "none", md: "flex" },
               fontFamily: "monospace",
               fontWeight: 700,

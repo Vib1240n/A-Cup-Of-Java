@@ -17,8 +17,8 @@ import "./App.css";
 function App() {
   return (
     <>
+      <Navbar_mui />
       <Router>
-        <Navbar_mui />
         <Sidebar />
         {/* <Footer /> */}
         <Routes>
