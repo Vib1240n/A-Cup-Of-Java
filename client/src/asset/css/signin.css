@@ -1,3 +1,51 @@
+.signin-wrapper2{
+  text-align: center;
+  align-items: center;
+}
+.signin-wrapper3{
+  background-color: white;
+  margin-left: 10vw;
+  margin-right: 10vw;
+  padding-top: 3vh;
+  padding-bottom: 3vh;
+  box-shadow: 0 2px 2px 3px rgba(0, 0, 0, 0.2);
+}
+#signin-label{
+  font-size: 15px;
+  margin-left: 10vw;
+}
+#signin-info{
+  background-color: whitesmoke;
+  box-shadow: 0 2px 2px 3px rgba(0, 0, 0, 0.2);
+  padding: 0.3vw;
+  height: 30px;
+  width: 60vw;
+  margin: 1vw;
+  font-size: 13px;
+  font-family: Arial, Helvetica, sans-serif;
+  display: block;
+  margin-left: 10vw;
+}
+.signin-button{
+  text-align: center;
+}
+.signin-submitbutton{
+  margin-top: 2vh;
+  /* margin-left: 12vw; */
+  padding-left: 2vw;
+  padding-right: 2vw;
+  padding-top: 0.5vw;
+  padding-bottom: 0.5vw;
+  background-color:#DBA554;
+  font-size: 20px;
+}
+
+#signin-reminder{
+  font-size: 16px;
+}
+/* #signin-forsignup{
+
+} */
 /* .SignIn {
   background-color: #f5f5f5;
   padding: 15px;
@@ -59,7 +107,7 @@
 #inup-font {
   font-weight: bold;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 20px;
+  font-size: 2em;
 }
 .inup-signUp {
   margin-left: 4vw;
@@ -78,7 +126,7 @@
   height: 2vh;
   width: 35vw;
   margin: 1vw;
-  font-size: 1.5vw;
+  font-size: 12px;
   font-family: Arial, Helvetica, sans-serif;
   display: block;
 }
