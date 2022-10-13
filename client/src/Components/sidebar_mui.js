@@ -38,7 +38,6 @@ export default function Sidebar() {
   const list = (anchor) => (
     <Box
       sx={{
-        width: anchor === "top" || anchor === "bottom" ? "auto" : 300,
         background: "linear-gradient(180deg, #909090 30%, #151515 70%)",
         color: "white",
         height: "100vh",
@@ -51,7 +50,11 @@ export default function Sidebar() {
         <ListItem>
           <ListItemButton href="/loginPage">
             <ListItemIcon>
-              <LoginIcon />
+              <LoginIcon
+                sx={{
+                  color: "white",
+                }}
+              />
             </ListItemIcon>
             <ListItemText primary="Login" />
           </ListItemButton>
@@ -59,17 +62,13 @@ export default function Sidebar() {
         <ListItem>
           <ListItemButton href="/appointment">
             <ListItemIcon>
-              <AppRegistrationIcon />
+              <AppRegistrationIcon
+                sx={{
+                  color: "white",
+                }}
+              />
             </ListItemIcon>
             <ListItemText primary="Book Appointment" />
-          </ListItemButton>
-        </ListItem>
-        <ListItem>
-          <ListItemButton href="/loginPage">
-            <ListItemIcon>
-              <LoginIcon />
-            </ListItemIcon>
-            <ListItemText primary="Login" />
           </ListItemButton>
         </ListItem>
       </List>
@@ -90,8 +89,8 @@ export default function Sidebar() {
             onClick={toggleDrawer(anchor, true)}
             sx={{
               mr: 2,
-              display: { xs: "flex" },
-              flexGrow: 1,
+              display: { xs: "block" },
+              flexGrow: 2,
               fontFamily: "monospace",
               fontWeight: 700,
               color: "inherit",
