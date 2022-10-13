@@ -17,9 +17,9 @@ import "./App.css";
 function App() {
   return (
     <>
+      <Sidebar />
       <Navbar_mui />
       <Router>
-        <Sidebar />
         {/* <Footer /> */}
         <Routes>
           <Route path="/" exact element={<Home />} />
