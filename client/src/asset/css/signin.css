@@ -46,6 +46,7 @@
   align-items: center;
   margin-left: 5vw;
   margin-right: 5vw;
+  margin-bottom: 5vh;
   /* columns: 2; */
   box-shadow: 0 2px 2px 3px rgba(0, 0, 0, 0.2);
   /* column-rule: solid black; */
@@ -58,21 +59,32 @@
 #inup-font {
   font-weight: bold;
   font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
 }
 .inup-signUp {
   margin-left: 4vw;
 }
 .inup-signIn {
   margin-left: 4vw;
-  margin-top: 5vw;
-  padding-top: 0.1vw;
+  /* margin-top: 5vw;
+  padding-top: 0.1vh; */
+  margin-top: 15vh;
+  padding-top: 0.005vh;
 }
 #inup-boxshadow {
   background-color: whitesmoke;
   box-shadow: 0 2px 2px 3px rgba(0, 0, 0, 0.2);
   padding: 0.3vw;
+  height: 2vh;
   width: 35vw;
   margin: 1vw;
+  font-size: 1.5vw;
+  font-family: Arial, Helvetica, sans-serif;
+  display: block;
+}
+
+#login-label{
+  font-size: 1.5vh;
 }
 /* .inup-signInLower{
     margin-left: 40%;
@@ -81,8 +93,10 @@
 #inup-googleIcon {
   width: 5vw;
   height: 5vw;
-  margin-top: 5vw;
+  margin-top: 5vh;
   margin-left: 39%;
+  /* padding-bottom: 5vh; */
+  margin-bottom: 15vh;
 }
 .inup-line {
   /* height: 1px;
@@ -106,10 +120,18 @@
   padding-bottom: 3vw;
   padding-left: 45.5%;
 }
-#inup-submitButton {
-  padding-left: 2vw;
+#inup-submit-button {
+  /* padding-left: 2vw;
   padding-right: 2vw;
   padding-top: 0.5vw;
   padding-bottom: 0.5vw;
-  background-color: #dba554;
+  background-color: #dba554; */
+    margin-top: 2vh;
+    margin-left: 12vw;
+    padding-left: 2vw;
+    padding-right: 2vw;
+    padding-top: 0.5vw;
+    padding-bottom: 0.5vw;
+    background-color:#DBA554;
+    font-size: 2vw;
 }

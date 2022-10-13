@@ -1,6 +1,6 @@
 import React from "react";
 import "../asset/css/style.css";
-import Appointment from "./appointment";
+import Appointment from "./Appointment"
 import InstagramIcon from "../asset/images/Instagram-Icon.png"
 import Facebookicon from "../asset/images/facebookiconcolor1.png"
 
@@ -18,7 +18,7 @@ function Home() {
         <br/>
         {/* <button class= "home-button" onClick= "./Appointment"> Book Now </button> */}
         <button class= "home-button" onClick = {Appointment}>
-              <a role href="/Appointment" class= "home-booknow"> Book Now </a> 
+              <a href="/Appointment" class= "home-booknow"> Book Now </a> 
         </button>
 
         <div class = "home-middleblock">
@@ -33,10 +33,9 @@ function Home() {
                 </a>
               </div>
               <div class="home-line-2"/>
-                  <div class = "home-line22" id = "home-font">
+                  <div class = "home-line22">
                     <p id = "home-contact"> Contact Us: 123 456789</p>
                     <p id = "home-address">  1049 Jefferson Blvd, West Sacramento, CA 95691 </p>
-                    
                   </div>
                  
         </div>
