@@ -78,7 +78,9 @@ export default function Sidebar() {
   return (
     <div
       style={{
-        background: "linear-gradient(45deg, #909090 30%, #151515 70%)",
+        background: "transparent",
+        boxShadow: "10",
+        backdropFilter: "blur(30px)",
         height: "10%",
         width: "1",
       }}
@@ -87,19 +89,24 @@ export default function Sidebar() {
         <React.Fragment key={anchor}>
           <Button
             onClick={toggleDrawer(anchor, true)}
+            elevation={5}
             sx={{
               mr: 2,
-              display: { xs: "block" },
+              display: "flex",
               flexGrow: 2,
               fontFamily: "monospace",
               fontWeight: 700,
               color: "inherit",
-              zIndex: 1,
-              position: "fixed",
+              position: "absolute",
+              zIndex: "5000",
               top: 15,
             }}
           >
-            <MenuIcon />
+            <MenuIcon
+              sx={{
+                display: "inline-block",
+              }}
+             />
           </Button>
           <Drawer
             anchor={anchor}
