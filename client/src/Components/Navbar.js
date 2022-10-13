@@ -80,28 +80,39 @@
 //     </MDBNavbar>
 //   );
 // }
-import React from "react"
+import React, {useEffect, useState} from "react"
 import AppRouter from "./AppRouter"
 import "../asset/css/style.css"
 import Sidebar from "./sidebar"
-// import background from "../asset/images/BarbershopBackground.png";
-// import AcesBarbershoplogo from "../asset/images/AcesBarbershopLogo.jpg";
-import threedot from "../asset/images/threedotblack.webp";
+import axios from "axios";
 
 export default function navbar(){
+
+  const [userData, setUserData] = useState([]);
+  const [toggle, setToggle] = useState();
+
+  // to be continue
+  useEffect(() =>{
+    if(userData.firstname != null || userData.length > 0){
+      setToggle("Log Out")
+      document.getElementsByClassName("toggle").href = "./logout";
+    }
+    else{
+      setToggle("Login")
+      document.getElementsByClassName("toggle").href = "./login";
+    }
+  })
+
   return(
       <div id ="nav-App">
-         {/* <img src = {threedot}/> */}
           <Sidebar/>
           <nav id="nav-firstNav">
-            <a href="/login" id="nav-twonav"> login </a>
-            <a href="/appointment" id="nav-twonav"> Appointment </a>          
+            <a href="/login" id="nav-twonav" className ="toggle"> {toggle} </a>
+            <a href="/appointment" id="nav-twonav"> Appointment </a> 
           </nav> 
           <div clsss = "navbar-gap">
             <AppRouter/>
           </div>
       </div>
-     
-
   )
 }

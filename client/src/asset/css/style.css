@@ -7,26 +7,28 @@
 } */
 
 #nav-firstNav{
-        padding-top: 1.5vw;
-        height: 2vw;
+        padding-top: 1.5vh;
+        height: 3vh;
         font-family:  Helvetica, Arial, sans-serif;
         font-size:medium;
-        font-size: 1.5vw;
+        font-size: 2.5vw;
         text-align: right;
         box-shadow: 0 2px 2px 3px rgba(0,0,0,.2);
-        margin-bottom: 0.2vw;
+        /* margin-bottom: 0.2vw; */
+        padding-bottom: 6vw;
        
 }
 a+a{
-    margin-right: 3vw;
+    margin-right: 2.5vw;
 }
 a{
     text-decoration: none;
     text-shadow: 2px 2px 8px black;
 }
 #nav-twonav{
-    padding-top: 1.5vw;
+    padding-top: 2.5vw;
     padding-right: 2rem;
+    font-size: 2vw;
     /* font-weight: bold; */
 }
 #nav-twonav:hover{
@@ -71,11 +73,11 @@ a:visited {
   } */
     .bm-burger-button {
     position: fixed;
-    width : 3vw;
-    height: 1.8vw;
+    width : 2.5vh;
+    height: 2vh;
     left: 6vw;
     top:1vw;
-    
+    margin-top: 1.5vw;
    
   }
   
@@ -115,18 +117,16 @@ a:visited {
 
 .home-background{
     /* width: 100%;*/
-    height: 30vw;
+   
     background-image: url("../images/homebackground.png");
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    
-    /* background-repeat: no-repeat; */
-    /* background-size: contain; */
     text-align: center;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     color: black;
+    height: 40vh;
 }
 #nav-twonav:visited{
     text-decoration: none;
@@ -136,7 +136,7 @@ a:visited {
     
 }
 .home-title{
-    padding-top: 7vw;
+    padding-top: 17vh;
     color: white;
     font-family:Arial, Helvetica, sans-serif;
     font-size: 5vw;
@@ -144,21 +144,21 @@ a:visited {
 .home-secondtitle{
     color: white;
     font-family:Arial, Helvetica, sans-serif;
-    font-size: 1.5vw;
+    font-size: 1vh;
 }
 
 .home-button{
     background-color: #DBA554;
-    width: 10vw;
-    height: 3vw;
+    width: 10vh;
+    height: 3vh;
     box-shadow: 0 2px 2px 3px rgba(0,0,0,.2);
     font-size: small;
-    font-size: 1.5vw;
+    font-size: 1.5vh;
 }
 .home-booknow{
     color: black;
     font-size: small;
-    font-size: 1vw;
+    font-size: 1vh;
 
 }
 .home-button:hover{
@@ -168,24 +168,26 @@ a:visited {
     height: 1px;
     max-width: 80%;
     margin: 10rem 10rem 0 10rem ;
-    margin-top: 15vw;
+    margin-top: 20vh;
     margin-left: 10vw;
     margin-right: 5vw;
-    margin-bottom: 5vw;
+    margin-bottom: 5vh;
     background: black;
     align-items: center;
     font-family: Arial, Helvetica, sans-serif;
   }
  #home-igicon{
-    width: 5vw;
-    height: 5vw;
-    margin-right: 50px;
+    width: 7vw;
+    height: 7vw;
+    margin-right: 5vw;
  }
  #home-fbicon{
-    width: 5vw;
-    height: 5vw;
-    margin-left: 50px;
-    padding-top: 10px;
+
+    width: 7vw;
+    height: 7vw;
+    margin-left: 5vw;
+    /* padding-top: 1vw; */
+    padding: 0.2vw;
  }
  .home-twoicon{
   size: 2vw;
@@ -201,6 +203,9 @@ a:visited {
     height: 1px;
     max-width: 90%;
     margin: 5rem 5rem 0 5rem ;
+    margin-top: 6vh;
+    margin-left:5vw;
+    margin-right: 5vw;
     background: black;
     align-items: center;
     font-family: Arial, Helvetica, sans-serif;
@@ -208,14 +213,15 @@ a:visited {
  }
 #home-font{
   font-family: Arial, Helvetica, sans-serif;
+  font-size: 3vw;
 }
 .home-line22{
   columns: 2;
   font-size: small;
-  font-size: 1vw;
+  font-size: 1vh;
 }
 #home-address{
-  padding-top: 1vw;
+  padding-top: 1vh;
 }
 
 /* .about-background{
@@ -233,8 +239,9 @@ a:visited {
 } */
 .about-background1{
       /* width: 100%;*/
-      height: 30vw;
-      background-image: url("../images/grooming3.png");
+      height: 35vh;
+      /* background-image: url("../images/grooming3.png"); */
+      background-image: url("../images/aboutbackground.jpg");
       -webkit-background-size: cover;
       -moz-background-size: cover;
       -o-background-size: cover;
@@ -242,18 +249,25 @@ a:visited {
       
       /* background-repeat: no-repeat; */
       /* background-size: contain; */
-      text-align: center;
+      text-align: left;
       font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-      color: black;
+      color: white;
 }
-.about-title{
-  padding-top: 150px;
-  padding-top: 15vw;
-  color: white;
+.about-headertitle{
+  padding-top: 12vh;
+  color:#373a47;
   font-family:Arial, Helvetica, sans-serif;
-  font-size: 100px;
   font-size: 5vw;
   font-weight: bold;
+  margin-left: 13vw;
+}
+.about-title{
+  /* padding-top: 12vh; */
+  color:#373a47;
+  font-family:Arial, Helvetica, sans-serif;
+  font-size: 3vw;
+  font-weight: bold;
+  margin-left: 8vw;
 } 
 
 /* .about-line-1{
@@ -269,7 +283,7 @@ a:visited {
   text-align: center;
   text-decoration: underline;
   font-size: medium;
-  font-size: 2vw;
+  font-size: 2.5vw;
   font-weight: bold;
 }
 .about-middleelement{
@@ -285,21 +299,23 @@ a:visited {
   column-gap: 0;
 }
 #about-textundercontent1{
-  font-size: 1.5vw;
+  font-size: 2vw;
   font-family: Arial, Helvetica, sans-serif;
   color: black;
 }
 #about-content1{
   font-size: medium;
-  font-size: 1.5vw;
+  font-size: 2vw;
   color: green;
 }
 #about-booknow{
   color: black;
   text-decoration: underline;
   font-size: 1.5vw;
+
 }
 .about-content2{
+  padding-top: 1.5vh;
   columns: 2;
 }
 #about-barberimage1{
@@ -307,10 +323,18 @@ a:visited {
   width: 20vw;
   /* height: 183px; */
   height: 20vw;
+  margin-bottom: 3vh;
+  /* box-shadow: 0 2px 2px 3px rgba(0,0,0,.2); */
+}
+#about-barberimage2{
+  width: 20vh;
+  /* height: 183px; */
+  height: 20vh;
   /* box-shadow: 0 2px 2px 3px rgba(0,0,0,.2); */
 }
 
 .about-mid2{
+  margin-top: 2.5vh;
   columns: 2;
 }
 

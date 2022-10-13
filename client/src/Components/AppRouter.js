@@ -1,13 +1,13 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from "../views/home";
 import About from "../views/about";
-import Appointment from "../views/appointment";
-import Services from "../views/services";
+import Home from "../views/Home";
+import MyProfile from "../views/MyProfile";
+import Barber from "../views/Barber";
+import Services from "../views/Services"
 import Login from "../views/login";
-import SignUp from "../views/signup";
-import Barber from "../views/barber";
-import MyProfile from "../views/myprofile";
+// import SignUp from "../views/signup";
+import Appointment from "../views/Appointment";
 
 class AppRouter extends React.Component {
   render() {
@@ -21,8 +21,8 @@ class AppRouter extends React.Component {
           <Route path="/services" element={<Services />} />
           <Route path="/appointment" element={<Appointment />} />
           <Route path="/MyProfile" element={<MyProfile />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<SignUp />} />
+          <Route path="/login" element={<Login/>} />
+          <Route path="/signup" element={<Login />} />
         </Routes>
       </BrowserRouter>
     );

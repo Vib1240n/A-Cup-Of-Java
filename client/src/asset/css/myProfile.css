@@ -1,4 +1,74 @@
-@import url('https://fonts.googleapis.com/css2?family=Hanuman&display=swap');
+
+.MyProfile-Column{
+    /* margin-top: 5vh;
+    margin-left: 20vw; */
+    margin-top: 5vh;
+    background-color: white;
+    margin-left: 20vw;
+    margin-right: 20vw;
+    /* box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); */
+    border-style: double;
+    
+}
+.MyProfile-title{
+    margin-top: 5vh;
+    margin-left: 33vw;
+    font-family:  Helvetica, Arial, sans-serif;
+    text-decoration: underline;
+    font-size: 3vw;
+}
+#MyProfile-Rabit{
+    /* padding-top: 10vh;
+    height: 10px;
+    width: 4px; */
+    height: 25vh;
+    
+}
+.MyProfile-card{
+    background-color: white;
+    padding-top: 20%;
+    padding-bottom: 20%;
+    
+}
+#MyProfile-logo{
+    margin-left: 45vw;
+    /* margin-right: 25vw; */
+    width: 10vw;
+    height: 10vw;
+    margin-bottom: 5vh;
+    /* border-radius: 50%;
+    border-style:groove; */
+}
+.firstName{
+    font-family:  Helvetica, Arial, sans-serif;
+    padding: 0.5vh;
+    font-weight: bold;
+    font-size: 2vw;
+    /* border-style:groove; */
+}
+
+
+
+.MyProfile-button{
+  margin-top: 5vh;
+  margin-left: 25vw;
+
+
+  /* margin: 35px auto 0 auto; */
+  width: 30vw;
+  height: 4vh;
+
+  border: none;
+  border-radius: 0;
+
+  font-size: 14px;
+  color: white;
+  background: #DBA554;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  margin-bottom: 20vh;
+}
+
+/* @import url('https://fonts.googleapis.com/css2?family=Hanuman&display=swap');
 
 * {
     box-sizing: border-box !important;
@@ -63,4 +133,4 @@
 .MyProfile button:hover {
     background-color:rgb(255, 207, 134);
     transition: 0.7s;
-}
+} */

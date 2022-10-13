@@ -1,139 +1,27 @@
-#nav-firstNav{
-    padding-top: 1.5vw;
-    height: 2vw;
-    font-family:  Helvetica, Arial, sans-serif;
-    font-size:medium;
-    font-size: 1.5vw;
-    text-align: right;
-    box-shadow: 0 2px 2px 3px rgba(0,0,0,.2);
-    margin-bottom: 0.2vw;
-   
-}
-a+a{
-margin-right: 3vw;
-}
-a{
-text-decoration: none;
-text-shadow: 2px 2px 8px black;
-}
-#nav-twonav{
-padding-top: 1.5vw;
-padding-right: 2rem;
-/* font-weight: bold; */
-}
-#nav-twonav:hover{
-font-weight: bold;
-}
-
-a:visited {
-text-decoration: none; 
-
-}
-
-
-#nav-App {
-font-family: sans-serif;
-/* height: 100vh; */
-}
-
-#page-wrap {
-text-align: center;
-overflow: auto;
-}
-
-.bm-item {
-display: inline-block;
-text-decoration: none;
-margin-bottom: 10px;
-/* color: #d1d1d1; */
-color: black;
-transition: color 0.2s;
-}
-
-.bm-item:hover {
-color: white;
-}
-
-/* .bm-burger-button {
-position: fixed;
-width: 36px;
-height: 30px;
-left: 36px;
-top: 5px;
-} */
-.bm-burger-button {
-position: fixed;
-width : 3vw;
-height: 1.8vw;
-left: 6vw;
-top:1vw;
-
-
-}
-
-.bm-burger-bars {
-background: #373a47;
-
-}
-
-.bm-cross-button {
-height: 24px;
-width: 24px;
-}
-
-.bm-cross {
-/* background: #bdc3c7; */
-background: black;
-}
-
-.bm-menu {
-/* background: #373a47; */
-background: #EFF2F5D9;
-padding: 2.5em 1.5em 0;
-font-size: 1.15em;
-}
-
-.bm-morph-shape {
-fill: #373a47;
-}
-
-.bm-item-list {
-color: #b8b7ad;
-}
-
-.bm-overlay {
-background: rgba(0, 0, 0, 0.3);
-}
 
 .servicesBackground{
-height: 30vw;
-background-image: url("../images/servicesbackground.jpg");
+height: 40vw;
+background-image: url("../images/servicesbackground1.jpg");
 -webkit-background-size: cover;
 -moz-background-size: cover;
 -o-background-size: cover;
 background-size: cover;
 text-align: center;
-font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+font-family:  Helvetica, Arial, sans-serif;
 color: black;
 }
 
-#nav-twonav:visited{
-    text-decoration: none;
-    color:black;
-    font-size: large;
-    font-weight: bold;
-    
-}
+
 .servicesTitle{
-    padding-top: 7vw;
-    color: brown;
+    padding-top: 10vh;
+    color: black;
     font-family:Arial, Helvetica, sans-serif;
     font-size: 5vw;
 }
 .servicesTitleContent{
-    color: brown;
+    color:  black;
     font-family:Arial, Helvetica, sans-serif;
-    font-size: 1.5vw;
+    font-size: 2vw;
 }
 
 .servicesSection {
@@ -142,7 +30,10 @@ color: black;
 
 .servicesLine {
     height: 1px;
-    margin: 5rem 10rem 0rem 5rem;
+    /* margin: 5rem 10rem 0rem 5rem; */
+    margin-top: 2vh;
+    margin-left: 10vw;
+    margin-right: 10vw;
     
     background: black;
     font-family: Arial, Helvetica, sans-serif;
@@ -151,10 +42,10 @@ color: black;
 #servicesLineTitle {
     color: black;
     font-size: medium;
-    font-size: 2vw;
+    font-size: 2vh;
     font-weight: bold;
     position: relative;
-    top: -75px;
+    /* top: -75px; */
 }
 
 .servicesList{
@@ -163,30 +54,48 @@ color: black;
     box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.5);
     padding-left: 3vw;
     padding-right: 3vw; 
-    margin-right: 25%;
-    margin-left: 25%;
+    margin-right: 15%;
+    margin-left: 15%;
     font-family: Arial, Helvetica, sans-serif;
+   grid: 2;
 }
 
-.services-list:hover{
+/* .services-list:hover{
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.5);
+} */
+.servicesFirstRow{
+    padding-top: 2vw;
+    columns: 2;
 }
 
 .classicHaircut{
-    float: left;
+    /* float: left;
     width: 50%;
-    padding: 10px;
+    padding: 10px; */
+    padding-bottom: 5vw;
+    font-size: 1.5vw;
 
 }
 
 .hairTrimming{
-    float: left;
+    padding-top: 0.1vw;
+    font-size: 1.5vw;
+    /* float: left;
     width: 50%;
-    padding: 10px;
+    padding: 10px; */
     
 }
-
 .hairWaxing{
+    /* padding-bottom: 2vw; */
+    font-size: 1.5vw;
+}
+
+.hairGrooming{
+    padding-top: 0.1vw;
+    font-size: 1.5vw;
+}
+
+/* .hairWaxing{
     padding: 10px;
     
 }
@@ -194,14 +103,14 @@ color: black;
 .hairGrooming{
     padding: 10px;
     
-}
+} */
 
 
 .servicesCost{
     color: green;
 }
 
-.haircutContent{
+/* .haircutContent{
     word-wrap: break-word;
 }
 
@@ -215,9 +124,14 @@ color: black;
 
 .hairgroomingContent{
     word-wrap: break-word;
+} */
+.bookAppointment{
+    margin-top: 2vh;
+    font-size: 1.5vw;
 }
-
 #bookAppointmentLink{
     color: black;
     text-decoration: underline;
+    font-size: 2vh;
 }
+
