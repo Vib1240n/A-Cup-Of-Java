@@ -31,26 +31,26 @@ export default (sidebar) => {
 
   if(removePartOfSideBar == "true"){
     return(
-    <Menu>
-      <a className="Home" href="/home">
-        Home
-      </a>
+      <Menu>
+        <a className="Home" href="/home">
+          Home
+        </a>
 
-      <a className="About" href="/about">
-        About
-      </a>
-      <a className="Barber" href="/barber">
-        Barber Profile
-      </a>
+        <a className="About" href="/about">
+          About
+        </a>
+        <a className="Barber" href="/barber">
+          Barber Profile
+        </a>
 
-      <a className="Services" href="/services">
-        Services
-      </a>
+        <a className="Services" href="/services">
+          Services
+        </a>
 
-      <a className="Appointment" href="/appointment">
-        Appointment
-      </a>
-    </Menu>
+        <a className="Appointment" href="/appointment">
+          Appointment
+        </a>
+      </Menu>
     )
   }
   else{
