@@ -6,12 +6,12 @@ import ace from "../asset/images/AcesBarbershopLogo.jpg"
 import instagramIcon from "../asset/images/instagramIcon.png"
 import facebookIcon from "../asset/images/facebookIcon.jpg"
 import navbar from "../Components/Navbar";
+import object from "./object";
 
 const MyProfile = () => {
 
   const [userData, setUserData] = useState([]);
-
-
+  let obj = new object();
 
 useEffect(() => {
   fetchUserData();
@@ -23,6 +23,8 @@ const fetchUserData = () => {
     .then((res) => {
       console.log(res);
       setUserData(res.data);
+      obj.setData(res.data);
+      
     })
     .catch((err) => {
       console.log(err);
