@@ -243,17 +243,12 @@ a:visited {
 
 } */
 .about-background1{
-      /* width: 100%;*/
       height: 35vh;
-      /* background-image: url("../images/grooming3.png"); */
       background-image: url("../images/aboutbackground.jpg");
       -webkit-background-size: cover;
       -moz-background-size: cover;
       -o-background-size: cover;
       background-size: cover;
-      
-      /* background-repeat: no-repeat; */
-      /* background-size: contain; */
       text-align: left;
       font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
       color: white;
@@ -267,23 +262,12 @@ a:visited {
   margin-left: 13vw;
 }
 .about-title{
-  /* padding-top: 12vh; */
   color:#373a47;
   font-family:Arial, Helvetica, sans-serif;
   font-size: 3vw;
   font-weight: bold;
   margin-left: 8vw;
 } 
-
-/* .about-line-1{
-  height: 1px;
-  max-width: 20%;
-  margin: 2rem 2rem 0 2rem ;
-  background: black;
-  align-items: center;
-  font-family: Arial, Helvetica, sans-serif;
-
-} */
 #about-subtitle{
   text-align: center;
   text-decoration: underline;
@@ -324,18 +308,13 @@ a:visited {
   columns: 2;
 }
 #about-barberimage1{
-  /* width: 163px; */
   width: 20vw;
-  /* height: 183px; */
   height: 20vw;
   margin-bottom: 3vh;
-  /* box-shadow: 0 2px 2px 3px rgba(0,0,0,.2); */
 }
 #about-barberimage2{
   width: 20vh;
-  /* height: 183px; */
   height: 20vh;
-  /* box-shadow: 0 2px 2px 3px rgba(0,0,0,.2); */
 }
 
 .about-mid2{
@@ -377,15 +356,10 @@ a:visited {
   height: 6vw;
   margin-left: 1.5vw;
 }
-/* #about-mid2image{
-  width: 15vw;
-  height: 10vw
-} */
 
 .maprouter{
   overflow:hidden;
   padding-top: 30vw;
-  /* padding-bottom:0vw; */
   position:relative;
   height:0;
 }
@@ -397,4 +371,101 @@ a:visited {
   position:absolute;
 }
 
+.Aboutus-card{
+  margin-top: 7vw;
+  padding-top: 10vh;
+  padding-bottom: 10vh;
+  align-items: center;
+  margin-left: 5vw;
+  margin-right: 5vw;
+  margin-bottom: 5vh;
+  box-shadow: 0 2px 2px 2px rgba(0, 0, 0, 0.2);
+}
+#Aboutus-card1{
+  background-image: url("../images/aboutbackground.jpg");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+ 
+}
+#Aboutus-acelogo{
+  width: 8vh;
+  height: 8vh;
+  margin-left: 20%;
+}
+#Aboutus-card1title1{
+  margin-left: 15%;
+  font-size: 5vh;
+  padding-top: 3vh;
+}
+#Aboutus-card1title2{
+  margin-left: 6%;
+  font-size: 4vh;
+  padding-bottom: 3vh;
+}
+.Aboutus-card2{
+  columns: 2;
+}
+#Aboutus-card2left{
+  margin-left: 8vw;
+}
+#Aboutus-card2text{
+  font-size: 2vw;
+}
+#Aboutus-card2right{
+  margin: 5vw;
+}
+#Aboutus-card2rightimage{
+  width:  30vw;
+  height: 30vw;
+  box-shadow: 0 2px 2px 2px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+.Aboutus-card3{
+  columns: 2;
+}
 
+#Aboutus-card3rightimage{
+  width:  30vw;
+  height: 30vw;
+  box-shadow: 0 2px 2px 2px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  margin-left: 8vw;
+}
+#Aboutus-card3text{
+  font-size: 3vw;
+  text-align: center;
+  padding-top: 10vw;
+}
+#Aboutus-card3textbot{
+  font-size: 1.5vw;
+  text-align: center;
+
+}
+#Aboutus-mid2card{
+  background-color: white;
+  padding-bottom: 3vw;
+  padding-left: 2vw;
+  padding-right: 1vw;
+  margin-left: 2vw;
+  text-align: center;
+}
+
+.Aboutus-cardbuttom{
+  margin-top: 7vw;
+  align-items: center;
+  margin-left: 5vw;
+  margin-right: 5vw;
+  margin-bottom: 5vh;
+  box-shadow: 0 2px 2px 2px rgba(0, 0, 0, 0.2);
+}
+.Aboutus-findusonmap{
+  padding-top: 1vh;
+  text-align: center;
+  font-size: 3vw;
+}
+.mainrouter{
+  width: 90vw;
+  height: 50vh;
+}
