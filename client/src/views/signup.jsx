@@ -10,7 +10,7 @@ export default class SignUp extends Component {
   constructor(props) {
     super(props);
     // this.onChangeUserName = this.onChangeUserName.bind(this);
-    // this.onChangeUserEmail = this.onChangeUserEmail.bind(this);
+    this.onChangeUserEmail = this.onChangeUserEmail.bind(this);
     // this.onChangePasswordLogIn = this.onChangePasswordLogIn.bind(this);
 
     this.onChangePasswordSignUp = this.onChangePasswordSignUp.bind(this);
@@ -42,11 +42,11 @@ export default class SignUp extends Component {
 // }
 
 // //onchange function for signup page
-// onChangeUserEmail(e) {
-//   this.setState({
-//     email: e.target.value,
-//   });
-// }
+onChangeUserEmail(e) {
+  this.setState({
+    email: e.target.value,
+  });
+}
   onChangeFirstName(e) {
     this.setState({
       firstName: e.target.value,
@@ -118,7 +118,7 @@ export default class SignUp extends Component {
                   onChange={this.onChangeUserLastName}
                 ></input>
                 <br />
-                <label id = "signin-label"> Email </label> 
+                <label id = "signin-label"> Email </label>
                 <input
                   id="signin-info"
                   type="text"

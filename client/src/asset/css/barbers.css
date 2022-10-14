@@ -54,8 +54,9 @@
 #barber-ig{
     /* margin-left: 10vw; */
     width: 4.5vw;
-    margin-right: 1.5vw;
+    /* margin-right: 1.5vw; */
     /* margin-right: 2em; */
+    margin-left: 1.5vw;
 }
 #barber-fb{
     /* margin-left: 2vw; */
