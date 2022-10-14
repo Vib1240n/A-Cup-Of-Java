@@ -85,21 +85,39 @@ import AppRouter from "./AppRouter"
 import "../asset/css/style.css"
 import Sidebar from "./sidebar"
 import axios from "axios";
+import object from "../views/object";
 
-export default function navbar(){
+
+
+// export default function navbar(){
+  const navbar = () =>{
 
   const [userData, setUserData] = useState([]);
   const [toggle, setToggle] = useState();
+  const [toggleNavbar, setToggler] = useState();
 
-  // to be continue
+  let obj = new object();
+  
   useEffect(() =>{
-    if(userData.firstname != null || userData.length > 0){
-      setToggle("Log Out")
-      document.getElementsByClassName("toggle").href = "./logout";
+    axios
+    .get("http://localhost:5500/api/profile")
+    .then((res) => {
+      // console.log(res);
+      setUserData(res.data);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+  }, []);
+
+  useEffect(() =>{
+    if(userData.firstname != null){
+      setToggle("My Profile")
+      setToggler("/MyProfile")
     }
     else{
       setToggle("Login")
-      document.getElementsByClassName("toggle").href = "./login";
+      setToggler("/login")
     }
   })
 
@@ -107,7 +125,7 @@ export default function navbar(){
       <div id ="nav-App">
           <Sidebar/>
           <nav id="nav-firstNav">
-            <a href="/login" id="nav-twonav" className ="toggle"> {toggle} </a>
+            <a href={toggleNavbar}id="nav-twonav" className ="toggle"> {toggle} </a>
             <a href="/appointment" id="nav-twonav"> Appointment </a> 
           </nav> 
           <div clsss = "navbar-gap">
@@ -115,4 +133,5 @@ export default function navbar(){
           </div>
       </div>
   )
-}
+};
+export default navbar;
