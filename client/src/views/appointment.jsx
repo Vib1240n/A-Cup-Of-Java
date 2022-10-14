@@ -7,7 +7,7 @@ import { DateTimePicker } from '@mui/x-date-pickers/DateTimePicker';
 import Background from "../asset/images/ACOJ-Logo.jpg";
 
 export default function Appointment() {
-  const [value, setValue] = React.useState(dayjs("2022-04-07"));
+  const [value, setValue] = React.useState(dayjs(Date.now()));
   const styles = {
     root: {
       backgroundImage: `url(${Background})`,
@@ -31,8 +31,8 @@ export default function Appointment() {
         sx={{
           backdropFilter: "blur(10px)",
           padding: "20px",
-          width: "50vw",
-          height: "70vh",
+          width: {md: "70%", sm: "100%", lg: "50%"},
+          height: {md: "80%", sm: "100%", lg: "50%"},
           display: "inline-flex",
           flexDirection: "column",
           justifyContent: "center",
@@ -42,8 +42,9 @@ export default function Appointment() {
             transition: "all 0.8s ease-in",
             backdropFilter: "blur(70px) brightness(0.9)",
             borderRadius: "100px",
-            height: "35%",
-            width: "50vw",
+            height: { xl: "45%", lg: "50%", md: "65%", sm: "70%", xs: "75%" },
+            width: { xl: "60%", lg: "65%", md: "85%", sm: "90", xs: "95%" },
+            marginBottom: "40px",
           },
         }}
       >
@@ -114,9 +115,11 @@ export default function Appointment() {
             />
             <LocalizationProvider dateAdapter={AdapterDayjs}>
               <DateTimePicker
+                disableIgnoringDatePartForTimeValidation={true}
                 renderInput={(props) => <mui.TextField {...props} />}
-                label="DateTimePicker"
-                value={value}
+                label="Date and Time"
+                value={value || Date.now()}
+                // maxTime={new Date( AdapterDayjs.date(value).setHours(17, 0, 0, 0) )}
                 onChange={(newValue) => {
                   setValue(newValue);
                 }}
