@@ -9,6 +9,7 @@ import Login from "../views/login";
 import SignIn from "../views/SignIn";
 import SignUp from "../views/SignUp"
 import Appointment from "../views/Appointment";
+import AboutUs from "../views/AboutUs";
 
 class AppRouter extends React.Component {
   render() {
@@ -17,7 +18,7 @@ class AppRouter extends React.Component {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />
-          <Route path="/about" element={<About />} />
+          <Route path="/about" element={<AboutUs />} />
           <Route path="/barber" element={<Barber />} />
           <Route path="/services" element={<Services />} />
           <Route path="/appointment" element={<Appointment />} />
