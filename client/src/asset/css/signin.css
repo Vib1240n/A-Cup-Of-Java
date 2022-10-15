@@ -183,3 +183,10 @@
     background-color:#DBA554;
     font-size: 2vw;
 }
+
+#errorMessage {
+  color: red;
+  text-align: center;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+}

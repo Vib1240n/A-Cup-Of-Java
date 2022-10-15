@@ -19,6 +19,9 @@ export default class SignUp extends Component {
     this.onChangeUserLastName = this.onChangeUserLastName.bind(this);
     // this.onSubmitLogIn = this.onSubmitLogIn.bind(this);
     this.onSubmitSignUp = this.onSubmitSignUp.bind(this);
+    this.onSubmitEmptyFieldVerification = this.onSubmitEmptyFieldVerification.bind(this);
+    this.onSubmitPasswordMatchVerification = this.onSubmitPasswordMatchVerification.bind(this);
+    this.onSubmitEmailVerification = this.onSubmitEmailVerification.bind(this);
     this.state = {
       username: "",
       passwordLogIn: "",
@@ -85,6 +88,61 @@ onChangeUserEmail(e) {
       })
       .catch((err) => console.log(err));
   }
+  onSubmitEmptyFieldVerification(e) {
+    e.preventDefault();
+    if(this.state.firstName === "" || this.state.lastName === "" || 
+    this.state.email === "" || this.state.passwordSignUp === "" || 
+    this.state.confirmPassword === "") {
+      this.setState({
+        passwordSignUp: "",
+      })
+      this.setState({
+        confirmPassword: "",
+      })
+      document.getElementById("errorMessage").textContent = 
+      "There are fields that are empty, please fill out all fields!"; 
+    }
+      
+    else {
+      this.onSubmitPasswordMatchVerification(e);
+    }
+      
+  }
+  onSubmitPasswordMatchVerification(e) {
+    e.preventDefault();
+    if(this.state.passwordSignUp === this.state.confirmPassword) {
+      this.onSubmitEmailVerification(e);
+    }
+    else {
+      this.setState({
+        passwordSignUp: "",
+      })
+      this.setState({
+        confirmPassword: "",
+      })
+      document.getElementById("errorMessage").textContent = 
+      "Password and confirm password do not match, please resubmit your password!";
+    }
+  }
+
+  onSubmitEmailVerification(e) {
+    e.preventDefault();
+    let validEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    if(validEmail.test(this.state.email) == true) {
+      this.onSubmitSignUp(e);
+    }
+    else {
+      this.setState({
+        passwordSignUp: "",
+      })
+      this.setState({
+        confirmPassword: "",
+      })
+      document.getElementById("errorMessage").textContent = 
+      "Invaild email address, please confirm that your email address is vaild!";
+    }
+    
+  }
 
   render(){
     return(
@@ -99,7 +157,7 @@ onChangeUserEmail(e) {
             </div>
 
         <div class="signin-wrapper3">
-              <form onSubmit={this.onSubmitSignUp}>
+              <form onSubmit={this.onSubmitEmptyFieldVerification}>
                 <label id = "signin-label"> First Name </label>   
                 <input
                   id="signin-info"
@@ -145,6 +203,7 @@ onChangeUserEmail(e) {
                   onChange={this.onChangeConfirmPassword}
                 ></input>
                 <br />
+                <p id = "errorMessage"></p>
                 <div class = "signin-button">
                     <div>
                         <button class = "signin-submitbutton" type="submit">

@@ -23,6 +23,8 @@ export default class SignIn extends Component {
     //   this.onChangeUserLastName = this.onChangeUserLastName.bind(this);
       this.onSubmitLogIn = this.onSubmitLogIn.bind(this);
     //   this.onSubmitSignUp = this.onSubmitSignUp.bind(this);
+      this.onSubmitEmptyFieldVerification = this.onSubmitEmptyFieldVerification.bind(this);
+      this.onSubmitEmailVerification = this.onSubmitEmailVerification.bind(this);
       this.state = {
         username: "",
         passwordLogIn: "",
@@ -50,6 +52,38 @@ export default class SignIn extends Component {
     this.setState({
       email: e.target.value,
     });
+  }
+
+  onSubmitEmptyFieldVerification(e) {
+    e.preventDefault();
+    if(this.state.username === "" || this.state.passwordLogIn === "") {
+      this.setState({
+        passwordLogIn: "",
+      })
+      document.getElementById("errorMessage").textContent = 
+      "There are fields that are empty, please fill out all fields!"; 
+    }
+      
+    else {
+      this.onSubmitEmailVerification(e);
+    }
+      
+  }
+
+  onSubmitEmailVerification(e) {
+    e.preventDefault();
+    let validEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    if(validEmail.test(this.state.username) == true) {
+      this.onSubmitLogIn(e);
+    }
+    else {
+      this.setState({
+        passwordLogIn: "",
+      })
+      document.getElementById("errorMessage").textContent = 
+      "Invaild email address, please confirm that your email address is vaild!";
+    }
+    
   }
 //   onChangeFirstName(e) {
 //     this.setState({
@@ -91,7 +125,14 @@ export default class SignIn extends Component {
           window.location = "/home";
         }
       })
-      .catch((err) => console.log(err));
+      .catch((err) => console.log(err),
+       document.getElementById("errorMessage").textContent =
+       "Invaild username/password, please check and resubmit your login information!",
+       this.setState({
+        passwordLogIn: "",
+       })
+       ) 
+      
   }
 //   onSubmitSignUp(e) {
 //     e.preventDefault();
@@ -125,7 +166,7 @@ render(){
 
             <div class="signin-wrapper3">
               <div>
-                <form onSubmit={this.onSubmitLogIn}>
+                <form onSubmit={this.onSubmitEmptyFieldVerification}>
                 <label id = "signin-label"> Email </label> 
                   <input
                     id ="signin-info"
@@ -144,6 +185,7 @@ render(){
                     onChange={this.onChangePasswordLogIn}
                   ></input>
                   <br/><br/>
+                  <p id = "errorMessage"></p>
                   <div class = "signin-button">
                     <div>
                         <button class = "signin-submitbutton" type="submit">
