@@ -4,11 +4,12 @@ import * as mui from "@mui/material";
 import dayjs from "dayjs";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
-import { DateTimePicker } from "@mui/x-date-pickers/DateTimePicker";
+import { DatePicker, TimePicker } from "@mui/x-date-pickers";
 // import Background from "../asset/images/ACOJ-Logo.jpg";
 
 export default function Appointment() {
-  const [valueChange, setValue] = React.useState(dayjs(new Date()));
+  const [date, setDate] = React.useState(null);
+  const [time, setTime] = React.useState(null);
   const [userData, setUserData] = React.useState([]);
 
   React.useEffect(() => {
@@ -20,24 +21,21 @@ export default function Appointment() {
       .get("http://localhost:5500/api/profile")
       .then((res) => {
         console.log(res);
-        setUserData(res.data);
+        setUserData(res.data.username);
       })
       .catch((err) => {
         console.log(err);
       });
   };
 
-  const onChangeDate = (newValue) => {
-    setValue(newValue);
-  };
-
-  const onAppointment = (newValue) => {
-    setValue(newValue);
-    console.log(newValue);
+  const onAppointment = (e) => {
+    console.log(date);
+    console.log(JSON.stringify(time));
     console.log(userData);
     axios.post("http://localhost:5500/api/appointment", {
-      date: newValue,
-      user: userData,
+      date: date,
+      time: time,
+      username: userData,
     });
   };
   const styles = {
@@ -70,14 +68,6 @@ export default function Appointment() {
           justifyContent: "center",
           alignItems: "center",
           marginBottom: "auto",
-          // "&:hover": {
-          //   transition: "all 0.8s ease-in",
-          //   backdropFilter: "blur(70px) brightness(0.9)",
-          //   borderRadius: "100px",
-          //   height: { xl: "45%", lg: "50%", md: "65%", sm: "70%", xs: "75%" },
-          //   width: { xl: "60%", lg: "65%", md: "85%", sm: "90", xs: "95%" },
-          //   marginBottom: "40px",
-          // },
         }}
       >
         <mui.Paper
@@ -147,13 +137,23 @@ export default function Appointment() {
               }}
             />
             <LocalizationProvider dateAdapter={AdapterDayjs}>
-              <DateTimePicker
-                // disableIgnoringDatePartForTimeValidation={true}
-                renderInput={(props) => <mui.TextField {...props} />}
-                label="Date and Time"
-                value={valueChange}
-                onChange={onChangeDate}
-                // maxTime={new Date( AdapterDayjs.date(value).setHours(17, 0, 0, 0) )}
+              <DatePicker
+                label="Pick Date"
+                value={date}
+                onChange={(newValue) => {
+                  setDate(newValue);
+                }}
+                renderInput={(params) => <mui.TextField {...params} />}
+              />
+              <TimePicker
+                renderInput={(params) => <mui.TextField {...params} />}
+                value={time}
+                label="Pick Time"
+                onChange={(newValue) => {
+                  setTime(newValue);
+                }}
+                minTime={dayjs("T06:00PM")}
+                maxTime={dayjs("T10:00AM")}
               />
             </LocalizationProvider>
             <mui.Button variant="contained" onClick={onAppointment} sx={{}}>
