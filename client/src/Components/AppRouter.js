@@ -1,14 +1,14 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import About from "../views/about";
-import Home from "../views/Home";
+import Home from "../views/home";
 import MyProfile from "../views/MyProfile";
-import Barber from "../views/Barber";
-import Services from "../views/Services"
+import Barber from "../views/barber";
+import Services from "../views/services"
 import Login from "../views/login";
 import SignIn from "../views/SignIn";
-import SignUp from "../views/SignUp"
-import Appointment from "../views/Appointment";
+import SignUp from "../views/signup"
+import Appointment from "../views/appointment";
 import AboutUs from "../views/AboutUs";
 
 class AppRouter extends React.Component {

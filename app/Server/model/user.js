@@ -35,5 +35,5 @@ const user = new mongoose.Schema({
 
 //exports.user = user;
 //exports.validation = validation;
-module.exports = mongoose.model("user", user);
+module.exports = mongoose.model("user", user, "users");
 // module.exports = validation;

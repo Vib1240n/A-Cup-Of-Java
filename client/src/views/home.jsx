@@ -1,6 +1,6 @@
 import React from "react";
 import "../asset/css/style.css";
-import Appointment from "./Appointment"
+import Appointment from "./appointment"
 import InstagramIcon from "../asset/images/Instagram-Icon.png"
 import Facebookicon from "../asset/images/facebookiconcolor1.png"
 
