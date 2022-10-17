@@ -53,7 +53,7 @@ export default class SignIn extends Component {
       email: e.target.value,
     });
   }
-
+// //onsubmit verification function for signin page
   onSubmitEmptyFieldVerification(e) {
     e.preventDefault();
     if(this.state.username === "" || this.state.passwordLogIn === "") {
