@@ -73,7 +73,6 @@ function ResponsiveAppBar() {
             height="75px"
             alignItems={{ md: "center", xs: "center" }}
             sx={{
-              border: "1px solid black",
               width: { xs: "100%", md: "65%", lg: "50%" },
             }}
           >
@@ -84,7 +83,7 @@ function ResponsiveAppBar() {
               sx={{
                 color: "black",
                 mr: 2,
-                border: "1px solid black",
+                // border: "1px solid black",
                 "&:hover": {
                   background: "black",
                   color: "white",
@@ -110,7 +109,7 @@ function ResponsiveAppBar() {
                 width: "10vw",
                 top: "0px",
                 color: "black",
-                border: "1px solid black",
+                // border: "1px solid black",
                 "&:hover": {
                   color: "white",
                   backgroundColor: "black",
@@ -131,7 +130,7 @@ function ResponsiveAppBar() {
                 letterSpacing: "1px",
                 color: "black",
                 textDecoration: "none",
-                border: "1px solid black",
+                // border: "1px solid black",
                 "&:hover": {
                   color: "white",
                   backgroundColor: "black",
@@ -147,7 +146,8 @@ function ResponsiveAppBar() {
             justifyContent={{ md: "flex-end", xs: "none" }}
             display={{ md: "flex", xs: "none" }}
             height="75px"
-            width={{ md: "95%", xs: "none", border: "1px solid black" }}
+            width={{ md: "95%", xs: "none", 
+           }}
             alignItems="center"
             sx={{}}
           >

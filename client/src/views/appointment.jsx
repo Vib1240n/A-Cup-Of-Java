@@ -41,6 +41,7 @@ export default function Appointment() {
           "&:hover": {
             transition: "all 0.8s ease-in",
             backdropFilter: "blur(70px) brightness(0.9)",
+            boxShadow: "0 0 20px 0 rgba(0, 0, 0, 0.5)",
             borderRadius: "100px",
             height: { xl: "45%", lg: "50%", md: "65%", sm: "70%", xs: "75%" },
             width: { xl: "60%", lg: "65%", md: "85%", sm: "90", xs: "95%" },
@@ -87,7 +88,7 @@ export default function Appointment() {
               placeholder="Enter your name"
               required={true}
               sx={{
-                width: "500px",
+                width: "inherit",
                 height: "50px",
                 fontStyle: "italic",
                 textAlign: "center",
@@ -122,6 +123,9 @@ export default function Appointment() {
                 // maxTime={new Date( AdapterDayjs.date(value).setHours(17, 0, 0, 0) )}
                 onChange={(newValue) => {
                   setValue(newValue);
+                }}
+                sx={{
+                  width: "inherit",
                 }}
               />
             </LocalizationProvider>
