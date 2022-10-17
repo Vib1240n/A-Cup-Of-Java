@@ -1,86 +1,42 @@
 import React, { Component } from "react";
-import { Box, TextField, Button, FormControl, Step } from "@mui/material";
+import * as m from "@mui/material";
 import axios from "axios";
-import background from "../asset/images/grooming1.png";
-// import "../asset/css/loginPage.css";
+import background from "../asset/images/background_cornerLong.jpg";
 
-export default class loginPage extends Component {
-  /*
-  Constructor for the login page
-  Initialize the state of the login page
-  */
-  constructor(props) {
-    super(props);
-    this.onChangeUserName = this.onChangeUserName.bind(this);
-    this.onChangeUserEmail = this.onChangeUserEmail.bind(this);
-    this.onChangePasswordLogIn = this.onChangePasswordLogIn.bind(this);
-    this.onChangePasswordSignUp = this.onChangePasswordSignUp.bind(this);
-    this.onChangeConfirmPassword = this.onChangeConfirmPassword.bind(this);
-    this.onChangeFirstName = this.onChangeFirstName.bind(this);
-    this.onChangeUserLastName = this.onChangeUserLastName.bind(this);
-    this.onSubmitLogIn = this.onSubmitLogIn.bind(this);
-    this.onSubmitSignUp = this.onSubmitSignUp.bind(this);
-    this.state = {
-      username: "",
-      passwordLogIn: "",
-      email: "",
-      firstName: "",
-      lastName: "",
-      passwordSignUp: "",
-      confirmPassword: "",
-    };
-  }
+export default function loginPage() {
   /* 
-  On change function events for the login page
+  On change events for the login page & signup page
   */
-
-  //onchange function for login page
-  onChangeUserName(e) {
-    this.setState({
-      username: e.target.value,
-    });
-  }
-  onChangePasswordLogIn(e) {
-    this.setState({
-      passwordLogIn: e.target.value,
-    });
-  }
-
-  //onchange function for signup page
-  onChangeUserEmail(e) {
-    this.setState({
-      email: e.target.value,
-    });
-  }
-  onChangeFirstName(e) {
-    this.setState({
-      firstName: e.target.value,
-    });
-  }
-  onChangeUserLastName(e) {
-    this.setState({
-      lastName: e.target.value,
-    });
-  }
-  onChangePasswordSignUp(e) {
-    this.setState({
-      passwordSignUp: e.target.value,
-    });
-  }
-  onChangeConfirmPassword(e) {
-    this.setState({
-      confirmPassword: e.target.value,
-    });
-  }
+  const [email, setEmail] = React.useState("");
+  const [password, setPassword] = React.useState("");
+  const [firstName, setFirstName] = React.useState("");
+  const [lastName, setLastName] = React.useState("");
+  const [phoneNumber, setPhoneNumber] = React.useState("");
+  const [confirmPassword, setConfirmPassword] = React.useState("");
+  const [username, setUsername] = React.useState("");
+  /* default styles */
+  const styles = {
+    root: {
+      backgroundImage: `url(${background})`,
+      backgroundRepeat: "no-repeat",
+      backgroundSize: "cover",
+      backgroundPosition: "center",
+      height: "100vh",
+      width: "100vw",
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+    },
+  };
 
   /*  
   on Submit function for the login page  
   */
-  onSubmitLogIn(e) {
+  const onSubmitLogIn = (e) => {
     e.preventDefault();
     const user = {
-      username: this.state.username,
-      password: this.state.passwordLogIn,
+      username: username,
+      password: password,
     };
     axios
       .post("http://localhost:5500/api/login", user)
@@ -93,14 +49,14 @@ export default class loginPage extends Component {
         }
       })
       .catch((err) => console.log(err));
-  }
-  onSubmitSignUp(e) {
+  };
+  const onSubmitSignUp = (e) => {
     e.preventDefault();
     const user = {
-      username: this.state.email,
-      firstName: this.state.firstName,
-      lastName: this.state.lastName,
-      password: this.state.passwordSignUp,
+      username: email,
+      firstName: firstName,
+      lastName: lastName,
+      password: password,
     };
     axios
       .post("http://localhost:5500/api/signup", user)
@@ -111,180 +67,158 @@ export default class loginPage extends Component {
         }
       })
       .catch((err) => console.log(err));
-  }
+  };
 
   /*
   Render function for the login page
   */
-  render() {
-    return (
-      <div
-        style={{
-          backgroundColor: "gray",
-          backgroundRepeat: "repeat",
+  return (
+    <div className="loginpage-basecontainer" style={styles.root}>
+      <m.Box
+        component="div"
+        id="loginpage-box-outer"
+        margin={"auto"}
+        overflow="revert"
+        sx={{
+          height: { md: "80%", sm: "100%", lg: "50%", xs: "75%" },
+          width: { md: "70%", sm: "100%", lg: "50%", xs: "100%" },
+          // background:"black",
+          backdropFilter: "blur(50px)",
+          boxShadow: "0 0 20px 0 rgba(255, 255, 255, 0.9)",
+          borderRadius: "100px",
         }}
       >
-        <Box
-          component="div"
-          sx={{
-            width: 700,
-            height: 700,
-            marginLeft: "auto",
-            marginRight: "auto",
-            marginTop: "50px",
-            //backgroundImage: `url(${background})`,
-            backgroundRepeat: "no-repeat",
-            backgroundPosition: "center",
-            backgroundSize: "cover",
-            borderRadius: "10px",
-            borderRadius: 5,
-            boxShadow: 5,
-            display: "-ms-grid",
-            flexDirection: "inherit",
-            justifyContent: "center",
-            position: "unset",
-            location: "center",
-            backfaceVisibility: "hidden",
-            "&:hover": {
-              boxShadow: 19,
-              backfaceVisibility: "revert",
-              blur: 10,
-              backgroundColor: "#909090",
-            },
-          }}
-          autoComplete="on"
+        <m.Stack
+          direction="column"
+          justifyContent="center"
+          alignItems="center"
+          spacing={5}
+          height="100%"
         >
-          <FormControl required={true}>
-            <TextField
-              id="outlined-basic"
-              label="Name"
-              variant="outlined"
-              component="div"
-              required={true}
-              sx={{
-                width: 300,
-                height: 50,
-                marginTop: 7,
-                marginLeft: 20,
-                marginRight: 20,
-                fontStyle: "italic",
-                padding: 1,
-                borderRadius: 1,
-                borderStyle: "solid",
+          <m.TextField
+            id="loginpage-username"
+            label="Username"
+            type={"text"}
+            variant="standard"
+            onChange={(e) => setUsername(e.target.value)}
+            required
+            sx={{
+              color: "white",
+              height: "10%",
+              width: "40%",
+              fontSize: "1.5rem",
+              // border: "4px solid white",
+              borderRadius: "10px",
+              padding: "0px",
+              paddingLeft: "3px",
+              paddingRight: "4px",
+              "&:hover": {
+                transition: "all 0.2s ease-out",
+                boxShadow: "white 0px 0px 5px 0.1rem",
+                // top: "-0.9rem",
+              },
+              "&:label": {
                 color: "white",
-                boxShadow: 7,
-                "& label": {
-                  color: "primary.secondary",
-                  border: "white",
-                  margenLeft: 1,
-                  margenRight: 1,
-                },
-                "& label.Mui-focused": {
-                  color: "Black",
-                  display: "block",
-                },
-                "& .MuiOutlinedInput-root": {
-                  "& fieldset": {
-                    borderColor: "black",
-                  },
-                  "& fieldset.Mui-focused": {
-                    borderColor: "black",
-                  },
-                },
-              }}
-              inputMode="text"
-              inputProps={{
-                style: { color: "white", fontSize: 22, fontStyle: "normal" },
-              }}
-            />
-            <TextField
-              id="filled-basic"
-              label="Email"
-              variant="outlined"
-              component="div"
-              required={true}
-              sx={{
-                width: 300,
-                height: 50,
-                marginTop: 25,
-                marginLeft: 20,
-                marginRight: 20,
-                fontStyle: "italic",
-                padding: 1,
-                borderRadius: 1,
-                borderStyle: "solid",
+                fontSize: "1.5rem",
+              },
+            }}
+            inputProps={{
+              style: {
                 color: "white",
-                boxShadow: 7,
-                "& label": {
-                  color: "primary.secondary",
-                  border: "white",
-                  margenLeft: 1,
-                  margenRight: 1,
-                },
-                "& label.Mui-focused": {
-                  color: "Black",
-                  display: "block",
-                },
-                "& .MuiOutlinedInput-root": {
-                  "& fieldset": {
-                    borderColor: "black",
-                  },
-                  "& fieldset.Mui-focused": {
-                    borderColor: "black",
-                  },
+                fontSize: "1.5rem",
+                borderRadius: "10px",
+                // padding: "20px",
+                paddingLeft: "0px",
+              },
+            }}
+          ></m.TextField>
+          <m.TextField
+            id="loginpage-username"
+            label="Password"
+            type={"password"}
+            variant="standard"
+            onChange={(e) => setPassword(e.target.value)}
+            required
+            sx={{
+              color: "white",
+              height: "10%",
+              width: "40%",
+              fontSize: "1.5rem",
+              // border: "4px solid white",
+              borderRadius: "10px",
+              // padding: "20px",
+              paddingLeft: "3px",
+              paddingRight: "4px",
+              "&:hover": {
+                boxShadow: "white 0px 0px 5px 0.1rem",
+                transition: "all 0.2s ease-in",
+              },
+              "&:label": {
+                color: "white",
+                fontSize: "1.5rem",
+              },
+            }}
+            inputProps={{
+              style: {
+                color: "white",
+                fontSize: "1.5rem",
+                borderRadius: "10px",
+                padding: "20px",
+                paddingLeft: "0px",
+              },
+            }}
+          ></m.TextField>
+          <m.Button
+            sx={{
+              height: "10%",
+              width: "40%",
+              borderRadius: "10px",
+              padding: "20px",
+              paddingLeft: "3px",
+              paddingRight: "4px",
+              color: "black",
+              "&:hover": {
+                boxShadow: "white 0px 0px 5px 0.1rem",
+                backgroundColor: "rgba(255, 255, 255, 0.7)",
+              },
+            }}
+          >
+            <m.Typography
+              sx={{
+                fontSize: "1.5rem",
+                height: "200%",
+                width: "200%",
+                padding: "20px",
+                "&:hover": {
+                  transform: "translateX(-40%)",
+                  transition: "all 0.9s ease-in",
                 },
               }}
-              inputProps={{
-                style: { color: "white", fontSize: 22, fontStyle: "normal" },
-              }}
-            />
-            <div>
-              <TextField
-                sx={{
-                  width: 300,
-                  height: 50,
-                  marginTop: 25,
-                  marginLeft: 20,
-                  marginRight: 20,
-                  fontStyle: "italic",
-                  padding: 1,
-                  borderRadius: 1,
-                  borderStyle: "solid",
-                  color: "white",
-                  boxShadow: 7,
-                  "& label": {
-                    color: "primary.secondary",
-                    border: "white",
-                    margenLeft: 1,
-                    margenRight: 1,
-                  },
-                  "& label.Mui-focused": {
-                    color: "Black",
-                    display: "block",
-                  },
-                  "& .MuiOutlinedInput-root": {
-                    "& fieldset": {
-                      borderColor: "black",
-                    },
-                    "& fieldset.Mui-focused": {
-                      borderColor: "black",
-                    },
-                  },
-                }}
-                id="standard-basic"
-                label="Password"
-                variant="outlined"
-                type="password"
-                required={true}
-                component="div"
-                inputProps={{
-                  style: { color: "white", fontSize: 22, fontStyle: "normal" },
-                }}
-              />
-            </div>
-          </FormControl>
-        </Box>
-      </div>
-    );
-  }
+            >
+              Login
+            </m.Typography>
+          </m.Button>
+          <m.Button
+            sx={{
+              height: "10%",
+              width: "40%",
+              fontSize: "1.2rem",
+              borderRadius: "10px",
+              padding: "20px",
+              paddingLeft: "3px",
+              paddingRight: "4px",
+              color: "white",
+
+              "&:hover": {
+                boxShadow: "black 0px 0px 5px 0.1rem",
+                backgroundColor: "rgba(0, 0, 0, 0.7)",
+              },
+            }}
+          >
+            Dont have an account? Sign Up
+          </m.Button>
+        </m.Stack>
+      </m.Box>
+    </div>
+  );
 }

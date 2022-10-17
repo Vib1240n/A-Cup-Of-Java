@@ -28,32 +28,59 @@ function Home() {
         backgroundBlendMode: "overlay",
       }}
     >
-      <mui.Button
-        variant="contained"
-        href="/appointment"
+      <mui.Box
         sx={{
-          backgroundColor: "#000000",
+          top: "0",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "center",
+          height: "75%",
+          width: "100%",
+          position: "static",
+          background: "rgba(0,0,0,0.5)",
           backdropFilter: "blur(10px)",
-          color: "#ffffff",
-          width: "200px",
-          height: "50px",
-          fontSize: "10px",
-          fontWeight: "bold",
-          borderRadius: "10px",
-          marginTop: "20px",
-          position: "fixed",
-          top: "195px",
-          "&:hover": {
-            backgroundColor: "gray",
-            color: "#ffffff",
-            backdropFilter: "blur(10px)",
-            padding: "10px",
-            shadow: "10px",
-          },
         }}
       >
-        Book Appointment
-      </mui.Button>
+        <mui.Typography
+          variant="h1"
+          sx={{
+            color: "white",
+            fontFamily: "comic sans ms",
+            fontWeight: "bold",
+            fontSize: "5rem",
+            textAlign: "center",
+          }}
+        >
+          A Cut Above the Rest
+        </mui.Typography>
+        <mui.Button
+          variant="contained"
+          href="/LoginPage"
+          sx={{
+            backgroundColor: "#000000",
+            backdropFilter: "blur(10px)",
+            color: "#ffffff",
+            width: "200px",
+            height: "50px",
+            fontSize: "10px",
+            fontWeight: "bold",
+            borderRadius: "10px",
+            marginTop: "20px",
+            position: "sticky",
+            top: "195px",
+            "&:hover": {
+              backgroundColor: "white",
+              color: "black",
+              backdropFilter: "blur(10px)",
+              padding: "10px",
+              shadow: "10px",
+            },
+          }}
+        >
+          login
+        </mui.Button>
+      </mui.Box>
     </mui.Box>
   );
 }
