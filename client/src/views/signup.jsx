@@ -88,6 +88,7 @@ onChangeUserEmail(e) {
       })
       .catch((err) => console.log(err));
   }
+// //onsubmit verification function for signup page
   onSubmitEmptyFieldVerification(e) {
     e.preventDefault();
     if(this.state.firstName === "" || this.state.lastName === "" || 
