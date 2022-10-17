@@ -45,16 +45,25 @@ router.post("/logout", function (req, res, next) {
   });
 });
 
-router.post("/appointment", checkAuthentication, async function (req, res) {
+router.post("/appointment", checkAuthentication, function(req, res, done) {
   const { date, time, username } = req.body;
   const newAppointment = new Appointment({
     date,
     time,
     username,
   });
-  await newAppointment.save();
-  console.log("Appointment saved");
+  newAppointment.save((error, inserted) => {
+    if (error) {
+      return done(error, null);
+    }
+
+    return done(null, inserted);
+  });
   res.json(newAppointment);
+});
+
+router.get("/appointment", checkAuthentication, function(req, res, done) {
+  res.send(req.Appointment);
 });
 
 module.exports = router;
