@@ -8,7 +8,6 @@ const appointment = new mongoose.Schema({
 
     time: {
         type: String,
-        required: true,
     },
     username: {
         type: String,
