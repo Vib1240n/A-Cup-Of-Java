@@ -5,16 +5,15 @@ const localStrategy = require("passport-local").Strategy;
 const localStrat = new localStrategy((username, password, done) => {
   User.findOne({ username: username }, (err, user) => {
     if (err) throw err;
-    if (!User) {
-      console.log("User doestnt exist");
-      return done(null, false);
+    if (!user) {
+      return done("User does not exist, please sign up!", false);
     }
     bcrypt.compare(password, user.password, (err, result) => {
-      // if (err) throw err;
-      if (result === true) {
+      if (err) throw err;
+      if (result == true) {
         return done(null, user);
       } else {
-        return done(null, false);
+        return done("Password is incorrect, please try again!", false);
       }
     });
   });

@@ -86,7 +86,9 @@ onChangeUserEmail(e) {
           window.location = "/MyProfile";
         }
       })
-      .catch((err) => console.log(err));
+      .catch((err) => console.log(err),
+      document.getElementById("errorMessage").textContent =
+       "Email already exists, please sign in!")
   }
 // //onsubmit verification function for signup page
   onSubmitEmptyFieldVerification(e) {
