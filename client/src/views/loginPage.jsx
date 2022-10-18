@@ -1,5 +1,6 @@
-import React, { Component } from "react";
+import React from "react";
 import * as m from "@mui/material";
+import * as t from "@mui/material/styles";
 import axios from "axios";
 import background from "../asset/images/background_cornerLong.jpg";
 
@@ -14,6 +15,10 @@ export default function loginPage() {
   const [phoneNumber, setPhoneNumber] = React.useState("");
   const [confirmPassword, setConfirmPassword] = React.useState("");
   const [username, setUsername] = React.useState("");
+  const [state, setState] = React.useState({
+    show: false,
+  });
+
   /* default styles */
   const styles = {
     root: {
@@ -21,6 +26,7 @@ export default function loginPage() {
       backgroundRepeat: "no-repeat",
       backgroundSize: "cover",
       backgroundPosition: "center",
+      backdropFilter: "blur(10px)",
       height: "100vh",
       width: "100vw",
       display: "flex",
@@ -68,7 +74,6 @@ export default function loginPage() {
       })
       .catch((err) => console.log(err));
   };
-
   /*
   Render function for the login page
   */
@@ -84,7 +89,10 @@ export default function loginPage() {
           width: { md: "70%", sm: "100%", lg: "50%", xs: "100%" },
           // background:"black",
           backdropFilter: "blur(50px)",
-          boxShadow: "0 0 20px 0 rgba(255, 255, 255, 0.9)",
+          /* ***offset-x | offset-y | blur-radius | spread-radius | color*** */
+          // boxShadow: "0 10px 20px 0 rgba(255, 255, 255, 0.9), 10px 0 20px 10px rgba(0, 0, 0, 0.9)",
+          boxShadow:
+            "0 9px 10px 0px gray, 0 -9px 10px 0px rgba(255, 255, 255, 0.8), 12px 0 15px -4px rgba(255, 0, 0, 1), -12px 0 15px -4px rgba(3, 3, 3, 0.5)",
           borderRadius: "100px",
         }}
       >
@@ -102,6 +110,8 @@ export default function loginPage() {
             variant="standard"
             onChange={(e) => setUsername(e.target.value)}
             required
+            notched
+            disableUnderline={true}
             sx={{
               color: "white",
               height: "10%",
@@ -112,14 +122,28 @@ export default function loginPage() {
               padding: "0px",
               paddingLeft: "3px",
               paddingRight: "4px",
-              "&:hover": {
-                transition: "all 0.2s ease-out",
-                boxShadow: "white 0px 0px 5px 0.1rem",
-                // top: "-0.9rem",
+              "& .MuiInputBase-input": {
+                color: "white",
+                textAlign: "center",
               },
-              "&:label": {
+              "& .MuiInputLabel-root": {
                 color: "white",
                 fontSize: "1.5rem",
+                textAlign: "center",
+              },
+              "& .MuiInputLabel-root.Mui-focused": {
+                color: "white",
+                textAlign: "center",
+                fontSize: "1.2rem",
+              },
+              "& .MuiInput-underline:before": {
+                borderBottom: "2px solid white",
+              },
+              "& .MuiInput-underline:after": {
+                borderBottom: "2px solid black",
+              },
+              "& .MuiInput-underline:hover:not(.Mui-disabled):before": {
+                borderBottom: "2px solid green",
               },
             }}
             inputProps={{
@@ -149,13 +173,27 @@ export default function loginPage() {
               // padding: "20px",
               paddingLeft: "3px",
               paddingRight: "4px",
-              "&:hover": {
-                boxShadow: "white 0px 0px 5px 0.1rem",
-                transition: "all 0.2s ease-in",
+              "& .MuiInputBase-input": {
+                color: "white",
+                textAlign: "center",
               },
-              "&:label": {
+              "& .MuiInputLabel-root": {
                 color: "white",
                 fontSize: "1.5rem",
+              },
+              "& .MuiInputLabel-root.Mui-focused": {
+                color: "white",
+                textAlign: "center",
+                fontSize: "1.2rem",
+              },
+              "& .MuiInput-underline:before": {
+                borderBottom: "2px solid white",
+              },
+              "& .MuiInput-underline:after": {
+                borderBottom: "2px solid red",
+              },
+              "& .MuiInput-underline:hover:not(.Mui-disabled):before": {
+                borderBottom: "2px solid green",
               },
             }}
             inputProps={{
@@ -173,6 +211,7 @@ export default function loginPage() {
               height: "10%",
               width: "40%",
               borderRadius: "10px",
+              border: "2px solid white",
               padding: "20px",
               paddingLeft: "3px",
               paddingRight: "4px",
@@ -186,11 +225,13 @@ export default function loginPage() {
             <m.Typography
               sx={{
                 fontSize: "1.5rem",
-                height: "200%",
+                height: "auto",
                 width: "200%",
-                padding: "20px",
+                justifyContent: "center",
+                alignItems: "center",
+                // padding: "20px",
                 "&:hover": {
-                  transform: "translateX(-40%)",
+                  transform: "translateX(-20%)",
                   transition: "all 0.9s ease-in",
                 },
               }}
@@ -199,23 +240,24 @@ export default function loginPage() {
             </m.Typography>
           </m.Button>
           <m.Button
+            // onClick={toggleBox(visibility, true)}
+            elevation={5}
             sx={{
               height: "10%",
               width: "40%",
-              fontSize: "1.2rem",
               borderRadius: "10px",
               padding: "20px",
               paddingLeft: "3px",
               paddingRight: "4px",
-              color: "white",
-
+              color: "black",
+              border: "1px solid white",
               "&:hover": {
-                boxShadow: "black 0px 0px 5px 0.1rem",
-                backgroundColor: "rgba(0, 0, 0, 0.7)",
+                boxShadow: "white 0px 0px 5px 0.1rem",
+                backgroundColor: "rgba(255, 255, 255, 0.7)",
               },
             }}
           >
-            Dont have an account? Sign Up
+            Dont have an account?
           </m.Button>
         </m.Stack>
       </m.Box>

@@ -8,6 +8,7 @@ import Facebookicon from "../asset/images/facebookiconcolor1.png";
 import Background from "../asset/images/BarbershopBackground.png";
 
 function Home() {
+  const [open, setOpen] = React.useState(false);
   let navigate = useNavigate();
   const handleChange = () => {
     navigate("/appointment");
@@ -35,11 +36,11 @@ function Home() {
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
-          height: "75%",
+          height: "100%",
           width: "100%",
           position: "static",
           background: "rgba(0,0,0,0.5)",
-          backdropFilter: "blur(10px)",
+          backdropFilter: "blur(10px) brightness(0.9)",
         }}
       >
         <mui.Typography
