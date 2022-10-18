@@ -1,137 +1,135 @@
 
 .servicesBackground{
-height: 40vw;
-background-image: url("../images/servicesbackground1.jpg");
--webkit-background-size: cover;
--moz-background-size: cover;
--o-background-size: cover;
-background-size: cover;
-text-align: center;
-font-family:  Helvetica, Arial, sans-serif;
-color: black;
-}
-
-
-.servicesTitle{
-    padding-top: 10vh;
-    color: black;
-    font-family:Arial, Helvetica, sans-serif;
-    font-size: 5vw;
-}
-.servicesTitleContent{
-    color:  black;
-    font-family:Arial, Helvetica, sans-serif;
-    font-size: 2vw;
-}
-
-.servicesSection {
+    height: 30vw;
+    /* background-image: url("../images/servicesbackground.jpg"); */
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
     text-align: center;
-}
-
-.servicesLine {
-    height: 1px;
-    /* margin: 5rem 10rem 0rem 5rem; */
-    margin-top: 2vh;
-    margin-left: 10vw;
-    margin-right: 10vw;
-    
-    background: black;
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-#servicesLineTitle {
+    font-family:  Helvetica, Arial, sans-serif;
     color: black;
-    font-size: medium;
-    font-size: 2vh;
-    font-weight: bold;
-    position: relative;
-    /* top: -75px; */
-}
-
-.servicesList{
-    background-color: white;
-    padding-bottom: 3vw;
-    box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.5);
-    padding-left: 3vw;
-    padding-right: 3vw; 
-    margin-right: 15%;
-    margin-left: 15%;
-    font-family: Arial, Helvetica, sans-serif;
-   grid: 2;
-}
-
-/* .services-list:hover{
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.5);
-} */
-.servicesFirstRow{
-    padding-top: 2vw;
-    columns: 2;
-}
-
-.classicHaircut{
-    /* float: left;
-    width: 50%;
-    padding: 10px; */
-    padding-bottom: 5vw;
-    font-size: 1.5vw;
-
-}
-
-.hairTrimming{
-    padding-top: 0.1vw;
-    font-size: 1.5vw;
-    /* float: left;
-    width: 50%;
-    padding: 10px; */
+    }
     
-}
-.hairWaxing{
-    /* padding-bottom: 2vw; */
-    font-size: 1.5vw;
-}
-
-.hairGrooming{
-    padding-top: 0.1vw;
-    font-size: 1.5vw;
-}
-
-/* .hairWaxing{
-    padding: 10px;
     
-}
-
-.hairGrooming{
-    padding: 10px;
+    .servicesTitle{
+        padding-top: 10vw;
+        color: black;
+        font-family:Arial, Helvetica, sans-serif;
+        font-size: 5vw;
+    }
+    .servicesTitleContent{
+        color:  black;
+        font-family:Arial, Helvetica, sans-serif;
+        font-size: 1.5vw;
+    }
     
-} */
-
-
-.servicesCost{
-    color: green;
-}
-
-/* .haircutContent{
-    word-wrap: break-word;
-}
-
-.hairtrimContent{
-    word-wrap: break-word;
-}
-
-.hairwaxingContent{
-    word-wrap: break-word;
-}
-
-.hairgroomingContent{
-    word-wrap: break-word;
-} */
-.bookAppointment{
-    margin-top: 2vh;
-    font-size: 1.5vw;
-}
-#bookAppointmentLink{
-    color: black;
-    text-decoration: underline;
-    font-size: 2vh;
-}
-
+    .servicesSection {
+        text-align: center;
+    }
+    
+    .servicesLine {
+        height: 1px;
+        /* margin: 5rem 10rem 0rem 5rem; */
+        margin-top: 2vw;
+        margin-left: 10vw;
+        margin-right: 10vw;
+        
+        background: black;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    
+    #servicesLineTitle {
+        color: black;
+        font-size: medium;
+        font-size: 2vw;
+        font-weight: bold;
+        position: relative;
+        /* top: -75px; */
+    }
+    
+    .servicesList{
+        background-color: white;
+        padding-bottom: 3vw;
+        box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.5);
+        padding-left: 3vw;
+        padding-right: 3vw; 
+        margin-right: 15%;
+        margin-left: 15%;
+        font-family: Arial, Helvetica, sans-serif;
+       grid: 2;
+    }
+    
+    /* .services-list:hover{
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.5);
+    } */
+    .servicesFirstRow{
+        padding-top: 2vw;
+        columns: 2;
+    }
+    
+    .classicHaircut{
+        /* float: left;
+        width: 50%;
+        padding: 10px; */
+        padding-bottom: 5vw;
+        font-size: 1.5vw;
+    
+    }
+    
+    .hairTrimming{
+        padding-top: 0.1vw;
+        font-size: 1.5vw;
+        /* float: left;
+        width: 50%;
+        padding: 10px; */
+        
+    }
+    .hairWaxing{
+        /* padding-bottom: 2vw; */
+        font-size: 1.5vw;
+    }
+    
+    .hairGrooming{
+        padding-top: 0.1vw;
+        font-size: 1.5vw;
+    }
+    
+    /* .hairWaxing{
+        padding: 10px;
+        
+    }
+    
+    .hairGrooming{
+        padding: 10px;
+        
+    } */
+    
+    
+    .servicesCost{
+        color: green;
+    }
+    
+    /* .haircutContent{
+        word-wrap: break-word;
+    }
+    
+    .hairtrimContent{
+        word-wrap: break-word;
+    }
+    
+    .hairwaxingContent{
+        word-wrap: break-word;
+    }
+    
+    .hairgroomingContent{
+        word-wrap: break-word;
+    } */
+    .bookAppointment{
+        font-size: 1.5vw;
+    }
+    #bookAppointmentLink{
+        color: black;
+        text-decoration: underline;
+    }
+    

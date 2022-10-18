@@ -1,167 +1,79 @@
 import React from "react";
-import axios from "axios";
-import * as mui from "@mui/material";
-import dayjs from "dayjs";
-import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
-import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
-import { DatePicker,TimePicker } from "@mui/x-date-pickers";
-// import Background from "../asset/images/ACOJ-Logo.jpg";
+import "../asset/css/appointment.css";
+import instagramIcon from "./instagram.png";
+import yelpIcon from "./yelp.png";
 
 export default function Appointment() {
-  const [date, setDate] = React.useState(null);
-  const [time, setTime] = React.useState(null);
-  const [userData, setUserData] = React.useState([]);
-  
-  React.useEffect(() => {
-    fetchUserData();
-  }, []);
-
-  const fetchUserData = () => {
-    axios
-      .get("http://localhost:5500/api/profile")
-      .then((res) => {
-        console.log(res);
-        setUserData(res.data.username);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  };
-
-  const onAppointment = (e) => {
-    console.log(date);
-    console.log(JSON.stringify(time));
-    console.log(userData);
-    axios.post("http://localhost:5500/api/appointment", {
-      date: date,
-      time: time,
-      username: userData,
-    });
-  };
-  const styles = {
-    root: {
-      // backgroundImage: `url(${Background})`,
-      backgroundRepeat: "no-repeat",
-      backgroundSize: "contain",
-      backgroundPosition: "center",
-      height: "100vh",
-      width: "100vw",
-      display: "flex",
-      justifyContent: "center",
-      alignItems: "center",
-    },
-  };
   return (
-    <div className="background-parent" style={styles.root}>
-      <mui.Box
-        component="div"
-        id="appointment-box-outer"
-        margin={"auto"}
-        overflow="revert"
-        sx={{
-          backdropFilter: "blur(10px)",
-          padding: "20px",
-          width: { md: "70%", sm: "100%", lg: "50%" },
-          height: { md: "80%", sm: "100%", lg: "50%" },
-          display: "inline-flex",
-          flexDirection: "column",
-          justifyContent: "center",
-          alignItems: "center",
-          marginBottom: "auto",
-        }}
-      >
-        <mui.Paper
-          id="appointment-Paper-inner"
-          component="div"
-          margin={"auto"}
-          overflow="revert"
-          sx={{
-            background: "transparent",
-          }}
-        >
-          <mui.Stack
-            id="appointment-stack"
-            direction="column"
-            spacing={15}
-            elevation={0}
-          >
-            <mui.Typography
-              variant="h3"
-              sx={{
-                position: "relative",
-                fontWeight: "bold",
-                fontSize: "3rem",
-                fontFamily: "Roboto",
-                textAlign: "center",
-                overflow: "hidden",
-                "@media (max-width: 1000px)": {
-                  fontSize: "2rem",
-                },
-              }}
-            >
-              Let's make an Appointment
-            </mui.Typography>
-            <mui.TextField
-              id="outlined-basic"
-              type="text"
-              label="Name"
-              variant="outlined"
-              placeholder={userData.firstName + " " + userData.lastName}
-              value={userData.firstName + " " + userData.lastName}
-              defaultValue=""
-              sx={{
-                width: "500px",
-                height: "50px",
-                fontStyle: "italic",
-                textAlign: "center",
-                padding: "10px",
-                display: "flex",
-                "& label.Mui-focused": {
-                  color: "Black",
-                  textAlign: "center",
-                },
-                "& label.Mui": {
-                  textAlign: "center",
-                },
-                "& .MuiOutlinedInput-root": {
-                  "& fieldset": {
-                    borderColor: "black",
-                  },
-                  "& fieldset.Mui": {
-                    borderColor: "black",
-                  },
-                  "& fieldset.Mui-focused": {
-                    borderColor: "white",
-                  },
-                },
-              }}
-            />
-            <LocalizationProvider dateAdapter={AdapterDayjs}>
-            <DatePicker
-                label="Pick Date"
-                value={date}
-                onChange={(newValue) => {
-                  setDate(newValue);
-                }}
-                renderInput={(params) => <mui.TextField {...params} />}
-              />
-              <TimePicker
-                renderInput={(params) => <mui.TextField {...params} />}
-                value={time}
-                label="Pick Time"
-                onChange={(newValue) => {
-                  setTime(newValue);
-                }}
-                minTime={dayjs("T06:00PM")}
-                maxTime={dayjs("T10:00AM")}
-              />
-            </LocalizationProvider>
-            <mui.Button variant="contained" onClick={onAppointment} sx={{}}>
-              Book Appointment
-            </mui.Button>
-          </mui.Stack>
-        </mui.Paper>
-      </mui.Box>
+    <div className="Appointment">
+      <h1 className="heading">Make an Appointment</h1>
+
+      <form className="form" action="#">
+        <div className="container">
+          <input type="text" readOnly value={"Name: "} />
+          <br />
+          <input type="text" readOnly value={"Email: "} />
+        </div>
+
+        <input
+          type="text"
+          name="name"
+          id="name"
+          placeholder="Please Enter Your Phone Number"
+        />
+
+        <div className="date-time">
+          <p>Select Your Date</p>
+          <input type="date" name="date" id="date" />
+        </div>
+
+        <div className="date-time">
+          <p>Select Your Time</p>
+          <input type="time" name="time" id="time" />
+        </div>
+
+        <textarea
+          name="message"
+          id="message"
+          placeholder="Message Here"
+        ></textarea>
+
+        <button type="submit">SUBMIT</button>
+      </form>
+
+      <footer>
+        <div class="barber-footerline"></div>
+        <div class="barber-footer">
+          <div id="barber-social">
+            <a href="https://www.instagram.com/listoblendz">
+              <img src={instagramIcon} alt="Instagram Icon" id="barber-ig" />
+            </a>
+
+            <a href="https://yelp.to/OGPIqL3Bcub">
+              <img src={yelpIcon} alt="Yelp Icon" id="barber-fb" />
+            </a>
+          </div>
+          <div>
+            <p id="barber-footerinfo"> Contact Us: 123 456789</p>
+            <p id="barber-footerinfo">
+              {" "}
+              1049 Jefferson Blvd, West Sacramento, CA 95691{" "}
+            </p>
+          </div>
+        </div>
+        {/* <div className="info">
+                    <p>Contact: 1234566678</p>
+                    <p>Email: helloworld@gmail.com</p>
+                </div>
+
+                <div className="social-icons">
+                    <p>Follow Us On</p>
+                    <div className="icons">
+                        <img className="fb-img" src={facebookIcon} alt="facebook icon" />
+                        <img className="insta-img" src={instagramIcon} alt="facebook icon" />
+                    </div>
+                </div> */}
+      </footer>
     </div>
   );
 }
