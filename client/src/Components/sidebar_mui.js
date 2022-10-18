@@ -14,10 +14,14 @@ import MailIcon from "@mui/icons-material/Mail";
 import MenuIcon from "@mui/icons-material/Menu";
 import { color } from "@mui/system";
 import Login from "@mui/icons-material/Login";
-export default function Sidebar() {
+export default function Sidebar(props) {
   const [state, setState] = React.useState({
     left: false,
   });
+
+  const setProps = (props) => {
+    setState({ ...state, ...props });
+  };
 
   // const toggle = { props, query };
   // React.useEffect(() => {
@@ -106,7 +110,7 @@ export default function Sidebar() {
               sx={{
                 display: "inline-block",
               }}
-             />
+            />
           </Button>
           <Drawer
             anchor={anchor}

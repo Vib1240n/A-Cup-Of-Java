@@ -2,6 +2,7 @@ import * as React from "react";
 import { useNavigate } from "react-router-dom";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
+import Drawer from "@mui/material/Drawer";
 import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
@@ -12,35 +13,133 @@ import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
-import Sidebar from "./sidebar_mui";
-import { MultiSelectUnstyled } from "@mui/base";
+import { List, ListItem, ListItemButton, ListItemText } from "@mui/material";
+import AppRegistrationIcon from "@mui/icons-material/AppRegistration";
+import ListItemIcon from "@mui/material/ListItemIcon";
+import LoginIcon from "@mui/icons-material/Login";
+import HomeIcon from "@mui/icons-material/Home";
 import { Grid } from "@mui/material";
-import { keys } from "@mui/system";
 
 const settings = ["Profile", "Sign Out", "Appointments"];
-
 function ResponsiveAppBar() {
-  const [anchorElNav, setAnchorElNav] = React.useState(null);
-  const [anchorElUser, setAnchorElUser] = React.useState(null);
+  const [loggedIn, setLoggedIn] = React.useState(false);
+  const [state, setState] = React.useState({
+    left: false,
+  });
+
+  const toggleDrawer = (anchor, open) => (event) => {
+    if (
+      event.type === "keydown" &&
+      event.type === "click" &&
+      (event.key === "Tab" || event.key === "Shift")
+    ) {
+      return;
+    }
+
+    setState({ ...state, [anchor]: open });
+  };
+
+  const userSetting = () => {
+    return (
+      <Box sx={{ flexGrow: 0 }}>
+        <Tooltip title="Profile Settings">
+          <IconButton sx={{ p: 0 }}>
+            <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+          </IconButton>
+        </Tooltip>
+
+        <Menu
+          sx={{ mt: "45px" }}
+          id="menu-appbar"
+          // anchorEl={anchorElUser}
+          anchorOrigin={{
+            vertical: "top",
+            horizontal: "right",
+          }}
+          keepMounted
+          transformOrigin={{
+            vertical: "top",
+            horizontal: "right",
+          }}
+          // open={Boolean(anchorElUser)}
+          // onClose={handleCloseUserMenu}
+        >
+          {settings.map((setting) => (
+            <MenuItem
+              key={setting}
+              component="Link"
+              onClick={(setting) => {
+                if (setting === "Profile") {
+                  useNavigate("/home");
+                }
+              }}
+            >
+              <Typography textAlign="center">{setting}</Typography>
+            </MenuItem>
+          ))}
+        </Menu>
+      </Box>
+    );
+  };
+
+  const list = (anchor) => (
+    <Box
+      edge="start"
+      sx={{
+        backdropFilter: "blur(10px) brightness(0.1)",
+        color: "white",
+        height: "100vh",
+      }}
+      onClick={toggleDrawer("left", false)}
+      onKeyDown={toggleDrawer("left", false)}
+    >
+      <List>
+        <ListItem>
+          <ListItemButton href="/loginPage">
+            <ListItemIcon>
+              <HomeIcon
+                sx={{
+                  color: "white",
+                }}
+              />
+            </ListItemIcon>
+            <ListItemText primary="Home" />
+          </ListItemButton>
+        </ListItem>
+        <ListItem>
+          <ListItemButton href="/loginPage">
+            <ListItemIcon>
+              <LoginIcon
+                sx={{
+                  color: "white",
+                }}
+              />
+            </ListItemIcon>
+            <ListItemText primary="Login" />
+          </ListItemButton>
+        </ListItem>
+        <ListItem>
+          <ListItemButton href="/appointment">
+            <ListItemIcon>
+              <AppRegistrationIcon
+                sx={{
+                  color: "white",
+                }}
+              />
+            </ListItemIcon>
+            <ListItemText primary="Book Appointment" />
+          </ListItemButton>
+        </ListItem>
+      </List>
+    </Box>
+  );
 
   const navigate = (page) => {
     window.location.href = page;
   };
 
-  const handleOpenNavMenu = (event) => {
-    setAnchorElNav(event.currentTarget);
-    // <Sidebar setState={({ ...this.state, [this.anchor]: this.open })} /> ;
-  };
-  const handleOpenUserMenu = (event) => {
-    setAnchorElUser(event.currentTarget);
-  };
-
-  const handleCloseNavMenu = () => {
-    setAnchorElNav(null);
-  };
-
-  const handleCloseUserMenu = () => {
-    setAnchorElUser(null);
+  const checkLogin = () => {
+    setLoggedIn(true);
   };
 
   const handleEvent = (event) => {
@@ -77,6 +176,7 @@ function ResponsiveAppBar() {
             }}
           >
             <Button
+              elevation={0}
               size="small"
               edge="end"
               aria-label="menu"
@@ -89,9 +189,20 @@ function ResponsiveAppBar() {
                   color: "white",
                 },
               }}
-              onClick={handleOpenNavMenu}
+              onClick={toggleDrawer("left", true)}
             >
               <MenuIcon />
+              <Drawer
+                // anchor={"left"}
+                sx={{
+                  background: "transparent brightness(0.2)",
+                }}
+                open={state["left"]}
+                onClick={toggleDrawer("left", false)}
+                onClose={toggleDrawer("left", false)}
+              >
+                {list("left")}
+              </Drawer>
             </Button>
             {/** Shows when screen is maximum  */}
             <Button
@@ -146,8 +257,7 @@ function ResponsiveAppBar() {
             justifyContent={{ md: "flex-end", xs: "none" }}
             display={{ md: "flex", xs: "none" }}
             height="75px"
-            width={{ md: "95%", xs: "none", 
-           }}
+            width={{ md: "95%", xs: "none" }}
             alignItems="center"
             sx={{}}
           >
@@ -165,7 +275,7 @@ function ResponsiveAppBar() {
                 color: "White",
                 textDecoration: "none",
                 "&:hover": {
-                  color: "black !important",
+                  color: "black important",
                   backgroundColor: "White",
                 },
               }}
@@ -215,63 +325,6 @@ function ResponsiveAppBar() {
               Appointment
             </Button>
             <Box sx={{ flexGrow: 0, display: { xs: "flex", md: "none" } }}>
-              <Menu
-                id="menu-appbar"
-                anchorEl={anchorElNav}
-                anchorOrigin={{
-                  vertical: "bottom",
-                  horizontal: "left",
-                }}
-                keepMounted
-                transformOrigin={{
-                  vertical: "top",
-                  horizontal: "left",
-                }}
-                open={Boolean(anchorElNav)}
-                onClose={handleCloseNavMenu}
-                sx={{
-                  display: { xs: "block", md: "none" },
-                }}
-              ></Menu>
-            </Box>
-
-            <Box sx={{ flexGrow: 0 }}>
-              <Tooltip title="Open settings">
-                <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                  <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
-                </IconButton>
-              </Tooltip>
-
-              <Menu
-                sx={{ mt: "45px" }}
-                id="menu-appbar"
-                anchorEl={anchorElUser}
-                anchorOrigin={{
-                  vertical: "top",
-                  horizontal: "right",
-                }}
-                keepMounted
-                transformOrigin={{
-                  vertical: "top",
-                  horizontal: "right",
-                }}
-                open={Boolean(anchorElUser)}
-                onClose={handleCloseUserMenu}
-              >
-                {settings.map((setting) => (
-                  <MenuItem
-                    key={setting}
-                    component="Link"
-                    onClick={(setting) => {
-                      if (setting === "Profile") {
-                        useNavigate("/home");
-                      }
-                    }}
-                  >
-                    <Typography textAlign="center">{setting}</Typography>
-                  </MenuItem>
-                ))}
-              </Menu>
             </Box>
           </Grid>
         </Toolbar>
@@ -280,58 +333,3 @@ function ResponsiveAppBar() {
   );
 }
 export default ResponsiveAppBar;
-
-/*{
-
-  <Box sx={{ flexGrow: 0, display: { xs: "flex", md: "none" } }}>
-              <Menu
-                id="menu-appbar"
-                anchorEl={anchorElNav}
-                anchorOrigin={{
-                  vertical: "bottom",
-                  horizontal: "left",
-                }}
-                keepMounted
-                transformOrigin={{
-                  vertical: "top",
-                  horizontal: "left",
-                }}
-                open={Boolean(anchorElNav)}
-                onClose={handleCloseNavMenu}
-                sx={{
-                  display: { xs: "block", md: "none" },
-                }}
-              ></Menu>
-            </Box> 
-
-             <Box sx={{ flexGrow: 0 }}>
-              <Tooltip title="Open settings">
-                <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                  <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
-                </IconButton>
-              </Tooltip>
-              <Menu
-                sx={{ mt: "45px" }}
-                id="menu-appbar"
-                anchorEl={anchorElUser}
-                anchorOrigin={{
-                  vertical: "top",
-                  horizontal: "right",
-                }}
-                keepMounted
-                transformOrigin={{
-                  vertical: "top",
-                  horizontal: "right",
-                }}
-                open={Boolean(anchorElUser)}
-                onClose={handleCloseUserMenu}
-              >
-                {settings.map((setting) => (
-                  <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                    <Typography textAlign="center">{setting}</Typography>
-                  </MenuItem>
-                ))}
-              </Menu>
-            </Box> 
-
-}*/
