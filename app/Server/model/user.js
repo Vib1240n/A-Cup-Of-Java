@@ -25,5 +25,12 @@ const user = new mongoose.Schema({
 });
 
 
+<<<<<<< HEAD
 module.exports = mongoose.model("user", user);
 
+=======
+//exports.user = user;
+//exports.validation = validation;
+module.exports = mongoose.model("user", user, "users");
+// module.exports = validation;
+>>>>>>> main_temp

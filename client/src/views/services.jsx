@@ -1,5 +1,8 @@
 import React from "react";
 import "../asset/css/services.css";
+import instagramIcon from "../asset/images/instagramIcon.png"
+import facebookIcon from "../asset/images/facebookIcon.jpg"
+
 
 function Services() {
 
@@ -8,7 +11,7 @@ function Services() {
         
         <div class="servicesBackground">
             <div class="servicesTitle">
-            Our Services
+            OUR SERVICES
             </div>
             <div class="servicesTitleContent">
                 The services we provide at our shop!
@@ -19,8 +22,8 @@ function Services() {
         
 
         <div class = "servicesSection">
-            <div class = "servicesLine"></div>
             <h1 id = "servicesLineTitle"> Services and Pricing </h1>
+            <div class = "servicesLine"></div>
 
             <br/><br/>
 
@@ -38,7 +41,7 @@ function Services() {
                         </div>
                 </div>
 
-                <div class = "servicesSecondRow">
+                <div class = "servicesFirstRow">
                     <div class = "hairWaxing">
                         <h2 id = "hairwaxingTitle"> Waxing - <span class = "servicesCost">$45</span></h2>
                         <p id = "hairwaxingContent"> Our waxing service!</p>
@@ -49,17 +52,29 @@ function Services() {
                         <p id = "hairgroomingContent"> Our grooming service!</p>
                     </div>
                 </div>
-                <br/><br/>
-
-                <div class = "bookAppointment">
+                <br/><br/>         
+            </div>
+            <div class = "bookAppointment">
                     <h2 id = "bookAppointmentTitle"> Need to schedule an appointment?</h2>
                     <p id = "bookAppointmentLink"> <a href = "/Appointment">Book Now!</a></p>
                 </div>
-                
-                
-            </div>
             <br/><br/>
         </div>
+
+        <div class = "barber-footer">
+                <div id = "barber-social">
+                    <a href="https://www.instagram.com">
+                  <img src= {instagramIcon} alt="Instagram Icon" id ="barber-ig"/>
+                </a>
+                <a href="https://www.facebook.com">
+                  <img src= {facebookIcon} alt="Instagram Icon" id ="barber-fb"/>
+                </a>
+                </div>
+                <div>
+                    <p id = "barber-footerinfo"> Contact Us: 123 456789</p>
+                    <p id = "barber-footerinfo">  1049 Jefferson Blvd, West Sacramento, CA 95691 </p>
+                </div>
+            </div>
        
     </div>
   )
