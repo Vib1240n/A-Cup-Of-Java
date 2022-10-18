@@ -13,6 +13,8 @@ import Barber from "./views/barber";
 import MyProfile from "./views/MyProfile";
 import LoginPage from "./views/loginPage";
 import "./App.css";
+import instagramIcon from "./asset/images/instagramIcon.png"
+import facebookIcon from "./asset/images/facebookIcon.jpg"
 
 function App() {
   return (

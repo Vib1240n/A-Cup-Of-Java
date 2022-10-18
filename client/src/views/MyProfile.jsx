@@ -1,40 +1,75 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "../asset/css/myProfile.css";
-import { Component } from "react";
+import "../asset/css/barbers.css";
+import ace from "../asset/images/AcesBarbershopLogo.jpg"
+import instagramIcon from "../asset/images/instagramIcon.png"
+import facebookIcon from "../asset/images/facebookIcon.jpg"
+import navbar from "../Components/Navbar";
 
-export class MyProfile extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      email: "",
-      firstName: "",
-      lastName: "",
-    };
-  }
-  componentDidMount() {
-    axios.get("http://localhost:5500/api/MyProfile").then((res) => {
-      this.setState({
-        email: res.data.email,
-        firstName: res.data.firstName,
-        lastName: res.data.lastName,
-      });
+const MyProfile = () => {
+
+  const [userData, setUserData] = useState([]);
+
+useEffect(() => {
+  fetchUserData();
+}, []);
+
+const fetchUserData = () => {
+  axios
+    .get("http://localhost:5500/api/profile")
+    .then((res) => {
+      console.log(res);
+      setUserData(res.data);
+      
+    })
+    .catch((err) => {
+      console.log(err);
     });
-  }
+};
 
-  render() {
-    return (
-      <div className="MyProfile">
-        <h1 className="heading">Your Profile Information</h1>
-        <div className="form" action="#">
-          <div className="firstName">First Name: {this.firstName}</div>
-          <div className="firstName">Last Name: {this.lastName}</div>
-          <div className="firstName">Email: {this.email}</div>
-          <button type="submit">Sign Out</button>
-        </div>
-      </div>
-    );
-  }
-}
+const logout = () => {
+  axios.post("http://localhost:5500/api/logout").then((res) => {
+    console.log(res.data);
+    if (res.data.redirect === "/home") {
+      window.location = "/home";
+    }
+  })
+  .catch((err) => console.log(err));
+};
 
+  return (
+    <div class="MyProfile">
+    
+      <h1 class = "MyProfile-title"> Your Profile Information</h1>
+      <div class = "barbertop">
+                <img src = {ace} alt = "ace lgo" id = "barberimage" />
+                <br/>
+                <br/>
+                <div id = "barber-title">
+                    <div class="firstName">Name: {userData.firstname} {userData.lastname}</div>
+                    <div class="firstName">Email: {userData.username}</div>
+                </div>
+                <br/>
+                <button class = "MyProfile-button" onClick={logout} >Sign Out</button>
+      </div >
+
+      <div class = "barber-footer">
+                    <div id = "barber-social">
+                            <a href="https://www.instagram.com">
+                        <img src= {instagramIcon} alt="Instagram Icon" id ="barber-ig"/>
+                        </a>
+                        <a href="https://www.facebook.com">
+                        <img src= {facebookIcon} alt="Instagram Icon" id ="barber-fb"/>
+                        </a>
+                        </div>
+                        <div>
+                            <p id = "barber-footerinfo"> Contact Us: 123 456789</p>
+                            <p id = "barber-footerinfo">  1049 Jefferson Blvd, West Sacramento, CA 95691 </p>
+                    </div>
+                </div>
+    </div>
+   );
+  };
+          
 export default MyProfile;

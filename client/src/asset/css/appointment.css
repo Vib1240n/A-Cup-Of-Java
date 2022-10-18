@@ -9,7 +9,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-family: "Hanuman", serif;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .Appointment .heading {
@@ -45,7 +45,8 @@ textarea::placeholder {
 .Appointment .container > input {
   padding-left: 30px;
   font-size: 12px;
-  font-family: "Hanuman", serif;
+  /* font-family: "Hanuman", serif; */
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .Appointment .form > input {
@@ -56,7 +57,8 @@ textarea::placeholder {
   padding-left: 30px;
 
   font-size: 12px;
-  font-family: "Hanuman", serif;
+  /* font-family: "Hanuman", serif; */
+  font-family: Arial, Helvetica, sans-serif;
 
   background: #ffffff;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -88,8 +90,8 @@ textarea::placeholder {
 
   margin: 0;
   padding-left: 30px;
-
-  font-family: "Hanuman", serif;
+  font-family: Arial, Helvetica, sans-serif;
+  /* font-family: "Hanuman", serif; */
   font-size: 12px;
   color: black;
 
@@ -101,4 +103,10 @@ textarea::placeholder {
   height: 100%;
   width: 100%;
   margin: 0;
+}
+.insta-img{
+  width: 3vw;
+}
+#appointment-footer{
+  margin-bottom: 18vh;
 }

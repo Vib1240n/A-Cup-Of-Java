@@ -1,6 +1,5 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from "../views/home";
 import About from "../views/about";
 import Appointment from "../views/appointment";
 import Services from "../views/services";

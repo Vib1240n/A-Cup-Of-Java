@@ -1,23 +1,18 @@
 import React from 'react'
-import barber1 from "../asset/images/barber1.jpg";
-import barber2 from "../asset/images/barber2.jpg";
 import barber3 from "../asset/images/barber104.png";
 import barber4 from "../asset/images/barber103.png";
 import instaIcon from "../asset/images/Instagram-Icon.png"
 import fbIcon from "../asset/images/facebookicon1.png"
-import grooming3 from "../asset/images/grooming3.png"
 import "../asset/css/style.css";
 
 function About() {
   return (  
-    <div>
-      {/* <div class= "about-background">
-          <div class = "about-title"> Haircut && Grooming </div>
-      </div> */}
+    <div >
       <div class = "about-background1">
+        <div class = "about-headertitle"> About Us </div>
         <div class = "about-title"> Haircut && Grooming </div>
       </div>
-      <h1 id = "about-subtitle"> ABOUT US </h1>
+      <h1 id = "about-subtitle"> Learn More </h1>
       <div class = "about-middleelement">
           <div class = "about-mid1"> 
             <div>
@@ -29,8 +24,8 @@ function About() {
                 <a href='./Appointment' id = "about-booknow"> Book Now </a>
             </div>
             <div class = "about-content2">
-                <img src = {barber3} id = "about-barberimage1" alt = "barber image 1"></img>
-                <img src = {barber4} id = "about-barberimage1" alt = "barber image 2"></img>
+                <img src = {barber3} id = "about-barberimage1" alt = "barber1"></img>
+                <img src = {barber4} id = "about-barberimage1" alt = "barber2"></img>
             </div>
           </div>
 
@@ -66,6 +61,8 @@ function About() {
               </div>
           </div>          
       </div>
+      <br/>
+      <br/>
     </div>
   );
 }

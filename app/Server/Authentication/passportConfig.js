@@ -16,13 +16,18 @@ const registerStrategy = require("./registerStrat");
 //   });
 // });
 
-passport.serializeUser((username, done) => {
-  done(null, username);
+passport.serializeUser(function (user, done) {
+  process.nextTick(function() {
+    done(null, { username: user.username,
+    firstname: user.firstName,
+    lastname: user.lastName });
+  });
 });
 
-passport.deserializeUser(async (username, done) => {
-  const user = await User.findOne({ username: username });
-  done(null, user);
+passport.deserializeUser(function (user, done) {
+  process.nextTick(function() {
+    return done(null, user);
+  })
 });
 
 passport.use("local", localStrategy);
