@@ -46,7 +46,7 @@ function Barber() {
             <h6 className="barber-information">Please visit my Social media for the latest updates and designs. </h6>
             <h6 className="barber-information">Email: marco.h99@hotmail.com</h6>
             <h6 className="barber-information"> Cell: 916-752-8381 </h6>
-            <h6 className="barber-information"> Tues-Sat (Appointments only) 10am - 6pm</h6>
+            <h6 className="barber-information"> Tuesday - Saturday (Appointments only) 10am - 6pm</h6>
             <h6 className="barber-information">
               For custom prices please call or make an appointment today.
             </h6>
