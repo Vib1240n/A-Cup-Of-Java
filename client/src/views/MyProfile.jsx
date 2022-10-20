@@ -1,75 +1,139 @@
 import React, { useEffect, useState } from "react";
+import * as m from "@mui/material";
 import axios from "axios";
 import "../asset/css/myProfile.css";
 import "../asset/css/barbers.css";
-import ace from "../asset/images/AcesBarbershopLogo.jpg"
-import instagramIcon from "../asset/images/instagramIcon.png"
-import facebookIcon from "../asset/images/facebookIcon.jpg"
-import navbar from "../Components/Navbar";
+import ace from "../asset/images/grooming3.png";
+import instagramIcon from "../asset/images/instagramIcon.png";
+import facebookIcon from "../asset/images/facebookIcon.jpg";
 
 const MyProfile = () => {
-
   const [userData, setUserData] = useState([]);
+  let name = userData.firstname + " " + userData.lastname;
+  let username = userData.username;
 
-useEffect(() => {
-  fetchUserData();
-}, []);
+  const styles = {
+    background: {
+      background: `url(${ace})`,
+      backgroundRepeat: "no-repeat",
+      backgroundSize: "cover",
+      backgroundPosition: "center",
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+      height: "100vh",
+      width: "100vw",
+    },
+  };
 
-const fetchUserData = () => {
-  axios
-    .get("http://localhost:5500/api/profile")
-    .then((res) => {
-      console.log(res);
-      setUserData(res.data);
-      
-    })
-    .catch((err) => {
-      console.log(err);
-    });
-};
+  useEffect(() => {
+    fetchUserData();
+  }, []);
 
-const logout = () => {
-  axios.post("http://localhost:5500/api/logout").then((res) => {
-    console.log(res.data);
-    if (res.data.redirect === "/home") {
-      window.location = "/home";
-    }
-  })
-  .catch((err) => console.log(err));
-};
+  const fetchUserData = () => {
+    axios
+      .get("http://localhost:5500/api/profile")
+      .then((res) => {
+        console.log(res);
+        setUserData(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
+  const logout = () => {
+    axios
+      .post("http://localhost:5500/api/logout")
+      .then((res) => {
+        console.log(res.data);
+        if (res.data.redirect === "/home") {
+          window.location = "/home";
+        }
+      })
+      .catch((err) => console.log(err));
+  };
 
   return (
-    <div class="MyProfile">
-    
-      <h1 class = "MyProfile-title"> Your Profile Information</h1>
-      <div class = "barbertop">
-                <img src = {ace} alt = "ace lgo" id = "barberimage" />
-                <br/>
-                <br/>
-                <div id = "barber-title">
-                    <div class="firstName">Name: {userData.firstname} {userData.lastname}</div>
-                    <div class="firstName">Email: {userData.username}</div>
-                </div>
-                <br/>
-                <button class = "MyProfile-button" onClick={logout} >Sign Out</button>
-      </div >
+    <div style={styles.background}>
+      <m.Box
+        display="flex"
+        flexDirection="column"
+        justifyContent="center"
+        alignItems="center"
+        className="myProfile-basecontainer"
+        sx={{
+          width: { xl: "40%", lg: "50%", md: "60%", sm: "70%", xs: "80%" },
+          height: "60%",
+          background: "black",
+          opacity: 0.8,
+          borderRadius: "10px",
+        }}
+      >
+        <m.Box
+          display="flex"
+          flexDirection="row"
+          justifyContent="flex-start"
+          alignItems="center"
+          className="myProfile-innercontainer"
+          margin={"auto"}
+          sx={{
+            // borderRadius: "10px",
+            borderBottom: "3px solid white",
+            width: "100%",
+            height: "30%",
+            flex: "1 10px",
+            order: 0,
+          }}
+        >
+          <m.Typography
+            variant="h3"
+            sx={{
+              color: "white",
+            }}
+          >
+            Name
+          </m.Typography>
+        </m.Box>
+        <m.Box
+          display="flex"
+          flexDirection="row"
+          justifyContent="flex-start"
+          alignItems="center"
+          className="myProfile-innercontainer"
+          margin={"auto"}
+          sx={{
+            borderRadius: "10px",
+            border: "1px solid white",
+            width: "100%",
+            height: "30%",
+            flex: 1,
+            order: 1,
+          }}
+        >
+          <m.Typography
+            variant="h3"
+            sx={{
+              color: "white",
+            }}
+          >
+            User Name
+          </m.Typography>
+        </m.Box>
+        <m.Table
+          sx={{
+            display: "flex",
+            width: "100%",
+            border: "1px solid white",
+            order: 2,
+            flex: 1,
+          }}
+        >
 
-      <div class = "barber-footer">
-                    <div id = "barber-social">
-                            <a href="https://www.instagram.com">
-                        <img src= {instagramIcon} alt="Instagram Icon" id ="barber-ig"/>
-                        </a>
-                        <a href="https://www.facebook.com">
-                        <img src= {facebookIcon} alt="Instagram Icon" id ="barber-fb"/>
-                        </a>
-                        </div>
-                        <div>
-                            <p id = "barber-footerinfo"> Contact Us: 123 456789</p>
-                            <p id = "barber-footerinfo">  1049 Jefferson Blvd, West Sacramento, CA 95691 </p>
-                    </div>
-                </div>
+        </m.Table>
+      </m.Box>
     </div>
-   );
-  };
-          
+  );
+};
+
 export default MyProfile;
