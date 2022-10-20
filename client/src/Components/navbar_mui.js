@@ -212,7 +212,7 @@ function ResponsiveAppBar() {
               sx={{
                 mr: 1,
                 display: { xs: "none", md: "flex", lg: "flex" },
-                color: "white",
+//                color: "white",
                 fontFamily: "monospace",
                 fontWeight: 800,
                 letterSpacing: ".1rem",

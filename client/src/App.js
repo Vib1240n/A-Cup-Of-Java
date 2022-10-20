@@ -13,29 +13,30 @@ import Barber from "./views/barber";
 import MyProfile from "./views/MyProfile";
 import LoginPage from "./views/loginPage";
 import "./App.css";
-import instagramIcon from "./asset/images/instagramIcon.png"
-import facebookIcon from "./asset/images/facebookIcon.jpg"
+import instagramIcon from "./asset/images/instagramIcon.png";
+import facebookIcon from "./asset/images/facebookIcon.jpg";
 
 function App() {
   return (
-    <>
-      <Sidebar />
+    <div className="main">
       <Navbar_mui />
-      <Router>
-        {/* <Footer /> */}
-        <Routes>
-          <Route path="/" exact element={<Home />} />
-          <Route path="/home" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/barber" element={<Barber />} />
-          <Route path="/services" element={<Services />} />
-          <Route path="/appointment" element={<Appointment />} />
-          <Route path="/MyProfile" element={<MyProfile />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/loginPage" element={<LoginPage />} />
-        </Routes>
-      </Router>
-    </>
+      <div className="container">
+        <Router>
+          <Routes>
+            <Route path="/" exact element={<Home />} />
+            <Route path="/home" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/barber" element={<Barber />} />
+            <Route path="/services" element={<Services />} />
+            <Route path="/appointment" element={<Appointment />} />
+            <Route path="/MyProfile" element={<MyProfile />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/loginPage" element={<LoginPage />} />
+          </Routes>
+        </Router>
+      </div>
+      <Footer />
+    </div>
   );
 }
 

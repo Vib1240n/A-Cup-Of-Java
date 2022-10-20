@@ -10,7 +10,7 @@ import LoginPage from "../views/loginPage";
 
 class AppRouter extends React.Component {
   render() {
-    return (
+return (
       <BrowserRouter>
         <Routes>
           <Route path="/" component={<Home />} />

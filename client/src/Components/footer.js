@@ -6,31 +6,17 @@ export default function footer() {
     <m.Box
       sx={{
         display: "flex",
-        justifyContent: "center",
-        background: "linear-gradient(45deg, #909090 30%, #151515 70%)",
-        alignItems: "center",
-        top: "500",
-        bottom: "0",
-        bgcolor: "background.paper",
-        position: "fixed",
+        flexDirection: "column",
+        backgroundColor: "transparent",
+        backdropFilter: "blur(50px) brightness(0.7)",
+        color: "white",
+        position: "sticky",
+        bottom: 0,
+        paddingTop: "5rem",
         width: "100%",
-        height: "100px",
       }}
     >
-      <m.Card
-        sx={{
-          justifyContent: "center",
-          alignItems: "center",
-          display: "flex",
-          bgcolor: "background.paper",
-          boxShadow: 1,
-          padding: 1,
-          width: "200px",
-          height: "100px",
-        }}
-      >
-        Card
-      </m.Card>
+      this is a footer
     </m.Box>
   );
 }
