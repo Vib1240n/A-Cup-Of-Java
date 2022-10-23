@@ -6,6 +6,7 @@ import Sidebar from "./Components/sidebar_mui";
 import Footer from "./Components/footer";
 import Home from "./views/home";
 import About from "./views/about";
+import AboutUs from "./views/AboutUs";
 import Appointment from "./views/appointment";
 import Services from "./views/services";
 import Login from "./views/login";
@@ -27,6 +28,7 @@ function App() {
             <Route path="/home" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/barber" element={<Barber />} />
+            <Route path="/aboutus" element={<AboutUs />} />
             <Route path="/services" element={<Services />} />
             <Route path="/appointment" element={<Appointment />} />
             <Route path="/MyProfile" element={<MyProfile />} />

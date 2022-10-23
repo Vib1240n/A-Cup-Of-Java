@@ -4,19 +4,59 @@ import * as m from "@mui/material";
 export default function footer() {
   return (
     <m.Box
+      container
       sx={{
         display: "flex",
-        flexDirection: "column",
         backgroundColor: "transparent",
-        backdropFilter: "blur(50px) brightness(0.7)",
+        backdropFilter: "blur(80px) brightness(0.7)",
         color: "white",
-        position: "sticky",
+        position: "fixed",
         bottom: 0,
-        paddingTop: "5rem",
+        paddingTop: "7rem",
         width: "100%",
+        height: "inherit",
       }}
     >
-      this is a footer
+      <m.Grid
+        container
+        direction="row"
+        justifyContent="center"
+        alignItems="center"
+        sx={{
+          display: "flex",
+          flexDirection: "row",
+          border: "1px solid red",
+          width: "20%",
+          height: "100%",
+        }}
+      >
+        {/** 
+        TODO: Re-write footer for website
+        TODO: Add social media links
+        TODO: Add contact information
+         */}
+        <m.Typography
+          variant="h7"
+          component="a"
+          href="/"
+          sx={{
+            mr: 2,
+            display:"flex",
+            justifyContent:"flex-start",
+            fontFamily: "monospace",
+            fontWeight: 700,
+            letterSpacing: ".1rem",
+            color: "White",
+            textDecoration: "none",
+            "&:hover": {
+              color: "black",
+              backgroundColor: "White",
+            },
+          }}
+        >
+          Ace's BarberShop
+        </m.Typography>
+      </m.Grid>
     </m.Box>
   );
 }

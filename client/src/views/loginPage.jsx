@@ -173,6 +173,7 @@ export default function loginPage() {
               // padding: "20px",
               paddingLeft: "3px",
               paddingRight: "4px",
+              paddingBottom: "10px",
               "& .MuiInputBase-input": {
                 color: "white",
                 textAlign: "center",
@@ -207,12 +208,13 @@ export default function loginPage() {
             }}
           ></m.TextField>
           <m.Button
+            id="loginpage-button"
+            onClick={onSubmitLogIn}
             sx={{
               height: "10%",
               width: "40%",
               borderRadius: "10px",
               border: "2px solid white",
-              padding: "20px",
               paddingLeft: "3px",
               paddingRight: "4px",
               color: "black",
