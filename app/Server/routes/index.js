@@ -2,8 +2,11 @@ const express = require("express");
 const { session } = require("../Authentication/passportConfig");
 const router = express.Router();
 const passport = require("../Authentication/passportConfig");
-
+const dotenv = require("dotenv");
+dotenv.config({ path: "../app/Private/.env" });
+const nodemailer = require('nodemailer');
 const User = require("../model/user");
+
 const {
   giveAuthentication,
   checkAuthentication,
@@ -46,13 +49,33 @@ router.post("/logout", function (req, res, next) {
 });
 
 router.post("/appointment", checkAuthentication, async function (req, res) {
-  const { date, time, username } = req.body;
+  const { date, time, username, message } = req.body;
   const newAppointment = new Appointment({
     date,
     time,
     username,
   });
   await newAppointment.save();
+  const transporter = nodemailer.createTransport({
+    service: "gmail",
+    auth: {
+      user: "acesbarbershopappointment@gmail.com",
+      pass: process.env.emailPassApp,
+    },
+  });
+  const mailOptions = {
+    from: 'acesbarbershopappointment@gmail.com',
+    to: 'alex@s3v.us' || username,
+    subject: 'Appointments',
+    text: message, 
+  };
+  transporter.sendMail(mailOptions, function(error, info){
+    if (error) {
+      console.log(error);
+    } else {
+      console.log('Email sent: ' + info.response);
+    }
+  });
   console.log("Appointment saved");
   res.json(newAppointment);
 });
