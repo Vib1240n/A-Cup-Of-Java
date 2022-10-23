@@ -73,16 +73,18 @@ const MyProfile = () => {
         <m.Box
           display="flex"
           flexDirection="row"
-          justifyContent="flex-start"
+          justifyContent="center"
           alignItems="center"
           className="myProfile-innercontainer"
           margin={"auto"}
           sx={{
             // borderRadius: "10px",
+            // border: "1px solid red",
+            marginTop: 0,
             borderBottom: "3px solid white",
             width: "100%",
             height: "30%",
-            flex: "1 10px",
+            flex: "0 100px",
             order: 0,
           }}
         >
@@ -92,7 +94,7 @@ const MyProfile = () => {
               color: "white",
             }}
           >
-            Name
+            {name}
           </m.Typography>
         </m.Box>
         <m.Box
@@ -101,36 +103,41 @@ const MyProfile = () => {
           justifyContent="flex-start"
           alignItems="center"
           className="myProfile-innercontainer"
-          margin={"auto"}
           sx={{
-            borderRadius: "10px",
-            border: "1px solid white",
+            borderBottom: "3px solid white",
+            marginTop: 0,
             width: "100%",
-            height: "30%",
-            flex: 1,
-            order: 1,
+            height: "20%",
+            flex: "1 10px",
+            order: 0,
           }}
         >
           <m.Typography
-            variant="h3"
+            variant="h5"
             sx={{
               color: "white",
             }}
           >
-            User Name
+            {username}
           </m.Typography>
         </m.Box>
-        <m.Table
+        {/* Appointments are filled in this box*/}
+        <m.Box
+          display="flex"
+          flexDirection="column"
+          justifyContent="flex-start"
+          alignItems="center"
+          className="myProfile-innercontainer"
+          margin={"auto"}
           sx={{
-            display: "flex",
+            borderRadius: "10px",
+            marginTop: 0,
             width: "100%",
-            border: "1px solid white",
-            order: 2,
-            flex: 1,
+            height: "100%",
+            flex: "10 10px",
           }}
         >
-
-        </m.Table>
+          </m.Box>
       </m.Box>
     </div>
   );

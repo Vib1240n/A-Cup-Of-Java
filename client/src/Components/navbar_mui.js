@@ -30,7 +30,6 @@ function ResponsiveAppBar() {
   const toggleDrawer = (anchor, open) => (event) => {
     if (
       event.type === "keydown" &&
-      event.type === "click" &&
       (event.key === "Tab" || event.key === "Shift")
     ) {
       return;
@@ -84,14 +83,15 @@ function ResponsiveAppBar() {
 
   const list = (anchor) => (
     <Box
-      edge="start"
-      sx={{
-        backdropFilter: "blur(10px) brightness(0.1)",
-        color: "white",
-        height: "100vh",
-      }}
       onClick={toggleDrawer("left", false)}
+      onClose={toggleDrawer("left", false)}
       onKeyDown={toggleDrawer("left", false)}
+      sx={{
+        background: "rgba(255,255,255, 0.2)",
+        opacity:" 0.9",
+        backdropFilter: "blur(40px)",
+        height: "100%",
+      }}
     >
       <List>
         <ListItem>
@@ -193,15 +193,12 @@ function ResponsiveAppBar() {
             >
               <MenuIcon />
               <Drawer
-                // anchor={"left"}
-                sx={{
-                  background: "transparent brightness(0.2)",
-                }}
                 open={state["left"]}
                 onClick={toggleDrawer("left", false)}
                 onClose={toggleDrawer("left", false)}
+                close={state["left"]}
               >
-                {list("left")}
+                {list(`left`)}
               </Drawer>
             </Button>
             {/** Shows when screen is maximum  */}
@@ -212,7 +209,7 @@ function ResponsiveAppBar() {
               sx={{
                 mr: 1,
                 display: { xs: "none", md: "flex", lg: "flex" },
-//                color: "white",
+                //                color: "white",
                 fontFamily: "monospace",
                 fontWeight: 800,
                 letterSpacing: ".1rem",
@@ -275,7 +272,7 @@ function ResponsiveAppBar() {
                 color: "White",
                 textDecoration: "none",
                 "&:hover": {
-                  color: "black important",
+                  color: "black",
                   backgroundColor: "White",
                 },
               }}
@@ -324,8 +321,9 @@ function ResponsiveAppBar() {
             >
               Appointment
             </Button>
-            <Box sx={{ flexGrow: 0, display: { xs: "flex", md: "none" } }}>
-            </Box>
+            <Box
+              sx={{ flexGrow: 0, display: { xs: "flex", md: "none" } }}
+            ></Box>
           </Grid>
         </Toolbar>
       </Container>
