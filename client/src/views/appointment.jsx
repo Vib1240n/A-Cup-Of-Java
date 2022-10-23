@@ -21,7 +21,7 @@ export default function Appointment() {
       .get("http://localhost:5500/api/profile")
       .then((res) => {
         console.log(res);
-        setUserData(res.data.username);
+        setUserData(res.data);
       })
       .catch((err) => {
         console.log(err);
@@ -32,10 +32,12 @@ export default function Appointment() {
     console.log(date);
     console.log(JSON.stringify(time));
     console.log(userData);
+    let message = "Your appointment is set for " + date + " at " + time;
     axios.post("http://localhost:5500/api/appointment", {
       date: date,
       time: time,
-      username: userData,
+      username: userData.username,
+      message: message,
     });
   };
   const styles = {
@@ -117,7 +119,8 @@ export default function Appointment() {
               type="text"
               label="Name"
               variant="outlined"
-              placeholder="Enter your name"
+              placeholder={userData.firstname + " " + userData.lastname}
+              value={userData.firstname + " " + userData.lastname}
               required={true}
               sx={{
                 width: "inherit",
