@@ -10,7 +10,7 @@ export default function footer() {
         backgroundColor: "transparent",
         backdropFilter: "blur(80px) brightness(0.7)",
         color: "white",
-        position: "fixed",
+        position: "static",
         bottom: 0,
         paddingTop: "7rem",
         width: "100%",
@@ -40,7 +40,8 @@ export default function footer() {
           component="a"
           href="/"
           sx={{
-            mr: 2,
+            mr: 1,
+            m: 1,
             display:"flex",
             justifyContent:"flex-start",
             fontFamily: "monospace",

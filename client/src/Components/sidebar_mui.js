@@ -29,12 +29,12 @@ export default function Sidebar(props) {
   // }, [toggle, bool]);
 
   const toggleDrawer = (anchor, open) => (event) => {
-    if (
-      event.type === "keydown" &&
-      (event.key === "Tab" || event.key === "Shift")
-    ) {
-      return;
-    }
+    // if (
+    //   event.type === "keydown" &&
+    //   (event.key === "Tab" || event.key === "Shift" || event.onClose)
+    // ) {
+    //   return;
+    // }
 
     setState({ ...state, [anchor]: open });
   };
@@ -45,6 +45,7 @@ export default function Sidebar(props) {
         background: "linear-gradient(180deg, #909090 30%, #151515 70%)",
         color: "white",
         height: "100vh",
+        width: "250px",
       }}
       role="presentation"
       onClick={toggleDrawer(anchor, false)}
@@ -89,10 +90,10 @@ export default function Sidebar(props) {
         width: "1",
       }}
     >
-      {["left"].map((anchor) => (
-        <React.Fragment key={anchor}>
+      {/* {["left"].map((anchor) => (
+        <React.Fragment key={anchor}> */}
           <Button
-            onClick={toggleDrawer(anchor, true)}
+            onClick={toggleDrawer("left", true)}
             elevation={5}
             sx={{
               mr: 2,
@@ -102,25 +103,26 @@ export default function Sidebar(props) {
               fontWeight: 700,
               color: "inherit",
               position: "absolute",
-              zIndex: "5000",
+              zIndex: "50",
               top: 15,
             }}
           >
             <MenuIcon
               sx={{
-                display: "inline-block",
+                display: "flex",
               }}
             />
           </Button>
           <Drawer
-            anchor={anchor}
-            open={state[anchor]}
-            onClose={toggleDrawer(anchor, false)}
+            // anchor={anchor}
+            // open={state[anchor]}
+            onClick={toggleDrawer("left", false)}
+            onClose={toggleDrawer("left", false)}
           >
-            {list(anchor)}
+            {list("left")}
           </Drawer>
-        </React.Fragment>
-      ))}
+        {/* </React.Fragment> */}
+      {/* ))} */}
     </div>
   );
 }

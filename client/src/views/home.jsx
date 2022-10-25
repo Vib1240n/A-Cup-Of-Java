@@ -1,88 +1,161 @@
 import React from "react";
-import * as mui from "@mui/material";
+import { useRef } from "react";
+import * as m from "@mui/material";
 //import "../asset/css/style.css";
 import { useNavigate } from "react-router-dom";
-import Appointment from "./appointment";
-import InstagramIcon from "../asset/images/Instagram-Icon.png";
-import Facebookicon from "../asset/images/facebookiconcolor1.png";
 import Background from "../asset/images/BarbershopBackground.png";
+import servicesbg from "../asset/images/servicesbackground.jpg";
 
 function Home() {
   const [open, setOpen] = React.useState(false);
+  const ref = useRef(null);
   let navigate = useNavigate();
+
   const handleChange = () => {
     navigate("/appointment");
   };
-  return (
-    <mui.Box
-      sx={{
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "center",
-        height: "100vh",
-        width: "100vw",
-        backgroundImage: `url(${Background})`,
-        backgroundPosition: "center",
-        backgroundSize: "cover",
-        backgroundRepeat: "no-repeat",
-        backgroundBlendMode: "overlay",
-      }}
-    >
-      <mui.Box
-        sx={{
-          top: "0",
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          justifyContent: "center",
-          height: "100%",
-          width: "100%",
-          position: "static",
-          background: "rgba(0,0,0,0.5)",
-          backdropFilter: "blur(10px) brightness(0.9)",
-        }}
+
+  const styles = {
+    background: {
+      background: `url(${Background})`,
+      position: "fixed",
+      backgroundRepeat: "no-repeat",
+      backgroundSize: "cover",
+      backgroundPosition: "center",
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+      height: "100vh",
+      width: "100vw",
+      zIndex: "-1",
+    },
+    listItem: {
+      display: "flex",
+      backgroundColor: "transparent",
+      backdropFilter: "blur(20px) brightness(0.2)",
+      justifyContent: "center",
+      alignItems: "center",
+      flexDirection: "column",
+      height: "100vh",
+      width: "100vw",
+      top: "0",
+    },
+    listItemBox: {
+      background: "rgba(255, 255, 255, 0.1)",
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+      flexDirection: "row",
+      height: "100vh",
+      width: "100vw",
+      top: "0",
+      marginBottom: "0",
+    },
+    servicesBackground: {
+      background: `url(${servicesbg})`,
+      borderRadius: "20px",
+      backgroundRepeat: "no-repeat",
+      backgroundSize: "cover",
+      backgroundPosition: "top",
+      display: "flex",
+      flexDirection: "column",
+      height: "100vh",
+      width: "100vw",
+      fontSize: "2rem",
+      color: "white",
+    },
+    servicesBackgroundbox: {
+      backgroundColor: "transparent",
+      backdropFilter: "blur(70px)",
+      border: "1px solid white",
+      display: "flex",
+      justifyContent: "flex-start",
+      alignItems: "center",
+      flexDirection: "row",
+      height: "75%",
+      width: "100%",
+      borderRadius: "10px",
+    },
+    Typography: {
+      fontFamily: "Roboto",
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+      flexDirection: "column",
+      marginTop: "55px",
+      margin: "auto",
+      fontSize: {
+        xl: "5rem",
+        lg: "3rem",
+        md: "2rem",
+        sm: "1.5rem",
+        xs: "1.5rem",
+      },
+      color: "white",
+    },
+    gridLayout: {
+      display: "flex",
+      justifyContent: "flex-start",
+      alignItems: "center",
+      flexDirection: "column",
+      height: "90%",
+      width: "100%",
+    },
+  };
+
+  const list = () => (
+    <m.List>
+      <m.ListItem id="home" style={styles.listItem} className="listItem">
+        <m.Box style={styles.listItemBox} className="listItemBox">
+          <m.Typography style={styles.Typography} className="Typography">
+            Welcome to Ace's Barbershop
+          </m.Typography>
+        </m.Box>
+      </m.ListItem>
+      <m.ListItem
+        id="services-view"
+        style={styles.listItem}
+        className="listItem"
       >
-        <mui.Typography
-          variant="h1"
-          sx={{
-            color: "white",
-            fontFamily: "comic sans ms",
-            fontWeight: "bold",
-            fontSize: "5rem",
-            textAlign: "center",
-          }}
-        >
-          A Cut Above the Rest
-        </mui.Typography>
-        <mui.Button
-          variant="contained"
-          href="/LoginPage"
-          sx={{
-            backgroundColor: "#000000",
-            backdropFilter: "blur(10px)",
-            color: "#ffffff",
-            width: "200px",
-            height: "50px",
-            fontSize: "10px",
-            fontWeight: "bold",
-            borderRadius: "10px",
-            marginTop: "20px",
-            position: "sticky",
-            top: "195px",
-            "&:hover": {
-              backgroundColor: "white",
-              color: "black",
-              backdropFilter: "blur(10px)",
-              padding: "10px",
-              shadow: "10px",
-            },
-          }}
-        >
-          login
-        </mui.Button>
-      </mui.Box>
-    </mui.Box>
+        <m.Box style={styles.servicesBackground} className="servicesBackground">
+          <m.Typography style={styles.Typography}>Services</m.Typography>
+          <m.Box
+            style={styles.servicesBackgroundbox}
+            className="servicesBackgroundbox"
+          >
+            <m.Box
+              sx={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                flexDirection: "column",
+                height: "60%",
+                width: "50%",
+                margin: "auto",
+                border: "1px solid white",
+                backgroundColor: "rgba(255, 0, 0)",
+              }}
+            ></m.Box>
+          </m.Box>
+        </m.Box>
+      </m.ListItem>
+      <m.ListItem ref={ref} id="Barber-information" style={styles.listItem}>
+        <m.Box style={styles.listItemBox}>Barbers</m.Box>
+      </m.ListItem>
+      <m.ListItem ref={ref} id="contact-infomration" style={styles.listItem}>
+        <m.Box style={styles.listItemBox}>Contact Us</m.Box>
+      </m.ListItem>
+      <m.ListItem id="about-us" style={styles.listItem}>
+        <m.Box style={styles.listItemBox}>About Us</m.Box>
+      </m.ListItem>
+    </m.List>
+  );
+
+  return (
+    <div id="base-page">
+      <img style={styles.background} id="base-page"></img>
+      <m.Box>{list()}</m.Box>
+    </div>
   );
 }
 
