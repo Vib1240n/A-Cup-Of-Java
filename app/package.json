@@ -4,7 +4,7 @@
   "description": "CSC-190/191 Project Repository",
   "main": "./Server/routes/index.js",
   "scripts": {
-    "start": "node ./Server/server.js",
+    "start": "concurrently \"cd ../client && npm run build\" \"node ./Server/server.js\"",
     "devStart": "nodemon ./Server/server.js",
     "react": "npm start --prefix client",
     "dev": "concurrently \"cd ../client && npm run build\" \"npm run start\" "

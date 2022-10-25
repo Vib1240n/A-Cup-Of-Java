@@ -2,7 +2,6 @@ import "./App.css";
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar_mui from "./Components/navbar_mui";
-import Sidebar from "./Components/sidebar_mui";
 import Footer from "./Components/footer";
 import Home from "./views/home";
 import About from "./views/about";
@@ -36,8 +35,8 @@ function App() {
             <Route path="/loginPage" element={<LoginPage />} />
           </Routes>
         </Router>
+        <Footer />
       </div>
-      <Footer />
     </div>
   );
 }
