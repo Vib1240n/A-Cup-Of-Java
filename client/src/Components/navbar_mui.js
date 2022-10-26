@@ -1,18 +1,13 @@
 import * as React from "react";
-import { link, animateScroll as scroll } from "react-scroll";
-import { useNavigate } from "react-router-dom";
+import axios from "axios";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Drawer from "@mui/material/Drawer";
 import Toolbar from "@mui/material/Toolbar";
-import IconButton from "@mui/material/IconButton";
-import Typography from "@mui/material/Typography";
 import Menu from "@mui/material/Menu";
 import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
-import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
-import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import { List, ListItem, ListItemButton, ListItemText } from "@mui/material";
 import AppRegistrationIcon from "@mui/icons-material/AppRegistration";
@@ -24,48 +19,54 @@ import ContactPhoneOutlinedIcon from "@mui/icons-material/ContactPhoneOutlined";
 import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
 import { Grid } from "@mui/material";
 
-const settings = ["Profile", "Sign Out", "Appointments"];
-function ResponsiveAppBar() {
-  const [loggedIn, setLoggedIn] = React.useState(false);
-  const [show, setShow] = React.useState(false);
-  const userSetting = () => {
-    return (
-      <Box sx={{ flexGrow: 0 }}>
-        <Tooltip title="Profile Settings">
-          <IconButton sx={{ p: 0 }}>
-            <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
-          </IconButton>
-        </Tooltip>
 
-        <Menu
-          sx={{ mt: "45px" }}
-          id="menu-appbar"
-          anchorOrigin={{
-            vertical: "top",
-            horizontal: "right",
-          }}
-          keepMounted
-          transformOrigin={{
-            vertical: "top",
-            horizontal: "right",
-          }}
-        >
-          {settings.map((setting) => (
-            <MenuItem
-              key={setting}
-              component="Link"
-              onClick={(setting) => {
-                if (setting === "Profile") {
-                  useNavigate("/home");
-                }
-              }}
-            >
-              <Typography textAlign="center">{setting}</Typography>
-            </MenuItem>
-          ))}
-        </Menu>
-      </Box>
-    );
+//fix navigation and implement logout login function with navvbar and drawer
+
+function ResponsiveAppBar() {
+  const [show, setShow] = React.useState(false);
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const [isVisible, setIsVisible] = React.useState(false);
+  // let navigate = useNavigate();
+
+  React.useEffect(() => {
+    isLoggedIn();
+  }, []);
+
+  const open = Boolean(anchorEl);
+  const handleClickSetting = (event) => {
+    if (isVisible) {
+      setAnchorEl(event.currentTarget);
+    }
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
+  const isLoggedIn = () => {
+    axios
+      .get("http://localhost:5500/api/profile")
+      .then((res) => {
+        console.log("Is user logged in status: " + res.status);
+        console.log(res.data);
+        if (res.status === 200) {
+          setIsVisible(true);
+        }
+      })
+      .catch((err) => {
+        console.log("err" + err);
+        setIsVisible(false);
+      });
+  };
+
+  const logout = () => {
+    axios
+      .post("http://localhost:5500/api/logout")
+      .then((res) => {
+        if (res.status === 200) {
+          window.location = "/";
+        }
+      })
+      .catch((err) => console.log(err));
   };
 
   const list = () => (
@@ -81,15 +82,18 @@ function ResponsiveAppBar() {
       <List>
         <ListItem>
           <ListItemButton
-            onClick={(e) => {
-              if (window.location.pathname === "/") {
+            onClick={() => {
+              if (
+                window.location.href === "/" ||
+                window.location.href === "/home"
+              ) {
                 const anchor = document.querySelector("#home");
                 anchor.scrollIntoView({
                   behavior: "smooth",
                   block: "center",
                 });
               } else {
-                navigate("/");
+                window.location.assign("/");
               }
             }}
           >
@@ -130,14 +134,17 @@ function ResponsiveAppBar() {
         <ListItem>
           <ListItemButton
             onClick={() => {
-              if (window.location.pathname === "/") {
-                const anchor = document.querySelector("#services-view");
+              if (
+                window.location.href === "/" ||
+                window.location.href === "/home"
+              ) {
+                const anchor = document.querySelector(e);
                 anchor.scrollIntoView({
                   behavior: "smooth",
                   block: "center",
                 });
               } else {
-                navigate("/");
+                window.location.assign("/");
               }
             }}
           >
@@ -154,14 +161,17 @@ function ResponsiveAppBar() {
         <ListItem>
           <ListItemButton
             onClick={() => {
-              if (window.location.pathname === "/") {
-                const anchor = document.querySelector("#contact-infomration");
+              if (
+                window.location.href === "/" ||
+                window.location.href === "/home"
+              ) {
+                const anchor = document.querySelector(e);
                 anchor.scrollIntoView({
                   behavior: "smooth",
                   block: "center",
                 });
               } else {
-                navigate("/");
+                window.location.assign("/");
               }
             }}
           >
@@ -178,14 +188,17 @@ function ResponsiveAppBar() {
         <ListItem>
           <ListItemButton
             onClick={() => {
-              if (window.location.pathname === "/") {
-                const anchor = document.querySelector("#about-us");
+              if (
+                window.location.href === "/" ||
+                window.location.href === "/home"
+              ) {
+                const anchor = document.querySelector(e);
                 anchor.scrollIntoView({
                   behavior: "smooth",
                   block: "center",
                 });
               } else {
-                navigate("/");
+                window.location.assign("/");
               }
             }}
           >
@@ -202,20 +215,6 @@ function ResponsiveAppBar() {
       </List>
     </Box>
   );
-  const navigate = (page) => {
-    window.location.href = page;
-  };
-
-  const checkLogin = () => {
-    setLoggedIn(true);
-  };
-
-  const handleEvent = (event) => {
-    console.log(event);
-    if (event === "Profile") {
-      navigate("/loginPage");
-    }
-  };
 
   return (
     <AppBar
@@ -260,7 +259,6 @@ function ResponsiveAppBar() {
               onClick={(e) => {
                 setShow(!show);
               }}
-              // onChange={toggleDrawer("left", false)}
             >
               <MenuIcon />
               <Drawer
@@ -277,14 +275,17 @@ function ResponsiveAppBar() {
               variant="h5"
               component="a"
               onClick={() => {
-                if (window.location.pathname === "/") {
+                if (
+                  window.location.href === "/" ||
+                  window.location.href === "/home"
+                ) {
                   const anchor = document.querySelector("#home");
                   anchor.scrollIntoView({
                     behavior: "smooth",
                     block: "center",
                   });
                 } else {
-                  navigate("/");
+                  window.location.assign("/");
                 }
               }}
               sx={{
@@ -310,14 +311,17 @@ function ResponsiveAppBar() {
               variant="h7"
               component="a"
               onClick={() => {
-                if (window.location.pathname === "/") {
+                if (
+                  window.location.href === "/" ||
+                  window.location.href === "/home"
+                ) {
                   const anchor = document.querySelector("#home");
                   anchor.scrollIntoView({
                     behavior: "smooth",
                     block: "center",
                   });
                 } else {
-                  navigate("/");
+                  window.location.assign("/");
                 }
               }}
               sx={{
@@ -353,22 +357,12 @@ function ResponsiveAppBar() {
               variant="h7"
               component="a"
               onClick={() => {
-                if (window.location.pathname === "/") {
-                  const anchor = document.querySelector("#services-view");
-                  anchor.scrollIntoView({
-                    behavior: "smooth",
-                    block: "center",
-                  });
-                } else {
-                  navigate("/#services-view");
-                  const anchor = document.querySelector("#services-view");
-                  anchor.scrollIntoView({
-                    behavior: "smooth",
-                    block: "center",
-                  });
-                }
+                const anchor = document.querySelector("#services-view");
+                anchor.scrollIntoView({
+                  behavior: "smooth",
+                  block: "center",
+                });
               }}
-              // href="#services"
               sx={{
                 mr: 2,
                 display: { xs: "none", md: "flex" },
@@ -439,11 +433,45 @@ function ResponsiveAppBar() {
             >
               About Us
             </Button>
-            <Box>
-              <Menu>
-                <Tooltip>{userSetting()}</Tooltip>
-              </Menu>
-            </Box>
+            <Button
+              id="basic-button"
+              aria-controls={open ? "basic-menu" : undefined}
+              aria-haspopup="true"
+              aria-expanded={open ? "true" : undefined}
+              onClick={handleClickSetting}
+              disabled={open}
+              variant="h7"
+              component="a"
+              sx={{
+                mr: 2,
+                display: { xs: "none", md: "flex" },
+                fontFamily: "monospace",
+                fontWeight: 700,
+                letterSpacing: ".1rem",
+                color: "White",
+                textDecoration: "none",
+                "&:hover": {
+                  color: "black !important",
+                  backgroundColor: "White",
+                },
+              }}
+            >
+              Dashboard
+            </Button>
+            <Menu
+              id="basic-menu"
+              anchorEl={anchorEl}
+              open={open}
+              onClose={handleClose}
+              MenuListProps={{
+                "aria-labelledby": "basic-button",
+              }}
+            >
+              <MenuItem
+              onClick={handleClose}>Profile</MenuItem>
+              <MenuItem>My account</MenuItem>
+              <MenuItem>Logout</MenuItem>
+            </Menu>
           </Grid>
         </Toolbar>
       </Container>

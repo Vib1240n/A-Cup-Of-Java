@@ -43,13 +43,14 @@ router.get("/profile", function (req, res) {
 });
 
 router.post("/logout", function (req, res, next) {
-  req.logout(function (err) {
-    if (err) {
-      return next(err);
-    }
-    var redir = { redirect: "/home" };
-    return res.json(redir);
-  });
+  if (req.isAuthenticated()) {
+    req.logout(function (err) {
+      if (err) {
+        return next(err);
+      }
+      return res.status(200).json({ message: "Logged out" });
+    });
+  }
 });
 
 router.post("/appointment", async function (req, res) {
@@ -83,7 +84,7 @@ router.post("/appointment", async function (req, res) {
     });
     console.log("Appointment saved");
     res.json(newAppointment);
-  }else {
+  } else {
     res.status(404).json({ redirect: "/home" });
   }
 });
