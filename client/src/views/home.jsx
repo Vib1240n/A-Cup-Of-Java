@@ -139,7 +139,7 @@ function Home() {
           </m.Box>
         </m.Box>
       </m.ListItem>
-      <m.ListItem ref={ref} id="Barber-information" style={styles.listItem}>
+      <m.ListItem ref={ref} id="barber-information" style={styles.listItem}>
         <m.Box style={styles.listItemBox}>Barbers</m.Box>
       </m.ListItem>
       <m.ListItem ref={ref} id="contact-infomration" style={styles.listItem}>
