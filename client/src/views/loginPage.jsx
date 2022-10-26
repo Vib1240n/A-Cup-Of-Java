@@ -1,6 +1,7 @@
 import React from "react";
 import * as m from "@mui/material";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 import background from "../asset/images/background_cornerLong.jpg";
 import Alert from "@mui/material/Alert";
 
@@ -11,11 +12,53 @@ export default function loginPage() {
   /* 
   On change events for the login page & signup page
   */
-  const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
-  const [firstName, setFirstName] = React.useState("");
-  const [lastName, setLastName] = React.useState("");
   const [username, setUsername] = React.useState("");
+  let navigate = useNavigate();
+
+  const handleChange = (prop) => {
+    navigate(prop);
+  };
+
+  const isLoggedIn = () => {
+    axios
+      .get("http://localhost:5500/api/profile")
+      .then((res) => {
+        console.log("Is user logged in status: " + res.status);
+        console.log(res.data);
+        if (res.status === 200) {
+          handleChange("/MyProfile");
+        }
+      })
+      .catch((err) => {
+        console.log("err" + err);
+      });
+  };
+
+  /*  
+  on Submit function for the login page  
+  */
+  const onSubmitLogIn = (e) => {
+    e.preventDefault();
+    const user = {
+      username: username,
+      password: password,
+    };
+    axios
+      .post("http://localhost:5500/api/login", user)
+      .then((res) => {
+        console.log(res.data);
+        if (res.data.redirect === "/MyProfile") {
+          window.location = "/MyProfile";
+        } else {
+          window.location = "/home";
+        }
+      })
+      .catch((err) => {
+        <Alert severity="error">This is an error alert — check it out!</Alert>;
+        return err;
+      });
+  };
 
   /* default styles */
   const styles = {
@@ -87,20 +130,6 @@ export default function loginPage() {
     },
   };
 
-  const isLoggedIn = () => {
-    axios
-      .get("http://localhost:5500/api/profile")
-      .then((res) => {
-        console.log("Is user logged in status: " + res.status);
-        if (res.status === 200) {
-          window.Location = "/home";
-        }
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  };
-
   const logPage = () => {
     return (
       <m.Stack
@@ -136,9 +165,7 @@ export default function loginPage() {
         ></m.TextField>
         <m.Button
           id="loginpage-button"
-          onClick={() => {
-            onSubmitLogIn;
-          }}
+          onClick={onSubmitLogIn}
           sx={styles.button}
         >
           <m.Typography
@@ -155,31 +182,6 @@ export default function loginPage() {
         </m.Button>
       </m.Stack>
     );
-  };
-
-  /*  
-  on Submit function for the login page  
-  */
-  const onSubmitLogIn = (e) => {
-    e.preventDefault();
-    const user = {
-      username: username,
-      password: password,
-    };
-    axios
-      .post("http://localhost:5500/api/login", user)
-      .then((res) => {
-        console.log(res.data);
-        if (res.data.redirect === "/MyProfile") {
-          window.location = "/MyProfile";
-        } else {
-          window.location = "/home";
-        }
-      })
-      .catch((err) => {
-        <Alert severity="error">This is an error alert — check it out!</Alert>;
-        return err;
-      });
   };
 
   /*
