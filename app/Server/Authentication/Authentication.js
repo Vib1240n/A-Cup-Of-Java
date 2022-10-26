@@ -3,18 +3,21 @@
    giveAuthentication function gives authentication once user is signed in
 */
 
+
+
 module.exports = {
   checkAuthentication: function (req, res, next) {
-    if (req.user) {
-      return next();
+    if (req.isAuthenticated()) {
+      res.statusText = "Authenticated";
+      return res.redirect("/MyProfile");
+    } else {
+      res.redirect("/login");
     }
-    req.flash("error_message", "User must be logged in");
-    res.redirect("/login");
   },
   giveAuthentication: function (req, res, next) {
     if (!req.user) {
       return next();
     }
-    res.redircect("/home_page");
+    res.redircect("/home");
   },
 };

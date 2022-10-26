@@ -72,11 +72,9 @@ function ResponsiveAppBar() {
     <Box
       className="sidebar"
       sx={{
-        background: "transparent",
+        backgroundColor: "transparent",
         opacity: " 0.9",
-        backdropFilter: "blur(40px)",
         height: "100%",
-        border: "3px solid red",
       }}
       zIndex="-1"
     >
@@ -141,7 +139,6 @@ function ResponsiveAppBar() {
               } else {
                 navigate("/");
               }
-              toggleDrawer("left", false);
             }}
           >
             <ListItemIcon>
@@ -267,15 +264,10 @@ function ResponsiveAppBar() {
             >
               <MenuIcon />
               <Drawer
-                sx={{
-                  background: "transparent",
-                  backdropFilter: "blur(40px)",
-                }}
                 open={show}
                 onClick={(e) => {
                   setShow(!show);
                 }}
-                // elevation={0}
               >
                 {list()}
               </Drawer>
@@ -398,6 +390,33 @@ function ResponsiveAppBar() {
               variant="h7"
               component="a"
               onClick={() => {
+                const anchor = document.querySelector("#barber-information");
+                anchor.scrollIntoView({
+                  behavior: "smooth",
+                  block: "center",
+                });
+              }}
+              sx={{
+                mr: 2,
+                display: { xs: "none", md: "flex" },
+                fontFamily: "monospace",
+                fontWeight: 700,
+                letterSpacing: ".1rem",
+                color: "White",
+                textDecoration: "none",
+                "&:hover": {
+                  color: "black !important",
+                  backgroundColor: "White",
+                },
+              }}
+            >
+              Barbers
+            </Button>
+            <Button
+              display={{ md: "flex", xs: "none" }}
+              variant="h7"
+              component="a"
+              onClick={() => {
                 const anchor = document.querySelector("#about-us");
                 anchor.scrollIntoView({
                   behavior: "smooth",
@@ -419,27 +438,6 @@ function ResponsiveAppBar() {
               }}
             >
               About Us
-            </Button>
-            <Button
-              display={{ md: "flex", xs: "none" }}
-              variant="h7"
-              component="a"
-              href="/appointment"
-              sx={{
-                mr: 2,
-                display: { xs: "none", md: "flex" },
-                fontFamily: "monospace",
-                fontWeight: 700,
-                letterSpacing: ".1rem",
-                color: "White",
-                textDecoration: "none",
-                "&:hover": {
-                  color: "black !important",
-                  backgroundColor: "White",
-                },
-              }}
-            >
-              Appointment
             </Button>
             <Box>
               <Menu>

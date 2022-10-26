@@ -31,7 +31,6 @@ function App() {
             <Route path="/services" element={<Services />} />
             <Route path="/appointment" element={<Appointment />} />
             <Route path="/MyProfile" element={<MyProfile />} />
-            <Route path="/login" element={<Login />} />
             <Route path="/loginPage" element={<LoginPage />} />
           </Routes>
         </Router>

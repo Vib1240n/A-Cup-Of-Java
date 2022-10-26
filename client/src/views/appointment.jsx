@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 import * as mui from "@mui/material";
 import dayjs from "dayjs";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
@@ -8,13 +9,29 @@ import { DatePicker, TimePicker } from "@mui/x-date-pickers";
 import Background from "../asset/images/ACOJ-Logo.jpg";
 
 export default function Appointment() {
+  let navigate = useNavigate();
   const [date, setDate] = React.useState(null);
   const [time, setTime] = React.useState(null);
   const [userData, setUserData] = React.useState([]);
 
   React.useEffect(() => {
-    fetchUserData();
+    isLoggedIn();
   }, []);
+
+  const isLoggedIn = () => {
+    axios
+      .get("http://localhost:5500/api/profile")
+      .then((res) => {
+        console.log("Is user logged in status: " + res.status);
+        if (res.status === 200) {
+          fetchUserData();
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+         navigate("/loginPage");
+      });
+  };
 
   const fetchUserData = () => {
     axios
@@ -29,9 +46,6 @@ export default function Appointment() {
   };
 
   const onAppointment = (e) => {
-    console.log(date);
-    console.log(JSON.stringify(time));
-    console.log(userData);
     let message = "Your appointment is set for " + date + " at " + time;
     axios.post("http://localhost:5500/api/appointment", {
       date: date,
@@ -40,6 +54,7 @@ export default function Appointment() {
       message: message,
     });
   };
+
   const styles = {
     root: {
       backgroundImage: `url(${Background})`,
@@ -53,6 +68,7 @@ export default function Appointment() {
       alignItems: "center",
     },
   };
+
   return (
     <div className="background-parent" style={styles.root}>
       <mui.Box
@@ -169,7 +185,10 @@ export default function Appointment() {
                 maxTime={dayjs("T10:00AM")}
               />
             </LocalizationProvider>
-            <mui.Button variant="contained" onClick={onAppointment} sx={{
+            <mui.Button
+              variant="contained"
+              onClick={onAppointment}
+              sx={{
                 width: "inherit",
                 height: "50px",
                 fontStyle: "italic",
@@ -178,7 +197,8 @@ export default function Appointment() {
                 display: "flex",
                 color: "white",
                 backgroundColor: "black",
-            }}>
+              }}
+            >
               Book Appointment
             </mui.Button>
           </mui.Stack>
