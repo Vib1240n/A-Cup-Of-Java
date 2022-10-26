@@ -1,5 +1,4 @@
 const express = require("express");
-const { session } = require("../Authentication/passportConfig");
 const router = express.Router();
 const passport = require("../Authentication/passportConfig");
 const dotenv = require("dotenv");
@@ -7,15 +6,12 @@ dotenv.config({ path: "../app/Private/.env" });
 const nodemailer = require("nodemailer");
 const User = require("../model/user");
 
-const {
-  giveAuthentication,
-  checkAuthentication,
-} = require("../Authentication/Authentication");
-const user = require("../model/user");
+//const user = require("../model/user");
 const Appointment = require("../model/appointment");
 
 router.post("/login", passport.authenticate("local"), (req, res, next) => {
   if (req.user) {
+      //implementing status codes: 200, 201, 302, 400, 404, 500, 504
     var redir = { redirect: "/MyProfile" };
     return res.json(redir);
   } else {

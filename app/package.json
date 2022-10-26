@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/Vib1240n/A-Cup-Of-Java#readme",
   "dependencies": {
+    "@babel/eslint-parser": "^7.19.1",
     "@emotion/react": "^11.10.4",
     "@emotion/styled": "^11.10.4",
     "@mui/material": "^5.10.8",

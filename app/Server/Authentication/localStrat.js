@@ -10,7 +10,6 @@ const localStrat = new localStrategy((username, password, done) => {
       return done(null, false);
     }
     bcrypt.compare(password, user.password, (err, result) => {
-      // if (err) throw err;
       if (result === true) {
         return done(null, user);
       } else {
