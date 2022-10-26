@@ -8,7 +8,7 @@ import About from "./views/about";
 import AboutUs from "./views/AboutUs";
 import Appointment from "./views/appointment";
 import Services from "./views/services";
-import Login from "./views/login";
+import SignUp from "./views/signUpPage";
 import Barber from "./views/barber";
 import MyProfile from "./views/MyProfile";
 import LoginPage from "./views/loginPage";
@@ -32,6 +32,7 @@ function App() {
             <Route path="/appointment" element={<Appointment />} />
             <Route path="/MyProfile" element={<MyProfile />} />
             <Route path="/loginPage" element={<LoginPage />} />
+            <Route path="/signUpPage" element={<SignUp />} />
           </Routes>
         </Router>
         <Footer />
