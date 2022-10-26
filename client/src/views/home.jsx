@@ -76,7 +76,7 @@ function Home() {
       width: "100%",
       borderRadius: "10px",
     },
-    Typography: {
+    typography: {
       fontFamily: "Roboto",
       display: "flex",
       justifyContent: "center",
@@ -107,7 +107,7 @@ function Home() {
     <m.List>
       <m.ListItem id="home" style={styles.listItem} className="listItem">
         <m.Box style={styles.listItemBox} className="listItemBox">
-          <m.Typography style={styles.Typography} className="Typography">
+            <m.Typography style={styles.typography} variant="h2" className="Typography">
             Welcome to Ace's Barbershop
           </m.Typography>
         </m.Box>
@@ -118,7 +118,7 @@ function Home() {
         className="listItem"
       >
         <m.Box style={styles.servicesBackground} className="servicesBackground">
-          <m.Typography style={styles.Typography}>Services</m.Typography>
+          <m.Typography style={styles.typography} variant="h3">Services</m.Typography>
           <m.Box
             style={styles.servicesBackgroundbox}
             className="servicesBackgroundbox"
