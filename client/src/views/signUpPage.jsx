@@ -15,7 +15,8 @@ export default function loginPage() {
   const [password, setPassword] = React.useState("");
   const [firstName, setFirstName] = React.useState("");
   const [lastName, setLastName] = React.useState("");
-  const [username, setUsername] = React.useState("");
+  const [phoneNumber, setPhoneNumber] = React.useState("");
+  const [confirmPassword, setConfirmPassword] = React.useState("");
 
   /* default styles */
   const styles = {
@@ -71,20 +72,6 @@ export default function loginPage() {
         paddingLeft: "0px",
       },
     },
-    button: {
-      height: "10%",
-      width: { xl: "40%" },
-
-      borderRadius: "10px",
-      border: "2px solid white",
-      paddingLeft: "3px",
-      paddingRight: "4px",
-      color: "black",
-      "&:hover": {
-        boxShadow: "white 0px 0px 5px 0.1rem",
-        backgroundColor: "rgba(255, 255, 255, 0.7)",
-      },
-    },
   };
 
   const isLoggedIn = () => {
@@ -93,11 +80,12 @@ export default function loginPage() {
       .then((res) => {
         console.log("Is user logged in status: " + res.status);
         if (res.status === 200) {
-          window.Location = "/home";
+          window.Location = "/MyProfile";
         }
       })
       .catch((err) => {
         console.log(err);
+        <Alert severity="error">This is an error alert — check it out!</Alert>;
       });
   };
 
@@ -110,17 +98,26 @@ export default function loginPage() {
         spacing={5}
         height="100%"
         width="100%"
-        marginTop={"10%"}
       >
         <m.TextField
           id="loginpage-username"
-          label="Username"
+          label="First Name"
           type={"text"}
           variant="standard"
-          onChange={(e) => setUsername(e.target.value)}
+          onChange={(e) => setFirstName(e.target.value)}
           required
           notched
           disableUnderline={true}
+          sx={styles.TextField}
+          inputProps={styles.inputProps}
+        ></m.TextField>
+        <m.TextField
+          id="loginpage-username"
+          label="Last Name"
+          type={"text"}
+          variant="standard"
+          onChange={(e) => setLastName(e.target.value)}
+          required
           sx={styles.TextField}
           inputProps={styles.inputProps}
         ></m.TextField>
@@ -134,12 +131,33 @@ export default function loginPage() {
           sx={styles.TextField}
           inputProps={styles.inputProps}
         ></m.TextField>
+        <m.TextField
+          id="loginpage-username"
+          label="Confirm Password"
+          type={"password"}
+          variant="standard"
+          onChange={(e) => setConfirmPassword(e.target.value)}
+          required
+          sx={styles.TextField}
+          inputProps={styles.inputProps}
+        ></m.TextField>
         <m.Button
           id="loginpage-button"
-          onClick={() => {
-            onSubmitLogIn;
+          onClick={onSubmitSignUp}
+          sx={{
+            height: "10%",
+            width: { xl: "40%" },
+
+            borderRadius: "10px",
+            border: "2px solid white",
+            paddingLeft: "3px",
+            paddingRight: "4px",
+            color: "black",
+            "&:hover": {
+              boxShadow: "white 0px 0px 5px 0.1rem",
+              backgroundColor: "rgba(255, 255, 255, 0.7)",
+            },
           }}
-          sx={styles.button}
         >
           <m.Typography
             sx={{
@@ -148,9 +166,13 @@ export default function loginPage() {
               width: "200%",
               justifyContent: "center",
               alignItems: "center",
+              "&:hover": {
+                transform: "translateX(-20%)",
+                transition: "all 0.9s ease-in",
+              },
             }}
           >
-            Login
+            Sign Up
           </m.Typography>
         </m.Button>
       </m.Stack>
@@ -160,28 +182,24 @@ export default function loginPage() {
   /*  
   on Submit function for the login page  
   */
-  const onSubmitLogIn = (e) => {
+  const onSubmitSignUp = (e) => {
     e.preventDefault();
     const user = {
-      username: username,
+      username: email,
+      firstName: firstName,
+      lastName: lastName,
       password: password,
     };
     axios
-      .post("http://localhost:5500/api/login", user)
+      .post("http://localhost:5500/api/signup", user)
       .then((res) => {
         console.log(res.data);
         if (res.data.redirect === "/MyProfile") {
           window.location = "/MyProfile";
-        } else {
-          window.location = "/home";
         }
       })
-      .catch((err) => {
-        <Alert severity="error">This is an error alert — check it out!</Alert>;
-        return err;
-      });
+      .catch((err) => console.log(err));
   };
-
   /*
   Return for the login page
   */
@@ -193,7 +211,7 @@ export default function loginPage() {
         margin={"auto"}
         overflow="revert"
         sx={{
-          height: { md: "80%", sm: "100%", lg: "50%", xs: "75%" },
+          height: { md: "80%", sm: "90%", lg: "70%", xs: "75%" },
           width: { md: "70%", sm: "100%", lg: "50%", xs: "100%" },
           backdropFilter: "blur(50px)",
           boxShadow:
@@ -202,30 +220,6 @@ export default function loginPage() {
         }}
       >
         <m.Stack>{logPage()}</m.Stack>
-        <m.Button
-          elevation={5}
-          onClick={(e) => {}}
-          sx={{
-            height: "10%",
-            width: "40%",
-            borderRadius: "10px",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            margin: "auto",
-            padding: "20px",
-            paddingLeft: "3px",
-            paddingRight: "4px",
-            color: "black",
-            border: "1px solid white",
-            "&:hover": {
-              boxShadow: "white 0px 0px 5px 0.1rem",
-              backgroundColor: "rgba(255, 255, 255, 0.7)",
-            },
-          }}
-        >
-          Dont have an account?
-        </m.Button>
       </m.Box>
     </div>
   );
