@@ -85,7 +85,6 @@ export default function loginPage() {
       })
       .catch((err) => {
         console.log(err);
-        <Alert severity="error">This is an error alert — check it out!</Alert>;
       });
   };
 

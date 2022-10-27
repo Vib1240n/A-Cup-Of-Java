@@ -46,7 +46,8 @@ export default function Appointment() {
   };
 
   const onAppointment = (e) => {
-    let message = "Your appointment is set for " + date + " at " + time;
+    // Client message if you want us it: An appointment has been scheduled for [user.firstname user.lastname]. The appointment is scheduled for  [DATE] at [TIME]. To contact the customer, please call [PHONE]. Thank you. 
+    let message = "Hello [user.firstname user.lastname], thank you for scheduling an appointment with us at Ace’s Barbershop. Your appointment is scheduled for [DATE] at [TIME]. We are located at 1049 Jefferson Blvd West Sacramento, CA 95691. For any questions please contact us at (916) 956-0670. We look forward to seeing you!";
     axios.post("http://localhost:5500/api/appointment", {
       date: date,
       time: time,
