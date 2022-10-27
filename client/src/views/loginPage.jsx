@@ -55,7 +55,6 @@ export default function loginPage() {
         }
       })
       .catch((err) => {
-        <Alert severity="error">This is an error alert — check it out!</Alert>;
         return err;
       });
   };
@@ -154,7 +153,7 @@ export default function loginPage() {
           inputProps={styles.inputProps}
         ></m.TextField>
         <m.TextField
-          id="loginpage-username"
+          id="loginpage-password"
           label="Password"
           type={"password"}
           variant="standard"
