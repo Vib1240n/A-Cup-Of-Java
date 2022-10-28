@@ -7,8 +7,8 @@ import instaIcon from "../asset/images/Instagram-Icon.png";
 import fbIcon from "../asset/images/facebookicon1.png";
 import grooming3 from "../asset/images/grooming3.png";
 import "../asset/css/style.css";
-import instagramIcon from "./instagram.png";
-import yelpIcon from "./yelp.png";
+import instagramIcon from "../asset/images/instagramIcon.png";
+import yelpIcon from "../asset/images/yelpicon.png";
 
 function About() {
   return (

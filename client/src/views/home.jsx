@@ -1,9 +1,9 @@
 import React from "react";
 import "../asset/css/style.css";
-import Appointment from "./Appointment";
+import Appointment from "./appointment";
 import Facebookicon from "../asset/images/facebookiconcolor1.png";
-import instagramIcon from "./instagram.png";
-import yelpIcon from "./yelp.png";
+import instagramIcon from "../asset/images/instagramIcon.png"
+import yelpIcon from "../asset/images/yelpicon.png";
 
 function Home() {
   return (
@@ -15,7 +15,7 @@ function Home() {
       <br />
       {/* <button class= "home-button" onClick= "./Appointment"> Book Now </button> */}
       <button class="home-button" onClick={Appointment}>
-        <a role href="/Appointment" class="home-booknow">
+        <a role href="/appointment" class="home-booknow">
           {" "}
           Book Now{" "}
         </a>
