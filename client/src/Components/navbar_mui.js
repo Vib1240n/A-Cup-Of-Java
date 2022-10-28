@@ -1,5 +1,5 @@
 import * as React from "react";
-import { useNavigation } from "react-router-dom";
+import { BrowserRouter, useNavigate } from "react-router-dom";
 import axios from "axios";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
@@ -11,6 +11,9 @@ import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
 import { List, ListItem, ListItemButton, ListItemText } from "@mui/material";
+import AccountCircleIcon from "@mui/icons-material/AccountCircle";
+import LogoutIcon from "@mui/icons-material/Logout";
+import ManageAccountsIcon from "@mui/icons-material/ManageAccounts";
 import AppRegistrationIcon from "@mui/icons-material/AppRegistration";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import LoginIcon from "@mui/icons-material/Login";
@@ -27,6 +30,11 @@ function ResponsiveAppBar() {
   const [show, setShow] = React.useState(false);
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [isVisible, setIsVisible] = React.useState(false);
+  let navigate = useNavigate();
+
+  const handleClick = (event) => {
+    navigate(event);
+  };
 
   React.useEffect(() => {
     isLoggedIn();
@@ -63,7 +71,8 @@ function ResponsiveAppBar() {
       .post("http://localhost:5500/api/logout")
       .then((res) => {
         if (res.status === 200) {
-          window.location = "/";
+          handleClick("/home");
+          setIsVisible(false);
         }
       })
       .catch((err) => console.log(err));
@@ -96,6 +105,7 @@ function ResponsiveAppBar() {
                   });
                 }, 100);
               }
+              handleClick("/home");
             }}
           >
             <ListItemIcon>
@@ -109,7 +119,11 @@ function ResponsiveAppBar() {
           </ListItemButton>
         </ListItem>
         <ListItem>
-          <ListItemButton href="/loginPage">
+          <ListItemButton
+            onClick={() => {
+              handleClick("/loginPage");
+            }}
+          >
             <ListItemIcon>
               <LoginIcon
                 sx={{
@@ -278,11 +292,14 @@ function ResponsiveAppBar() {
               variant="h5"
               component="a"
               onClick={() => {
-                const anchor = document.querySelector("#home");
-                anchor.scrollIntoView({
-                  behavior: "smooth",
-                  block: "center",
-                });
+                if (window.location.pathname === "/home") {
+                  const anchor = document.querySelector("#home");
+                  anchor.scrollIntoView({
+                    behavior: "smooth",
+                    block: "center",
+                  });
+                }
+                handleClick("/home");
               }}
               sx={{
                 mr: 1,
@@ -424,7 +441,6 @@ function ResponsiveAppBar() {
               component="a"
               onClick={() => {
                 const anchor = document.getElementById("about-us");
-                console.log(anchor);
                 if (
                   window.location.pathname === "/" ||
                   window.location.pathname === "/home"
@@ -436,6 +452,15 @@ function ResponsiveAppBar() {
                     });
                   }, 100);
                 }
+                handleClick("/home");
+                // const anchor2 = document.getElementById("about-us");
+                console.log("anchor 2: " + anchor);
+                setTimeout(() => {
+                  anchor.scrollIntoView({
+                    behavior: "smooth",
+                    block: "center",
+                  });
+                }, 10);
               }}
               sx={{
                 mr: 2,
@@ -538,9 +563,90 @@ function ResponsiveAppBar() {
                 "aria-labelledby": "basic-button",
               }}
             >
-              <MenuItem onClick={handleClose}>Profile</MenuItem>
-              <MenuItem>My account</MenuItem>
-              <MenuItem>Logout</MenuItem>
+              <MenuItem>
+                <Button
+                  variant="h76"
+                  onClick={() => {
+                    handleClick("/MyProfile");
+                  }}
+                  sx={{
+                    mr: 2,
+                    display: "flex",
+                    fontFamily: "monospace",
+                    fontWeight: 800,
+                    letterSpacing: ".1rem",
+                    justifyContent: "center",
+                    alignItems: "center",
+                  }}
+                >
+                  <AccountCircleIcon
+                    sx={{
+                      mr: 3,
+                      ml: 0,
+                      width: "30px",
+                      height: "30px",
+                      justifyContent: "flex-start",
+                    }}
+                  />
+                  Profile
+                </Button>
+              </MenuItem>
+              <MenuItem>
+                <Button
+                  variant="h76"
+                  onClick={() => {
+                    handleClick("/MyProfile");
+                  }}
+                  sx={{
+                    mr: 0,
+                    display: "flex",
+                    fontFamily: "monospace",
+                    fontWeight: 800,
+                    letterSpacing: ".1rem",
+                    justifyContent: "center",
+                    alignItems: "center",
+                  }}
+                >
+                  <ManageAccountsIcon
+                    sx={{
+                      mr: 3,
+                      ml: 0,
+                      width: "30px",
+                      height: "30px",
+                      justifyContent: "flex-start",
+                    }}
+                  />
+                  Account Settings
+                </Button>
+              </MenuItem>
+              <MenuItem>
+                <Button
+                  variant="h76"
+                  onClick={() => {
+                    logout();
+                  }}
+                  sx={{
+                    mr: 0,
+                    display: "flex",
+                    fontFamily: "monospace",
+                    fontWeight: 800,
+                    letterSpacing: ".1rem",
+                    justifyContent: "center",
+                    alignItems: "center",
+                  }}
+                >
+                  <LogoutIcon
+                    sx={{
+                      mr: 3,
+                      ml: 0,
+                      width: "30px",
+                      height: "30px",
+                      justifyContent: "flex-start",
+                    }}
+                  />
+                  Logout
+                </Button>
+              </MenuItem>
             </Menu>
           </Grid>
         </Toolbar>

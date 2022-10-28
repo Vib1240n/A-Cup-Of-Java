@@ -17,9 +17,9 @@ import "./App.css";
 function App() {
   return (
     <div className="main">
-      <Navbar_mui />
-      <div className="container">
-        <Router>
+      <Router>
+        <Navbar_mui />
+        <div className="container">
           <Routes>
             <Route path="/" exact element={<Home />} />
             <Route path="/home" element={<Home />} />
@@ -32,9 +32,9 @@ function App() {
             <Route path="/loginPage" element={<LoginPage />} />
             <Route path="/signUpPage" element={<SignUp />} />
           </Routes>
-        </Router>
-        <Footer />
-      </div>
+        </div>
+      </Router>
+      <Footer />
     </div>
   );
 }
