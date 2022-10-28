@@ -1,7 +1,7 @@
 import React from "react";
 import "../asset/css/appointment.css";
-import instagramIcon from "./instagram.png";
-import yelpIcon from "./yelp.png";
+import instagramIcon from "../asset/images/instagramIcon.png";
+import yelpIcon from "../asset/images/yelpicon.png";
 
 export default function Appointment() {
   return (
