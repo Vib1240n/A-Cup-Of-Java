@@ -21,15 +21,18 @@ export default function loginPage() {
     const [confirmPassword, setConfirmPassword] = React.useState("");
     const [errorMessage, setErrormessage] = React.useState(false);
     const [errorEmail, setErrorEmail] = React.useState(false);
+    const [errorInput, setErrorInput] = React.useState(false);
 
     /* Error message*/
-    const errorBox = errorMessage ? <Alert severity="error" variant="filled">Please check passwords</Alert> : <Alert severity="success">Signed Up!</Alert>;
+    const errorBox = errorMessage ? <Alert severity="error" variant="filled">Please check passwords</Alert> : "";
 
     const errorEmailBox = errorEmail ? <Alert severity="error" variant="filled">Email is incorrect</Alert> : "";
 
+    const errorInputBox = errorInput ? <Alert severity="error" variant="filled">Please fill in all fields</Alert> : "";
+
     const isValidEmail = (_prop) => {
         console.log(_prop);
-        _prop=_prop.toString();
+        _prop = _prop.toString();
         console.log(_prop);
         if (!_prop) {
             setErrorEmail(true);
@@ -58,7 +61,7 @@ export default function loginPage() {
             color: "white",
             height: "10%",
             width: {xl: "40%"},
-            fontSize: "1.5rem",
+            fontSize: {xl: "1.5rem", xs: "0.5rem"},
             borderRadius: "10px",
             paddingLeft: "3px",
             paddingRight: "4px",
@@ -69,7 +72,7 @@ export default function loginPage() {
             },
             "& .MuiInputLabel-root": {
                 color: "white",
-                fontSize: "1.5rem",
+                fontSize: {xl: "1.5rem"},
             },
             "& .MuiInputLabel-root.Mui-focused": {
                 color: "green",
@@ -112,114 +115,107 @@ export default function loginPage() {
 
     const logPage = () => {
         return (
-            <m.Stack
-                direction="column"
-                justifyContent="center"
-                alignItems="center"
-                spacing={7}
-                height="100%"
-                width="100%"
+          <m.Stack
+            direction="column"
+            justifyContent="center"
+            alignItems="center"
+            spacing={{ xl: 3, xs: 1 }}
+            height="100%"
+            width="100%"
+          >
+            <m.TextField
+              id="loginpage-username"
+              label="First Name"
+              type={"text"}
+              variant="standard"
+              onChange={(e) => setFirstName(e.target.value)}
+              required
+              notched
+              disableUnderline={true}
+              sx={styles.TextField}
+              inputProps={styles.inputProps}
+            ></m.TextField>
+            <m.TextField
+              id="loginpage-username"
+              label="Last Name"
+              type={"text"}
+              variant="standard"
+              onChange={(e) => setLastName(e.target.value)}
+              required
+              sx={styles.TextField}
+              inputProps={styles.inputProps}
+            ></m.TextField>
+            <m.TextField
+              id="loginpage-username"
+              label="Email"
+              type={"email"}
+              variant="standard"
+              onChange={(e) => setEmail(e.target.value.toString())}
+              required
+              sx={styles.TextField}
+              inputProps={styles.inputProps}
+            ></m.TextField>
+            <m.TextField
+              id="loginpage-username"
+              label="Phone Number"
+              type={"number"}
+              variant="standard"
+              onChange={(e) => setPhoneNumber(e.target.value)}
+              required
+              sx={styles.TextField}
+              inputProps={styles.inputProps}
+            ></m.TextField>
+            <m.TextField
+              id="loginpage-username"
+              label="Password"
+              type={"password"}
+              variant="standard"
+              onChange={(e) => setPassword(e.target.value)}
+              required
+              sx={styles.TextField}
+              inputProps={styles.inputProps}
+            ></m.TextField>
+            <m.TextField
+              id="loginpage-username"
+              label="Confirm Password"
+              type={"password"}
+              variant="standard"
+              onChange={(e) => setConfirmPassword(e.target.value)}
+              required
+              sx={styles.TextField}
+              inputProps={styles.inputProps}
+            ></m.TextField>
+
+            <m.Button
+              id="loginpage-button"
+              onClick={onSubmitSignUp && isValidEmail}
+              sx={{
+                height: "10%",
+                width: { xl: "40%", xs: "70%" },
+                borderRadius: "10px",
+                paddingLeft: "3px",
+                paddingRight: "4px",
+                color: "black",
+                "&:hover": {
+                  boxShadow: "white 0px 0px 5px 0.1rem",
+                  backgroundColor: "rgba(255, 255, 255, 0.7)",
+                },
+              }}
             >
-                <m.TextField
-                    id="loginpage-username"
-                    label="First Name"
-                    type={"text"}
-                    variant="standard"
-                    onChange={(e) => setFirstName(e.target.value)}
-                    required
-                    notched
-                    disableUnderline={true}
-                    sx={styles.TextField}
-                    inputProps={styles.inputProps}
-                ></m.TextField>
-                <m.TextField
-                    id="loginpage-username"
-                    label="Last Name"
-                    type={"text"}
-                    variant="standard"
-                    onChange={(e) => setLastName(e.target.value)}
-                    required
-                    sx={styles.TextField}
-                    inputProps={styles.inputProps}
-                ></m.TextField>
-                <m.TextField
-                    id="loginpage-username"
-                    label="Email"
-                    type={"email"}
-                    variant="standard"
-                    onChange={(e) => setEmail(e.target.value.toString())}
-                    required
-                    sx={styles.TextField}
-                    inputProps={styles.inputProps}
-                ></m.TextField>
-                <m.TextField
-                    id="loginpage-username"
-                    label="Phone Number"
-                    type={"number"}
-                    variant="standard"
-                    onChange={(e) => setPhoneNumber(e.target.value)}
-                    required
-                    sx={styles.TextField}
-                    inputProps={styles.inputProps}
-                ></m.TextField>
-                <m.TextField
-                    id="loginpage-username"
-                    label="Password"
-                    type={"password"}
-                    variant="standard"
-                    onChange={(e) => setPassword(e.target.value)}
-                    required
-                    sx={styles.TextField}
-                    inputProps={styles.inputProps}
-                ></m.TextField>
-                <m.TextField
-                    id="loginpage-username"
-                    label="Confirm Password"
-                    type={"password"}
-                    variant="standard"
-                    onChange={(e) => setConfirmPassword(e.target.value)}
-                    required
-                    sx={styles.TextField}
-                    inputProps={styles.inputProps}
-                ></m.TextField>
-
-                <m.Button
-                    id="loginpage-button"
-                    onClick={onSubmitSignUp && isValidEmail}
-                    sx={{
-                        height: "10%",
-                        width: {xl: "40%"},
-
-                        borderRadius: "10px",
-                        border: "2px solid white",
-                        paddingLeft: "3px",
-                        paddingRight: "4px",
-                        color: "black",
-                        "&:hover": {
-                            boxShadow: "white 0px 0px 5px 0.1rem",
-                            backgroundColor: "rgba(255, 255, 255, 0.7)",
-                        },
-                    }}
-                >
-                    <m.Typography
-                        sx={{
-                            fontSize: "1.5rem",
-                            height: "auto",
-                            width: "200%",
-                            justifyContent: "center",
-                            alignItems: "center",
-                            "&:hover": {
-                                transform: "translateX(-20%)",
-                                transition: "all 0.9s ease-in",
-                            },
-                        }}
-                    >
-                        Sign Up
-                    </m.Typography>
-                </m.Button>
-                {errorEmailBox}
-                {errorBox}
-            </m.Stack>
+              <m.Typography
+                sx={{
+                  fontSize: "1.5rem",
+                  height: "auto",
+                  width: "200%",
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
+              >
+                Sign Up
+              </m.Typography>
+            </m.Button>
+            {errorBox}
+          </m.Stack>
         );
     };
 
