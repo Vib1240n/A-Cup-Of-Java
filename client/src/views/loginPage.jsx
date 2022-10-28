@@ -160,8 +160,6 @@ export default function loginPage() {
           variant="standard"
           onChange={(e) => setUsername(e.target.value)}
           required
-          notched
-          disableUnderline={true}
           sx={styles.TextField}
           inputProps={styles.inputProps}
         ></m.TextField>
