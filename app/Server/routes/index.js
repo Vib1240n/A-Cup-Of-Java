@@ -11,7 +11,7 @@ const Appointment = require("../model/appointment");
 
 router.post("/login", passport.authenticate("local"), (req, res, next) => {
   if (req.user) {
-      //implementing status codes: 200, 201, 302, 400, 404, 500, 504
+    //implementing status codes: 200, 201, 302, 400, 404, 500, 504
     var redir = { redirect: "/MyProfile" };
     return res.json(redir);
   } else {
@@ -57,7 +57,9 @@ router.post("/appointment", async function (req, res) {
       time,
       username,
     });
-    await newAppointment.save();
+    await newAppointment
+      .save()
+      .then(res.status(201).json({ message: "Appointment created" }));
     const transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
@@ -78,10 +80,8 @@ router.post("/appointment", async function (req, res) {
         console.log("Email sent: " + info.response);
       }
     });
-    console.log("Appointment saved");
-    res.json(newAppointment);
   } else {
-    res.status(404).json({ redirect: "/home" });
+    res.status(504).json({ message: "Email not sent" });
   }
 });
 
