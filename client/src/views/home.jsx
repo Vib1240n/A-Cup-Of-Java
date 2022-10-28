@@ -158,7 +158,7 @@ function Home() {
             <m.ListItem ref={ref} id="barber-information" style={styles.listItem}>
                 <m.Box style={styles.listItemBox}>Barbers</m.Box>
             </m.ListItem>
-            <m.ListItem ref={ref} id="contact-infomration" style={styles.listItem}>
+            <m.ListItem ref={ref} id="contact-information" style={styles.listItem}>
                 <m.Box style={styles.listItemBox}>{contactInfo()}</m.Box>
             </m.ListItem>
             <m.ListItem id="about-us" style={styles.listItem}>
