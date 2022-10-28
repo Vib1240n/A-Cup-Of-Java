@@ -25,7 +25,7 @@ export default function loginPage() {
     ""
   );
   const successBox = successMessage ? (
-    <Alert severity="error">Incorrect Password or Email</Alert>
+    <Alert severity="Success">Logged In</Alert>
   ) : (
     ""
   );

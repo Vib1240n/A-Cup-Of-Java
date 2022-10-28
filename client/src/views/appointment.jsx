@@ -10,9 +10,26 @@ import Background from "../asset/images/ACOJ-Logo.jpg";
 
 export default function Appointment() {
   let navigate = useNavigate();
-  const [date, setDate] = React.useState(null);
-  const [time, setTime] = React.useState(null);
+  const [date, setDate] = React.useState(dayjs(new Date()));
+  const [time, setTime] = React.useState(dayjs(new Date()));
   const [userData, setUserData] = React.useState([]);
+  const [errorMessage, setErrormessage] = React.useState(false);
+  const [successMessage, setSuccessMessage] = React.useState(false);
+
+  const errorBox = errorMessage ? (
+    <Alert severity="error" varient="Filled">
+      Incorrect Password or Email
+    </Alert>
+  ) : (
+    ""
+  );
+  const successBox = successMessage ? (
+    <Alert severity="Success" varient="Filled">
+      Appointment Booked
+    </Alert>
+  ) : (
+    ""
+  );
 
   React.useEffect(() => {
     isLoggedIn();
@@ -29,7 +46,7 @@ export default function Appointment() {
       })
       .catch((err) => {
         console.log(err);
-         navigate("/loginPage");
+        navigate("/loginPage");
       });
   };
 
@@ -46,14 +63,42 @@ export default function Appointment() {
   };
 
   const onAppointment = (e) => {
-    // Client message if you want us it: An appointment has been scheduled for [user.firstname user.lastname]. The appointment is scheduled for  [DATE] at [TIME]. To contact the customer, please call [PHONE]. Thank you. 
-    let message = "Hello [user.firstname user.lastname], thank you for scheduling an appointment with us at Ace’s Barbershop. Your appointment is scheduled for [DATE] at [TIME]. We are located at 1049 Jefferson Blvd West Sacramento, CA 95691. For any questions please contact us at (916) 956-0670. We look forward to seeing you!";
-    axios.post("http://localhost:5500/api/appointment", {
-      date: date,
-      time: time,
-      username: userData.username,
-      message: message,
-    });
+    e.preventDefault();
+    console.log(
+      "Date: " +
+        date.toDate().getMonth() +
+        "/" +
+        date.toDate().getDate() +
+        "/" +
+        date.toDate().getFullYear()
+    );
+    console.log(
+      "Time: " +
+        (time.toDate().getHours()) +
+        ":" +
+        time.toDate().getMinutes()
+    );
+    let message =
+      "Hello " +
+      userData.firstname +
+      " " +
+      userData.lastname +
+      ", thank you for scheduling an appointment with us at Ace’s Barbershop. Your appointment is scheduled for [DATE] at [TIME]. We are located at 1049 Jefferson Blvd West Sacramento, CA 95691. For any questions please contact us at (916) 956-0670. We look forward to seeing you!";
+    axios
+      .post("http://localhost:5500/api/appointment", {
+        date: date,
+        time: time.toDate().getHours() + ":" + time.toDate().getMinutes(),
+        username: userData.username,
+        message: message,
+      })
+      .then((res) => {
+        if (res.status === 200) {
+          setSuccessMessage(true);
+        }
+      })
+      .catch((err) => {
+        setErrormessage(true);
+      });
   };
 
   const styles = {
@@ -202,6 +247,8 @@ export default function Appointment() {
             >
               Book Appointment
             </mui.Button>
+            {successBox}
+            {errorBox}
           </mui.Stack>
         </mui.Paper>
       </mui.Box>
