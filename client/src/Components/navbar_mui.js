@@ -575,8 +575,9 @@ function ResponsiveAppBar() {
                     fontFamily: "monospace",
                     fontWeight: 800,
                     letterSpacing: ".1rem",
-                    justifyContent: "center",
+                    justifyContent: "flex-start",
                     alignItems: "center",
+                    width: "100%",
                   }}
                 >
                   <AccountCircleIcon
@@ -603,8 +604,9 @@ function ResponsiveAppBar() {
                     fontFamily: "monospace",
                     fontWeight: 800,
                     letterSpacing: ".1rem",
-                    justifyContent: "center",
+                    justifyContent: "flex-start",
                     alignItems: "center",
+                    width: "100%",
                   }}
                 >
                   <ManageAccountsIcon
@@ -621,7 +623,7 @@ function ResponsiveAppBar() {
               </MenuItem>
               <MenuItem>
                 <Button
-                  variant="h76"
+                  variant="h7"
                   onClick={() => {
                     logout();
                   }}
@@ -631,8 +633,9 @@ function ResponsiveAppBar() {
                     fontFamily: "monospace",
                     fontWeight: 800,
                     letterSpacing: ".1rem",
-                    justifyContent: "center",
+                    justifyContent: "flex-start",
                     alignItems: "center",
+                    width: "100%",
                   }}
                 >
                   <LogoutIcon

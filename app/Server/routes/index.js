@@ -57,9 +57,7 @@ router.post("/appointment", async function (req, res) {
       time,
       username,
     });
-    await newAppointment
-      .save()
-      .then(res.status(201).json({ message: "Appointment created" }));
+    await newAppointment.save();
     const transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
@@ -69,7 +67,7 @@ router.post("/appointment", async function (req, res) {
     });
     const mailOptions = {
       from: "acesbarbershopappointment@gmail.com",
-      to: "alex@s3v.us" || username,
+      to: username,
       subject: "Appointments",
       text: message,
     };
@@ -80,6 +78,7 @@ router.post("/appointment", async function (req, res) {
         console.log("Email sent: " + info.response);
       }
     });
+    res.status(200).json({ message: "Appointment created" });
   } else {
     res.status(504).json({ message: "Email not sent" });
   }

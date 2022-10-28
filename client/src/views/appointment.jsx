@@ -7,6 +7,7 @@ import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { DatePicker, TimePicker } from "@mui/x-date-pickers";
 import Background from "../asset/images/ACOJ-Logo.jpg";
+import Alert from "@mui/material/Alert";
 
 export default function Appointment() {
   let navigate = useNavigate();
@@ -17,20 +18,19 @@ export default function Appointment() {
   const [successMessage, setSuccessMessage] = React.useState(false);
 
   const errorBox = errorMessage ? (
-    <Alert severity="error" varient="Filled">
-      Incorrect Password or Email
+    <Alert severity="error" variant="filled">
+      Appointment Booking Failed, Please try again.
     </Alert>
   ) : (
     ""
   );
   const successBox = successMessage ? (
-    <Alert severity="Success" varient="Filled">
-      Appointment Booked
+    <Alert severity="success" variant="filled" sx={{ width: "100%" }}>
+      Appointment Booked!
     </Alert>
   ) : (
     ""
   );
-
   React.useEffect(() => {
     isLoggedIn();
   }, []);
@@ -45,7 +45,6 @@ export default function Appointment() {
         }
       })
       .catch((err) => {
-        console.log(err);
         navigate("/loginPage");
       });
   };
@@ -54,36 +53,22 @@ export default function Appointment() {
     axios
       .get("http://localhost:5500/api/profile")
       .then((res) => {
-        console.log(res);
         setUserData(res.data);
       })
-      .catch((err) => {
-        console.log(err);
-      });
+      .catch((err) => {});
   };
 
   const onAppointment = (e) => {
     e.preventDefault();
-    console.log(
-      "Date: " +
-        date.toDate().getMonth() +
-        "/" +
-        date.toDate().getDate() +
-        "/" +
-        date.toDate().getFullYear()
-    );
-    console.log(
-      "Time: " +
-        (time.toDate().getHours()) +
-        ":" +
-        time.toDate().getMinutes()
-    );
-    let message =
-      "Hello " +
-      userData.firstname +
-      " " +
-      userData.lastname +
-      ", thank you for scheduling an appointment with us at Ace’s Barbershop. Your appointment is scheduled for [DATE] at [TIME]. We are located at 1049 Jefferson Blvd West Sacramento, CA 95691. For any questions please contact us at (916) 956-0670. We look forward to seeing you!";
+    console.log("Date:" + date.format("YYYY-MM-DD"));
+    let realDate =
+      date.toDate().getMonth() +
+      "/" +
+      date.toDate().getDate() +
+      "/" +
+      date.toDate().getFullYear();
+    let realTime = time.toDate().getHours() + ":" + time.toDate().getMinutes();
+    let message = `Hello ${userData.firstname} ${userData.lastname}, thank you for scheduling an appointment with us at Ace’s Barbershop. Your appointment is scheduled for ${realDate} at ${realTime}. We are located at 1049 Jefferson Blvd West Sacramento, CA 95691. For any questions please contact us at (916) 956-0670. We look forward to seeing you!`;
     axios
       .post("http://localhost:5500/api/appointment", {
         date: date,
@@ -93,7 +78,11 @@ export default function Appointment() {
       })
       .then((res) => {
         if (res.status === 200) {
+          console.log("response" + res.status);
           setSuccessMessage(true);
+          setTimeout(() => {
+            navigate("/MyProfile");
+          }, 500);
         }
       })
       .catch((err) => {
@@ -145,12 +134,10 @@ export default function Appointment() {
           id="appointment-Paper-inner"
           component="div"
           elevation={0}
-          //   margin={"auto"}
-          overflow="revert"
           sx={{
             height: "100%",
             // width: "100%",
-            display: "inline-flex",
+            display: "flex",
             background: "transparent",
           }}
         >
@@ -158,7 +145,8 @@ export default function Appointment() {
             id="appointment-stack"
             direction="column"
             spacing={12}
-            elevation={0}
+            elevation={1}
+            zIndex={4}
           >
             <mui.Typography
               variant="h4"
@@ -247,8 +235,20 @@ export default function Appointment() {
             >
               Book Appointment
             </mui.Button>
-            {successBox}
-            {errorBox}
+            <mui.Box
+              sx={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                flexDirection: "column",
+                borderRadius: "10px",
+                height: "50px",
+                width: "100%",
+              }}
+            >
+              {successBox}
+              {errorBox}
+            </mui.Box>
           </mui.Stack>
         </mui.Paper>
       </mui.Box>
