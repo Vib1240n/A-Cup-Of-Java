@@ -8,12 +8,15 @@ import AccountCircle from "@mui/icons-material/AccountCircle";
 import InputAdornment from "@mui/material/InputAdornment";
 
 export default function loginPage() {
+
   React.useEffect(() => {
     isLoggedIn();
   }, []);
+
   /*
     On change events for the login page & signup page
     */
+
   const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
   const [firstName, setFirstName] = React.useState("");
