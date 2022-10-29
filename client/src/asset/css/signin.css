@@ -14,7 +14,8 @@
   font-size: 15px;
   margin-left: 10vw;
 }
-#signin-info{
+#signin-infousername, #signin-infopassword, #signin-infofirstname, #signin-infolastname,
+#signin-infoemail, #signin-infoconfirmpassword{
   background-color: whitesmoke;
   box-shadow: 0 2px 2px 3px rgba(0, 0, 0, 0.2);
   padding: 0.3vw;
