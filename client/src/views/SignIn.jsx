@@ -40,11 +40,13 @@ export default class SignIn extends Component {
     this.setState({
       username: e.target.value,
     });
+    document.getElementById("signin-infousername").style.backgroundColor = "whitesmoke";
   }
   onChangePasswordLogIn(e) {
     this.setState({
       passwordLogIn: e.target.value,
     });
+    document.getElementById("signin-infopassword").style.backgroundColor = "whitesmoke";
   }
 
   //onchange function for signup page
@@ -57,9 +59,12 @@ export default class SignIn extends Component {
   onSubmitEmptyFieldVerification(e) {
     e.preventDefault();
     if(this.state.username === "" || this.state.passwordLogIn === "") {
-      this.setState({
-        passwordLogIn: "",
-      })
+      if(this.state.passwordLogIn === "") {
+        document.getElementById("signin-infopassword").style.backgroundColor = "#FF7276";  
+      } 
+      if(this.state.username === ""){
+        document.getElementById("signin-infousername").style.backgroundColor = "#FF7276";
+      }
       document.getElementById("errorMessage").textContent = 
       "There are fields that are empty, please fill out all fields!"; 
     }
@@ -82,6 +87,7 @@ export default class SignIn extends Component {
       })
       document.getElementById("errorMessage").textContent = 
       "Invaild email address, please confirm that your email address is vaild!";
+      document.getElementById("signin-infousername").style.backgroundColor = "#FF7276";
     }
     
   }
@@ -125,13 +131,14 @@ export default class SignIn extends Component {
           window.location = "/home";
         }
       })
-      .catch((err) => console.log(err),
-       document.getElementById("errorMessage").textContent =
-       "Invaild username/password, please check and resubmit your login information!",
+      .catch((err) => {
+        console.log(err);
+        document.getElementById("errorMessage").textContent =
+       "Invaild username/password, please check and resubmit your login information!";
        this.setState({
         passwordLogIn: "",
        })
-       ) 
+      }) 
       
   }
 //   onSubmitSignUp(e) {
@@ -169,7 +176,7 @@ render(){
                 <form onSubmit={this.onSubmitEmptyFieldVerification}>
                 <label id = "signin-label"> Email </label> 
                   <input
-                    id ="signin-info"
+                    id ="signin-infousername"
                     type="text"
                     placeholder=" "
                     value={this.state.username}
@@ -178,7 +185,7 @@ render(){
                   <br />
                   <label id = "signin-label"> Passwords </label> 
                   <input
-                    id = "signin-info"
+                    id = "signin-infopassword"
                     type="password"
                     placeholder=" "
                     value={this.state.passwordLogIn}

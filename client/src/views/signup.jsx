@@ -49,26 +49,31 @@ onChangeUserEmail(e) {
   this.setState({
     email: e.target.value,
   });
-}
+  document.getElementById("signin-infoemail").style.backgroundColor = "whitesmoke";
+  }
   onChangeFirstName(e) {
     this.setState({
       firstName: e.target.value,
     });
+    document.getElementById("signin-infofirstname").style.backgroundColor = "whitesmoke";
   }
   onChangeUserLastName(e) {
     this.setState({
       lastName: e.target.value,
     });
+    document.getElementById("signin-infolastname").style.backgroundColor = "whitesmoke";
   }
   onChangePasswordSignUp(e) {
     this.setState({
       passwordSignUp: e.target.value,
     });
+    document.getElementById("signin-infopassword").style.backgroundColor = "whitesmoke";
   }
   onChangeConfirmPassword(e) {
     this.setState({
       confirmPassword: e.target.value,
     });
+    document.getElementById("signin-infoconfirmpassword").style.backgroundColor = "whitesmoke";
   }
   onSubmitSignUp(e) {
     e.preventDefault();
@@ -86,9 +91,12 @@ onChangeUserEmail(e) {
           window.location = "/MyProfile";
         }
       })
-      .catch((err) => console.log(err),
-      document.getElementById("errorMessage").textContent =
-       "Email already exists, please sign in!")
+      .catch((err) => {
+        console.log(err);
+        document.getElementById("errorMessage").textContent =
+       "Email already exists, please sign in!"
+      })
+      
   }
 // //onsubmit verification function for signup page
   onSubmitEmptyFieldVerification(e) {
@@ -96,12 +104,21 @@ onChangeUserEmail(e) {
     if(this.state.firstName === "" || this.state.lastName === "" || 
     this.state.email === "" || this.state.passwordSignUp === "" || 
     this.state.confirmPassword === "") {
-      this.setState({
-        passwordSignUp: "",
-      })
-      this.setState({
-        confirmPassword: "",
-      })
+      if(this.state.firstName === "") {
+        document.getElementById("signin-infofirstname").style.backgroundColor = "#FF7276";  
+      }
+      if(this.state.lastName === "") {
+        document.getElementById("signin-infolastname").style.backgroundColor = "#FF7276";  
+      }
+      if(this.state.email === "") {
+        document.getElementById("signin-infoemail").style.backgroundColor = "#FF7276";  
+      }
+      if(this.state.passwordSignUp === "") {
+        document.getElementById("signin-infopassword").style.backgroundColor = "#FF7276";  
+      }
+      if(this.state.confirmPassword === "") {
+        document.getElementById("signin-infoconfirmpassword").style.backgroundColor = "#FF7276";  
+      }
       document.getElementById("errorMessage").textContent = 
       "There are fields that are empty, please fill out all fields!"; 
     }
@@ -123,6 +140,8 @@ onChangeUserEmail(e) {
       this.setState({
         confirmPassword: "",
       })
+      document.getElementById("signin-infopassword").style.backgroundColor = "#FF7276";  
+      document.getElementById("signin-infoconfirmpassword").style.backgroundColor = "#FF7276";  
       document.getElementById("errorMessage").textContent = 
       "Password and confirm password do not match, please resubmit your password!";
     }
@@ -143,6 +162,7 @@ onChangeUserEmail(e) {
       })
       document.getElementById("errorMessage").textContent = 
       "Invaild email address, please confirm that your email address is vaild!";
+      document.getElementById("signin-infoemail").style.backgroundColor = "#FF7276";
     }
     
   }
@@ -163,7 +183,7 @@ onChangeUserEmail(e) {
               <form onSubmit={this.onSubmitEmptyFieldVerification}>
                 <label id = "signin-label"> First Name </label>   
                 <input
-                  id="signin-info"
+                  id="signin-infofirstname"
                   type="text"
                   placeholder=" "
                   value={this.state.firstName}
@@ -172,7 +192,7 @@ onChangeUserEmail(e) {
                 <br />
                 <label id = "signin-label"> Last Name </label>   
                 <input
-                  id="signin-info"
+                  id="signin-infolastname"
                   type="text"
                   placeholder=" "
                   value={this.state.lastName}
@@ -181,7 +201,7 @@ onChangeUserEmail(e) {
                 <br />
                 <label id = "signin-label"> Email </label>
                 <input
-                  id="signin-info"
+                  id="signin-infoemail"
                   type="text"
                   placeholder=" "
                   value={this.state.email}
@@ -190,7 +210,7 @@ onChangeUserEmail(e) {
                 <br />
                 <label id = "signin-label"> Passwords </label> 
                 <input
-                  id="signin-info"
+                  id="signin-infopassword"
                   type="password"
                   placeholder=" "
                   value={this.state.passwordSignUp}
@@ -199,7 +219,7 @@ onChangeUserEmail(e) {
                 <br />
                 <label id = "signin-label"> Confirm Passwords </label> 
                 <input
-                  id="signin-info"
+                  id="signin-infoconfirmpassword"
                   type="password"
                   placeholder=" "
                   value={this.state.confirmPassword}
