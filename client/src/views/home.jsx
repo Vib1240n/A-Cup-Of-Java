@@ -616,7 +616,7 @@ function Home() {
               >
                 <m.IconButton
                   aria-label="instagram"
-                  href="https://www.instagram.com/@jgonzo-916"
+                  href="https://www.instagram.com/jgonzo_916"
                   target="_blank"
                   rel="noopener"
                 >
@@ -721,7 +721,7 @@ function Home() {
               >
                 <m.IconButton
                   aria-label="instagram"
-                  href="https://www.instagram.com/@misshortyblendz"
+                  href="https://www.instagram.com/mizzshortyblendz"
                   target="_blank"
                   rel="noopener"
                 >

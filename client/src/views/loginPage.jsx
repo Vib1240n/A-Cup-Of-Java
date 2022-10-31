@@ -163,7 +163,7 @@ export default function loginPage() {
           inputProps={styles.inputProps}
         ></m.TextField>
         <m.TextField
-          id="loginpage-username"
+          id="loginpage-password"
           label="Password"
           type={"password"}
           variant="standard"
