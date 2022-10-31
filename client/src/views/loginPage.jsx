@@ -129,7 +129,6 @@ export default function loginPage() {
     button: {
       height: "10%",
       width: { xl: "40%", xs: "90%" },
-
       borderRadius: "10px",
       border: "2px solid white",
       paddingLeft: "3px",
