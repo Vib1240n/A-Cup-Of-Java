@@ -40,7 +40,7 @@ const logout = () => {
 
   return (
     <div class="MyProfile">
-    
+    <script type = "text/javascript" src = "../Components/Navabar.js"></script>
       <h1 class = "MyProfile-title"> Your Profile Information</h1>
       <div class = "barbertop">
                 <img src = {ace} alt = "ace lgo" id = "barberimage" />
@@ -49,6 +49,7 @@ const logout = () => {
                 <div id = "barber-title">
                     <div class="firstName">Name: {userData.firstname} {userData.lastname}</div>
                     <div class="firstName">Email: {userData.username}</div>
+                    <div id = "myprofile-userName" value = "hello" ></div>
                 </div>
                 <br/>
                 <button class = "MyProfile-button" onClick={logout} >Sign Out</button>
