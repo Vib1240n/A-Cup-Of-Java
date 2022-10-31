@@ -4,6 +4,8 @@ import "../asset/css/style.css"
 import Sidebar from "./sidebar"
 import axios from "axios";
 import object from "../views/object";
+import { Link } from "react-router-dom";
+import Appointment from "../views/appointment";
 
 
 
@@ -13,8 +15,8 @@ import object from "../views/object";
   const [userData, setUserData] = useState([]);
   const [toggle, setToggle] = useState();
   const [toggleNavbar, setToggler] = useState();
-
-  let obj = new object();
+  var test = "hi";
+  // let obj = new object();
   
   useEffect(() =>{
     axios
@@ -32,10 +34,12 @@ import object from "../views/object";
     if(userData.firstname != null){
       setToggle("My Profile")
       setToggler("/MyProfile")
+      document.getElementById("nav-firstNav").childNodes[1].href = "/appointment";
     }
     else{
       setToggle("Login")
       setToggler("/login")
+      document.getElementById("nav-firstNav").childNodes[1].href = "/login";
     }
   })
 
@@ -44,7 +48,7 @@ import object from "../views/object";
           <Sidebar/>
           <nav id="nav-firstNav">
             <a href={toggleNavbar}id="nav-twonav" className ="toggle"> {toggle} </a>
-            <a href="/appointment" id="nav-twonav"> Appointment </a> 
+            <a href="/appointment" id="nav-twonav" className = "navbar-appintment"> Appointment </a>
           </nav> 
           <div clsss = "navbar-gap">
             <AppRouter/>
