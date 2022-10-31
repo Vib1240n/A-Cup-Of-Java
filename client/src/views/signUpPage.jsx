@@ -1,5 +1,6 @@
 import React from "react";
 import * as m from "@mui/material";
+import {useNavigate} from "react-router-dom";
 import axios from "axios";
 import background from "../asset/images/background_cornerLong.jpg";
 import Alert from "@mui/material/Alert";
@@ -7,8 +8,21 @@ import valid from "validator";
 import AccountCircle from "@mui/icons-material/AccountCircle";
 import InputAdornment from "@mui/material/InputAdornment";
 
-export default function loginPage() {
+function isValidNumber(value) {
+  const phoneNumber = value.replace(/[^\d]/g, "");
+  const phoneNumberLength = phoneNumber.length;
+  if (phoneNumberLength < 4) return phoneNumber;
+  if (phoneNumberLength < 7) {
+    return `(${phoneNumber.slice(0, 3)}) ${phoneNumber.slice(3)}`;
+  }
+  return `(${phoneNumber.slice(0, 3)}) ${phoneNumber.slice(
+    3,
+    6
+  )}-${phoneNumber.slice(6, 10)}`;
+}
 
+export default function loginPage() {
+    let navigate = useNavigate();
   React.useEffect(() => {
     isLoggedIn();
   }, []);
@@ -65,6 +79,11 @@ export default function loginPage() {
     }
   };
 
+  const isNumber = (e) => {
+    const phoneNumber = isValidNumber(e.target.value);
+    setPhoneNumber(phoneNumber);
+  };
+
   /* default styles */
   const styles = {
     root: {
@@ -118,11 +137,6 @@ export default function loginPage() {
         borderRadius: "10px",
         paddingLeft: "0px",
       },
-      startAdornment: (
-        <InputAdornment position="start">
-          <AccountCircle />
-        </InputAdornment>
-      ),
     },
   };
 
@@ -155,19 +169,20 @@ export default function loginPage() {
           label="First Name"
           type={"text"}
           variant="standard"
-          onChange={(e) => setFirstName(e.target.value)}
+          onChange={(e) =>
+            setFirstName(e.target.value.toString().toLowerCase())
+          }
           required
-          notched
           disableUnderline={true}
           sx={styles.TextField}
           inputProps={styles.inputProps}
         ></m.TextField>
         <m.TextField
-          id="loginpage-username"
+          id="loginpage-password"
           label="Last Name"
           type={"text"}
           variant="standard"
-          onChange={(e) => setLastName(e.target.value)}
+          onChange={(e) => setLastName(e.target.value.toString().toLowerCase())}
           required
           sx={styles.TextField}
           inputProps={styles.inputProps}
@@ -185,10 +200,10 @@ export default function loginPage() {
         <m.TextField
           id="loginpage-username"
           label="Phone Number"
-          pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
           type="tel"
+          value={phoneNumber}
           variant="standard"
-          onChange={(e) => setPhoneNumber(e.target.value)}
+          onChange={(e) => isNumber(e)}
           required
           sx={styles.TextField}
           inputProps={styles.inputProps}
@@ -216,7 +231,7 @@ export default function loginPage() {
 
         <m.Button
           id="loginpage-button"
-          onClick={onSubmitSignUp && isValidEmail}
+          onClick={onSubmitSignUp}
           sx={{
             height: "10%",
             width: { xl: "40%", xs: "70%" },
@@ -265,7 +280,7 @@ export default function loginPage() {
         .then((res) => {
           console.log(res.data);
           if (res.data.redirect === "/MyProfile") {
-            window.location = "/MyProfile";
+            navigate("/MyProfile");
           }
         })
         .catch((err) => console.log(err));

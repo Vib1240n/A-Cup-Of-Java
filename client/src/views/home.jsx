@@ -5,7 +5,8 @@ import * as i from "@mui/icons-material";
 //import "../asset/css/style.css";
 import { useNavigate } from "react-router-dom";
 import Background from "../asset/images/BarbershopBackground.png";
-import servicesbg from "../asset/images/servicesbackground.jpg";
+import logo from "../asset/images/AcesBarbershopLogo-removebg-preview.png";
+import servicesbg from "../asset/images/servicesbackground1.jpg";
 import wallBg from "../asset/images/wall-bg-up.jpg";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import marco from "../asset/images/barber102.png";
@@ -36,6 +37,12 @@ function Home() {
   const [expanded, setExpanded] = React.useState(false);
   const [expandedBarber2, setExpandedBarber2] = React.useState(false);
   const [expandedBarber3, setExpandedBarber3] = React.useState(false);
+
+  var red = "AA3832";
+  var lightRed = "C43832";
+  var blue = "293678";
+  var lightBlue = "295DA5";
+  var white = "FBF9FB";
 
   const handleBarber1 = () => {
     setExpanded(!expanded);
@@ -116,7 +123,7 @@ function Home() {
       backdropFilter: "blur(70px)",
       boxShadow: "0 0 20px 0 rgba(0, 0, 0, 1.9)",
       display: "flex",
-      justifyContent: "flex-start",
+      justifyContent: "center",
       alignItems: "center",
       flexDirection: "row",
       height: "75%",
@@ -138,7 +145,7 @@ function Home() {
         sm: "1.5rem",
         xs: "1.5rem",
       },
-      color: "white",
+      color: "black",
     },
     gridLayout: {
       display: "flex",
@@ -163,12 +170,102 @@ function Home() {
         sx={{
           backgroundImage: `url(${wallBg})`,
           backgroundPosition: "center",
-          WebkitFilter: "blur(10px)",
-          display: "flex",
-          width: "95%",
-          height: "95%",
+          backgroundSize: "cover",
+          backgroundRepeat: "no-repeat",
+          alignItems: { xl: "center", xs: "center" },
+          justifyContent: { xl: "center", xs: "center" },
+          display: { xl: "flex", xs: "grid" },
+          gridArea: "1/1",
+          gridAutoFlow: "Row",
+          gridTemplateColumns: "1fr",
+          border: "1px solid black",
+          width: "98%",
+          height: "98%",
         }}
-      ></m.Box>
+      >
+        <m.Card
+          sx={{
+            background: "transparent",
+            backdropFilter: "blur(50px)",
+            height: { xl: "70%", xs: "50%" },
+            width: { xl: "20%", xs: "100%" },
+            justifyContent: { xl: "center", xs: "center" },
+            alignItems: { xl: "center", xs: "center" },
+            margin: { xl: "auto", xs: "auto" },
+            marginBottom: { xs: "120%" },
+          }}
+        >
+          <m.CardHeader
+            title="Hours"
+            justifyContent="center"
+            alignItems="center"
+            sx={{ fontSize: { xl: "2rem", xs: "1rem" } }}
+          />
+          <m.Typography
+            sx={{
+              padding: { xl: "20px" },
+              justifyContent: "center",
+              color: "white",
+              alignItems: "center",
+              margin: "auto",
+              fontSize: {
+                xl: "1.5rem",
+                lg: "1.2rem",
+                md: "1.1rem",
+                sm: "1rem",
+                xs: "0.9rem",
+              },
+            }}
+          >
+            Monday-Friday: 10:00am-6:00pm
+          </m.Typography>
+          <m.Typography
+            sx={{
+              padding: { xl: "20px" },
+              justifyContent: "center",
+              color: "white",
+              alignItems: "center",
+              margin: "auto",
+              fontSize: {
+                xl: "1.5rem",
+                lg: "1.2rem",
+                md: "1.1rem",
+                sm: "1rem",
+                xs: "0.9rem",
+              },
+            }}
+          >
+            Saturday: 9:00am-4:00pm
+          </m.Typography>
+          <m.Typography
+            sx={{
+              padding: { xl: "20px" },
+              justifyContent: "center",
+              color: "white",
+              alignItems: "center",
+              margin: "auto",
+              fontSize: {
+                xl: "1.5rem",
+                lg: "1.2rem",
+                md: "1.1rem",
+                sm: "1rem",
+                xs: "0.9rem",
+              },
+            }}
+          >
+            Sunday: Closed
+          </m.Typography>
+        </m.Card>
+        <m.Card
+          sx={{
+            background: "transparent",
+            backdropFilter: "blur(50px)",
+            height: { xl: "50%", xs: "70%" },
+            width: { xl: "20%", xs: "100vw" },
+            border: "2px solid white",
+          }}
+        ></m.Card>
+      </m.Box>
     );
   };
 
@@ -176,13 +273,22 @@ function Home() {
     <m.List>
       <m.ListItem id="home" style={styles.listItem} className="listItem">
         <m.Box style={styles.listItemBox} className="listItemBox">
-          <m.Typography
-            style={styles.typography}
-            variant="h2"
-            className="Typography"
-          >
-            Welcome to Ace's Barbershop
-          </m.Typography>
+          <m.Box
+            sx={{
+              backgroundImage: `url(${logo})`,
+              backgroundPosition: "center",
+              backgroundSize: "contain",
+              backgroundRepeat: "no-repeat",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              flexDirection: "column",
+              height: "50%",
+              width: "50%",
+              top: "0",
+              marginBottom: "0",
+            }}
+          ></m.Box>
         </m.Box>
       </m.ListItem>
       <m.ListItem
@@ -201,7 +307,7 @@ function Home() {
             <m.TableContainer
               component={m.Paper}
               sx={{
-                width: "100%",
+                width: { xl: "70%" },
                 height: "100%",
                 overflow: "revert",
                 backgroundColor: "transparent",
@@ -217,9 +323,9 @@ function Home() {
                     }}
                   >
                     <m.TableCell
-                      align="left"
+                      align="center"
                       sx={{
-                        width: "100%",
+                        width: "20%",
                         fontSize: {
                           xl: "2rem",
                           lg: "2rem",
@@ -233,9 +339,9 @@ function Home() {
                       Service
                     </m.TableCell>
                     <m.TableCell
-                      align="right"
+                      align="center"
                       sx={{
-                        width: "100%",
+                        width: "60%",
                         fontSize: {
                           xl: "2rem",
                           lg: "2rem",
@@ -272,7 +378,7 @@ function Home() {
                       component="th"
                       key={row.name}
                       sx={{
-                        "&:last-child td, &:last-child th": { border: 5 },
+                        "&:last-child td, &:last-child th": { border: 0 },
                         "&:hover": {
                           backgroundColor: "rgba(0, 0, 0, 0.6)",
                           backdropFilter: "blur(90px) brightness(0.2)",
@@ -300,7 +406,7 @@ function Home() {
                         {row.service}
                       </m.TableCell>
                       <m.TableCell
-                        align="right"
+                        align="center"
                         sx={{
                           fontSize: {
                             xl: "1.5rem",
@@ -345,384 +451,374 @@ function Home() {
       </m.ListItem>
       <m.ListItem id="barber-information" style={styles.listItem}>
         <m.Box style={styles.listItemBox}>
-          <m.Grid
-            container
-            margin="auto"
-            className="gridLayoutBarber"
-            direction={{ xl: "row", xs: "column" }}
-            justifyContent={{ xl: "center", xs: "flex-start" }}
-            alignItems={{ xl: "center", xs: "flex-start" }}
+          <m.Card
             sx={{
-              height: { xl: "100% ", xs: "100%", lg: "100%" },
-              width: { xl: "100%", xs: "33%", lg: "100%" },
-              display: { xl: "flex", xs: "flex" },
-              marginLeft: { xl: "1px", xs: "0px" },
+              margin: "auto",
+              marginTop: "0px",
+              background: "linear-gradient(90deg, #AA3832 30%, #D05432 90%)",
+              maxWidth: { xl: 500, xs: 150 },
+              boxShadow:
+                "10px 0px 10px 0px #D05432, 0 10px 10px 0px #AA3832, -10px 1px 10px 0px #D05432",
             }}
           >
-            <m.Grid
-              item
-              xs={12}
-              xl={3}
-              margin="auto"
-              sx={{
-                height: { xl: "100%" },
-                width: { xl: "100%" },
-                justifyContent: { xl: "flex-start", xs: "flex-start" },
-                display: { xl: "flex", xs: "flex" },
-              }}
+            <m.CardHeader title="Marco" />
+            <m.CardMedia component="img" image={marco} alt="Barber-Marco" />
+            <m.CardActions disableSpacing>
+              <ExpandMore
+                expand={expanded}
+                onClick={handleBarber1}
+                aria-expanded={expanded}
+                aria-label="show more"
+              >
+                <ExpandMoreIcon />
+              </ExpandMore>
+            </m.CardActions>
+            <m.Collapse
+              in={expanded}
+              timeout="auto"
+              unmountOnExit
+              orientation={{ xl: "vertical", xs: "horizontal" }}
             >
-              <m.Card
+              <m.CardContent>
+                <m.Typography
+                  paragraph
+                  sx={{
+                    fontSize: {
+                      xl: "1.5rem",
+                      lg: "1.2rem",
+                      md: "1.1rem",
+                      sm: "1rem",
+                      xs: "0.7rem",
+                    },
+                  }}
+                >
+                  Better known in the community as Li$to, is the owner of Ace’s
+                  Barbershop alongside Elena. Marco is an expert in modern
+                  contemporary haircuts and beard fades. For custom haircuts,
+                  please contact via phone or instagram.
+                </m.Typography>
+              </m.CardContent>
+              <m.Box
                 sx={{
-                  background:
-                    "linear-gradient(90deg, #FE8D52 30%, #FE8D8C 90%)",
-                  maxHeight: { xl: "100%" },
-                  maxWidth: { xl: "100%", xs: "100%" },
-                  height: { xl: "auto", xs: "auto" },
-                  width: { xl: "auto", xs: "auto" },
-                  boxShadow: { xl: "0 0 20px 0 rgba(0, 0, 0, 1.9)" },
+                  display: "flex",
+                  justifyContent: "flex-start",
+                  alignItems: "center",
+                  flexDirection: "row",
+                  margin: "auto",
+                  marginLeft: { xs: "0px" },
+                  width: "50%",
+                  height: "100px",
                 }}
               >
-                <m.CardHeader title="Marco" component="h2" />
-                <m.CardMedia
-                  component="img"
-                  height={{ xl: "300px", xs: "10px" }}
-                  width={{ xl: "300px", xs: "10px" }}
-                  image={marco}
-                  alt="Barber-Marco"
-                />
-                <m.CardActions disableSpacing>
-                  <ExpandMore
-                    expand={expanded}
-                    onClick={handleBarber1}
-                    aria-expanded={expanded}
-                    aria-label="show more"
-                  >
-                    <ExpandMoreIcon />
-                  </ExpandMore>
-                </m.CardActions>
-                <m.Collapse
-                  in={expanded}
-                  timeout="auto"
-                  unmountOnExit
-                  orientation={{ xl: "vertical", xs: "horizontal" }}
+                <m.IconButton
+                  aria-label="instagram"
+                  href="https://www.instagram.com/listoblendz"
+                  target="_blank"
+                  rel="noopener"
                 >
-                  <m.CardContent>
-                    <m.Typography paragraph color={"white"}>
-                      Better known in the community as Li$to, is the owner of
-                      Ace’s Barbershop alongside Elena. Marco is an expert in
-                      modern contemporary haircuts and beard fades. For custom
-                      haircuts, please contact via phone or instagram.
-                    </m.Typography>
-                  </m.CardContent>
-                  <m.Box
+                  <InstagramIcon
                     sx={{
-                      display: "flex",
-                      justifyContent: "flex-start",
-                      alignItems: "center",
-                      flexDirection: "row",
+                      color: "white",
                       margin: "auto",
-                      width: "50%",
-                      height: "100px",
+                      fontSize: { xl: "50px", xs: "30px" },
                     }}
-                  >
-                    <m.IconButton
-                      aria-label="instagram"
-                      href="https://www.instagram.com/listoblendz"
-                      target="_blank"
-                      rel="noopener"
-                    >
-                      <InstagramIcon
-                        sx={{
-                          color: "white",
-                          fontSize: "50px",
-                          margin: "auto",
-                          width: "50px",
-                          height: "50px",
-                        }}
-                      />
-                    </m.IconButton>
-                    <m.IconButton
-                      aria-label="phone"
-                      href="tel:1-916-752-8381"
-                      target="_blank"
-                      rel="noopener"
-                    >
-                      <ContactPhoneIcon
-                        sx={{
-                          color: "white",
-                          fontSize: "50px",
-                          margin: "auto",
-                          width: "50px",
-                          height: "50px",
-                        }}
-                      />
-                    </m.IconButton>
-                    <m.IconButton
-                      aria-label="email"
-                      href="mailto:marco.h99@hotmail.com"
-                      target="_blank"
-                      rel="noopener"
-                    >
-                      <AlternateEmailIcon
-                        sx={{
-                          color: "white",
-                          fontSize: "50px",
-                          margin: "auto",
-                          width: "50px",
-                          height: "50px",
-                        }}
-                      />
-                    </m.IconButton>
-                  </m.Box>
-                </m.Collapse>
-              </m.Card>
-            </m.Grid>
-            <m.Grid
-              item
-              xs={12}
-              xl={3}
-              margin="auto"
-              sx={{
-                height: { xl: "100%" },
-                width: { xl: "100%" },
-                justifyContent: { xl: "flex-start", xs: "center" },
-                display: "flex",
-              }}
+                  />
+                </m.IconButton>
+                <m.IconButton
+                  aria-label="phone"
+                  href="tel:1-916-752-8381"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  <ContactPhoneIcon
+                    sx={{
+                      color: "white",
+                      margin: "auto",
+                      fontSize: { xl: "50px", xs: "30px" },
+                    }}
+                  />
+                </m.IconButton>
+                <m.IconButton
+                  aria-label="email"
+                  href="mailto:marco.h99@hotmail.com"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  <AlternateEmailIcon
+                    sx={{
+                      color: "white",
+                      margin: "auto",
+                      fontSize: { xl: "50px", xs: "30px" },
+                    }}
+                  />
+                </m.IconButton>
+              </m.Box>
+            </m.Collapse>
+          </m.Card>
+          <m.Card
+            sx={{
+              margin: "auto",
+              marginTop: { xl: "0px" },
+              background: "linear-gradient(90deg, #D05432 30%, #1E70A5 90%)",
+              maxWidth: { xl: 500, xs: 150 },
+              boxShadow:
+                "10px -10px 10px 0px #1E70A5, 0 10px 10px 0px #AA3832, -10px 1px 10px 0px #D05432",
+            }}
+          >
+            <m.CardHeader title="Jimmy" />
+            <m.CardMedia component="img" image={barber3} alt="Barber-jimmy" />
+            <m.CardActions disableSpacing>
+              <ExpandMore
+                expand={expandedBarber3}
+                onClick={handleBarber3}
+                aria-expanded={expandedBarber3}
+                aria-label="show more"
+              >
+                <ExpandMoreIcon />
+              </ExpandMore>
+            </m.CardActions>
+            <m.Collapse
+              in={expandedBarber3}
+              timeout="auto"
+              unmountOnExit
+              orientation={{ xl: "vertical", xs: "horizontal" }}
             >
-              <m.Card
+              <m.CardContent>
+                <m.Typography
+                  paragraph
+                  sx={{
+                    fontSize: {
+                      xl: "1.5rem",
+                      lg: "1.2rem",
+                      md: "1.1rem",
+                      sm: "1rem",
+                      xs: "0.7rem",
+                    },
+                  }}
+                >
+                  A long time employee of Ace’s Barbershop, Jimmy is well known
+                  by customers for his artistic styles in haircuts. Jimmy shows
+                  off his expertise in fades, hair designs, and beard trimming.
+                  For custom haircuts, please contact via phone or instagram.
+                </m.Typography>
+              </m.CardContent>
+              <m.Box
                 sx={{
-                  background:
-                    "linear-gradient(90deg, #FE8D52 30%, #FE8D8C 90%)",
-                  height: { xl: "auto", xs: "auto" },
-                  width: { xl: "auto", xs: "auto" },
-                  boxShadow: { xl: "0 0 20px 0 rgba(0, 0, 0, 1.9)" },
+                  display: "flex",
+                  justifyContent: "flex-start",
+                  alignItems: "center",
+                  flexDirection: "row",
+                  margin: "auto",
+                  marginLeft: { xs: "0px" },
+                  width: "50%",
+                  height: "100px",
                 }}
               >
-                <m.CardHeader title="Elena" />
-                <m.CardMedia
-                  component="img"
-                  height={{ xl: "300px", xs: "10px" }}
-                  width={{ xl: "300px", xs: "10px" }}
-                  image={barber2}
-                  alt="Barber-Elena"
-                />
-                <m.CardActions disableSpacing>
-                  <ExpandMore
-                    expand={expandedBarber2}
-                    onClick={handleBarber2}
-                    aria-expanded={expandedBarber2}
-                    aria-label="show more"
-                  >
-                    <ExpandMoreIcon />
-                  </ExpandMore>
-                </m.CardActions>
-                <m.Collapse
-                  in={expandedBarber2}
-                  timeout="auto"
-                  unmountOnExit
-                  orientation={{ xl: "vertical", xs: "horizontal" }}
+                <m.IconButton
+                  aria-label="instagram"
+                  href="https://www.instagram.com/@jgonzo-916"
+                  target="_blank"
+                  rel="noopener"
                 >
-                  <m.CardContent>
-                    <m.Typography paragraph>
-                      Better known in the community as Shorty, is the owner of
-                      Ace’s Barbershop alongside Marco. With over twenty years
-                      of experience, Elena is excellent with customers that
-                      range from children to adults. For custom haircuts, please
-                      contact via phone or instagram.
-                    </m.Typography>
-                  </m.CardContent>
-                  <m.Box
+                  <InstagramIcon
                     sx={{
-                      display: "flex",
-                      justifyContent: "flex-start",
-                      alignItems: "center",
-                      flexDirection: "row",
+                      color: "white",
                       margin: "auto",
-                      width: "50%",
-                      height: "100px",
+                      fontSize: { xl: "50px", xs: "30px" },
                     }}
-                  >
-                    <m.IconButton
-                      aria-label="instagram"
-                      href="https://www.instagram.com/
-@misshortyblendz"
-                      target="_blank"
-                      rel="noopener"
-                    >
-                      <InstagramIcon
-                        sx={{
-                          color: "white",
-                          fontSize: "50px",
-                          margin: "auto",
-                          width: "50px",
-                          height: "50px",
-                        }}
-                      />
-                    </m.IconButton>
-                    <m.IconButton
-                      aria-label="phone"
-                      href="tel:1-916-956-067"
-                      target="_blank"
-                      rel="noopener"
-                    >
-                      <ContactPhoneIcon
-                        sx={{
-                          color: "white",
-                          fontSize: "50px",
-                          margin: "auto",
-                          width: "50px",
-                          height: "50px",
-                        }}
-                      />
-                    </m.IconButton>
-                    <m.IconButton
-                      aria-label="email"
-                      href="mailto:latinqween57@gmail.com"
-                      target="_blank"
-                      rel="noopener"
-                    >
-                      <AlternateEmailIcon
-                        sx={{
-                          color: "white",
-                          fontSize: "50px",
-                          margin: "auto",
-                          width: "50px",
-                          height: "50px",
-                        }}
-                      />
-                    </m.IconButton>
-                  </m.Box>
-                </m.Collapse>
-              </m.Card>
-            </m.Grid>
-            <m.Grid
-              item
-              xs={12}
-              xl={3}
-              margin="auto"
-              sx={{
-                height: { xl: "100%" },
-                width: { xl: "100%" },
-                justifyContent: { xl: "flex-start", xs: "flex-start" },
-                display: "flex",
-              }}
+                  />
+                </m.IconButton>
+                <m.IconButton
+                  aria-label="phone"
+                  href="tel:1-916-271-4339"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  <ContactPhoneIcon
+                    sx={{
+                      color: "white",
+                      margin: "auto",
+                      fontSize: { xl: "50px", xs: "30px" },
+                    }}
+                  />
+                </m.IconButton>
+                <m.IconButton
+                  aria-label="email"
+                  href="mailto:jqonsales@gmail.com"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  <AlternateEmailIcon
+                    sx={{
+                      color: "white",
+                      margin: "auto",
+                      fontSize: { xl: "50px", xs: "30px" },
+                    }}
+                  />
+                </m.IconButton>
+              </m.Box>
+            </m.Collapse>
+          </m.Card>
+          <m.Card
+            sx={{
+              background: "linear-gradient(90deg, #1E70A5 30%, #FBF9FB 90%)",
+              maxWidth: { xl: 500, xs: 150 },
+              margin: "auto",
+              marginTop: "0px",
+              boxShadow:
+                "10px -10px 10px 0px #FBF9FB, 0 10px 10px 0px #AA3832, -10px 1px 10px 0px #1E70A5",
+            }}
+          >
+            <m.CardHeader title="Elena" />
+            <m.CardMedia component="img" image={barber2} alt="Barber-Elena" />
+            <m.CardActions>
+              <ExpandMore
+                expand={expandedBarber2}
+                onClick={handleBarber2}
+                aria-expanded={expandedBarber2}
+                aria-label="show more"
+              >
+                <ExpandMoreIcon />
+              </ExpandMore>
+            </m.CardActions>
+            <m.Collapse
+              in={expandedBarber2}
+              timeout="auto"
+              unmountOnExit
+              orientation={{ xl: "vertical", xs: "horizontal" }}
             >
-              <m.Card
+              <m.CardContent>
+                <m.Typography
+                  paragraph
+                  sx={{
+                    fontSize: {
+                      xl: "1.5rem",
+                      lg: "1.2rem",
+                      md: "1.1rem",
+                      sm: "1rem",
+                      xs: "0.7rem",
+                    },
+                  }}
+                >
+                  Better known in the community as Shorty, is the owner of Ace’s
+                  Barbershop alongside Marco. With over twenty years of
+                  experience, Elena is excellent with customers that range from
+                  children to adults. For custom haircuts, please contact via
+                  phone or instagram.
+                </m.Typography>
+              </m.CardContent>
+              <m.Box
                 sx={{
-                  background:
-                    "linear-gradient(90deg, #FE8D52 30%, #FE8D8C 90%)",
-                  maxHeight: { xl: "100%" },
-                  maxWidth: { xl: "100%", xs: "100%" },
-                  height: { xl: "auto", xs: "auto" },
-                  width: { xl: "auto", xs: "auto" },
-                  boxShadow: { xl: "0 0 20px 0 rgba(0, 0, 0, 1.9)" },
+                  display: "flex",
+                  justifyContent: "flex-start",
+                  alignItems: "center",
+                  flexDirection: "row",
+                  margin: "auto",
+                  marginLeft: { xs: "0px" },
+                  width: "50%",
+                  height: "100px",
                 }}
               >
-                <m.CardHeader title="Jimmy" />
-                <m.CardMedia
-                  component="img"
-                  height={{ xl: "300px", xs: "100px" }}
-                  width={{ xl: "300px", xs: "100px" }}
-                  image={barber3}
-                  alt="Barber-jimmy"
-                />
-                <m.CardActions disableSpacing>
-                  <ExpandMore
-                    expand={expandedBarber3}
-                    onClick={handleBarber3}
-                    aria-expanded={expandedBarber3}
-                    aria-label="show more"
-                  >
-                    <ExpandMoreIcon />
-                  </ExpandMore>
-                </m.CardActions>
-                <m.Collapse
-                  in={expandedBarber3}
-                  timeout="auto"
-                  unmountOnExit
-                  orientation={{ xl: "vertical", xs: "horizontal" }}
+                <m.IconButton
+                  aria-label="instagram"
+                  href="https://www.instagram.com/@misshortyblendz"
+                  target="_blank"
+                  rel="noopener"
                 >
-                  <m.CardContent>
-                    <m.Typography paragraph>
-                      A long time employee of Ace’s Barbershop, Jimmy is well
-                      known by customers for his artistic styles in haircuts.
-                      Jimmy shows off his expertise in fades, hair designs, and
-                      beard trimming. For custom haircuts, please contact via
-                      phone or instagram.
-                    </m.Typography>
-                  </m.CardContent>
-                  <m.Box
+                  <InstagramIcon
                     sx={{
-                      display: "flex",
-                      justifyContent: "flex-start",
-                      alignItems: "center",
-                      flexDirection: "row",
+                      color: "white",
+                      fontSize: { xl: "50px", xs: "30px" },
                       margin: "auto",
-                      width: "50%",
-                      height: "100px",
                     }}
-                  >
-                    <m.IconButton
-                      aria-label="instagram"
-                      href="https://www.instagram.com/
-@jgonzo-916"
-                      target="_blank"
-                      rel="noopener"
-                    >
-                      <InstagramIcon
-                        sx={{
-                          color: "white",
-                          fontSize: "50px",
-                          margin: "auto",
-                          width: "50px",
-                          height: "50px",
-                        }}
-                      />
-                    </m.IconButton>
-                    <m.IconButton
-                      aria-label="phone"
-                      href="tel:1-916-271-4339"
-                      target="_blank"
-                      rel="noopener"
-                    >
-                      <ContactPhoneIcon
-                        sx={{
-                          color: "white",
-                          fontSize: "50px",
-                          margin: "auto",
-                          width: "50px",
-                          height: "50px",
-                        }}
-                      />
-                    </m.IconButton>
-                    <m.IconButton
-                      aria-label="email"
-                      href="mailto:jqonsales@gmail.com"
-                      target="_blank"
-                      rel="noopener"
-                    >
-                      <AlternateEmailIcon
-                        sx={{
-                          color: "white",
-                          fontSize: "50px",
-                          margin: "auto",
-                          width: "50px",
-                          height: "50px",
-                        }}
-                      />
-                    </m.IconButton>
-                  </m.Box>
-                </m.Collapse>
-              </m.Card>
-            </m.Grid>
-          </m.Grid>
+                  />
+                </m.IconButton>
+                <m.IconButton
+                  aria-label="phone"
+                  href="tel:1-916-956-067"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  <ContactPhoneIcon
+                    sx={{
+                      color: "white",
+                      fontSize: { xl: "50px", xs: "30px" },
+                      margin: "auto",
+                    }}
+                  />
+                </m.IconButton>
+                <m.IconButton
+                  aria-label="email"
+                  href="mailto:latinqween57@gmail.com"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  <AlternateEmailIcon
+                    sx={{
+                      color: "white",
+                      fontSize: { xl: "50px", xs: "30px" },
+
+                      margin: "auto",
+                    }}
+                  />
+                </m.IconButton>
+              </m.Box>
+            </m.Collapse>
+          </m.Card>
         </m.Box>
       </m.ListItem>
       <m.ListItem ref={ref} id="contact-information" style={styles.listItem}>
         <m.Box style={styles.listItemBox}>{contactInfo()}</m.Box>
       </m.ListItem>
       <m.ListItem id="about-us" style={styles.listItem}>
-        <m.Box style={styles.listItemBox}>About Us</m.Box>
+        <m.Box style={styles.listItemBox}>
+          <m.Card
+            sx={{
+              background: "linear-gradient(90deg, #AA3832 30%, #295DA5 90%)",
+              height: { xl: "50%" },
+              width: "70%",
+              justifyContent: "center",
+              alignItems: "center",
+              marginTop: "0px",
+            }}
+          >
+            <m.CardHeader
+              title="About Us"
+              justifyContent="center"
+              alignItems="center"
+              sx={{ fontSize: { xl: "2rem", xs: "1rem" } }}
+            />
+            <m.Typography
+              sx={{
+                padding: "20px",
+                justifyContent: "center",
+                alignItems: "center",
+                margin: "auto",
+                fontSize: {
+                  xl: "1.5rem",
+                  lg: "1.2rem",
+                  md: "1.1rem",
+                  sm: "1rem",
+                  xs: "0.9rem",
+                },
+              }}
+            >
+              Ace’s Barbershop is a family owned and operating barber shop
+              serving Yolo county and surrounding areas. We offer a complete
+              haircut service that includes premium haircuts, line ups, fades,
+              bread trims, and facial services. With over 25+ years of
+              experience, our services are best for everyone including children,
+              teens, adults, and seniors! Our goal is to continue providing for
+              our loyal customers in Yolo county while also building
+              relationships with new customers. Interested to learn more? Please
+              take a look at our website for information regarding our store
+              information, our barbers, and prices for our services. Want to
+              schedule an appointment with us? Please sign up to create an
+              account to schedule your appointment with us! We look forward to
+              seeing you soon.
+            </m.Typography>
+          </m.Card>
+        </m.Box>
       </m.ListItem>
     </m.List>
   );
@@ -736,3 +832,7 @@ function Home() {
 }
 
 export default Home;
+
+
+//center text and pop border in about us
+//book appointment - change bg to make navbar visible

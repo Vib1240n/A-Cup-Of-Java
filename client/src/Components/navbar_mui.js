@@ -383,6 +383,14 @@ function ResponsiveAppBar() {
                     });
                   }, 100);
                 }
+                handleClick("/home");
+                setTimeout(() => {
+                  const anchor = document.getElementById("services-view");
+                  anchor.scrollIntoView({
+                    behavior: "smooth",
+                    block: "center",
+                  });
+                }, 100);
               }}
               sx={{
                 mr: 2,
@@ -418,6 +426,14 @@ function ResponsiveAppBar() {
                     });
                   }, 100);
                 }
+                handleClick("/home");
+                setTimeout(() => {
+                  const anchor = document.getElementById("barber-information");
+                  anchor.scrollIntoView({
+                    behavior: "smooth",
+                    block: "center",
+                  });
+                }, 100);
               }}
               sx={{
                 mr: 2,
@@ -440,6 +456,48 @@ function ResponsiveAppBar() {
               variant="h7"
               component="a"
               onClick={() => {
+                const anchor = document.getElementById("contact-information");
+                if (
+                  window.location.pathname === "/" ||
+                  window.location.pathname === "/home"
+                ) {
+                  setTimeout(() => {
+                    anchor.scrollIntoView({
+                      behavior: "smooth",
+                      block: "center",
+                    });
+                  }, 100);
+                }
+                handleClick("/home");
+                setTimeout(() => {
+                  const anchor = document.getElementById("contact-information");
+                  anchor.scrollIntoView({
+                    behavior: "smooth",
+                    block: "center",
+                  });
+                }, 100);
+              }}
+              sx={{
+                mr: 2,
+                display: { xs: "none", md: "flex" },
+                fontFamily: "monospace",
+                fontWeight: 700,
+                letterSpacing: ".1rem",
+                color: "White",
+                textDecoration: "none",
+                "&:hover": {
+                  color: "black !important",
+                  backgroundColor: "White",
+                },
+              }}
+            >
+              Contact
+            </Button>
+            <Button
+              display={{ md: "flex", xs: "none" }}
+              variant="h7"
+              component="a"
+              onClick={() => {
                 const anchor = document.getElementById("about-us");
                 if (
                   window.location.pathname === "/" ||
@@ -453,14 +511,13 @@ function ResponsiveAppBar() {
                   }, 100);
                 }
                 handleClick("/home");
-                // const anchor2 = document.getElementById("about-us");
-                console.log("anchor 2: " + anchor);
                 setTimeout(() => {
+                  const anchor = document.getElementById("about-us");
                   anchor.scrollIntoView({
                     behavior: "smooth",
                     block: "center",
                   });
-                }, 10);
+                }, 100);
               }}
               sx={{
                 mr: 2,
@@ -565,7 +622,7 @@ function ResponsiveAppBar() {
             >
               <MenuItem>
                 <Button
-                  variant="h76"
+                  variant="h7"
                   onClick={() => {
                     handleClick("/MyProfile");
                   }}
