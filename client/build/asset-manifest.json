@@ -1,19 +1,19 @@
 {
   "files": {
     "main.css": "/static/css/main.61ad7465.css",
-    "main.js": "/static/js/main.df7cee8f.js",
+    "main.js": "/static/js/main.986f588a.js",
     "static/js/787.c4e7f8f9.chunk.js": "/static/js/787.c4e7f8f9.chunk.js",
     "static/media/background_cornerLong.jpg": "/static/media/background_cornerLong.66a8a957a23e1be5c2e4.jpg",
     "static/media/barber104.png": "/static/media/barber104.4624161dacf5fc2af2af.png",
     "static/media/grooming3.png": "/static/media/grooming3.cd20db851bb07e7deb24.png",
     "static/media/BarbershopBackground.png": "/static/media/BarbershopBackground.9893004b1f7e264fb794.png",
     "static/media/wall-bg-up.jpg": "/static/media/wall-bg-up.ba73d9222ec7afc667f2.jpg",
-    "static/media/barber101.png": "/static/media/barber101.bfb8d53a6a1b1f2364bf.png",
-    "static/media/barber103.png": "/static/media/barber103.b83bfdad7d60839044fb.png",
     "static/media/Instagram-Icon.png": "/static/media/Instagram-Icon.39b4810afed9f1a9318c.png",
+    "static/media/barber103.png": "/static/media/barber103.cca0319a3ce7fb1399c9.png",
     "static/media/homebackground.png": "/static/media/homebackground.0efee4bc3a037ef1df0e.png",
+    "static/media/barber101.png": "/static/media/barber101.6924ed0191aa62a00ae7.png",
+    "static/media/barber102.png": "/static/media/barber102.ffdd27be4ce995401d8d.png",
     "static/media/aboutbackground.jpg": "/static/media/aboutbackground.337e1e5342107e6d695c.jpg",
-    "static/media/barber102.png": "/static/media/barber102.3afaf58839eacc805a2b.png",
     "static/media/bbremoval102.png": "/static/media/bbremoval102.e0caf03b65bd7c3ad314.png",
     "static/media/bbremoval103.png": "/static/media/bbremoval103.52d0e07a9451507e5009.png",
     "static/media/AcesBarbershopLogo-removebg-preview.png": "/static/media/AcesBarbershopLogo-removebg-preview.ef2d84d44e91804a5761.png",
@@ -25,11 +25,11 @@
     "static/media/instagramIcon.png": "/static/media/instagramIcon.bc603acad2a8cb3bd098.png",
     "index.html": "/index.html",
     "main.61ad7465.css.map": "/static/css/main.61ad7465.css.map",
-    "main.df7cee8f.js.map": "/static/js/main.df7cee8f.js.map",
+    "main.986f588a.js.map": "/static/js/main.986f588a.js.map",
     "787.c4e7f8f9.chunk.js.map": "/static/js/787.c4e7f8f9.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.61ad7465.css",
-    "static/js/main.df7cee8f.js"
+    "static/js/main.986f588a.js"
   ]
 }
