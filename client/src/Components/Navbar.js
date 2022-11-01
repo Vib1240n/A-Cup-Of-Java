@@ -34,6 +34,8 @@ import Appointment from "../views/appointment";
     if(userData.firstname != null){
       setToggle("My Profile")
       setToggler("/MyProfile")
+      // just want to do it different way
+      // either create a const or query element by document.getElementById.
       document.getElementById("nav-firstNav").childNodes[1].href = "/appointment";
     }
     else{
