@@ -3,7 +3,7 @@
    giveAuthentication function gives authentication once user is signed in
 */
 
-module.exports = {
+module.exports = {                                        //Checks if the user is authorized to sign in, if not direct them to sign in page
   checkAuthentication: function (req, res, next) {
     if (req.user) {
       return next();
@@ -11,7 +11,7 @@ module.exports = {
     req.flash("error_message", "User must be logged in");
     res.redirect("/login");
   },
-  giveAuthentication: function (req, res, next) {
+  giveAuthentication: function (req, res, next) {         //once the sign up is completed, user is authenticated this functions lets user in as authorized user
     if (!req.user) {
       return next();
     }
