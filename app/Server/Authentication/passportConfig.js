@@ -1,5 +1,5 @@
-const User = require("../model/user");
-const passport = require("passport");
+const User = require("../model/user");                        //Password config is used to verify the password when the user is logging in. 
+const passport = require("passport");                         // also to check that email is in the database.
 const localStrategy = require("./localStrat");
 const registerStrategy = require("./registerStrat");
 // seralizeUser is used to persist user data after sucessful authentication

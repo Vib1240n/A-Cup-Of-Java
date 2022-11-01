@@ -1,9 +1,9 @@
 const User = require("../model/user");
-const hash = require("../Authentication/passwordHash");
+const hash = require("../Authentication/passwordHash");         
 const Strategy = require("passport-local").Strategy;
 
-const registerStrat = new Strategy(
-  { passReqToCallback: true, usernameField: "username" },
+const registerStrat = new Strategy(                           //register strat is used to make sure the email is not in the database.
+  { passReqToCallback: true, usernameField: "username" },    
   function (req, username, password, done) {
     User.findOne({ username })
       .lean()
