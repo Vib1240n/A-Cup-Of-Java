@@ -4,6 +4,9 @@ import instagramIcon from "../asset/images/instagramIcon.png";
 import yelpIcon from "../asset/images/yelpicon.png";
 
 export default function Appointment() {
+
+
+  
   return (
     <div className="Appointment">
       <h1 className="heading">Make an Appointment</h1>
