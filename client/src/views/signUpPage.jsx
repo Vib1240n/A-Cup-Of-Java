@@ -52,7 +52,7 @@ export default function loginPage() {
 
   const errorEmailBox = errorEmail ? (
     <Alert severity="error" variant="filled">
-      Email is incorrect
+      Email is either already registered or not a valid Email
     </Alert>
   ) : (
     ""
@@ -258,6 +258,7 @@ export default function loginPage() {
           </m.Typography>
         </m.Button>
         {errorBox}
+        {errorEmailBox}
       </m.Stack>
     );
   };
@@ -284,6 +285,7 @@ export default function loginPage() {
           }
         })
         .catch((err) => console.log(err));
+        setErrorEmail(true);
     } else {
       setErrormessage(true);
     }
