@@ -26,7 +26,7 @@ router.post("/signup", passport.authenticate("local-signup"), (req, res) => {
         return res.json(redir);
     } else {
         var redir = {redirect: "/home"};
-        return res.status(400).json(redir);
+        return res.status(500).json(redir);
     }
 });
 
@@ -56,7 +56,6 @@ router.post("/appointment", async function (req, res) {
             date,
             time,
             username,
-            phoneNumber,
         });
         await newAppointment.save();
         const transporter = nodemailer.createTransport({
