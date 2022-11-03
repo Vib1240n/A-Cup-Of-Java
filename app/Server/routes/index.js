@@ -20,15 +20,19 @@ router.post("/login", passport.authenticate("local"), (req, res, next) => {
   }
 });
 
-router.post("/signup", passport.authenticate("local-signup"), (req, res) => {
-  if (req.user) {
-    var redir = { redirect: "/MyProfile" };
-    return res.json(redir);
-  } else {
-    var redir = { redirect: "/home" };
-    return res.status(500).json(redir);
+router.post(
+  "/signup",
+  passport.authenticate("local-signup"),
+  (req, res, next) => {
+    if (next.status === 200) {
+      console.log(next);
+      res.status(200).json({ message: "User created" });
+    } else {
+      console.log(next);
+      res.status(400).json({ message: "User not created" });
+    }
   }
-});
+);
 
 router.get("/profile", function (req, res) {
   if (req.isAuthenticated()) {
