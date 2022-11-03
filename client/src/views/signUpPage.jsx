@@ -1,6 +1,6 @@
 import React from "react";
 import * as m from "@mui/material";
-import {useNavigate} from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import background from "../asset/images/background_cornerLong.jpg";
 import Alert from "@mui/material/Alert";
@@ -22,7 +22,7 @@ function isValidNumber(value) {
 }
 
 export default function loginPage() {
-    let navigate = useNavigate();
+  let navigate = useNavigate();
   React.useEffect(() => {
     isLoggedIn();
   }, []);
@@ -40,6 +40,7 @@ export default function loginPage() {
   const [errorMessage, setErrormessage] = React.useState(false);
   const [errorEmail, setErrorEmail] = React.useState(false);
   const [errorInput, setErrorInput] = React.useState(false);
+  const [errorGen, setError] = React.useState(false);
 
   /* Error message*/
   const errorBox = errorMessage ? (
@@ -65,6 +66,26 @@ export default function loginPage() {
   ) : (
     ""
   );
+
+  const error = errorGen ? (
+    <Alert severity="warning" variant="filled">
+      General Error please figure it out
+    </Alert>
+  ) : (
+    ""
+  );
+
+  const errorboxes = () => {
+    if (errorEmail) {
+      return errorEmailBox;
+    }
+    if (errorMessage) {
+      return errorBox;
+    }
+    if (errorInput) {
+      return errorInputBox;
+    }
+  };
 
   const isValidEmail = (_prop) => {
     console.log(_prop);
@@ -259,6 +280,7 @@ export default function loginPage() {
         </m.Button>
         {errorBox}
         {errorEmailBox}
+        {error}
       </m.Stack>
     );
   };
@@ -280,16 +302,23 @@ export default function loginPage() {
         .post("http://localhost:5500/api/signup", user)
         .then((res) => {
           console.log(res.data);
-          if (res.data.redirect === "/MyProfile") {
+          if (res.status === 200) {
             navigate("/MyProfile");
           }
         })
-        .catch((err) => console.log(err));
-        setErrorEmail(true);
+        .catch((err) => {
+          console.log(err);
+          if (res.status === 400) {
+            setErrorEmail(true);
+          } else {
+            setError(true);
+          }
+        });
     } else {
       setErrormessage(true);
     }
   };
+
   /*
     Return for the login page
     */

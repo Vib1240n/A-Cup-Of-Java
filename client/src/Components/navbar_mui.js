@@ -167,6 +167,14 @@ function ResponsiveAppBar() {
                   });
                 }, 100);
               }
+              handleClick("/home");
+              setTimeout(() => {
+                const anchor = document.getElementById("services-view");
+                anchor.scrollIntoView({
+                  behavior: "smooth",
+                  block: "center",
+                });
+              }, 100);
             }}
           >
             <ListItemIcon>
@@ -195,6 +203,14 @@ function ResponsiveAppBar() {
                   });
                 }, 100);
               }
+              handleClick("/home");
+              setTimeout(() => {
+                const anchor = document.getElementById("contact-information");
+                anchor.scrollIntoView({
+                  behavior: "smooth",
+                  block: "center",
+                });
+              }, 100);
             }}
           >
             <ListItemIcon>
@@ -223,6 +239,14 @@ function ResponsiveAppBar() {
                   });
                 }, 100);
               }
+              handleClick("/home");
+              setTimeout(() => {
+                const anchor = document.getElementById("about-us");
+                anchor.scrollIntoView({
+                  behavior: "smooth",
+                  block: "center",
+                });
+              }, 100);
             }}
           >
             <ListItemIcon>
