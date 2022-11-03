@@ -71,7 +71,7 @@ export default function Appointment() {
     let message = `Hello ${userData.firstname} ${userData.lastname}, thank you for scheduling an appointment with us at Ace’s Barbershop. Your appointment is scheduled for ${realDate} at ${realTime}. We are located at 1049 Jefferson Blvd West Sacramento, CA 95691. For any questions please contact us at (916) 956-0670. We look forward to seeing you!`;
     axios
       .post("http://localhost:5500/api/appointment", {
-        date: date,
+        date: realDate,
         time: time.toDate().getHours() + ":" + time.toDate().getMinutes(),
         username: userData.username,
         message: message,

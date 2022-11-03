@@ -3,12 +3,17 @@ import * as m from "@mui/material";
 import axios from "axios";
 import "../asset/css/myProfile.css";
 import "../asset/css/barbers.css";
-import ace from "../asset/images/grooming3.png";
-import instagramIcon from "../asset/images/instagramIcon.png";
-import facebookIcon from "../asset/images/facebookIcon.jpg";
+import ace from "../asset/images/aboutbackground.jpg";
+
+function createData(date, time) {
+  return { date, time };
+}
+
+const rows = [];
 
 const MyProfile = () => {
   const [userData, setUserData] = useState([]);
+  const [userAppointments, setUserAppointments] = useState([]);
   let name = userData.firstname + " " + userData.lastname;
   let username = userData.username;
 
@@ -16,7 +21,7 @@ const MyProfile = () => {
     background: {
       background: `url(${ace})`,
       backgroundRepeat: "no-repeat",
-      backgroundSize: "cover",
+      // backgroundSize: "cover",
       backgroundPosition: "center",
       display: "flex",
       justifyContent: "center",
@@ -30,11 +35,16 @@ const MyProfile = () => {
     fetchUserData();
   }, []);
 
+  useEffect(() => {
+    fetchApointments();
+  }, []);
+
   const fetchUserData = () => {
     axios
       .get("http://localhost:5500/api/profile")
       .then((res) => {
-        console.log(res);
+        console.log("res: ", res);
+        console.log("User: " + res.data);
         setUserData(res.data);
       })
       .catch((err) => {
@@ -42,16 +52,16 @@ const MyProfile = () => {
       });
   };
 
-  const logout = () => {
+  const fetchApointments = () => {
     axios
-      .post("http://localhost:5500/api/logout")
+      .get("http://localhost:5500/api/getappointments")
       .then((res) => {
+        setUserAppointments(res.data);
         console.log(res.data);
-        if (res.data.redirect === "/home") {
-          window.location = "/home";
-        }
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        console.log(err);
+      });
   };
 
   return (
@@ -133,14 +143,47 @@ const MyProfile = () => {
             borderRadius: "10px",
             marginTop: 0,
             width: "100%",
-            height: "100%",
+            height: "50%",
             flex: "10 10px",
           }}
         >
-          </m.Box>
+          <m.TableContainer component={m.Paper}>
+            <m.Table aria-label="simple table" stickyHeader>
+              <m.TableHead>
+                <m.TableRow>
+                  <m.TableCell align="left">Date</m.TableCell>
+                  <m.TableCell align="right">Time</m.TableCell>
+                </m.TableRow>
+              </m.TableHead>
+              <m.TableBody>
+                {userAppointments.map((row) => (
+                  <m.TableRow key={row.id}>
+                    <m.TableCell component="th" scope="row">
+                      {row.date}
+                    </m.TableCell>
+                    <m.TableCell align="right">{row.time}</m.TableCell>
+                  </m.TableRow>
+                ))}
+              </m.TableBody>
+            </m.Table>
+          </m.TableContainer>
+        </m.Box>
       </m.Box>
     </div>
   );
 };
 
 export default MyProfile;
+
+/**
+ * {data.map((row) => (
+           <TableRow key={row.id}>
+             <m.TableCell component="th" scope="row">
+               {row.name}
+             </m.TableCell>
+             <m.TableCell align="right">{row.username}</TableCell>
+             <TableCell align="right">{row.email}</TableCell>
+             <TableCell align="right">{row.phone}</TableCell>
+             <TableCell align="right">{row.website}</TableCell>
+           </TableRow>
+ */

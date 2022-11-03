@@ -34,6 +34,7 @@ function ResponsiveAppBar() {
 
   const handleClick = (event) => {
     navigate(event);
+    isLoggedIn();
   };
 
   React.useEffect(() => {
@@ -135,7 +136,11 @@ function ResponsiveAppBar() {
           </ListItemButton>
         </ListItem>
         <ListItem>
-          <ListItemButton href="/appointment">
+          <ListItemButton
+            onClick={() => {
+              handleClick("/appointment");
+            }}
+          >
             <ListItemIcon>
               <AppRegistrationIcon
                 sx={{

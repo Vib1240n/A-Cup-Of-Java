@@ -20,12 +20,16 @@ export default function loginPage() {
   let navigate = useNavigate();
 
   const errorBox = errorMessage ? (
-    <Alert severity="error" variant="filled">Incorrect Password or Email</Alert>
+    <Alert severity="error" variant="filled">
+      Incorrect Password or Email
+    </Alert>
   ) : (
     ""
   );
   const successBox = successMessage ? (
-    <Alert severity="Success" variant="filled">Logged In</Alert>
+    <Alert severity="Success" variant="filled">
+      Logged In
+    </Alert>
   ) : (
     ""
   );
