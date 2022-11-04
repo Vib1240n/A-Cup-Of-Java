@@ -366,8 +366,7 @@ function ResponsiveAppBar() {
                       block: "center",
                     });
                   }, 100);
-
-                }else{
+                } else {
                   handleClick("/home");
                 }
               }}
@@ -682,7 +681,7 @@ function ResponsiveAppBar() {
                   Profile
                 </Button>
               </MenuItem>
-              
+
               <MenuItem>
                 <Button
                   variant="h7"
