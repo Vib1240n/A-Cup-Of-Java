@@ -39,6 +39,8 @@ export default function loginPage() {
   const [confirmPassword, setConfirmPassword] = React.useState("");
   const [errorMessage, setErrormessage] = React.useState(false);
   const [errorEmail, setErrorEmail] = React.useState(false);
+  const [errorEmailInvalid, setErrorEmailInvalid] = React.useState(false);
+  const [errorServer, setErrorServer] = React.useState(false);
   const [errorInput, setErrorInput] = React.useState(false);
   const [errorGen, setError] = React.useState(false);
 
@@ -51,9 +53,25 @@ export default function loginPage() {
     ""
   );
 
-  const errorEmailBox = errorEmail ? (
+  const errorEmailRegisteredBox = errorEmail ? (
     <Alert severity="error" variant="filled">
-      Email is either already registered or not a valid Email
+      Email is already registered
+    </Alert>
+  ) : (
+    ""
+  );
+
+  const errorServerBox = errorServer ? (
+    <Alert severity="error" variant="filled">
+      Internal Server error, please try back later!
+    </Alert>
+  ) : (
+    ""
+  );
+
+  const errorEmailInvalidBox = errorEmailInvalid ? (
+    <Alert severity="error" variant="filled">
+      Email is not a valid Email
     </Alert>
   ) : (
     ""
@@ -279,7 +297,9 @@ export default function loginPage() {
           </m.Typography>
         </m.Button>
         {errorBox}
-        {errorEmailBox}
+        {errorEmailRegisteredBox}
+        {errorEmailInvalidBox}
+        {errorServerBox}
         {error}
       </m.Stack>
     );
@@ -289,8 +309,8 @@ export default function loginPage() {
     on Submit function for the login page
     */
   const onSubmitSignUp = (e) => {
+    e.preventDefault();
     if (password === confirmPassword) {
-      e.preventDefault();
       const user = {
         username: email.toString().toLowerCase(),
         firstName: firstName,
@@ -303,15 +323,17 @@ export default function loginPage() {
         .then((res) => {
           console.log(res.data);
           if (res.status === 200) {
-            navigate("/MyProfile");
+            window.location = "/MyProfile";
           }
         })
-        .catch((err) => {
+        .catch((err,res) => {
           console.log(err);
-          if (res.status === 400) {
+          if(err.status === 401){
             setErrorEmail(true);
-          } else {
-            setError(true);
+          }else if(err.status === 400){
+            setErrorEmailInvalid(true);
+          }else{
+            setErrorServer(true);
           }
         });
     } else {
