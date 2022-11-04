@@ -6,7 +6,8 @@ dotenv.config({ path: "../app/Private/.env" });
 const nodemailer = require("nodemailer");
 const User = require("../model/user");
 const hash = require("../Authentication/passwordHash");
-const emailValidator = require('deep-email-validator');
+//const emailValidator = require('deep-email-validator');
+const validator = require("node-email-validation");
 
 
 var log4js = require('log4js');
@@ -53,9 +54,7 @@ router.post("/signup", function (req, res) {
         if (user) {
           return res.status(400).json({ message: "User Already Exists" });
         }
-        const {valid, reason, validators} = await isEmailValid(req.body.username);
-        if(!valid){
-          console.log(reason);
+        if(!validator.is_email_valid(req.body.username)){
           return res.status(401).json({ message: "Invalid Email" });
         }
         if (!user) {

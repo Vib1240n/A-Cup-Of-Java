@@ -158,7 +158,7 @@ export default function loginPage() {
       >
         <m.TextField
           id="loginpage-username"
-          label="Username"
+          label="Email"
           type={"text"}
           variant="standard"
           onChange={(e) => setUsername(e.target.value)}

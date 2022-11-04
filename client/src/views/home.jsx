@@ -634,7 +634,12 @@ function Home() {
                   aria-expanded={expanded}
                   aria-label="show more"
                 >
-                  <ExpandMoreIcon />
+                  <ExpandMoreIcon 
+                    sx={{
+                      color: "white",
+                      margin: "auto",
+                    }}/>
+
                 </ExpandMore>
               </m.CardActions>
               <m.Collapse
@@ -789,7 +794,11 @@ function Home() {
                   aria-expanded={expandedBarber3}
                   aria-label="show more"
                 >
-                  <ExpandMoreIcon />
+                  <ExpandMoreIcon 
+                    sx={{
+                    color: "white",
+                    margin: "auto",
+                    }}/>
                 </ExpandMore>
               </m.CardActions>
               <m.Collapse

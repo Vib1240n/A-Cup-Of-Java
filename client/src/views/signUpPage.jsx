@@ -311,6 +311,7 @@ export default function loginPage() {
   const onSubmitSignUp = (e) => {
     e.preventDefault();
     if (password === confirmPassword) {
+      
       const user = {
         username: email.toString().toLowerCase(),
         firstName: firstName,
