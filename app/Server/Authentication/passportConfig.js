@@ -4,17 +4,20 @@ const localStrategy = require("./localStrat");
 const registerStrategy = require("./registerStrat");
 
 passport.serializeUser(function (user, done) {
-  process.nextTick(function() {
-    done(null, { username: user.username,
-    firstname: user.firstName,
-    lastname: user.lastName });
+  process.nextTick(function () {
+    done(null, {
+      username: user.username,
+      firstname: user.firstName,
+      lastname: user.lastName,
+      phonenumber: user.phoneNumber,
+    });
   });
 });
 
 passport.deserializeUser(function (user, done) {
-  process.nextTick(function() {
+  process.nextTick(function () {
     return done(null, user);
-  })
+  });
 });
 
 passport.use("local", localStrategy);
