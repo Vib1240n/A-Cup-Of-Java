@@ -327,12 +327,12 @@ export default function loginPage() {
             window.location = "/MyProfile";
           }
         })
-        .catch((err,res) => {
+        .catch(err => {
           console.log(err);
-          if(err.status === 401){
-            setErrorEmail(true);
-          }else if(err.status === 400){
+          if(err.response.status === 401){
             setErrorEmailInvalid(true);
+          }else if(err.response.status === 400){
+            setErrorEmail(true);
           }else{
             setErrorServer(true);
           }
