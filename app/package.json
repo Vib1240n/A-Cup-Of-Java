@@ -43,6 +43,7 @@
     "express-session": "^1.17.3",
     "hbs": "^4.2.0",
     "joi": "^17.6.0",
+    "log4js": "^6.7.0",
     "mongoose": "^6.3.0",
     "node-email-validation": "^1.0.4",
     "nodemailer": "^6.8.0",

@@ -5,6 +5,31 @@ const dotenv = require("dotenv");
 dotenv.config({ path: "../app/Private/.env" });
 const nodemailer = require("nodemailer");
 const User = require("../model/user");
+const hash = require("../Authentication/passwordHash");
+const emailValidator = require('deep-email-validator');
+
+
+var log4js = require('log4js');
+
+log4js.configure({
+  appenders: { cheese: { type: "file", filename: "~/A-Cup-Of-Java/cheese.log" } },
+  categories: { default: { appenders: ["cheese"], level: "error" } },
+});
+var logger = log4js.getLogger('cheese'); 
+
+
+//used to make sure email is an actual email and not jsut a random string
+async function isEmailValid(email) {
+  return emailValidator.validate(email)
+}
+
+const transporter = nodemailer.createTransport({
+  service: "gmail",
+  auth: {
+      user: "acesbarbershopappointment@gmail.com",
+      pass: process.env.emailPassApp,
+  },
+});
 
 //const user = require("../model/user");
 const Appointment = require("../model/appointment");
@@ -20,19 +45,67 @@ router.post("/login", passport.authenticate("local"), (req, res, next) => {
   }
 });
 
-router.post(
-  "/signup",
-  passport.authenticate("local-signup"),
-  (req, res, next) => {
-    if (next.status === 200) {
-      console.log(next);
-      res.status(200).json({ message: "User created" });
-    } else {
-      console.log(next);
-      res.status(400).json({ message: "User not created" });
-    }
-  }
-);
+router.post("/signup", function (req, res) {
+    User.findOne({ username : req.body.username}).lean().exec(async (err, user) => {
+        if (err) {
+          return res.status(500).json({ message: "Internal Server Error" });
+        }
+        if (user) {
+          return res.status(400).json({ message: "User Already Exists" });
+        }
+        const {valid, reason, validators} = await isEmailValid(req.body.username);
+        if(!valid){
+          console.log(reason);
+          return res.status(401).json({ message: "Invalid Email" });
+        }
+        if (!user) {
+          const encryptedPassword = await hash(req.body.password);
+          let newUser = new User({
+            username: req.body.username,
+            password: encryptedPassword,
+            firstName: req.body.firstName,
+            lastName: req.body.lastName,
+            phoneNumber: req.body.phoneNumber,
+          });
+          
+
+
+          newUser.save((error, inserted) => {
+            if (error) {
+              return res.status(500).json({ message: "Internal Server Error" });
+            }
+            passport.authenticate('local')(req, res, function () {
+              return res.status(200).json(req.user);
+            })
+            let message = `Hello ${req.body.firstName} ${req.body.lastName}. Thank you for signing up with Ace's Barbershop We are located at 1049 Jefferson Blvd West Sacramento, CA 95691. For any questions please contact us at (916) 956-0670. We look forward to seeing you!`;
+
+            const mailOptions = {
+              from: "acesbarbershopappointment@gmail.com",
+              to: req.body.username,
+              subject: "Ace's Barbershop Account Confirmation",
+              text: message,
+            };
+            transporter.sendMail(mailOptions, function (error, info) {
+              if (error) {
+                  console.log(error);
+              } else {
+                  console.log("Email sent: " + info.response);
+              }
+            });
+          });
+        }
+      });
+    });
+
+// router.post("/signup", passport.authenticate("local-signup"), (req, res) => {
+//   if (req.user) {
+//       var redir = {redirect: "/MyProfile"};
+//       return res.json(redir);
+//   } else {
+//       var redir = {redirect: "/home"};
+//       return res.status(500).json(redir);
+//   }
+// });
 
 router.get("/profile", function (req, res) {
   if (req.isAuthenticated()) {
@@ -71,6 +144,7 @@ router.post("/appointment", async function (req, res) {
       time,
       username,
     });
+    const mailoptions = [username,"acesbarbershopappointment@gmail.com"];
     await newAppointment.save();
     const transporter = nodemailer.createTransport({
       service: "gmail",
@@ -81,8 +155,8 @@ router.post("/appointment", async function (req, res) {
     });
     const mailOptions = {
       from: "acesbarbershopappointment@gmail.com",
-      to: username && "",
-      subject: "Appointments",
+      to: mailoptions, 
+      subject: "Ace's Barbershop Appointment Confirmation",
       text: message,
     };
     transporter.sendMail(mailOptions, function (error, info) {
@@ -90,6 +164,7 @@ router.post("/appointment", async function (req, res) {
         console.log(error);
       } else {
         console.log("Email sent: " + info.response);
+        console.log(username);
       }
     });
     res.status(200).json({ message: "Appointment created" });

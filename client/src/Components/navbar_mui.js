@@ -322,6 +322,7 @@ function ResponsiveAppBar() {
               component="a"
               onClick={() => {
                 if (window.location.pathname === "/home") {
+                  handleClick("/home");
                   const anchor = document.querySelector("#home");
                   anchor.scrollIntoView({
                     behavior: "smooth",
@@ -353,7 +354,7 @@ function ResponsiveAppBar() {
               variant="h7"
               component="a"
               onClick={() => {
-                const anchor = document.getElementById("home");
+                const anchor = document.querySelector("#home");
                 console.log(anchor);
                 if (
                   window.location.pathname === "/" ||
@@ -365,6 +366,9 @@ function ResponsiveAppBar() {
                       block: "center",
                     });
                   }, 100);
+
+                }else{
+                  handleClick("/home");
                 }
               }}
               sx={{
@@ -678,35 +682,7 @@ function ResponsiveAppBar() {
                   Profile
                 </Button>
               </MenuItem>
-              <MenuItem>
-                <Button
-                  variant="h76"
-                  onClick={() => {
-                    handleClick("/MyProfile");
-                  }}
-                  sx={{
-                    mr: 0,
-                    display: "flex",
-                    fontFamily: "monospace",
-                    fontWeight: 800,
-                    letterSpacing: ".1rem",
-                    justifyContent: "flex-start",
-                    alignItems: "center",
-                    width: "100%",
-                  }}
-                >
-                  <ManageAccountsIcon
-                    sx={{
-                      mr: 3,
-                      ml: 0,
-                      width: "30px",
-                      height: "30px",
-                      justifyContent: "flex-start",
-                    }}
-                  />
-                  Account Settings
-                </Button>
-              </MenuItem>
+              
               <MenuItem>
                 <Button
                   variant="h7"
