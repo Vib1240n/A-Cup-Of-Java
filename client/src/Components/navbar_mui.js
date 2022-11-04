@@ -592,7 +592,7 @@ function ResponsiveAppBar() {
             >
               <Person2Icon />
             </Button>
-            <Menu
+            {/* <Menu
               id="basic-menu"
               anchorEl={anchorEl}
               open={open}
@@ -604,7 +604,7 @@ function ResponsiveAppBar() {
               <MenuItem onClick={handleClose}>Profile</MenuItem>
               <MenuItem>My account</MenuItem>
               <MenuItem>Logout</MenuItem>
-            </Menu>
+            </Menu> */}
           </Grid>
           <Grid
             container
@@ -681,7 +681,6 @@ function ResponsiveAppBar() {
                   Profile
                 </Button>
               </MenuItem>
-
               <MenuItem>
                 <Button
                   variant="h7"

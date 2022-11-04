@@ -16,6 +16,7 @@ const MyProfile = () => {
   const [userAppointments, setUserAppointments] = useState([]);
   let name = userData.firstname + " " + userData.lastname;
   let username = userData.username;
+  let phone = userData.phonenumber;
 
   const styles = {
     background: {
@@ -91,7 +92,7 @@ const MyProfile = () => {
             // borderRadius: "10px",
             // border: "1px solid red",
             marginTop: 0,
-            borderBottom: "3px solid white",
+            borderBottom: "3px solid red",
             width: "100%",
             height: "30%",
             flex: "0 100px",
@@ -110,11 +111,11 @@ const MyProfile = () => {
         <m.Box
           display="flex"
           flexDirection="row"
-          justifyContent="flex-start"
+          justifyContent="center"
           alignItems="center"
           className="myProfile-innercontainer"
           sx={{
-            borderBottom: "3px solid white",
+            borderBottom: "3px solid rgba(0, 255, 0, 0.9)",
             marginTop: 0,
             width: "100%",
             height: "20%",
@@ -126,9 +127,21 @@ const MyProfile = () => {
             variant="h5"
             sx={{
               color: "white",
+              flex: "1 9px",
+              padding: "0 10px",
             }}
           >
             {username}
+          </m.Typography>
+          <m.Typography
+            variant="h5"
+            sx={{
+              color: "white",
+              justifyContent: "flex-end",
+              alignItems: "flex-end",
+            }}
+          >
+            {phone}
           </m.Typography>
         </m.Box>
         {/* Appointments are filled in this box*/}
@@ -141,7 +154,7 @@ const MyProfile = () => {
           margin={"auto"}
           sx={{
             borderRadius: "10px",
-            marginTop: 0,
+            marginTop: "10px",
             width: "100%",
             height: "50%",
             flex: "10 10px",
