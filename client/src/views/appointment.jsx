@@ -6,7 +6,7 @@ import dayjs from "dayjs";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { DatePicker, TimePicker } from "@mui/x-date-pickers";
-import Background from "../asset/images/ACOJ-Logo.jpg";
+import Background from "../asset/images/appointment_background.jpg";
 import Alert from "@mui/material/Alert";
 
 export default function Appointment() {
@@ -68,7 +68,9 @@ export default function Appointment() {
       "/" +
       date.toDate().getFullYear();
     let realTime = time.toDate().getHours() + ":" + time.toDate().getMinutes();
-    let message = `Hello ${userData.firstname} ${userData.lastname}, thank you for scheduling an appointment with us at Ace’s Barbershop. Your appointment is scheduled for ${realDate} at ${realTime}. We are located at 1049 Jefferson Blvd West Sacramento, CA 95691. For any questions please contact us at (916) 956-0670. We look forward to seeing you!`;
+    let message = `Hello ${userData.firstname} ${
+      userData.lastname
+    }, ${" "} thank you for scheduling an appointment with us at Ace’s Barbershop. Your appointment is scheduled for ${realDate} at ${realTime}. We are located at 1049 Jefferson Blvd West Sacramento, CA 95691. For any questions please contact us at (916) 956-0670. We look forward to seeing you!`;
     axios
       .post("http://localhost:5500/api/appointment", {
         date: realDate,
@@ -94,7 +96,7 @@ export default function Appointment() {
     root: {
       backgroundImage: `url(${Background})`,
       backgroundRepeat: "no-repeat",
-      backgroundSize: "contain",
+      backgroundSize: "cover",
       backgroundPosition: "center",
       height: "100vh",
       width: "100vw",
@@ -114,9 +116,10 @@ export default function Appointment() {
         sx={{
           backdropFilter: "blur(10px)",
           padding: "20px",
-          border: "3px solid black",
+          border: "3px solid rgba(255,255,255,0.5)",
+          boxShadow: "0px 0px 10px 10px rgba(255,255,255,0.5)",
           width: { md: "70%", sm: "60%", lg: "70%", xs: "75%", xl: "35%" },
-          height: { md: "80%", sm: "70%", lg: "50%", xs: "75%", xl: "65%" },
+          height: { md: "80%", sm: "70%", lg: "80%", xs: "75%", xl: "85%" },
           display: "inline-flex",
           flexDirection: "column",
           justifyContent: "center",
@@ -136,8 +139,9 @@ export default function Appointment() {
           elevation={0}
           sx={{
             height: "100%",
-            // width: "100%",
+            width: "100%",
             display: "flex",
+            flexDirection: "column",
             background: "transparent",
           }}
         >
@@ -157,6 +161,7 @@ export default function Appointment() {
                 fontFamily: "Roboto",
                 textAlign: "center",
                 overflow: "hidden",
+                color: "white",
                 "@media (max-width: 1000px)": {
                   fontSize: "2rem",
                 },
@@ -172,6 +177,7 @@ export default function Appointment() {
               placeholder={userData.firstname + " " + userData.lastname}
               value={userData.firstname + " " + userData.lastname}
               required={true}
+              inputProps={{ readOnly: true }}
               sx={{
                 width: "inherit",
                 height: "50px",
@@ -179,22 +185,27 @@ export default function Appointment() {
                 textAlign: "center",
                 padding: "10px",
                 display: "flex",
-                "& label.Mui-focused": {
-                  color: "Black",
-                  textAlign: "center",
+                ".MuiInputLabel-root": {
+                  color: "white",
+                  fontSize: "1.5rem",
+                  fontWeight: "bold",
+                  fontFamily: "Roboto",
+                  margin: "-15px",
                 },
-                "& label.Mui": {
-                  textAlign: "center",
-                },
-                "& .MuiOutlinedInput-root": {
+                ".MuiOutlinedInput-root": {
+                  color: "white",
+                  fontSize: "1.5rem",
+                  font: "Roboto",
+                  borderColor: "white",
                   "& fieldset": {
-                    borderColor: "black",
+                    border: "2px solid white",
                   },
-                  "& fieldset.Mui": {
-                    borderColor: "black",
+                  "&:hover fieldset": {
+                    border: "2px solid white",
                   },
-                  "& fieldset.Mui-focused": {
-                    borderColor: "white",
+                  "&.MuiInputBase-readOnly": {
+                    border: "2px solid white",
+                    color: "white",
                   },
                 },
               }}
@@ -206,10 +217,54 @@ export default function Appointment() {
                 onChange={(newValue) => {
                   setDate(newValue);
                 }}
-                renderInput={(params) => <mui.TextField {...params} />}
+                renderInput={(params) => (
+                  <mui.TextField
+                    {...params}
+                    sx={{
+                      ".MuiInputLabel-root": {
+                        color: "white",
+                        fontSize: "1.5rem",
+                        fontWeight: "bold",
+                        fontFamily: "Roboto",
+                        margin: "-15px",
+                      },
+                      ".MuiOutlinedInput-root": {
+                        color: "white",
+                        fontSize: "1.5rem",
+                        font: "Roboto",
+                        borderColor: "white",
+                        "& fieldset": {
+                          border: "2px solid white",
+                        },
+                      },
+                    }}
+                  />
+                )}
               />
               <TimePicker
-                renderInput={(params) => <mui.TextField {...params} />}
+                renderInput={(params) => (
+                  <mui.TextField
+                    {...params}
+                    sx={{
+                      ".MuiInputLabel-root": {
+                        color: "white",
+                        fontSize: "1.5rem",
+                        fontWeight: "bold",
+                        fontFamily: "Roboto",
+                        margin: "-15px",
+                      },
+                      ".MuiOutlinedInput-root": {
+                        color: "white",
+                        fontSize: "1.5rem",
+                        font: "Roboto",
+                        borderColor: "white",
+                        "& fieldset": {
+                          border: "2px solid white",
+                        },
+                      },
+                    }}
+                  />
+                )}
                 value={time}
                 label="Pick Time"
                 onChange={(newValue) => {
@@ -231,6 +286,10 @@ export default function Appointment() {
                 display: "flex",
                 color: "white",
                 backgroundColor: "black",
+                "&:hover": {
+                  backgroundColor: "white",
+                  color: "black",
+                },
               }}
             >
               Book Appointment
