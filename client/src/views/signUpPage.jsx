@@ -60,7 +60,9 @@ export default function loginPage() {
   ) : (
     ""
   );
-
+  setTimeout(() => {
+    setErrorEmail(false);
+  }, 3000);
   const errorServerBox = errorServer ? (
     <Alert severity="error" variant="filled">
       Internal Server error, please try back later!
@@ -78,7 +80,7 @@ export default function loginPage() {
   );
 
   const errorInputBox = errorInput ? (
-    <Alert severity="error" variant="filled">
+    <Alert severity="warning" variant="filled">
       Please fill in all fields
     </Alert>
   ) : (
@@ -301,6 +303,7 @@ export default function loginPage() {
         {errorEmailInvalidBox}
         {errorServerBox}
         {error}
+        {errorInputBox}
       </m.Stack>
     );
   };
@@ -310,8 +313,19 @@ export default function loginPage() {
     */
   const onSubmitSignUp = (e) => {
     e.preventDefault();
-    if (password === confirmPassword) {
-      
+    if (
+      firstName === "" ||
+      lastName === "" ||
+      email === "" ||
+      phoneNumber === "" ||
+      password === "" ||
+      confirmPassword === ""
+    ) {
+      setErrorInput(true);
+      setTimeout(() => {
+        window.location.reload(true);
+      }, 3000);
+    } else if (password === confirmPassword) {
       const user = {
         username: email.toString().toLowerCase(),
         firstName: firstName,
@@ -327,13 +341,13 @@ export default function loginPage() {
             window.location = "/MyProfile";
           }
         })
-        .catch(err => {
+        .catch((err) => {
           console.log(err);
-          if(err.response.status === 401){
+          if (err.response.status === 401) {
             setErrorEmailInvalid(true);
-          }else if(err.response.status === 400){
+          } else if (err.response.status === 400) {
             setErrorEmail(true);
-          }else{
+          } else {
             setErrorServer(true);
           }
         });

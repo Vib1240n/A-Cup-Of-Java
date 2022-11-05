@@ -26,6 +26,9 @@ export default function loginPage() {
   ) : (
     ""
   );
+  setTimeout(() => {
+    setErrormessage(false);
+  }, 3000);
   const successBox = successMessage ? (
     <Alert severity="Success" variant="filled">
       Logged In
@@ -33,7 +36,9 @@ export default function loginPage() {
   ) : (
     ""
   );
-
+  setTimeout(() => {
+    setErrormessage(false);
+  }, 3000);
   const handleChange = (prop) => {
     navigate(prop);
   };
