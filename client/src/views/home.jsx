@@ -1056,7 +1056,7 @@ function Home() {
               width: { sm: "50%", xl: "35%", lg: "30%" },
               borderRadius: "5px",
               background: "rgba(255, 255, 255, 0.2)",
-              border: "4mm ridge rgba(255, 255, 255, .6)",
+              border: "4mm ridge rgba(255, 255, 255, .9)",
               top: "0px",
               margin: "auto",
               marginTop: "0px",
@@ -1105,8 +1105,8 @@ function Home() {
               relationships with new customers. Interested to learn more? Please
               take a look at our website for information regarding our store
               information, our barbers, and prices for our services. Want to
-              schedule an appointment with us? Please sign up to create an
-              account to schedule your appointment with us! We look forward to
+              request an appointment with us? Please sign up to create an
+              account to request your appointment with us! We look forward to
               seeing you soon.
             </m.Typography>
           </m.Card>

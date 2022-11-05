@@ -131,6 +131,13 @@ export default function Appointment() {
             boxShadow: "0 0 20px 0 rgba(0, 0, 0, 0.5)",
             borderRadius: "30px",
           },
+          "@media (max-height: 675px)": {
+            height: "50%",
+            width: "80%",
+            // display: "grid",
+            // gridTemplateRows: "100%",
+            // gridTemplateColumns: "100% 50% 50% 100%",
+          },
         }}
       >
         <mui.Paper
@@ -167,7 +174,24 @@ export default function Appointment() {
                 },
               }}
             >
-              Let's make an Appointment
+              Request an Appointment with us!
+            </mui.Typography>
+            <mui.Typography
+              sx={{
+                position: "relative",
+                fontWeight: "bold",
+                fontSize: "1rem",
+                fontFamily: "Roboto",
+                textAlign: "center",
+                overflow: "hidden",
+                color: "white",
+                "@media (max-width: 1000px)": {
+                  fontSize: "2rem",
+                },
+              }}
+            >
+              Once you requested your appointment, we will call or email you to
+              confirm this appointment.
             </mui.Typography>
             <mui.TextField
               id="outlined-basic"
@@ -292,7 +316,7 @@ export default function Appointment() {
                 },
               }}
             >
-              Book Appointment
+              Request an Appointment
             </mui.Button>
             <mui.Box
               sx={{

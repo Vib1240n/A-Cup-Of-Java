@@ -148,7 +148,7 @@ function ResponsiveAppBar() {
                 }}
               />
             </ListItemIcon>
-            <ListItemText primary="Book Appointment" />
+            <ListItemText primary="Request an Appointment" />
           </ListItemButton>
         </ListItem>
         <ListItem>
