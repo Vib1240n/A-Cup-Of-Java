@@ -43,68 +43,71 @@ export default function loginPage() {
   const [errorServer, setErrorServer] = React.useState(false);
   const [errorInput, setErrorInput] = React.useState(false);
   const [errorGen, setError] = React.useState(false);
+  const [successMessage, setSuccessMessage] = React.useState(false);
+  const [allFalse, setAllFalse] = React.useState({
+    errorEmail: false,
+    errorEmailInvalid: false,
+    errorServer: false,
+    errorInput: false,
+    errorGen: false,
+  });
 
-  /* Error message*/
-  const errorBox = errorMessage ? (
-    <Alert severity="error" variant="filled">
-      Please check passwords
-    </Alert>
-  ) : (
-    ""
-  );
+  const timeout = () => {
+    setTimeout(() => {
+      setAllFalse({
+        errorEmail: false,
+        errorEmailInvalid: false,
+        errorServer: false,
+        errorInput: false,
+        errorGen: false,
+      });
+    }, 3000);
+  };
 
-  const errorEmailRegisteredBox = errorEmail ? (
-    <Alert severity="error" variant="filled">
-      Email is already registered
-    </Alert>
-  ) : (
-    ""
-  );
-  setTimeout(() => {
-    setErrorEmail(false);
-  }, 3000);
-  const errorServerBox = errorServer ? (
-    <Alert severity="error" variant="filled">
-      Internal Server error, please try back later!
-    </Alert>
-  ) : (
-    ""
-  );
-
-  const errorEmailInvalidBox = errorEmailInvalid ? (
-    <Alert severity="error" variant="filled">
-      Email is not a valid Email
-    </Alert>
-  ) : (
-    ""
-  );
-
-  const errorInputBox = errorInput ? (
-    <Alert severity="warning" variant="filled">
-      Please fill in all fields
-    </Alert>
-  ) : (
-    ""
-  );
-
-  const error = errorGen ? (
-    <Alert severity="warning" variant="filled">
-      General Error please figure it out
-    </Alert>
-  ) : (
-    ""
-  );
-
-  const errorboxes = () => {
-    if (errorEmail) {
-      return errorEmailBox;
+  const errorboxes = (prop) => {
+    if (prop === errorEmail && prop === true) {
+      return (
+        <Alert severity="error" variant="filled">
+          Email is already registered
+        </Alert>
+      );
     }
-    if (errorMessage) {
-      return errorBox;
+    if (prop === errorMessage && prop === true) {
+      return (
+        <Alert severity="error" variant="filled">
+          Please check passwords
+        </Alert>
+      );
     }
-    if (errorInput) {
-      return errorInputBox;
+    if (prop === errorInput && prop === true) {
+      return (
+        <Alert severity="warning" variant="filled">
+          Please fill in all fields
+        </Alert>
+      );
     }
+    if (prop === errorEmailInvalid && prop === true) {
+      return (
+        <Alert severity="error" variant="filled">
+          Email is not a valid Email
+        </Alert>
+      );
+    }
+    if (prop === errorServer && prop === true) {
+      return (
+        <Alert severity="error" variant="filled">
+          Internal Server error, please try back later!
+        </Alert>
+      );
+    }
+    if (prop === errorGen && prop === true) {
+      return (
+        <Alert severity="warning" variant="filled">
+          General Error please figure it out
+        </Alert>
+      );
+    }
+    timeout();
   };
 
   const isValidEmail = (_prop) => {
@@ -199,9 +202,11 @@ export default function loginPage() {
     return (
       <m.Stack
         direction="column"
+        margin={"auto"}
+        marginTop={10}
         justifyContent="center"
         alignItems="center"
-        spacing={{ xl: 3, xs: 1 }}
+        spacing={{ xl: 5, xs: 1 }}
         height="100%"
         width="100%"
       >
@@ -298,16 +303,16 @@ export default function loginPage() {
             Sign Up
           </m.Typography>
         </m.Button>
-        {errorBox}
-        {errorEmailRegisteredBox}
-        {errorEmailInvalidBox}
-        {errorServerBox}
-        {error}
-        {errorInputBox}
+        {errorboxes(
+          errorMessage ||
+            errorEmail ||
+            errorEmailInvalid ||
+            errorInput ||
+            errorServer
+        )}
       </m.Stack>
     );
   };
-
   /*
     on Submit function for the login page
     */
@@ -347,9 +352,12 @@ export default function loginPage() {
             setErrorEmailInvalid(true);
           } else if (err.response.status === 400) {
             setErrorEmail(true);
-          } else {
+          } else if (err.code === "ERR_NETWORK") {
             setErrorServer(true);
           }
+          setTimeout(() => {
+            window.location.reload(true);
+          }, 3000);
         });
     } else {
       setErrormessage(true);
@@ -364,7 +372,7 @@ export default function loginPage() {
       <m.Box
         component="div"
         id="loginpage-box-outer"
-        margin={"auto"}
+        margin="auto"
         overflow="revert"
         sx={{
           height: { md: "80%", sm: "90%", lg: "70%", xs: "75%" },

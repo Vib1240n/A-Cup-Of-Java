@@ -156,10 +156,10 @@ export default function loginPage() {
         direction="column"
         justifyContent="center"
         alignItems="center"
-        spacing={5}
+        spacing={7}
         height="100%"
         width="100%"
-        marginTop={{ xl: "5%", xs: "20%" }}
+        marginTop={{ xl: "15%", xs: "20%" }}
       >
         <m.TextField
           id="loginpage-username"
@@ -213,7 +213,8 @@ export default function loginPage() {
             border: "1px solid white",
             "&:hover": {
               boxShadow: "white 0px 0px 5px 0.1rem",
-              backgroundColor: "rgba(0, 255, 0, 0.7)",
+              backgroundColor: "rgba(0, 250, 0, 0.7)",
+              border: "0",
             },
           }}
         >
@@ -238,10 +239,10 @@ export default function loginPage() {
         overflow="revert"
         sx={{
           height: { md: "80%", sm: "100%", lg: "50%", xs: "75%" },
-          width: { md: "70%", sm: "100%", lg: "50%", xs: "90%" },
+          width: { md: "70%", sm: "100%", lg: "40%", xs: "90%" },
           backdropFilter: "blur(50px)",
           boxShadow:
-            "0 9px 10px 0px gray, 0 -9px 10px 0px rgba(255, 255, 255, 0.8), 12px 0 15px -4px rgba(255, 0, 0, 1), -12px 0 15px -4px rgba(3, 3, 3, 0.5)",
+            "0 9px 15px 3px rgba( 5, 5, 5, 0.8), -3.5px -9px 10px 3px rgba(255, 255, 255, 0.8), 19px 0px 15px 3px rgba(255, 0, 0, 0.8), -12px 0 15px 3px rgba(3, 3, 3, 0.5)",
           borderRadius: "10px",
         }}
       >

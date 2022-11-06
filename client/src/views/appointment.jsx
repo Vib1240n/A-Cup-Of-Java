@@ -11,8 +11,8 @@ import Alert from "@mui/material/Alert";
 
 export default function Appointment() {
   let navigate = useNavigate();
-  const [date, setDate] = React.useState(dayjs(new Date()));
-  const [time, setTime] = React.useState(dayjs(new Date()));
+  const [date, setDate] = React.useState(new Date());
+  const [time, setTime] = React.useState(new Date());
   const [userData, setUserData] = React.useState([]);
   const [errorMessage, setErrormessage] = React.useState(false);
   const [successMessage, setSuccessMessage] = React.useState(false);
@@ -60,21 +60,17 @@ export default function Appointment() {
 
   const onAppointment = (e) => {
     e.preventDefault();
-    console.log("Date:" + date.format("YYYY-MM-DD"));
-    let realDate =
-      date.toDate().getMonth() +
-      "/" +
-      date.toDate().getDate() +
-      "/" +
-      date.toDate().getFullYear();
-    let realTime = time.toDate().getHours() + ":" + time.toDate().getMinutes();
     let message = `Hello ${userData.firstname} ${
       userData.lastname
-    }, ${" "} thank you for scheduling an appointment with us at Ace’s Barbershop. Your appointment is scheduled for ${realDate} at ${realTime}. We are located at 1049 Jefferson Blvd West Sacramento, CA 95691. For any questions please contact us at (916) 956-0670. We look forward to seeing you!`;
-    axios
+    },\n\nThank you for requesting an appointment with us at Ace’s Barbershop. Your appointment is requested for ${date.toLocaleDateString()} at 
+    ${time.toLocaleTimeString()}.\nWe are located at 1049 Jefferson Blvd West Sacramento, CA 95691. For any questions please contact us at  (916) 956-0670. We look forward to seeing you!`;
+    axios 
       .post("http://localhost:5500/api/appointment", {
-        date: realDate,
-        time: time.toDate().getHours() + ":" + time.toDate().getMinutes(),
+        date: date.toLocaleDateString(),
+        time: time.toLocaleTimeString([], {
+          hour: "2-digit",
+          minute: "2-digit",
+        }),
         username: userData.username,
         message: message,
       })
@@ -291,8 +287,8 @@ export default function Appointment() {
                 )}
                 value={time}
                 label="Pick Time"
-                onChange={(newValue) => {
-                  setTime(newValue);
+                onChange={(time) => {
+                  setTime(time);
                 }}
                 minTime={dayjs("T06:00PM")}
                 maxTime={dayjs("T10:00AM")}
