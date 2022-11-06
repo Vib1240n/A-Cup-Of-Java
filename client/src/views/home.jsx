@@ -106,7 +106,7 @@ function Home() {
       alignItems: "center",
       flexDirection: "row",
       height: "100%",
-      width: "100%",
+      width: "100vw",
       //            top: "10px",
     },
     servicesBackground: {
@@ -176,7 +176,6 @@ function Home() {
           backgroundPosition: "center",
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
-          borderRadius: "25px",
           alignItems: { xl: "center", xs: "center" },
           justifyContent: { xl: "center", xs: "center" },
           display: { xl: "grid", xs: "grid" },
@@ -188,7 +187,6 @@ function Home() {
         <m.Card
           elevation={0}
           sx={{
-            border: "5px solid white",
             display: "grid",
             gridTemplateRows: "20% 80%",
             gridTemplateColumns: "100%",
@@ -214,7 +212,9 @@ function Home() {
               alignItems: "center",
               alignContent: "center",
               margin: "auto",
-              border: "4mm ridge rgba(255, 255, 255, .9)",
+              border: "4mm ridge rgba(75, 75, 75, 1.9)",
+              background: "rgba(255, 255, 255, 0.2)",
+              backdropFilter: "blur(10px)",
               borderRadius: "10px",
               ".MuiCardHeader-title": {
                 justifyContent: "center",
@@ -224,7 +224,7 @@ function Home() {
                 alignContent: "center",
                 color: "black",
                 fontSize: {
-                  xl: "2rem",
+                  xl: "2.5rem",
                   lg: "1.5rem",
                   md: "1.7rem",
                   sm: " 1.7rem",
@@ -259,8 +259,41 @@ function Home() {
                   borderRadius: "10px 10px 0px 0px",
                 }}
               >
-                <m.TableCell align="center">Days</m.TableCell>
-                <m.TableCell align="center">Hours</m.TableCell>
+                <m.TableCell
+                  align="left"
+                  sx={{
+                    textShadow: "0px 1px 15px rgba(250, 250, 250, 0.7)",
+
+                    font: "Roboto",
+                    fontWeight: "700",
+                    fontSize: {
+                      xl: "1.5rem",
+                      lg: "1.5rem",
+                      md: "1.5rem",
+                      sm: "1.5rem",
+                      xs: "1rem",
+                    },
+                  }}
+                >
+                  Days
+                </m.TableCell>
+                <m.TableCell
+                  align="right"
+                  sx={{
+                    font: "Roboto",
+                    fontWeight: "700",
+                    textShadow: "0px 1px 15px rgba(250, 250, 250, 0.7)",
+                    fontSize: {
+                      xl: "1.5rem",
+                      lg: "1.5rem",
+                      md: "1.5rem",
+                      sm: "1.5rem",
+                      xs: "1rem",
+                    },
+                  }}
+                >
+                  Hours
+                </m.TableCell>
               </m.TableHead>
               <m.TableBody>
                 {rows_time.map((row) => (
@@ -269,10 +302,12 @@ function Home() {
                     key={row.name}
                     sx={{
                       "&:last-child td, &:last-child th": { border: 0 },
+                      borderRadius: "10px",
                       "&:hover": {
-                        backgroundColor: "rgba(0, 0, 0, 0.6)",
+                        backgroundColor: "rgba(250, 250, 250, 0.6)",
                         backdropFilter: "blur(90px) brightness(0.2)",
-                        transition: "all 0.2s ease",
+                        transition: "all 1.2s ease",
+                        borderRadius: "10px",
                       },
                     }}
                   >
@@ -338,9 +373,11 @@ function Home() {
             title="1049 Jefferson Blvd, West Sacramento, CA 95691"
             subheader={"contact: (916) 956-0670"}
             sx={{
+              display: "flex",
+              flexDirection: "column",
               ".MuiCardHeader-title": {
                 color: "white",
-                fontFamily: "Roboto",
+                fontFamily: "Jetbrains Mono",
                 fontWeight: "900",
                 textShadow: "3px 1px 5px rgba(0, 0, 0, 0.9)",
               },
@@ -389,6 +426,7 @@ function Home() {
           ></m.Box>
         </m.Box>
       </m.ListItem>
+      <m.Divider id="services-divider" />
       <m.ListItem
         id="services-view"
         style={styles.listItem}
@@ -405,18 +443,18 @@ function Home() {
               flexDirection: "column",
               border: "4mm ridge rgba(75, 75, 75, 1.9)",
               background: "rgba(255, 255, 255, 0.2)",
+              backdropFilter: "blur(10px)",
               margin: "auto",
               marginTop: "15px",
               fontSize: {
-                xl: "2rem",
-                lg: "1.5rem",
+                xl: "2.5rem",
+                lg: "1.9rem",
                 md: "1.7rem",
                 sm: " 1.7rem",
                 xs: "1rem",
               },
               color: "black",
             }}
-            variant="h3"
           >
             Services
           </m.Typography>
@@ -426,12 +464,14 @@ function Home() {
           >
             <m.TableContainer
               component={m.Paper}
+              elevation={0}
               sx={{
-                width: { xl: "70%" },
-                height: "100%",
+                width: { xl: "60%" },
+                height: "70%",
                 overflow: "revert",
                 backgroundColor: "transparent",
                 backdropFilter: "blur(10px)",
+                borderRadius: "10px",
               }}
             >
               <m.Table height="100%" aria-label="simple m.Table">
@@ -499,10 +539,12 @@ function Home() {
                       key={row.name}
                       sx={{
                         "&:last-child td, &:last-child th": { border: 0 },
+                        borderRadius: "100px",
+                        borderRadius: "10px",
                         "&:hover": {
-                          backgroundColor: "rgba(0, 0, 0, 0.6)",
+                          backgroundColor: "rgba(250, 250, 250, 0.9)",
                           backdropFilter: "blur(90px) brightness(0.2)",
-                          transition: "all 0.2s ease",
+                          transition: "all 1.6s ease",
                         },
                       }}
                     >
@@ -634,12 +676,12 @@ function Home() {
                   aria-expanded={expanded}
                   aria-label="show more"
                 >
-                  <ExpandMoreIcon 
+                  <ExpandMoreIcon
                     sx={{
                       color: "white",
                       margin: "auto",
-                    }}/>
-
+                    }}
+                  />
                 </ExpandMore>
               </m.CardActions>
               <m.Collapse
@@ -794,11 +836,12 @@ function Home() {
                   aria-expanded={expandedBarber3}
                   aria-label="show more"
                 >
-                  <ExpandMoreIcon 
+                  <ExpandMoreIcon
                     sx={{
-                    color: "white",
-                    margin: "auto",
-                    }}/>
+                      color: "white",
+                      margin: "auto",
+                    }}
+                  />
                 </ExpandMore>
               </m.CardActions>
               <m.Collapse
@@ -1049,25 +1092,31 @@ function Home() {
             width: "100%",
           }}
         >
-          <m.Box
-            sx={{
-              height: "30%",
-              display: "flex",
-              width: { sm: "50%", xl: "35%", lg: "30%" },
-              borderRadius: "5px",
-              background: "rgba(255, 255, 255, 0.2)",
-              border: "4mm ridge rgba(255, 255, 255, .9)",
-              top: "0px",
-              margin: "auto",
-              marginTop: "0px",
-              justifyContent: "center",
-              alignItem: "center",
-              alignContent: "center",
-              fontSize: "2rem",
-            }}
-          >
-            About us
-          </m.Box>
+            <m.Typography
+              sx={{
+                fontFamily: "Roboto",
+                width: "40%",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                flexDirection: "column",
+                border: "4mm ridge rgba(75, 75, 75, 1.9)",
+                background: "rgba(255, 255, 255, 0.2)",
+                backdropFilter: "blur(10px)",
+                margin: "auto",
+                marginTop: "15px",
+                fontSize: {
+                  xl: "2.5rem",
+                  lg: "1.9rem",
+                  md: "1.7rem",
+                  sm: " 1.7rem",
+                  xs: "1rem",
+                },
+                color: "black",
+              }}
+            >
+              About Us
+            </m.Typography>
           <m.Card
             sx={{
               background: "rgba(255, 255, 255, 0.2)",

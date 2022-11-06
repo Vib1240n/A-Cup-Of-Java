@@ -402,7 +402,7 @@ function ResponsiveAppBar() {
               variant="h7"
               component="a"
               onClick={() => {
-                const anchor = document.getElementById("services-view");
+                const anchor = document.getElementById("services-divider");
                 console.log(anchor);
                 if (
                   window.location.pathname === "/" ||
@@ -411,16 +411,16 @@ function ResponsiveAppBar() {
                   setTimeout(() => {
                     anchor.scrollIntoView({
                       behavior: "smooth",
-                      block: "center",
+                      block: "auto",
                     });
                   }, 100);
                 }
                 handleClick("/home");
                 setTimeout(() => {
-                  const anchor = document.getElementById("services-view");
+                  const anchor = document.getElementById("services-divider");
                   anchor.scrollIntoView({
                     behavior: "smooth",
-                    block: "center",
+                    block: "start",
                   });
                 }, 100);
               }}
