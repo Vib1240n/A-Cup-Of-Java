@@ -1092,31 +1092,31 @@ function Home() {
             width: "100%",
           }}
         >
-            <m.Typography
-              sx={{
-                fontFamily: "Roboto",
-                width: "40%",
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-                flexDirection: "column",
-                border: "4mm ridge rgba(75, 75, 75, 1.9)",
-                background: "rgba(255, 255, 255, 0.2)",
-                backdropFilter: "blur(10px)",
-                margin: "auto",
-                marginTop: "15px",
-                fontSize: {
-                  xl: "2.5rem",
-                  lg: "1.9rem",
-                  md: "1.7rem",
-                  sm: " 1.7rem",
-                  xs: "1rem",
-                },
-                color: "black",
-              }}
-            >
-              About Us
-            </m.Typography>
+          <m.Typography
+            sx={{
+              fontFamily: "Roboto",
+              width: "40%",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              flexDirection: "column",
+              border: "4mm ridge rgba(75, 75, 75, 1.9)",
+              background: "rgba(255, 255, 255, 0.2)",
+              backdropFilter: "blur(10px)",
+              margin: "auto",
+              marginTop: "15px",
+              fontSize: {
+                xl: "2.5rem",
+                lg: "1.9rem",
+                md: "1.7rem",
+                sm: " 1.7rem",
+                xs: "1rem",
+              },
+              color: "black",
+            }}
+          >
+            About Us
+          </m.Typography>
           <m.Card
             sx={{
               background: "rgba(255, 255, 255, 0.2)",

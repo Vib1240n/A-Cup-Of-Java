@@ -1,5 +1,6 @@
 const express = require("express");
 const flash = require("express-flash");
+const MongoStore = require("connect-mongo");
 const app = express();
 const cors = require("cors");
 var bodyparser = require("body-parser");
@@ -12,15 +13,17 @@ dotenv.config({ path: "../app/Private/.env" });
 let port = process.env.PORT;
 
 app.use(cors());
-app.use(express.static("../client/build"));
+// app.use(express.static("../client/build"));
 app.use(bodyparser.urlencoded({ extended: true }));
 app.use(bodyparser.json());
-app.use(cookieParser("secret"));
+app.use(cookieParser());
 app.use(
   session({
     secret: "secret",
+    store: MongoStore.create({ mongoUrl: process.env.ADMIN_URI }),
     resave: true,
     saveUninitialized: true,
+    cookie: { maxAge: 60000, httpOnly: true },
   })
 );
 // Middleware for passport
@@ -41,10 +44,10 @@ mongoose
 const indexRouter = require("./routes/index");
 app.use("/api", indexRouter);
 
-app.get("*", (req, res) => {
-  res.sendFile(
-    require("path").join(__dirname, "..", "..", "client", "build", "index.html")
-  );
-});
+// app.get("*", (req, res) => {
+//   res.sendFile(
+//     require("path").join(__dirname, "..", "..", "client", "build", "index.html")
+//   );
+// });
 
-app.listen(port, () => console.log("Server connected and running"));
+app.listen(port, () => console.log("Server connected and running" + port));

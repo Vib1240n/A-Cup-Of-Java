@@ -1,5 +1,5 @@
 const express = require("express");
-const router = express.Router();
+const router = express.Router({ mergeParams: true });
 const passport = require("../Authentication/passportConfig");
 const dotenv = require("dotenv");
 dotenv.config({ path: "../app/Private/.env" });
@@ -35,14 +35,12 @@ const transporter = nodemailer.createTransport({
 //const user = require("../model/user");
 const Appointment = require("../model/appointment");
 
-router.post("/login", passport.authenticate("local"), (req, res, next) => {
+router.post("/login", passport.authenticate("local"), (req, res) => {
   if (req.user) {
     //implementing status codes: 200, 201, 302, 400, 404, 500, 504
-    var redir = { redirect: "/MyProfile" };
-    return res.json(redir);
+    return res.status(200).send(req.user);
   } else {
-    var redir = { redirect: "/home" };
-    return res.json(redir);
+    return res.sendStatus(400).json({ message: "User not found" });
   }
 });
 
@@ -98,6 +96,8 @@ router.post("/signup", function (req, res) {
 
 router.get("/profile", function (req, res) {
   if (req.isAuthenticated()) {
+    console.log(req.user);
+    console.log("Authenticated");
     return res.status(200).json(req.user);
   } else {
     return res.status(302).json({ message: "User not found" });
@@ -163,5 +163,3 @@ router.post("/appointment", async function (req, res) {
 });
 
 module.exports = router;
-
-//An appointment has been scheduled for [user.firstname user.lastname]. The appointment is scheduled for  [DATE] at [TIME]. To contact the customer, please call [PHONE]. Thank you.
