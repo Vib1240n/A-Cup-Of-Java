@@ -34,10 +34,17 @@ export default function Appointment() {
   React.useEffect(() => {
     isLoggedIn();
   }, []);
+  const config = {
+    headers: {
+      "Access-Control-Allow-Origin": "http://localhost:3000",
+      "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS",
+      "Access-Control-Allow-Credentials": "true",
+    },
+  };
 
   const isLoggedIn = () => {
     axios
-      .get("http://localhost:5500/api/profile")
+      .get("http://localhost:5500/api/profile", config)
       .then((res) => {
         console.log("Is user logged in status: " + res.status);
         if (res.status === 200) {
@@ -51,7 +58,7 @@ export default function Appointment() {
 
   const fetchUserData = () => {
     axios
-      .get("http://localhost:5500/api/profile")
+      .get("http://localhost:5500/api/profile", config)
       .then((res) => {
         setUserData(res.data);
       })
@@ -64,16 +71,20 @@ export default function Appointment() {
       userData.lastname
     },\n\nThank you for requesting an appointment with us at Ace’s Barbershop. Your appointment is requested for ${date.toLocaleDateString()} at 
     ${time.toLocaleTimeString()}.\nWe are located at 1049 Jefferson Blvd West Sacramento, CA 95691. For any questions please contact us at  (916) 956-0670. We look forward to seeing you!`;
-    axios 
-      .post("http://localhost:5500/api/appointment", {
-        date: date.toLocaleDateString(),
-        time: time.toLocaleTimeString([], {
-          hour: "2-digit",
-          minute: "2-digit",
-        }),
-        username: userData.username,
-        message: message,
-      })
+    axios
+      .post(
+        "http://localhost:5500/api/appointment",
+        {
+          date: date.toLocaleDateString(),
+          time: time.toLocaleTimeString([], {
+            hour: "2-digit",
+            minute: "2-digit",
+          }),
+          username: userData.username,
+          message: message,
+        },
+        config
+      )
       .then((res) => {
         if (res.status === 200) {
           console.log("response" + res.status);

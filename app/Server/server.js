@@ -12,11 +12,17 @@ const cookieParser = require("cookie-parser");
 dotenv.config({ path: "../app/Private/.env" });
 let port = process.env.PORT;
 
-app.use(cors());
+app.use(
+  cors({
+    origin: "http://localhost:3000",
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    credentials: true,
+  })
+);
 // app.use(express.static("../client/build"));
 app.use(bodyparser.urlencoded({ extended: true }));
 app.use(bodyparser.json());
-app.use(cookieParser());
+app.use(cookieParser("secret"));
 app.use(
   session({
     secret: "secret",
