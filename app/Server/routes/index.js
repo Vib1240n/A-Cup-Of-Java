@@ -6,7 +6,6 @@ dotenv.config({ path: "../app/Private/.env" });
 const nodemailer = require("nodemailer");
 const User = require("../model/user");
 const hash = require("../Authentication/passwordHash");
-//const emailValidator = require('deep-email-validator');
 const validator = require("node-email-validation");
 
 var log4js = require("log4js");
@@ -38,7 +37,7 @@ const Appointment = require("../model/appointment");
 router.post("/login", passport.authenticate("local"), (req, res) => {
   if (req.user) {
     //implementing status codes: 200, 201, 302, 400, 404, 500, 504
-    return res.status(200).send(req.user);
+    return res.status(200).json({ message: "Login successful" });
   } else {
     return res.sendStatus(400).json({ message: "User not found" });
   }

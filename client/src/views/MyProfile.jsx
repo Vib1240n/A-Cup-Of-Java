@@ -11,6 +11,14 @@ function createData(date, time) {
 
 const rows = [];
 
+const config = {
+  headers: {
+    "Access-Control-Allow-Origin": "http://localhost:3000",
+    "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS",
+    "Access-Control-Allow-Credentials": "true",
+  },
+};
+
 const MyProfile = () => {
   const [userData, setUserData] = useState([]);
   const [userAppointments, setUserAppointments] = useState([]);
@@ -42,7 +50,7 @@ const MyProfile = () => {
 
   const fetchUserData = () => {
     axios
-      .get("http://localhost:5500/api/profile")
+      .get("http://localhost:5500/api/profile", config)
       .then((res) => {
         console.log("res: ", res);
         console.log("User: " + res.data);
@@ -55,7 +63,7 @@ const MyProfile = () => {
 
   const fetchApointments = () => {
     axios
-      .get("http://localhost:5500/api/getappointments")
+      .get("http://localhost:5500/api/getappointments", config)
       .then((res) => {
         setUserAppointments(res.data);
         console.log(res.data);
@@ -89,8 +97,6 @@ const MyProfile = () => {
           className="myProfile-innercontainer"
           margin={"auto"}
           sx={{
-            // borderRadius: "10px",
-            // border: "1px solid red",
             marginTop: 0,
             borderBottom: "3px solid red",
             width: "100%",
