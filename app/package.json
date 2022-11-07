@@ -4,7 +4,7 @@
   "description": "CSC-190/191 Project Repository",
   "main": "./Server/routes/index.js",
   "scripts": {
-    "start": "concurrently \"cd ../client && npm run build\" \"node ./Server/server.js\"",
+    "start": "node ./Server/server.js",
     "devStart": "nodemon ./Server/server.js",
     "react": "npm start --prefix client",
     "dev": "concurrently \"cd ../client && npm run build\" \"npm run start\" "
@@ -31,6 +31,8 @@
     "bcrypt": "^5.0.1",
     "body-parser": "^1.20.0",
     "concurrently": "^7.4.0",
+    "connect-mongo": "^4.6.0",
+    "connect-pg-simple": "^7.0.0",
     "consolidate": "^0.16.0",
     "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",

@@ -30,7 +30,7 @@ export default function loginPage() {
     setErrormessage(false);
   }, 3000);
   const successBox = successMessage ? (
-    <Alert severity="Success" variant="filled">
+    <Alert severity="success" variant="filled">
       Logged In
     </Alert>
   ) : (
@@ -71,9 +71,11 @@ export default function loginPage() {
       .post("http://localhost:5500/api/login", user)
       .then((res) => {
         console.log(res.data);
-        if (res.data.redirect === "/MyProfile") {
-          window.location = "/MyProfile";
+        if (res.status === 200) {
           setSuccessMessage(true);
+          setTimeout(() => {
+            handleChange("/MyProfile");
+          }, 2000);
         }
       })
       .catch((err) => {

@@ -3,20 +3,20 @@ const passport = require("passport");
 const localStrategy = require("./localStrat");
 const registerStrategy = require("./registerStrat");
 
-passport.serializeUser(function (user, done) {
+passport.serializeUser(function (User, done) {
   process.nextTick(function () {
     done(null, {
-      username: user.username,
-      firstname: user.firstName,
-      lastname: user.lastName,
-      phonenumber: user.phoneNumber,
+      username: User.username,
+      firstname: User.firstName,
+      lastname: User.lastName,
+      phonenumber: User.phoneNumber,
     });
   });
 });
 
-passport.deserializeUser(function (user, done) {
+passport.deserializeUser(function (User, done) {
   process.nextTick(function () {
-    return done(null, user);
+    return done(null, User);
   });
 });
 
