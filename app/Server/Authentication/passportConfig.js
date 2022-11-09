@@ -1,7 +1,5 @@
-const User = require("../model/user");
 const passport = require("passport");
 const localStrategy = require("./localStrat");
-const registerStrategy = require("./registerStrat");
 
 passport.serializeUser(function (User, done) {
   process.nextTick(function () {
@@ -21,6 +19,5 @@ passport.deserializeUser(function (User, done) {
 });
 
 passport.use("local", localStrategy);
-passport.use("local-signup", registerStrategy);
 
 module.exports = passport;

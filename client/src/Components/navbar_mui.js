@@ -32,6 +32,15 @@ function ResponsiveAppBar() {
   const [isVisible, setIsVisible] = React.useState(false);
   let navigate = useNavigate();
 
+  const config = {
+    headers: {
+      "Access-Control-Allow-Origin": "http://localhost:3000",
+      "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS",
+      "Access-Control-Allow-Credentials": "true",
+    },
+    withCredentials: true,
+  };
+
   const handleClick = (event) => {
     navigate(event);
     isLoggedIn();
@@ -53,7 +62,7 @@ function ResponsiveAppBar() {
 
   const isLoggedIn = () => {
     axios
-      .get("http://localhost:5500/api/profile")
+      .get("http://localhost:5500/api/profile", config)
       .then((res) => {
         console.log("Is user logged in status: " + res.status);
         console.log(res.data);
@@ -69,7 +78,7 @@ function ResponsiveAppBar() {
 
   const logout = () => {
     axios
-      .post("http://localhost:5500/api/logout")
+      .get("http://localhost:5500/api/logout", config)
       .then((res) => {
         if (res.status === 200) {
           handleClick("/home");
