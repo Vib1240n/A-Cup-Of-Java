@@ -313,6 +313,15 @@ export default function loginPage() {
       </m.Stack>
     );
   };
+
+  const config = {
+    headers: {
+      "Access-Control-Allow-Origin": "http://localhost:3000",
+      "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS",
+      "Access-Control-Allow-Credentials": "true",
+    },
+    withCredentials: true,
+  };
   /*
     on Submit function for the login page
     */
@@ -339,7 +348,7 @@ export default function loginPage() {
         phoneNumber: phoneNumber,
       };
       axios
-        .post("http://localhost:5500/api/signup", user)
+        .post("http://localhost:5500/api/signup", user, config)
         .then((res) => {
           console.log(res.data);
           if (res.status === 200) {

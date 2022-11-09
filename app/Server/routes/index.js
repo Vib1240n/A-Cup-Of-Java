@@ -1,5 +1,5 @@
 const express = require("express");
-const router = express.Router({ mergeParams: true });
+const router = express.Router();
 const passport = require("../Authentication/passportConfig");
 const dotenv = require("dotenv");
 dotenv.config({ path: "../app/Private/.env" });
@@ -7,16 +7,7 @@ const nodemailer = require("nodemailer");
 const User = require("../model/user");
 const hash = require("../Authentication/passwordHash");
 const validator = require("node-email-validation");
-
-var log4js = require("log4js");
-
-log4js.configure({
-  appenders: {
-    cheese: { type: "file", filename: "~/A-Cup-Of-Java/cheese.log" },
-  },
-  categories: { default: { appenders: ["cheese"], level: "error" } },
-});
-var logger = log4js.getLogger("cheese");
+const Appointment = require("../model/appointment");
 
 //used to make sure email is an actual email and not jsut a random string
 async function isEmailValid(email) {
@@ -32,14 +23,22 @@ const transporter = nodemailer.createTransport({
 });
 
 //const user = require("../model/user");
-const Appointment = require("../model/appointment");
 
 router.post("/login", passport.authenticate("local"), (req, res) => {
+  var time = new Date(Date.now());
+  console.log(
+    "Session ID before @ /login route: " +
+      time.toLocaleTimeString() +
+      ": " +
+      req.sessionID
+  );
   if (req.user) {
-    //implementing status codes: 200, 201, 302, 400, 404, 500, 504
-    return res.status(200).json({ message: "Login successful" });
+    console.log("Session ID after @ /login route: " + req.sessionID);
+    console.log("User is logged in: " + req.user.username);
+    console.log("User is Authenticated: " + req.isAuthenticated());
+    res.status(200).json({ message: "Login successful" });
   } else {
-    return res.sendStatus(400).json({ message: "User not found" });
+    res.send(400).json({ message: "User not found" });
   }
 });
 
@@ -94,23 +93,36 @@ router.post("/signup", function (req, res) {
 });
 
 router.get("/profile", function (req, res) {
+  var time = new Date(Date.now());
+  console.log(
+    "Session ID @ /profile route: " +
+      time.toLocaleTimeString() +
+      ": " +
+      req.sessionID
+  );
   if (req.isAuthenticated()) {
-    console.log(req.user);
-    console.log("Authenticated");
+    console.log(req.isAuthenticated());
+    console.log("user: " + req.user.username);
     return res.status(200).json(req.user);
+    num = num + 1;
   } else {
+    console.log("else Statement");
     return res.status(302).json({ message: "User not found" });
   }
 });
 
-router.post("/logout", function (req, res, next) {
+router.get("/logout", function (req, res, next) {
+  console.log("Session ID @ /logout route: " + req.sessionID);
+  console.log("User is logged in: " + req.user.username);
   if (req.isAuthenticated()) {
     req.logout(function (err) {
       if (err) {
         return next(err);
       }
-      return res.status(200).json({ message: "Logged out" });
+      res.status(200).json({ message: "Logout successful" });
     });
+  } else {
+    res.status(400).json({ message: "User not logged in" });
   }
 });
 
@@ -125,6 +137,7 @@ router.get("/getappointments", async (req, res) => {
 });
 
 router.post("/appointment", async function (req, res) {
+  console.log("Session ID @ /appointment route: " + req.sessionID);
   if (req.isAuthenticated()) {
     const { date, time, username, message } = req.body;
     const newAppointment = new Appointment({
@@ -162,3 +175,17 @@ router.post("/appointment", async function (req, res) {
 });
 
 module.exports = router;
+
+/**
+ * {"_id":"QLr_S5cGhM89KENOrJxaJUreMN57DdLu","expires":{"$date":{"$numberLong":"1670546765520"}},"session":"{\"cookie\":{\"originalMaxAge\":2592000000,\"expires\":\"2022-12-09T00:46:05.520Z\",\"httpOnly\":true,\"path\":\"/\"}}"}
+ *
+ * {"_id":"_HmjXWuBcfKPIEensc4ELD7TJ0IBkdKv","expires":{"$date":{"$numberLong":"1670546765533"}},"session":"{\"cookie\":{\"originalMaxAge\":2592000000,\"expires\":\"2022-12-09T00:46:05.533Z\",\"httpOnly\":true,\"path\":\"/\"}}"}
+ *
+ * {"_id":"nxjIuF2r9MpVe_PsOYSJvAQlugOHZe_2","expires":{"$date":{"$numberLong":"1670546763415"}},"session":"{\"cookie\":{\"originalMaxAge\":2592000000,\"expires\":\"2022-12-09T00:46:03.415Z\",\"httpOnly\":true,\"path\":\"/\"},\"passport\":{\"user\":{\"username\":\"vibhorsgr@gmail.com\",\"firstname\":\"Vibhore\",\"lastname\":\"Sagar\"}}}"}
+ *
+ * {"_id":"PYbu8a3v7z1GGh-q9Vuj1rBfBDd1BztL","expires":{"$date":{"$numberLong":"1670547165265"}},"session":"{\"cookie\":{\"originalMaxAge\":2592000000,\"expires\":\"2022-12-09T00:52:45.265Z\",\"httpOnly\":true,\"path\":\"/\"}}"}
+ *
+ * {"_id":"w05PAzXGQVISnodx9q3yAw9mZb6nJQ4h","expires":{"$date":{"$numberLong":"1670547167836"}},"session":"{\"cookie\":{\"originalMaxAge\":2592000000,\"expires\":\"2022-12-09T00:52:47.836Z\",\"httpOnly\":true,\"path\":\"/\"}}"}
+ *
+ * {"_id":"4FPp-H113r-mh2wBsRujDLjyJNKoBwKe","expires":{"$date":{"$numberLong":"1670547167950"}},"session":"{\"cookie\":{\"originalMaxAge\":2592000000,\"expires\":\"2022-12-09T00:52:47.950Z\",\"httpOnly\":true,\"path\":\"/\"}}"}
+ */

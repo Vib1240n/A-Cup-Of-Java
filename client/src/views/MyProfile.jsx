@@ -17,6 +17,7 @@ const config = {
     "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS",
     "Access-Control-Allow-Credentials": "true",
   },
+  withCredentials: true,
 };
 
 const MyProfile = () => {
@@ -52,12 +53,13 @@ const MyProfile = () => {
     axios
       .get("http://localhost:5500/api/profile", config)
       .then((res) => {
-        console.log("res: ", res);
+        console.log("res: " + res);
         console.log("User: " + res.data);
         setUserData(res.data);
       })
       .catch((err) => {
         console.log(err);
+        console.log(err.response);
       });
   };
 

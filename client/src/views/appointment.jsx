@@ -40,6 +40,7 @@ export default function Appointment() {
       "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS",
       "Access-Control-Allow-Credentials": "true",
     },
+    withCredentials: true,
   };
 
   const isLoggedIn = () => {
@@ -66,20 +67,20 @@ export default function Appointment() {
   };
 
   const onAppointment = (e) => {
+    var realDate = new Date(date).toLocaleDateString();
+    var realTime = new Date(time).toLocaleTimeString([], {
+      hour: "2-digit",
+      minute: "2-digit",
+    });
     e.preventDefault();
-    let message = `Hello ${userData.firstname} ${
-      userData.lastname
-    },\n\nThank you for requesting an appointment with us at Ace’s Barbershop. Your appointment is requested for ${date.toLocaleDateString()} at 
-    ${time.toLocaleTimeString()}.\nWe are located at 1049 Jefferson Blvd West Sacramento, CA 95691. For any questions please contact us at  (916) 956-0670. We look forward to seeing you!`;
+    let message = `Hello ${userData.firstname} ${userData.lastname},\n\nThank you for requesting an appointment with us at Ace’s Barbershop. Your appointment is requested for ${realDate} at 
+    ${realTime}.\nWe are located at 1049 Jefferson Blvd West Sacramento, CA 95691. For any questions please contact us at  (916) 956-0670. We look forward to seeing you!`;
     axios
       .post(
         "http://localhost:5500/api/appointment",
         {
-          date: date.toLocaleDateString(),
-          time: time.toLocaleTimeString([], {
-            hour: "2-digit",
-            minute: "2-digit",
-          }),
+          date: realDate,
+          time: realTime,
           username: userData.username,
           message: message,
         },

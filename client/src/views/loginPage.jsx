@@ -6,16 +6,20 @@ import background from "../asset/images/background_cornerLong.jpg";
 import Alert from "@mui/material/Alert";
 
 export default function loginPage() {
-  React.useEffect(() => {
-    isLoggedIn();
-  }, []);
+  // React.useEffect(() => {
+  //   isLoggedIn();
+  // });
 
+  document.addEventListener("DOMContentLoaded", function () {
+    isLoggedIn();
+  });
   const config = {
     headers: {
       "Access-Control-Allow-Origin": "http://localhost:3000",
       "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS",
       "Access-Control-Allow-Credentials": "true",
     },
+    withCredentials: true,
   };
   /*
     On change events for the login page & signup page
@@ -58,7 +62,7 @@ export default function loginPage() {
         console.log("Is user logged in status: " + res.status);
         console.log(res.data);
         if (res.status === 200) {
-          handleChange("/MyProfile");
+          window.location.href = "/MyProfile";
         }
       })
       .catch((err) => {
@@ -82,7 +86,7 @@ export default function loginPage() {
         if (res.status === 200) {
           setSuccessMessage(true);
           setTimeout(() => {
-            handleChange("/MyProfile");
+            window.location.href = "/MyProfile";
           }, 2000);
         }
       })
