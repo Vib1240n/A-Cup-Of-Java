@@ -186,11 +186,11 @@ export default function loginPage() {
 
   const isLoggedIn = () => {
     axios
-      .get("http://localhost:5500/api/profile")
+      .get("http://localhost:5500/api/profile",config)
       .then((res) => {
         console.log("Is user logged in status: " + res.status);
         if (res.status === 200) {
-          window.Location = "/MyProfile";
+          navigate("/MyProfile");
         }
       })
       .catch((err) => {

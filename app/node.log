@@ -263,3 +263,595 @@
 [2022-11-12T15:51:14.397] [DEBUG] default - Session ID @ /profile route: 3:51:14 PM: HYdOOG9W2V84dQt7EvgqYjXYNk1OZC38
 [2022-11-12T15:51:14.397] [DEBUG] default - true
 [2022-11-12T15:51:14.397] [DEBUG] default - user: alex@s3v.us
+[2022-11-13T14:05:52.380] [DEBUG] default - Session ID @ /profile route: 2:05:52 PM: tvMEk6j7SUwlRM4YZBN3WZrijTy7zD_5
+[2022-11-13T14:05:52.381] [DEBUG] default - alex@s3v.us Authenticated: true
+[2022-11-13T14:05:52.457] [DEBUG] default - Session ID @ /profile route: 2:05:52 PM: tvMEk6j7SUwlRM4YZBN3WZrijTy7zD_5
+[2022-11-13T14:05:52.457] [DEBUG] default - alex@s3v.us Authenticated: true
+[2022-11-13T14:05:55.473] [DEBUG] default - Session ID @ /profile route: 2:05:55 PM: tvMEk6j7SUwlRM4YZBN3WZrijTy7zD_5
+[2022-11-13T14:05:55.473] [DEBUG] default - alex@s3v.us Authenticated: true
+[2022-11-13T14:05:57.132] [DEBUG] default - Session ID @ /profile route: 2:05:57 PM: tvMEk6j7SUwlRM4YZBN3WZrijTy7zD_5
+[2022-11-13T14:05:57.132] [DEBUG] default - alex@s3v.us Authenticated: true
+[2022-11-13T14:05:58.919] [DEBUG] default - Session ID @ /profile route: 2:05:58 PM: tvMEk6j7SUwlRM4YZBN3WZrijTy7zD_5
+[2022-11-13T14:05:58.919] [DEBUG] default - alex@s3v.us Authenticated: true
+[2022-11-13T14:06:05.125] [DEBUG] default - Session ID @ /profile route: 2:06:05 PM: tvMEk6j7SUwlRM4YZBN3WZrijTy7zD_5
+[2022-11-13T14:06:05.125] [DEBUG] default - alex@s3v.us Authenticated: true
+[2022-11-13T14:06:05.932] [DEBUG] default - Session ID @ /profile route: 2:06:05 PM: tvMEk6j7SUwlRM4YZBN3WZrijTy7zD_5
+[2022-11-13T14:06:05.932] [DEBUG] default - alex@s3v.us Authenticated: true
+[2022-11-13T14:06:06.951] [DEBUG] default - Session ID @ /profile route: 2:06:06 PM: tvMEk6j7SUwlRM4YZBN3WZrijTy7zD_5
+[2022-11-13T14:06:06.951] [DEBUG] default - alex@s3v.us Authenticated: true
+[2022-11-13T14:06:07.920] [DEBUG] default - Session ID @ /profile route: 2:06:07 PM: tvMEk6j7SUwlRM4YZBN3WZrijTy7zD_5
+[2022-11-13T14:06:07.920] [DEBUG] default - alex@s3v.us Authenticated: true
+[2022-11-13T14:06:10.022] [DEBUG] default - Session ID @ /profile route: 2:06:10 PM: tvMEk6j7SUwlRM4YZBN3WZrijTy7zD_5
+[2022-11-13T14:06:10.022] [DEBUG] default - alex@s3v.us Authenticated: true
+[2022-11-13T14:06:12.180] [DEBUG] default - Session ID @ /profile route: 2:06:12 PM: tvMEk6j7SUwlRM4YZBN3WZrijTy7zD_5
+[2022-11-13T14:06:12.180] [DEBUG] default - alex@s3v.us Authenticated: true
+[2022-11-13T14:06:12.258] [DEBUG] default - Session ID @ /profile route: 2:06:12 PM: tvMEk6j7SUwlRM4YZBN3WZrijTy7zD_5
+[2022-11-13T14:06:12.258] [DEBUG] default - alex@s3v.us Authenticated: true
+[2022-11-13T14:06:31.694] [DEBUG] default - Session ID @ /profile route: 2:06:31 PM: tvMEk6j7SUwlRM4YZBN3WZrijTy7zD_5
+[2022-11-13T14:06:31.694] [DEBUG] default - alex@s3v.us Authenticated: true
+[2022-11-13T14:06:31.766] [DEBUG] default - Session ID @ /profile route: 2:06:31 PM: tvMEk6j7SUwlRM4YZBN3WZrijTy7zD_5
+[2022-11-13T14:06:31.766] [DEBUG] default - alex@s3v.us Authenticated: true
+[2022-11-13T14:06:33.442] [DEBUG] default - Session ID @ /profile route: 2:06:33 PM: tvMEk6j7SUwlRM4YZBN3WZrijTy7zD_5
+[2022-11-13T14:06:33.443] [DEBUG] default - alex@s3v.us Authenticated: true
+[2022-11-13T14:06:35.080] [DEBUG] default - Session ID @ /profile route: 2:06:35 PM: tvMEk6j7SUwlRM4YZBN3WZrijTy7zD_5
+[2022-11-13T14:06:35.080] [DEBUG] default - alex@s3v.us Authenticated: true
+[2022-11-13T14:06:36.299] [DEBUG] default - Session ID before @ /login route: 2:06:36 PM: tsmPZecnuG4-O1ItRNUDiA2Xb_BL4NF9
+[2022-11-13T14:06:36.299] [DEBUG] default - Session ID after @ /login route: tsmPZecnuG4-O1ItRNUDiA2Xb_BL4NF9
+[2022-11-13T14:06:36.299] [DEBUG] default - alex@s3v.us Authenticated: true
+[2022-11-13T14:06:36.299] [DEBUG] default - /login 200 Login Successful
+[2022-11-13T14:06:38.984] [DEBUG] default - Session ID @ /profile route: 2:06:38 PM: tsmPZecnuG4-O1ItRNUDiA2Xb_BL4NF9
+[2022-11-13T14:06:38.984] [DEBUG] default - alex@s3v.us Authenticated: true
+[2022-11-13T14:06:39.054] [DEBUG] default - Session ID @ /profile route: 2:06:39 PM: tsmPZecnuG4-O1ItRNUDiA2Xb_BL4NF9
+[2022-11-13T14:06:39.054] [DEBUG] default - alex@s3v.us Authenticated: true
+[2022-11-13T14:06:39.120] [DEBUG] default - Session ID @ /profile route: 2:06:39 PM: tsmPZecnuG4-O1ItRNUDiA2Xb_BL4NF9
+[2022-11-13T14:06:39.120] [DEBUG] default - alex@s3v.us Authenticated: true
+[2022-11-13T14:06:39.180] [DEBUG] default - Session ID @ /profile route: 2:06:39 PM: tsmPZecnuG4-O1ItRNUDiA2Xb_BL4NF9
+[2022-11-13T14:06:39.180] [DEBUG] default - alex@s3v.us Authenticated: true
+[2022-11-13T14:06:39.186] [DEBUG] default - Session ID @ /profile route: 2:06:39 PM: tsmPZecnuG4-O1ItRNUDiA2Xb_BL4NF9
+[2022-11-13T14:06:39.186] [DEBUG] default - alex@s3v.us Authenticated: true
+[2022-11-13T14:06:39.213] [DEBUG] default - alex@s3v.us
+[2022-11-13T14:06:39.213] [DEBUG] default - [
+  {
+    _id: new ObjectId("6365a06f87f63cfa66d4ef2a"),
+    date: '10/4/2022',
+    time: '16:29',
+    username: 'alex@s3v.us',
+    __v: 0
+  },
+  {
+    _id: new ObjectId("636b1716a3d166b45dd8338c"),
+    date: '11/17/2022',
+    time: '06:57 PM',
+    username: 'alex@s3v.us',
+    __v: 0
+  },
+  {
+    _id: new ObjectId("637169c7ae150338948155ec"),
+    date: '11/13/2022',
+    time: '03:15 PM',
+    username: 'alex@s3v.us',
+    __v: 0
+  }
+]
+[2022-11-13T14:06:39.437] [DEBUG] default - Session ID @ /profile route: 2:06:39 PM: tsmPZecnuG4-O1ItRNUDiA2Xb_BL4NF9
+[2022-11-13T14:06:39.437] [DEBUG] default - alex@s3v.us Authenticated: true
+[2022-11-13T14:06:39.469] [DEBUG] default - alex@s3v.us
+[2022-11-13T14:06:39.469] [DEBUG] default - [
+  {
+    _id: new ObjectId("6365a06f87f63cfa66d4ef2a"),
+    date: '10/4/2022',
+    time: '16:29',
+    username: 'alex@s3v.us',
+    __v: 0
+  },
+  {
+    _id: new ObjectId("636b1716a3d166b45dd8338c"),
+    date: '11/17/2022',
+    time: '06:57 PM',
+    username: 'alex@s3v.us',
+    __v: 0
+  },
+  {
+    _id: new ObjectId("637169c7ae150338948155ec"),
+    date: '11/13/2022',
+    time: '03:15 PM',
+    username: 'alex@s3v.us',
+    __v: 0
+  }
+]
+[2022-11-13T14:06:45.133] [DEBUG] default - Session ID @ /profile route: 2:06:45 PM: tsmPZecnuG4-O1ItRNUDiA2Xb_BL4NF9
+[2022-11-13T14:06:45.133] [DEBUG] default - alex@s3v.us Authenticated: true
+[2022-11-13T14:06:45.204] [DEBUG] default - /logout 200 Logout Successful
+[2022-11-13T14:06:45.293] [DEBUG] default - Session ID @ /profile route: 2:06:45 PM: dcrPfW9pZ7o_K-w2PZ19002e780TwWaD
+[2022-11-13T14:06:45.293] [ERROR] default - /profile 302 Not Authenticated
+[2022-11-13T14:06:47.782] [DEBUG] default - Session ID @ /profile route: 2:06:47 PM: dcrPfW9pZ7o_K-w2PZ19002e780TwWaD
+[2022-11-13T14:06:47.782] [ERROR] default - /profile 302 Not Authenticated
+[2022-11-13T14:06:53.644] [DEBUG] default - Session ID before @ /login route: 2:06:53 PM: eWCjx6f56Otl2fyRtncJ8l01RZxRA85W
+[2022-11-13T14:06:53.644] [DEBUG] default - Session ID after @ /login route: eWCjx6f56Otl2fyRtncJ8l01RZxRA85W
+[2022-11-13T14:06:53.644] [DEBUG] default - alex@s3v.us Authenticated: true
+[2022-11-13T14:06:53.644] [DEBUG] default - /login 200 Login Successful
+[2022-11-13T14:06:56.189] [DEBUG] default - Session ID @ /profile route: 2:06:56 PM: eWCjx6f56Otl2fyRtncJ8l01RZxRA85W
+[2022-11-13T14:06:56.189] [DEBUG] default - alex@s3v.us Authenticated: true
+[2022-11-13T14:06:56.190] [DEBUG] default - Session ID @ /profile route: 2:06:56 PM: eWCjx6f56Otl2fyRtncJ8l01RZxRA85W
+[2022-11-13T14:06:56.190] [DEBUG] default - alex@s3v.us Authenticated: true
+[2022-11-13T14:06:56.219] [DEBUG] default - alex@s3v.us
+[2022-11-13T14:06:56.219] [DEBUG] default - [
+  {
+    _id: new ObjectId("6365a06f87f63cfa66d4ef2a"),
+    date: '10/4/2022',
+    time: '16:29',
+    username: 'alex@s3v.us',
+    __v: 0
+  },
+  {
+    _id: new ObjectId("636b1716a3d166b45dd8338c"),
+    date: '11/17/2022',
+    time: '06:57 PM',
+    username: 'alex@s3v.us',
+    __v: 0
+  },
+  {
+    _id: new ObjectId("637169c7ae150338948155ec"),
+    date: '11/13/2022',
+    time: '03:15 PM',
+    username: 'alex@s3v.us',
+    __v: 0
+  }
+]
+[2022-11-13T14:06:56.229] [DEBUG] default - Session ID @ /profile route: 2:06:56 PM: eWCjx6f56Otl2fyRtncJ8l01RZxRA85W
+[2022-11-13T14:06:56.229] [DEBUG] default - alex@s3v.us Authenticated: true
+[2022-11-13T14:06:56.306] [DEBUG] default - Session ID @ /profile route: 2:06:56 PM: eWCjx6f56Otl2fyRtncJ8l01RZxRA85W
+[2022-11-13T14:06:56.306] [DEBUG] default - alex@s3v.us Authenticated: true
+[2022-11-13T14:06:56.321] [DEBUG] default - Session ID @ /profile route: 2:06:56 PM: eWCjx6f56Otl2fyRtncJ8l01RZxRA85W
+[2022-11-13T14:06:56.322] [DEBUG] default - alex@s3v.us Authenticated: true
+[2022-11-13T14:06:56.336] [DEBUG] default - alex@s3v.us
+[2022-11-13T14:06:56.336] [DEBUG] default - [
+  {
+    _id: new ObjectId("6365a06f87f63cfa66d4ef2a"),
+    date: '10/4/2022',
+    time: '16:29',
+    username: 'alex@s3v.us',
+    __v: 0
+  },
+  {
+    _id: new ObjectId("636b1716a3d166b45dd8338c"),
+    date: '11/17/2022',
+    time: '06:57 PM',
+    username: 'alex@s3v.us',
+    __v: 0
+  },
+  {
+    _id: new ObjectId("637169c7ae150338948155ec"),
+    date: '11/13/2022',
+    time: '03:15 PM',
+    username: 'alex@s3v.us',
+    __v: 0
+  }
+]
+[2022-11-13T14:06:56.397] [DEBUG] default - Session ID @ /profile route: 2:06:56 PM: eWCjx6f56Otl2fyRtncJ8l01RZxRA85W
+[2022-11-13T14:06:56.397] [DEBUG] default - alex@s3v.us Authenticated: true
+[2022-11-13T14:07:04.413] [DEBUG] default - Session ID @ /profile route: 2:07:04 PM: eb6XbxC5l4BwXtFYzItmx41phly7w0VA
+[2022-11-13T14:07:04.413] [ERROR] default - /profile 302 Not Authenticated
+[2022-11-13T14:07:04.415] [DEBUG] default - Session ID @ /profile route: 2:07:04 PM: RT0a0SCwOPAT8sEC7usJ-Di8wH5PZfIl
+[2022-11-13T14:07:04.415] [ERROR] default - /profile 302 Not Authenticated
+[2022-11-13T14:07:04.447] [DEBUG] default - Session ID @ /profile route: 2:07:04 PM: eWCjx6f56Otl2fyRtncJ8l01RZxRA85W
+[2022-11-13T14:07:04.447] [DEBUG] default - alex@s3v.us Authenticated: true
+[2022-11-13T14:07:04.482] [DEBUG] default - Session ID @ /profile route: 2:07:04 PM: eWCjx6f56Otl2fyRtncJ8l01RZxRA85W
+[2022-11-13T14:07:04.483] [DEBUG] default - alex@s3v.us Authenticated: true
+[2022-11-13T14:08:02.048] [DEBUG] default - Session ID @ /profile route: 2:08:02 PM: eWCjx6f56Otl2fyRtncJ8l01RZxRA85W
+[2022-11-13T14:08:02.048] [DEBUG] default - alex@s3v.us Authenticated: true
+[2022-11-13T14:08:05.706] [DEBUG] default - Session ID @ /profile route: 2:08:05 PM: eWCjx6f56Otl2fyRtncJ8l01RZxRA85W
+[2022-11-13T14:08:05.706] [DEBUG] default - alex@s3v.us Authenticated: true
+[2022-11-13T14:08:16.822] [DEBUG] default - Session ID @ /profile route: 2:08:16 PM: yvG3FVdhxZMtKwPRkgqACfHkywBEM2Co
+[2022-11-13T14:08:16.822] [ERROR] default - /profile 302 Not Authenticated
+[2022-11-13T14:08:16.855] [DEBUG] default - Session ID @ /profile route: 2:08:16 PM: eWCjx6f56Otl2fyRtncJ8l01RZxRA85W
+[2022-11-13T14:08:16.855] [DEBUG] default - alex@s3v.us Authenticated: true
+[2022-11-13T14:08:16.857] [DEBUG] default - Session ID @ /profile route: 2:08:16 PM: EQ2ya1k76CxuF9EVwJ60AJsOyjeDj8Dv
+[2022-11-13T14:08:16.858] [ERROR] default - /profile 302 Not Authenticated
+[2022-11-13T14:08:16.901] [DEBUG] default - Session ID @ /profile route: 2:08:16 PM: eWCjx6f56Otl2fyRtncJ8l01RZxRA85W
+[2022-11-13T14:08:16.901] [DEBUG] default - alex@s3v.us Authenticated: true
+[2022-11-13T14:10:36.797] [DEBUG] default - Session ID @ /profile route: 2:10:36 PM: eWCjx6f56Otl2fyRtncJ8l01RZxRA85W
+[2022-11-13T14:10:36.797] [DEBUG] default - alex@s3v.us Authenticated: true
+[2022-11-13T14:10:38.594] [DEBUG] default - Session ID @ /profile route: 2:10:38 PM: eWCjx6f56Otl2fyRtncJ8l01RZxRA85W
+[2022-11-13T14:10:38.594] [DEBUG] default - alex@s3v.us Authenticated: true
+[2022-11-13T14:10:40.617] [DEBUG] default - Session ID @ /profile route: 2:10:40 PM: eWCjx6f56Otl2fyRtncJ8l01RZxRA85W
+[2022-11-13T14:10:40.617] [DEBUG] default - alex@s3v.us Authenticated: true
+[2022-11-13T14:10:55.869] [DEBUG] default - Session ID @ /profile route: 2:10:55 PM: eWCjx6f56Otl2fyRtncJ8l01RZxRA85W
+[2022-11-13T14:10:55.869] [DEBUG] default - alex@s3v.us Authenticated: true
+[2022-11-13T14:10:59.491] [DEBUG] default - Session ID @ /profile route: 2:10:59 PM: eWCjx6f56Otl2fyRtncJ8l01RZxRA85W
+[2022-11-13T14:10:59.491] [DEBUG] default - alex@s3v.us Authenticated: true
+[2022-11-13T14:11:00.715] [DEBUG] default - Session ID @ /profile route: 2:11:00 PM: eWCjx6f56Otl2fyRtncJ8l01RZxRA85W
+[2022-11-13T14:11:00.716] [DEBUG] default - alex@s3v.us Authenticated: true
+[2022-11-13T14:11:02.404] [DEBUG] default - Session ID @ /profile route: 2:11:02 PM: eWCjx6f56Otl2fyRtncJ8l01RZxRA85W
+[2022-11-13T14:11:02.404] [DEBUG] default - alex@s3v.us Authenticated: true
+[2022-11-13T14:15:18.287] [DEBUG] default - Session ID @ /profile route: 2:15:18 PM: eWCjx6f56Otl2fyRtncJ8l01RZxRA85W
+[2022-11-13T14:15:18.287] [DEBUG] default - alex@s3v.us Authenticated: true
+[2022-11-13T14:15:18.360] [DEBUG] default - Session ID @ /profile route: 2:15:18 PM: eWCjx6f56Otl2fyRtncJ8l01RZxRA85W
+[2022-11-13T14:15:18.360] [DEBUG] default - alex@s3v.us Authenticated: true
+[2022-11-13T14:15:18.401] [DEBUG] default - Session ID @ /profile route: 2:15:18 PM: eWCjx6f56Otl2fyRtncJ8l01RZxRA85W
+[2022-11-13T14:15:18.401] [DEBUG] default - alex@s3v.us Authenticated: true
+[2022-11-13T14:15:18.430] [DEBUG] default - Session ID @ /profile route: 2:15:18 PM: eWCjx6f56Otl2fyRtncJ8l01RZxRA85W
+[2022-11-13T14:15:18.430] [DEBUG] default - alex@s3v.us Authenticated: true
+[2022-11-13T14:15:18.431] [DEBUG] default - alex@s3v.us
+[2022-11-13T14:15:18.431] [DEBUG] default - [
+  {
+    _id: new ObjectId("6365a06f87f63cfa66d4ef2a"),
+    date: '10/4/2022',
+    time: '16:29',
+    username: 'alex@s3v.us',
+    __v: 0
+  },
+  {
+    _id: new ObjectId("636b1716a3d166b45dd8338c"),
+    date: '11/17/2022',
+    time: '06:57 PM',
+    username: 'alex@s3v.us',
+    __v: 0
+  },
+  {
+    _id: new ObjectId("637169c7ae150338948155ec"),
+    date: '11/13/2022',
+    time: '03:15 PM',
+    username: 'alex@s3v.us',
+    __v: 0
+  }
+]
+[2022-11-13T14:15:18.498] [DEBUG] default - Session ID @ /profile route: 2:15:18 PM: eWCjx6f56Otl2fyRtncJ8l01RZxRA85W
+[2022-11-13T14:15:18.498] [DEBUG] default - alex@s3v.us Authenticated: true
+[2022-11-13T14:15:18.501] [DEBUG] default - Session ID @ /profile route: 2:15:18 PM: eWCjx6f56Otl2fyRtncJ8l01RZxRA85W
+[2022-11-13T14:15:18.501] [DEBUG] default - alex@s3v.us Authenticated: true
+[2022-11-13T14:15:18.533] [DEBUG] default - alex@s3v.us
+[2022-11-13T14:15:18.533] [DEBUG] default - [
+  {
+    _id: new ObjectId("6365a06f87f63cfa66d4ef2a"),
+    date: '10/4/2022',
+    time: '16:29',
+    username: 'alex@s3v.us',
+    __v: 0
+  },
+  {
+    _id: new ObjectId("636b1716a3d166b45dd8338c"),
+    date: '11/17/2022',
+    time: '06:57 PM',
+    username: 'alex@s3v.us',
+    __v: 0
+  },
+  {
+    _id: new ObjectId("637169c7ae150338948155ec"),
+    date: '11/13/2022',
+    time: '03:15 PM',
+    username: 'alex@s3v.us',
+    __v: 0
+  }
+]
+[2022-11-13T14:15:25.890] [DEBUG] default - Session ID @ /profile route: 2:15:25 PM: eWCjx6f56Otl2fyRtncJ8l01RZxRA85W
+[2022-11-13T14:15:25.890] [DEBUG] default - alex@s3v.us Authenticated: true
+[2022-11-13T14:15:28.117] [DEBUG] default - Session ID @ /profile route: 2:15:28 PM: eWCjx6f56Otl2fyRtncJ8l01RZxRA85W
+[2022-11-13T14:15:28.117] [DEBUG] default - alex@s3v.us Authenticated: true
+[2022-11-13T14:15:35.952] [DEBUG] default - Session ID @ /profile route: 2:15:35 PM: eWCjx6f56Otl2fyRtncJ8l01RZxRA85W
+[2022-11-13T14:15:35.952] [DEBUG] default - alex@s3v.us Authenticated: true
+[2022-11-13T14:15:36.017] [DEBUG] default - Session ID @ /profile route: 2:15:36 PM: eWCjx6f56Otl2fyRtncJ8l01RZxRA85W
+[2022-11-13T14:15:36.017] [DEBUG] default - alex@s3v.us Authenticated: true
+[2022-11-13T14:15:36.089] [DEBUG] default - Session ID @ /profile route: 2:15:36 PM: eWCjx6f56Otl2fyRtncJ8l01RZxRA85W
+[2022-11-13T14:15:36.089] [DEBUG] default - alex@s3v.us Authenticated: true
+[2022-11-13T14:15:36.153] [DEBUG] default - Session ID @ /profile route: 2:15:36 PM: eWCjx6f56Otl2fyRtncJ8l01RZxRA85W
+[2022-11-13T14:15:36.153] [DEBUG] default - alex@s3v.us Authenticated: true
+[2022-11-13T14:15:36.194] [DEBUG] default - Session ID @ /profile route: 2:15:36 PM: eWCjx6f56Otl2fyRtncJ8l01RZxRA85W
+[2022-11-13T14:15:36.194] [DEBUG] default - alex@s3v.us Authenticated: true
+[2022-11-13T14:15:36.218] [DEBUG] default - Session ID @ /profile route: 2:15:36 PM: eWCjx6f56Otl2fyRtncJ8l01RZxRA85W
+[2022-11-13T14:15:36.218] [DEBUG] default - alex@s3v.us Authenticated: true
+[2022-11-13T14:15:36.228] [DEBUG] default - alex@s3v.us
+[2022-11-13T14:15:36.228] [DEBUG] default - [
+  {
+    _id: new ObjectId("6365a06f87f63cfa66d4ef2a"),
+    date: '10/4/2022',
+    time: '16:29',
+    username: 'alex@s3v.us',
+    __v: 0
+  },
+  {
+    _id: new ObjectId("636b1716a3d166b45dd8338c"),
+    date: '11/17/2022',
+    time: '06:57 PM',
+    username: 'alex@s3v.us',
+    __v: 0
+  },
+  {
+    _id: new ObjectId("637169c7ae150338948155ec"),
+    date: '11/13/2022',
+    time: '03:15 PM',
+    username: 'alex@s3v.us',
+    __v: 0
+  }
+]
+[2022-11-13T14:15:36.287] [DEBUG] default - Session ID @ /profile route: 2:15:36 PM: eWCjx6f56Otl2fyRtncJ8l01RZxRA85W
+[2022-11-13T14:15:36.287] [DEBUG] default - alex@s3v.us Authenticated: true
+[2022-11-13T14:15:36.299] [DEBUG] default - Session ID @ /profile route: 2:15:36 PM: eWCjx6f56Otl2fyRtncJ8l01RZxRA85W
+[2022-11-13T14:15:36.299] [DEBUG] default - alex@s3v.us Authenticated: true
+[2022-11-13T14:15:36.330] [DEBUG] default - alex@s3v.us
+[2022-11-13T14:15:36.330] [DEBUG] default - [
+  {
+    _id: new ObjectId("6365a06f87f63cfa66d4ef2a"),
+    date: '10/4/2022',
+    time: '16:29',
+    username: 'alex@s3v.us',
+    __v: 0
+  },
+  {
+    _id: new ObjectId("636b1716a3d166b45dd8338c"),
+    date: '11/17/2022',
+    time: '06:57 PM',
+    username: 'alex@s3v.us',
+    __v: 0
+  },
+  {
+    _id: new ObjectId("637169c7ae150338948155ec"),
+    date: '11/13/2022',
+    time: '03:15 PM',
+    username: 'alex@s3v.us',
+    __v: 0
+  }
+]
+[2022-11-13T14:16:13.555] [DEBUG] default - Session ID @ /profile route: 2:16:13 PM: eWCjx6f56Otl2fyRtncJ8l01RZxRA85W
+[2022-11-13T14:16:13.555] [DEBUG] default - alex@s3v.us Authenticated: true
+[2022-11-13T14:16:18.442] [DEBUG] default - Session ID @ /profile route: 2:16:18 PM: eWCjx6f56Otl2fyRtncJ8l01RZxRA85W
+[2022-11-13T14:16:18.442] [DEBUG] default - alex@s3v.us Authenticated: true
+[2022-11-13T14:16:46.248] [DEBUG] default - Session ID @ /profile route: 2:16:46 PM: eWCjx6f56Otl2fyRtncJ8l01RZxRA85W
+[2022-11-13T14:16:46.248] [DEBUG] default - alex@s3v.us Authenticated: true
+[2022-11-13T14:16:46.318] [DEBUG] default - Session ID @ /profile route: 2:16:46 PM: eWCjx6f56Otl2fyRtncJ8l01RZxRA85W
+[2022-11-13T14:16:46.318] [DEBUG] default - alex@s3v.us Authenticated: true
+[2022-11-13T14:16:46.354] [DEBUG] default - Session ID @ /profile route: 2:16:46 PM: eWCjx6f56Otl2fyRtncJ8l01RZxRA85W
+[2022-11-13T14:16:46.354] [DEBUG] default - alex@s3v.us Authenticated: true
+[2022-11-13T14:16:46.384] [DEBUG] default - alex@s3v.us
+[2022-11-13T14:16:46.384] [DEBUG] default - [
+  {
+    _id: new ObjectId("6365a06f87f63cfa66d4ef2a"),
+    date: '10/4/2022',
+    time: '16:29',
+    username: 'alex@s3v.us',
+    __v: 0
+  },
+  {
+    _id: new ObjectId("636b1716a3d166b45dd8338c"),
+    date: '11/17/2022',
+    time: '06:57 PM',
+    username: 'alex@s3v.us',
+    __v: 0
+  },
+  {
+    _id: new ObjectId("637169c7ae150338948155ec"),
+    date: '11/13/2022',
+    time: '03:15 PM',
+    username: 'alex@s3v.us',
+    __v: 0
+  }
+]
+[2022-11-13T14:16:46.386] [DEBUG] default - Session ID @ /profile route: 2:16:46 PM: eWCjx6f56Otl2fyRtncJ8l01RZxRA85W
+[2022-11-13T14:16:46.386] [DEBUG] default - alex@s3v.us Authenticated: true
+[2022-11-13T14:16:46.454] [DEBUG] default - Session ID @ /profile route: 2:16:46 PM: eWCjx6f56Otl2fyRtncJ8l01RZxRA85W
+[2022-11-13T14:16:46.454] [DEBUG] default - alex@s3v.us Authenticated: true
+[2022-11-13T14:16:46.459] [DEBUG] default - Session ID @ /profile route: 2:16:46 PM: eWCjx6f56Otl2fyRtncJ8l01RZxRA85W
+[2022-11-13T14:16:46.459] [DEBUG] default - alex@s3v.us Authenticated: true
+[2022-11-13T14:16:46.484] [DEBUG] default - alex@s3v.us
+[2022-11-13T14:16:46.484] [DEBUG] default - [
+  {
+    _id: new ObjectId("6365a06f87f63cfa66d4ef2a"),
+    date: '10/4/2022',
+    time: '16:29',
+    username: 'alex@s3v.us',
+    __v: 0
+  },
+  {
+    _id: new ObjectId("636b1716a3d166b45dd8338c"),
+    date: '11/17/2022',
+    time: '06:57 PM',
+    username: 'alex@s3v.us',
+    __v: 0
+  },
+  {
+    _id: new ObjectId("637169c7ae150338948155ec"),
+    date: '11/13/2022',
+    time: '03:15 PM',
+    username: 'alex@s3v.us',
+    __v: 0
+  }
+]
+[2022-11-13T14:16:52.215] [DEBUG] default - Session ID @ /profile route: 2:16:52 PM: eWCjx6f56Otl2fyRtncJ8l01RZxRA85W
+[2022-11-13T14:16:52.215] [DEBUG] default - alex@s3v.us Authenticated: true
+[2022-11-13T14:16:52.285] [DEBUG] default - Session ID @ /profile route: 2:16:52 PM: eWCjx6f56Otl2fyRtncJ8l01RZxRA85W
+[2022-11-13T14:16:52.285] [DEBUG] default - alex@s3v.us Authenticated: true
+[2022-11-13T14:16:52.356] [DEBUG] default - Session ID @ /profile route: 2:16:52 PM: eWCjx6f56Otl2fyRtncJ8l01RZxRA85W
+[2022-11-13T14:16:52.356] [DEBUG] default - alex@s3v.us Authenticated: true
+[2022-11-13T14:16:52.397] [DEBUG] default - Session ID @ /profile route: 2:16:52 PM: eWCjx6f56Otl2fyRtncJ8l01RZxRA85W
+[2022-11-13T14:16:52.397] [DEBUG] default - alex@s3v.us Authenticated: true
+[2022-11-13T14:16:52.430] [DEBUG] default - alex@s3v.us
+[2022-11-13T14:16:52.430] [DEBUG] default - [
+  {
+    _id: new ObjectId("6365a06f87f63cfa66d4ef2a"),
+    date: '10/4/2022',
+    time: '16:29',
+    username: 'alex@s3v.us',
+    __v: 0
+  },
+  {
+    _id: new ObjectId("636b1716a3d166b45dd8338c"),
+    date: '11/17/2022',
+    time: '06:57 PM',
+    username: 'alex@s3v.us',
+    __v: 0
+  },
+  {
+    _id: new ObjectId("637169c7ae150338948155ec"),
+    date: '11/13/2022',
+    time: '03:15 PM',
+    username: 'alex@s3v.us',
+    __v: 0
+  }
+]
+[2022-11-13T14:16:52.431] [DEBUG] default - Session ID @ /profile route: 2:16:52 PM: eWCjx6f56Otl2fyRtncJ8l01RZxRA85W
+[2022-11-13T14:16:52.431] [DEBUG] default - alex@s3v.us Authenticated: true
+[2022-11-13T14:16:52.503] [DEBUG] default - Session ID @ /profile route: 2:16:52 PM: eWCjx6f56Otl2fyRtncJ8l01RZxRA85W
+[2022-11-13T14:16:52.503] [DEBUG] default - alex@s3v.us Authenticated: true
+[2022-11-13T14:16:52.505] [DEBUG] default - Session ID @ /profile route: 2:16:52 PM: eWCjx6f56Otl2fyRtncJ8l01RZxRA85W
+[2022-11-13T14:16:52.505] [DEBUG] default - alex@s3v.us Authenticated: true
+[2022-11-13T14:16:52.535] [DEBUG] default - alex@s3v.us
+[2022-11-13T14:16:52.535] [DEBUG] default - [
+  {
+    _id: new ObjectId("6365a06f87f63cfa66d4ef2a"),
+    date: '10/4/2022',
+    time: '16:29',
+    username: 'alex@s3v.us',
+    __v: 0
+  },
+  {
+    _id: new ObjectId("636b1716a3d166b45dd8338c"),
+    date: '11/17/2022',
+    time: '06:57 PM',
+    username: 'alex@s3v.us',
+    __v: 0
+  },
+  {
+    _id: new ObjectId("637169c7ae150338948155ec"),
+    date: '11/13/2022',
+    time: '03:15 PM',
+    username: 'alex@s3v.us',
+    __v: 0
+  }
+]
+[2022-11-13T14:16:58.681] [DEBUG] default - Session ID @ /profile route: 2:16:58 PM: eWCjx6f56Otl2fyRtncJ8l01RZxRA85W
+[2022-11-13T14:16:58.681] [DEBUG] default - alex@s3v.us Authenticated: true
+[2022-11-13T14:16:58.756] [DEBUG] default - /logout 200 Logout Successful
+[2022-11-13T14:16:58.844] [DEBUG] default - Session ID @ /profile route: 2:16:58 PM: eBlJHsUi-7MWWukT7z2OURwC95tvoHHT
+[2022-11-13T14:16:58.844] [ERROR] default - /profile 302 Not Authenticated
+[2022-11-13T14:17:01.902] [DEBUG] default - Session ID @ /profile route: 2:17:01 PM: eBlJHsUi-7MWWukT7z2OURwC95tvoHHT
+[2022-11-13T14:17:01.902] [ERROR] default - /profile 302 Not Authenticated
+[2022-11-13T14:17:01.935] [DEBUG] default - Session ID @ /profile route: 2:17:01 PM: eBlJHsUi-7MWWukT7z2OURwC95tvoHHT
+[2022-11-13T14:17:01.935] [ERROR] default - /profile 302 Not Authenticated
+[2022-11-13T14:17:01.970] [DEBUG] default - Session ID @ /profile route: 2:17:01 PM: eBlJHsUi-7MWWukT7z2OURwC95tvoHHT
+[2022-11-13T14:17:01.970] [ERROR] default - /profile 302 Not Authenticated
+[2022-11-13T14:17:02.239] [DEBUG] default - Session ID @ /profile route: 2:17:02 PM: eBlJHsUi-7MWWukT7z2OURwC95tvoHHT
+[2022-11-13T14:17:02.239] [ERROR] default - /profile 302 Not Authenticated
+[2022-11-13T14:17:02.276] [DEBUG] default - Session ID @ /profile route: 2:17:02 PM: eBlJHsUi-7MWWukT7z2OURwC95tvoHHT
+[2022-11-13T14:17:02.276] [ERROR] default - /profile 302 Not Authenticated
+[2022-11-13T14:17:02.926] [DEBUG] default - Session ID before @ /login route: 2:17:02 PM: PkGPKkQmX3D4HP5W-w6zumn6a5Tv8Q7Z
+[2022-11-13T14:17:02.926] [DEBUG] default - Session ID after @ /login route: PkGPKkQmX3D4HP5W-w6zumn6a5Tv8Q7Z
+[2022-11-13T14:17:02.926] [DEBUG] default - alex@s3v.us Authenticated: true
+[2022-11-13T14:17:02.926] [DEBUG] default - /login 200 Login Successful
+[2022-11-13T14:17:03.007] [DEBUG] default - Session ID @ /profile route: 2:17:03 PM: PkGPKkQmX3D4HP5W-w6zumn6a5Tv8Q7Z
+[2022-11-13T14:17:03.007] [DEBUG] default - alex@s3v.us Authenticated: true
+[2022-11-13T14:17:03.102] [DEBUG] default - Session ID @ /profile route: 2:17:03 PM: PkGPKkQmX3D4HP5W-w6zumn6a5Tv8Q7Z
+[2022-11-13T14:17:03.102] [DEBUG] default - alex@s3v.us Authenticated: true
+[2022-11-13T14:17:03.109] [DEBUG] default - Session ID @ /profile route: 2:17:03 PM: PkGPKkQmX3D4HP5W-w6zumn6a5Tv8Q7Z
+[2022-11-13T14:17:03.109] [DEBUG] default - alex@s3v.us Authenticated: true
+[2022-11-13T14:17:03.142] [DEBUG] default - alex@s3v.us
+[2022-11-13T14:17:03.142] [DEBUG] default - [
+  {
+    _id: new ObjectId("6365a06f87f63cfa66d4ef2a"),
+    date: '10/4/2022',
+    time: '16:29',
+    username: 'alex@s3v.us',
+    __v: 0
+  },
+  {
+    _id: new ObjectId("636b1716a3d166b45dd8338c"),
+    date: '11/17/2022',
+    time: '06:57 PM',
+    username: 'alex@s3v.us',
+    __v: 0
+  },
+  {
+    _id: new ObjectId("637169c7ae150338948155ec"),
+    date: '11/13/2022',
+    time: '03:15 PM',
+    username: 'alex@s3v.us',
+    __v: 0
+  }
+]
+[2022-11-13T14:17:03.174] [DEBUG] default - Session ID @ /profile route: 2:17:03 PM: PkGPKkQmX3D4HP5W-w6zumn6a5Tv8Q7Z
+[2022-11-13T14:17:03.174] [DEBUG] default - alex@s3v.us Authenticated: true
+[2022-11-13T14:17:03.211] [DEBUG] default - Session ID @ /profile route: 2:17:03 PM: PkGPKkQmX3D4HP5W-w6zumn6a5Tv8Q7Z
+[2022-11-13T14:17:03.211] [DEBUG] default - alex@s3v.us Authenticated: true
+[2022-11-13T14:17:03.245] [DEBUG] default - alex@s3v.us
+[2022-11-13T14:17:03.245] [DEBUG] default - [
+  {
+    _id: new ObjectId("6365a06f87f63cfa66d4ef2a"),
+    date: '10/4/2022',
+    time: '16:29',
+    username: 'alex@s3v.us',
+    __v: 0
+  },
+  {
+    _id: new ObjectId("636b1716a3d166b45dd8338c"),
+    date: '11/17/2022',
+    time: '06:57 PM',
+    username: 'alex@s3v.us',
+    __v: 0
+  },
+  {
+    _id: new ObjectId("637169c7ae150338948155ec"),
+    date: '11/13/2022',
+    time: '03:15 PM',
+    username: 'alex@s3v.us',
+    __v: 0
+  }
+]
+[2022-11-13T14:17:05.464] [DEBUG] default - Session ID @ /profile route: 2:17:05 PM: PkGPKkQmX3D4HP5W-w6zumn6a5Tv8Q7Z
+[2022-11-13T14:17:05.464] [DEBUG] default - alex@s3v.us Authenticated: true
+[2022-11-13T14:17:05.468] [DEBUG] default - Session ID @ /profile route: 2:17:05 PM: PkGPKkQmX3D4HP5W-w6zumn6a5Tv8Q7Z
+[2022-11-13T14:17:05.468] [DEBUG] default - alex@s3v.us Authenticated: true
+[2022-11-13T14:17:05.497] [DEBUG] default - alex@s3v.us
+[2022-11-13T14:17:05.497] [DEBUG] default - [
+  {
+    _id: new ObjectId("6365a06f87f63cfa66d4ef2a"),
+    date: '10/4/2022',
+    time: '16:29',
+    username: 'alex@s3v.us',
+    __v: 0
+  },
+  {
+    _id: new ObjectId("636b1716a3d166b45dd8338c"),
+    date: '11/17/2022',
+    time: '06:57 PM',
+    username: 'alex@s3v.us',
+    __v: 0
+  },
+  {
+    _id: new ObjectId("637169c7ae150338948155ec"),
+    date: '11/13/2022',
+    time: '03:15 PM',
+    username: 'alex@s3v.us',
+    __v: 0
+  }
+]
+[2022-11-13T14:17:05.540] [DEBUG] default - Session ID @ /profile route: 2:17:05 PM: PkGPKkQmX3D4HP5W-w6zumn6a5Tv8Q7Z
+[2022-11-13T14:17:05.540] [DEBUG] default - alex@s3v.us Authenticated: true
+[2022-11-13T14:17:05.562] [DEBUG] default - Session ID @ /profile route: 2:17:05 PM: PkGPKkQmX3D4HP5W-w6zumn6a5Tv8Q7Z
+[2022-11-13T14:17:05.562] [DEBUG] default - alex@s3v.us Authenticated: true
+[2022-11-13T14:17:05.592] [DEBUG] default - alex@s3v.us
+[2022-11-13T14:17:05.592] [DEBUG] default - [
+  {
+    _id: new ObjectId("6365a06f87f63cfa66d4ef2a"),
+    date: '10/4/2022',
+    time: '16:29',
+    username: 'alex@s3v.us',
+    __v: 0
+  },
+  {
+    _id: new ObjectId("636b1716a3d166b45dd8338c"),
+    date: '11/17/2022',
+    time: '06:57 PM',
+    username: 'alex@s3v.us',
+    __v: 0
+  },
+  {
+    _id: new ObjectId("637169c7ae150338948155ec"),
+    date: '11/13/2022',
+    time: '03:15 PM',
+    username: 'alex@s3v.us',
+    __v: 0
+  }
+]
+[2022-11-13T14:17:05.609] [DEBUG] default - Session ID @ /profile route: 2:17:05 PM: PkGPKkQmX3D4HP5W-w6zumn6a5Tv8Q7Z
+[2022-11-13T14:17:05.609] [DEBUG] default - alex@s3v.us Authenticated: true
+[2022-11-13T14:17:05.678] [DEBUG] default - Session ID @ /profile route: 2:17:05 PM: PkGPKkQmX3D4HP5W-w6zumn6a5Tv8Q7Z
+[2022-11-13T14:17:05.678] [DEBUG] default - alex@s3v.us Authenticated: true
