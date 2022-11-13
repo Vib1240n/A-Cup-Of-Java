@@ -1,0 +1,14 @@
+{
+  "[javascript]": {
+    "autoSave": true
+  },
+  "autoSave": true,
+  "editor.guides": [
+  ],
+  "formatter.prettier.enabled": "true",
+  "toolchains": [
+    {
+      "name": "JavaScript"
+    }
+  ]
+}

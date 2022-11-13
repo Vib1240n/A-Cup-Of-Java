@@ -1,64 +1,33 @@
 import "./App.css";
 import React from "react";
-import Navbar from "./Components/Navbar";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Navbar_mui from "./Components/navbar_mui";
+import Footer from "./Components/footer";
+import Home from "./views/home";
+import Appointment from "./views/appointment";
+import SignUp from "./views/signUpPage";
+import MyProfile from "./views/MyProfile";
+import LoginPage from "./views/loginPage";
 import "./App.css";
-import instagramIcon from "./asset/images/instagramIcon.png"
-import facebookIcon from "./asset/images/facebookIcon.jpg"
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <div className="App">
-          <Navbar />
+    <div className="main">
+      <Router>
+        <Navbar_mui />
+        <div className="container">
+          <Routes>
+            <Route path="/" exact element={<Home />} />
+            <Route path="/home" element={<Home />} />
+            <Route path="/appointment" element={<Appointment />} />
+            <Route path="/MyProfile" element={<MyProfile />} />
+            <Route path="/loginPage" element={<LoginPage />} />
+            <Route path="/signUpPage" element={<SignUp />} />
+          </Routes>
         </div>
-      </header>
+      </Router>
     </div>
   );
 }
 
 export default App;
-
-/*
-{/* <Section
-          title="Home"
-          subtitle={dummyText}
-          dark={true}
-          id="section1"
-          props="Home"
-        />
-        <Section
-          title="About Ace's"
-          // subtitle={dummyText}
-          dark={false}
-          id="section2"
-          props = "About"
-        />
-        <Section
-          title="Appointment"
-          subtitle={dummyText}
-          dark={true}
-          id="section3"
-          props = "Appointment"
-        />
-        <Section
-          title="Services"
-          subtitle={dummyText}
-          dark={false}
-          id="section4"
-          props = "Services"
-        />
-        <Section
-          title="Barbers"
-          subtitle={dummyText}
-          dark={true}
-          id="section5"
-          props = "Barber"
-        />
-        <Section
-          title="MyProfile"
-          subtitle={dummyText}
-          dark={false}
-          id="section6"
-          props = "MyProfile"
-        /> }*/

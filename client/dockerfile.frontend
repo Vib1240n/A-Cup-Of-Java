@@ -1,0 +1,18 @@
+# Build react client
+FROM node:18.11.0
+
+# Working directory be app
+WORKDIR /app
+
+COPY ./package.json ./
+COPY ./build ./build
+COPY ./public ./public
+COPY ./src ./src
+
+###  Installing dependencies
+
+RUN npm install --silent
+
+EXPOSE 3000
+
+CMD ["npm","start"]
