@@ -6,13 +6,10 @@ import background from "../asset/images/background_cornerLong.jpg";
 import Alert from "@mui/material/Alert";
 
 export default function loginPage() {
-  // React.useEffect(() => {
-  //   isLoggedIn();
-  // });
-
-  document.addEventListener("DOMContentLoaded", function () {
+  React.useEffect(() => {
     isLoggedIn();
   });
+
   const config = {
     headers: {
       "Access-Control-Allow-Origin": "http://localhost:3000",
@@ -62,7 +59,7 @@ export default function loginPage() {
         console.log("Is user logged in status: " + res.status);
         console.log(res.data);
         if (res.status === 200) {
-          window.location.href = "/MyProfile";
+          navigate("/MyProfile");
         }
       })
       .catch((err) => {
