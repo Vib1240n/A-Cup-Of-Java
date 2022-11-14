@@ -855,3 +855,25 @@
 [2022-11-13T14:17:05.609] [DEBUG] default - alex@s3v.us Authenticated: true
 [2022-11-13T14:17:05.678] [DEBUG] default - Session ID @ /profile route: 2:17:05 PM: PkGPKkQmX3D4HP5W-w6zumn6a5Tv8Q7Z
 [2022-11-13T14:17:05.678] [DEBUG] default - alex@s3v.us Authenticated: true
+[2022-11-14T18:15:46.612] [DEBUG] default - Session ID @ /profile route: 6:15:46 PM: Jbf0xvX2J2K0ShfbXC7zx4jC2MRRv9M5
+[2022-11-14T18:15:46.615] [ERROR] default - /profile 302 Not Authenticated
+[2022-11-14T18:15:46.947] [DEBUG] default - Session ID @ /profile route: 6:15:46 PM: Jbf0xvX2J2K0ShfbXC7zx4jC2MRRv9M5
+[2022-11-14T18:15:46.947] [ERROR] default - /profile 302 Not Authenticated
+[2022-11-14T18:15:50.392] [DEBUG] default - Session ID @ /profile route: 6:15:50 PM: Jbf0xvX2J2K0ShfbXC7zx4jC2MRRv9M5
+[2022-11-14T18:15:50.393] [ERROR] default - /profile 302 Not Authenticated
+[2022-11-14T18:15:50.435] [DEBUG] default - Session ID @ /profile route: 6:15:50 PM: Jbf0xvX2J2K0ShfbXC7zx4jC2MRRv9M5
+[2022-11-14T18:15:50.435] [ERROR] default - /profile 302 Not Authenticated
+[2022-11-14T18:15:50.475] [DEBUG] default - Session ID @ /profile route: 6:15:50 PM: Jbf0xvX2J2K0ShfbXC7zx4jC2MRRv9M5
+[2022-11-14T18:15:50.475] [ERROR] default - /profile 302 Not Authenticated
+[2022-11-14T18:15:51.237] [DEBUG] default - Session ID @ /profile route: 6:15:51 PM: Jbf0xvX2J2K0ShfbXC7zx4jC2MRRv9M5
+[2022-11-14T18:15:51.237] [ERROR] default - /profile 302 Not Authenticated
+[2022-11-14T18:15:51.287] [DEBUG] default - Session ID @ /profile route: 6:15:51 PM: Jbf0xvX2J2K0ShfbXC7zx4jC2MRRv9M5
+[2022-11-14T18:15:51.287] [ERROR] default - /profile 302 Not Authenticated
+[2022-11-14T18:16:49.443] [DEBUG] default - Session ID @ /profile route: 6:16:49 PM: Jbf0xvX2J2K0ShfbXC7zx4jC2MRRv9M5
+[2022-11-14T18:16:49.443] [ERROR] default - /profile 302 Not Authenticated
+[2022-11-14T18:16:50.198] [DEBUG] default - Session ID @ /profile route: 6:16:50 PM: Jbf0xvX2J2K0ShfbXC7zx4jC2MRRv9M5
+[2022-11-14T18:16:50.198] [ERROR] default - /profile 302 Not Authenticated
+[2022-11-14T18:16:52.187] [DEBUG] default - Session ID @ /profile route: 6:16:52 PM: Jbf0xvX2J2K0ShfbXC7zx4jC2MRRv9M5
+[2022-11-14T18:16:52.187] [ERROR] default - /profile 302 Not Authenticated
+[2022-11-14T18:16:53.147] [DEBUG] default - Session ID @ /profile route: 6:16:53 PM: Jbf0xvX2J2K0ShfbXC7zx4jC2MRRv9M5
+[2022-11-14T18:16:53.147] [ERROR] default - /profile 302 Not Authenticated

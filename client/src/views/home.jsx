@@ -9,8 +9,8 @@ import logo from "../asset/images/AcesBarbershopLogo-removebg-preview.png";
 import servicesbg from "../asset/images/servicesbackground1.jpg";
 import wallBg from "../asset/images/wall-bg-up.jpg";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import marco from "../asset/images/barber102.png";
-import barber2 from "../asset/images/barber101.png";
+import marco from "../asset/images/barber101.png";
+import barber2 from "../asset/images/barber102.png";
 import barber3 from "../asset/images/barber103.png";
 import ContactPhoneIcon from "@mui/icons-material/ContactPhone";
 import InstagramIcon from "@mui/icons-material/Instagram";
@@ -615,7 +615,7 @@ function Home() {
         <m.Box style={styles.listItemBox}>
           <m.Box
             sx={{
-              height: "80%",
+              height: "100%",
               width: "100vw",
               display: "grid",
               gridTemplateColumns: {
