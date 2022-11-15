@@ -203,10 +203,10 @@ export default function loginPage() {
       <m.Stack
         direction="column"
         margin={"auto"}
-        marginTop={10}
+        marginTop={{xs: 10, xl: 4}}
         justifyContent="center"
         alignItems="center"
-        spacing={{ xl: 5, xs: 1 }}
+        spacing={{ xl: 3, xs: 1 }}
         height="100%"
         width="100%"
       >
@@ -282,6 +282,7 @@ export default function loginPage() {
             height: "10%",
             width: { xl: "40%", xs: "70%" },
             borderRadius: "10px",
+            border: "2px solid white",
             paddingLeft: "3px",
             paddingRight: "4px",
             color: "black",
