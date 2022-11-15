@@ -108,4 +108,4 @@ node server.js
 
 As of right now the server will run the website on
 
-> http://localhost:5500
+> http://18.232.184.203

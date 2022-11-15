@@ -54,7 +54,7 @@ export default function loginPage() {
 
   const isLoggedIn = () => {
     axios
-      .get("http://localhost:5500/api/profile", config)
+      .get("http://18.232.184.203/api/profile", config)
       .then((res) => {
         console.log("Is user logged in status: " + res.status);
         console.log(res.data);
@@ -77,7 +77,7 @@ export default function loginPage() {
       password: password,
     };
     axios
-      .post("http://localhost:5500/api/login", user, config)
+      .post("http://18.232.184.203/api/login", user, config)
       .then((res) => {
         console.log(res.data);
         if (res.status === 200) {

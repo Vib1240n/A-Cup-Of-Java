@@ -45,7 +45,7 @@ export default function Appointment() {
 
   const isLoggedIn = () => {
     axios
-      .get("http://localhost:5500/api/profile", config)
+      .get("http://18.232.184.203/api/profile", config)
       .then((res) => {
         console.log("Is user logged in status: " + res.status);
         if (res.status === 200) {
@@ -59,7 +59,7 @@ export default function Appointment() {
 
   const fetchUserData = () => {
     axios
-      .get("http://localhost:5500/api/profile", config)
+      .get("http://18.232.184.203/api/profile", config)
       .then((res) => {
         setUserData(res.data);
       })
@@ -77,7 +77,7 @@ export default function Appointment() {
     ${realTime}.\nWe are located at 1049 Jefferson Blvd West Sacramento, CA 95691. For any questions please contact us at  (916) 956-0670. We look forward to seeing you!`;
     axios
       .post(
-        "http://localhost:5500/api/appointment",
+        "http://18.232.184.203/api/appointment",
         {
           date: realDate,
           time: realTime,

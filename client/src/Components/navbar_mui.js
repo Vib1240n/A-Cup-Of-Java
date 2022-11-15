@@ -62,7 +62,7 @@ function ResponsiveAppBar() {
 
   const isLoggedIn = () => {
     axios
-      .get("http://localhost:5500/api/profile", config)
+      .get("http://18.232.184.203/api/profile", config)
       .then((res) => {
         console.log("Is user logged in status: " + res.status);
         console.log(res.data);
@@ -78,7 +78,7 @@ function ResponsiveAppBar() {
 
   const logout = () => {
     axios
-      .get("http://localhost:5500/api/logout", config)
+      .get("http://18.232.184.203/api/logout", config)
       .then((res) => {
         if (res.status === 200) {
           handleClick("/home");

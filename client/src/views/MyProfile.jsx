@@ -51,7 +51,7 @@ const MyProfile = () => {
 
   const fetchUserData = () => {
     axios
-      .get("http://localhost:5500/api/profile", config)
+      .get("http://18.232.184.203/api/profile", config)
       .then((res) => {
         console.log("res: " + res);
         console.log("User: " + res.data);
@@ -65,7 +65,7 @@ const MyProfile = () => {
 
   const fetchApointments = () => {
     axios
-      .get("http://localhost:5500/api/getappointments", config)
+      .get("http://18.232.184.203/api/getappointments", config)
       .then((res) => {
         setUserAppointments(res.data);
         console.log(res.data);

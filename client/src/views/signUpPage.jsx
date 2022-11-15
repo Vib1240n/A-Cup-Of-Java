@@ -186,7 +186,7 @@ export default function loginPage() {
 
   const isLoggedIn = () => {
     axios
-      .get("http://localhost:5500/api/profile",config)
+      .get("http://18.232.184.203/api/profile",config)
       .then((res) => {
         console.log("Is user logged in status: " + res.status);
         if (res.status === 200) {
@@ -349,7 +349,7 @@ export default function loginPage() {
         phoneNumber: phoneNumber,
       };
       axios
-        .post("http://localhost:5500/api/signup", user, config)
+        .post("http://18.232.184.203/api/signup", user, config)
         .then((res) => {
           console.log(res.data);
           if (res.status === 200) {
