@@ -34,7 +34,7 @@ function ResponsiveAppBar() {
 
   const config = {
     headers: {
-      "Access-Control-Allow-Origin": "http://localhost:3000",
+      "Access-Control-Allow-Origin": "http://acesbarber.shop",
       "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS",
       "Access-Control-Allow-Credentials": "true",
     },
@@ -62,7 +62,7 @@ function ResponsiveAppBar() {
 
   const isLoggedIn = () => {
     axios
-      .get("http://18.232.184.203/api/profile", config)
+      .get("http://acesbarber.shop/api/profile", config)
       .then((res) => {
         console.log("Is user logged in status: " + res.status);
         console.log(res.data);
@@ -78,7 +78,7 @@ function ResponsiveAppBar() {
 
   const logout = () => {
     axios
-      .get("http://18.232.184.203/api/logout", config)
+      .get("http://acesbarber.shop/api/logout", config)
       .then((res) => {
         if (res.status === 200) {
           handleClick("/home");

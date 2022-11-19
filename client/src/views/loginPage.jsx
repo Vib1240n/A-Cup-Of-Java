@@ -12,7 +12,7 @@ export default function loginPage() {
 
   const config = {
     headers: {
-      "Access-Control-Allow-Origin": "http://localhost:3000",
+      "Access-Control-Allow-Origin": "http://acesbarber.shop",
       "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS",
       "Access-Control-Allow-Credentials": "true",
     },
@@ -54,7 +54,7 @@ export default function loginPage() {
 
   const isLoggedIn = () => {
     axios
-      .get("http://18.232.184.203/api/profile", config)
+      .get("http://acesbarber.shop/api/profile", config)
       .then((res) => {
         console.log("Is user logged in status: " + res.status);
         console.log(res.data);
@@ -77,7 +77,7 @@ export default function loginPage() {
       password: password,
     };
     axios
-      .post("http://18.232.184.203/api/login", user, config)
+      .post("http://acesbarber.shop/api/login", user, config)
       .then((res) => {
         console.log(res.data);
         if (res.status === 200) {

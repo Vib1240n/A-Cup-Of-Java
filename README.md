@@ -108,4 +108,4 @@ node server.js
 
 As of right now the server will run the website on
 
-> http://18.232.184.203
+> http://acesbarber.shop

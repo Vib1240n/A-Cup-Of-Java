@@ -25,8 +25,7 @@
     "react-scripts": "^5.0.1",
     "react-scroll": "^1.8.8",
     "validator": "^13.7.0",
-    "web-vitals": "^3.0.4",
-    "webpack": "^5.75.0"
+    "web-vitals": "^3.0.4"
   },
   "scripts": {
     "start": "webpack-dev-server --open",
@@ -45,5 +44,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "webpack": "^5.75.0"
   }
 }

@@ -51,3 +51,7 @@ sudo ufw allow 'Nginx Full'
 # enable firewall
 sudo ufw --force enable
 
+npm install
+
+cd /opt/A-Cup-Of-Java/app/client
+npm install
