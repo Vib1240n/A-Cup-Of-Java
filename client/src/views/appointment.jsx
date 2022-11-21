@@ -140,8 +140,8 @@ export default function Appointment() {
             borderRadius: "30px",
           },
           "@media (max-height: 675px)": {
-            height: "50%",
-            width: "80%",
+            height: "70%",
+            width: "90%",
             // display: "grid",
             // gridTemplateRows: "100%",
             // gridTemplateColumns: "100% 50% 50% 100%",
@@ -163,12 +163,12 @@ export default function Appointment() {
           <mui.Stack
             id="appointment-stack"
             direction="column"
-            spacing={12}
+            spacing={{ xl: 12, xs: 5 }}
             elevation={1}
             zIndex={4}
           >
             <mui.Typography
-              variant="h4"
+              variant="h2"
               sx={{
                 position: "relative",
                 fontWeight: "bold",
@@ -178,7 +178,7 @@ export default function Appointment() {
                 overflow: "hidden",
                 color: "white",
                 "@media (max-width: 1000px)": {
-                  fontSize: "2rem",
+                  fontSize: "1.5rem",
                 },
               }}
             >
@@ -194,7 +194,7 @@ export default function Appointment() {
                 overflow: "hidden",
                 color: "white",
                 "@media (max-width: 1000px)": {
-                  fontSize: "2rem",
+                  fontSize: "1rem",
                 },
               }}
             >
