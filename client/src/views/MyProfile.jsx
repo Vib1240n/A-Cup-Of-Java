@@ -13,11 +13,12 @@ const rows = [];
 
 const config = {
   headers: {
-    "Access-Control-Allow-Origin": "http://acesbarber.shop",
+    "Access-Control-Allow-Origin": "https://www.acesbarber.shop",
     "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS",
     "Access-Control-Allow-Credentials": "true",
   },
   withCredentials: true,
+  rejectUnauthorized: false,
 };
 
 const MyProfile = () => {
@@ -51,7 +52,7 @@ const MyProfile = () => {
 
   const fetchUserData = () => {
     axios
-      .get("http://acesbarber.shop/api/profile", config)
+      .get("https://www.acesbarber.shop/api/profile", config)
       .then((res) => {
         console.log("res: " + res);
         console.log("User: " + res.data);
@@ -65,7 +66,7 @@ const MyProfile = () => {
 
   const fetchApointments = () => {
     axios
-      .get("http://acesbarber.shop/api/getappointments", config)
+      .get("https://www.acesbarber.shop/api/getappointments", config)
       .then((res) => {
         setUserAppointments(res.data);
         console.log(res.data);

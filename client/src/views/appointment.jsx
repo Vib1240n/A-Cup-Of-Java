@@ -36,16 +36,17 @@ export default function Appointment() {
   }, []);
   const config = {
     headers: {
-      "Access-Control-Allow-Origin": "http://acesbarber.shop",
+      "Access-Control-Allow-Origin": "https://www.acesbarber.shop",
       "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS",
       "Access-Control-Allow-Credentials": "true",
     },
     withCredentials: true,
+    rejectUnauthorized: false,
   };
 
   const isLoggedIn = () => {
     axios
-      .get("http://acesbarber.shop/api/profile", config)
+      .get("https://www.acesbarber.shop/api/profile", config)
       .then((res) => {
         console.log("Is user logged in status: " + res.status);
         if (res.status === 200) {
@@ -59,7 +60,7 @@ export default function Appointment() {
 
   const fetchUserData = () => {
     axios
-      .get("http://acesbarber.shop/api/profile", config)
+      .get("https://www.acesbarber.shop/api/profile", config)
       .then((res) => {
         setUserData(res.data);
       })
@@ -77,7 +78,7 @@ export default function Appointment() {
     ${realTime}.\nWe are located at 1049 Jefferson Blvd West Sacramento, CA 95691. For any questions please contact us at  (916) 956-0670. We look forward to seeing you!`;
     axios
       .post(
-        "http://acesbarber.shop/api/appointment",
+        "https://www.acesbarber.shop/api/appointment",
         {
           date: realDate,
           time: realTime,

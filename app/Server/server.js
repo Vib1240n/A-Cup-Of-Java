@@ -16,7 +16,7 @@ app.use(bodyparser.json());
 app.use(bodyparser.urlencoded({ extended: true }));
 app.use(
   cors({
-    origin: "http://acesbarber.shop",
+    origin: "https://www.acesbarber.shop",
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     credentials: true,
   })

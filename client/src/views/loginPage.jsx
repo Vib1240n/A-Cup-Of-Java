@@ -12,11 +12,12 @@ export default function loginPage() {
 
   const config = {
     headers: {
-      "Access-Control-Allow-Origin": "http://acesbarber.shop",
+      "Access-Control-Allow-Origin": "https://www.acesbarber.shop",
       "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS",
       "Access-Control-Allow-Credentials": "true",
     },
     withCredentials: true,
+    rejectUnauthorized: false,
   };
   /*
     On change events for the login page & signup page
@@ -54,7 +55,7 @@ export default function loginPage() {
 
   const isLoggedIn = () => {
     axios
-      .get("http://acesbarber.shop/api/profile", config)
+      .get("https://www.acesbarber.shop/api/profile", config)
       .then((res) => {
         console.log("Is user logged in status: " + res.status);
         console.log(res.data);
@@ -77,7 +78,7 @@ export default function loginPage() {
       password: password,
     };
     axios
-      .post("http://acesbarber.shop/api/login", user, config)
+      .post("https://www.acesbarber.shop/api/login", user, config)
       .then((res) => {
         console.log(res.data);
         if (res.status === 200) {

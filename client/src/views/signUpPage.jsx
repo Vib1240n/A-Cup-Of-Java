@@ -186,7 +186,7 @@ export default function loginPage() {
 
   const isLoggedIn = () => {
     axios
-      .get("http://acesbarber.shop/api/profile",config)
+      .get("https://www.acesbarber.shop/api/profile", config)
       .then((res) => {
         console.log("Is user logged in status: " + res.status);
         if (res.status === 200) {
@@ -203,7 +203,7 @@ export default function loginPage() {
       <m.Stack
         direction="column"
         margin={"auto"}
-        marginTop={{xs: 10, xl: 4}}
+        marginTop={{ xs: 10, xl: 4 }}
         justifyContent="center"
         alignItems="center"
         spacing={{ xl: 3, xs: 1 }}
@@ -317,11 +317,12 @@ export default function loginPage() {
 
   const config = {
     headers: {
-      "Access-Control-Allow-Origin": "http://acesbarber.shop",
+      "Access-Control-Allow-Origin": "https://www.acesbarber.shop",
       "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS",
       "Access-Control-Allow-Credentials": "true",
     },
     withCredentials: true,
+    rejectUnauthorized: false,
   };
   /*
     on Submit function for the login page
@@ -349,7 +350,7 @@ export default function loginPage() {
         phoneNumber: phoneNumber,
       };
       axios
-        .post("http://acesbarber.shop/api/signup", user, config)
+        .post("https://www.acesbarber.shop/api/signup", user, config)
         .then((res) => {
           console.log(res.data);
           if (res.status === 200) {
