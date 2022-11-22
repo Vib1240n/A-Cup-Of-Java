@@ -18,7 +18,6 @@ const config = {
     "Access-Control-Allow-Credentials": "true",
   },
   withCredentials: true,
-  rejectUnauthorized: false,
 };
 
 const MyProfile = () => {

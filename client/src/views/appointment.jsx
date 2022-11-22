@@ -41,7 +41,6 @@ export default function Appointment() {
       "Access-Control-Allow-Credentials": "true",
     },
     withCredentials: true,
-    rejectUnauthorized: false,
   };
 
   const isLoggedIn = () => {

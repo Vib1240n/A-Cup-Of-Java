@@ -17,7 +17,6 @@ export default function loginPage() {
       "Access-Control-Allow-Credentials": "true",
     },
     withCredentials: true,
-    rejectUnauthorized: false,
   };
   /*
     On change events for the login page & signup page

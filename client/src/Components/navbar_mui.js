@@ -39,7 +39,6 @@ function ResponsiveAppBar() {
       "Access-Control-Allow-Credentials": "true",
     },
     withCredentials: true,
-    rejectUnauthorized: false,
   };
 
   const handleClick = (event) => {

@@ -322,7 +322,6 @@ export default function loginPage() {
       "Access-Control-Allow-Credentials": "true",
     },
     withCredentials: true,
-    rejectUnauthorized: false,
   };
   /*
     on Submit function for the login page
