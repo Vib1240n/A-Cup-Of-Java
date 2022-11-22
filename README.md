@@ -1,18 +1,27 @@
 <p align="center">
-  <img src="/Assets/images/WhiteBackgroundLogo.png" />
+  <img src="https://raw.githubusercontent.com/Vib1240n/A-Cup-Of-Java/679be5bf5e9b81798a197d8d811308971d246954/Assets/images/WhiteBackgroundLogo.png" />
 </p>
 
 ---
 
 ---
 
-CSC-190/191 Project
+***Ace's Barbershop Website by Team A Cup of Java***
 
 - [Team Members](#team-members)
 - [Background](#background)
 - [Solution](#solution)
 - [Prototype](#prototype)
 - [Timeline](#timeline)
+- [Website Demo](#website-demo)
+- [Testing](#testing)
+  - [Functional Test: Automation via Selenium](#functional-test-automation-via-selenium)
+  - [Functional Test: User Interaction](#functional-test-user-interaction)
+    - [Functional Test: User Interaction Tools](#functional-test-user-interaction-tools)
+    - [Functional Test: User Interaction Setup](#functional-test-user-interaction-setup)
+  - [Unit Test: API Testing](#unit-test-api-testing)
+    - [Unit Test: API Testing Tools](#unit-test-api-testing-tools)
+    - [Unit Test: API Testing Setup](#unit-test-api-testing-setup)
 - [Developer Instructions](#developer-instructions)
   - [**Terminal**](#terminal)
   - [**Command Prompt**](#command-prompt)
@@ -24,14 +33,14 @@ CSC-190/191 Project
 
 ---
 
-- [@Thomas Nguyen](https://github.com/NguyenSt3r)
 - [@Valentin Bakalor](https://github.com/Val2049)
-- [@Faizan Ul Islam](https://github.com/FizzyPop007)
-- [@Kenny Nguyen](https://github.com/Kennypnguyen)
-- [@Alex Smith](https://github.com/arsmith97)
-- [@Theo McDonald](https://github.com/TheoMcDonald)
 - [@Bunpheng Chhay](https://github.com/Bunphengchhay)
+- [@Faizan Ul Islam](https://github.com/FizzyPop007)
+- [@Theo McDonald](https://github.com/TheoMcDonald)
+- [@Kenny Nguyen](https://github.com/Kennypnguyen)
+- [@Thomas Nguyen](https://github.com/NguyenSt3r)
 - [@Vibhore Sagar](https://github.com/Vib1240n)
+- [@Alex Smith](https://github.com/arsmith97)
 
 ## Background
 
@@ -66,6 +75,77 @@ As part of our designing phase, we developed a figma clickable prototype that sh
 <img src="https://raw.githubusercontent.com/Vib1240n/A-Cup-Of-Java/8538fde5ca9a74c3b2e5aea240dd365454112c43/Assets/images/COJ%20Timeline.png" />
 </p>
 
+
+## Website Demo
+
+---
+
+<br>
+This section will provide GIF that showcases a walkthrough the deployed Ace's Barbershop Website.
+
+## Testing
+
+---
+
+<br>
+This section will provide a description of all the tests that were performed for Ace's Barbershop Website.
+
+### Functional Test: Automation via Selenium:
+<br>
+One of the tests we used for Ace’s Barbershop Website was functional tests using automation (Selenium). There are three test cases that include the Selenium automated software navigating through the website using Navbar, the Selenium automated software navigating through the website using Sidebar, and the Selenium automated software signing in using email and password provided by tester/user. If the user would like to learn how to perform these tests please follow this GitHub Repository Link (https://github.com/Kennypnguyen/Ace-Barbershop-Website-Tests)
+
+### Functional Test: User Interaction
+<br>
+The second test we used was  functional tests using User interaction. These include user signing up, signing in, requesting an appointment, viewing user profile information, viewing previous and upcoming requested appointments, and signing out. Not only are these tests ensuring that the user can interact with the features, but also that certain error messages are displayed in the front end whenever a user performs the feature incorrectly. To run these tests:
+
+#### Functional Test: User Interaction Tools
+
+- Windows Operating System (Windows 10 or above) or MacOS
+- Any web browser is okay (Google Chrome was used to perform these tests in the System Test Report)
+- Ace’s Barbershop Website Link: https://www.acesbarber.shop 
+
+#### Functional Test: User Interaction Setup
+
+- To run these tests, you first need to run the Ace’s Barbershop Website. The link is provided in the tools above. Then just follow the steps provided in each of the test cases in the System Test Report Section 3.0 Functional Test: Tester Interaction.
+- An example test case would be when the user is signing in with a valid email. Here the tester would navigate to Sign In View and sign in with a valid email and password (meaning that the email and password has been signed up in Ace’s Barbershop Website). The expected result of this test case should the user/tester being signed in and navigated to Profile View
+- Another example test case would be if the user is signing in with a valid email but incorrect password. Here the tester would navigate to Sign In View and sign in with a valid email (email has been signed up in Ace’s Barbershop Website) but incorrect password (password not associated with the email). The expected result is that user/tester is not signed in but is greeted with a pop up message stating “Incorrect Password or Email” 
+
+### Unit Test: API Testing
+<br>
+The last set of tests we did for Ace’s Barbershop Website were unit testing specifically testing the APIs of the website. During the Sprints 05-07, before our team pushed any changes to our GitHub, we performed tests on our APIs to ensure that they worked properly by making sure it is either sending to the server or retrieving data from server. The team performed these tests using Postman. To perform these tests:
+
+#### Unit Test: API Testing Tools
+
+- Windows Operating System (Windows 10 or above) or MacOS 
+- Google Chrome Browser (Latest version) or Safari (Any version)
+- Postman
+  - Link: https://www.postman.com/ 
+- Ace’s Barbershop Website Link: https://www.acesbarber.shop 
+
+#### Unit Test: API Testing Setup
+
+- To run these tests, you first need to run the Ace’s Barbershop Website. The link is provided in the tools above.
+- After the website is running, navigate to the Postman browser (link in tools) and create an account.
+- Once signed in, navigate to your workspace by clicking on workspaces on the top left. Then click on “My workspace”.
+- Once at “My Workspace”, select your postman agent to “Desktop Agent” on the bottom right. The tester must download “Desktop Agent” to perform these tests.
+- While still in “My workspace”, click on the new tab to begin a request. The requests will be either GET or POST. Then follow the steps to follow each test in section 4.0 Unit Test: API Testing.
+- An example test case would be Sign In API where the steps are:
+  - First selecting POST in the drop down menu. 
+  - Then the tester will provide “https://www.acesbarber.shop/api/login” in the request URL text field. 
+  - Next the tester will click on the “body” text option. 
+  - Then select on the “raw” option and select “JSON” for the language in the drop down menu.
+  - Then type the following in the body:
+    ```
+    {
+      “username” : “[valid email]”,
+      “password” : “[valid password]”
+    }
+    ```
+      **Note**: Valid email and password means it is already registered. Must include “” marks as listed in step 5.
+  - Once the tester has followed the steps above. Click on the “Send” button to send the request.
+  - The result will be provided in the response field at the bottom. The response will be a in a form of status code (Example: 200 series OK, 300 series REDIRECTION,   400 series BAD REQUEST, and 500 series INTERNAL SERVER ERROR)
+    - For this test, the user/tester should expect a status code 200 OK code and should return a **“Login Successful”** in the response body.
+    
 ## Developer Instructions
 
 <hr>
