@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/Vib1240n/A-Cup-Of-Java/679be5bf5e9b81798a197d8d811308971d246954/Assets/images/WhiteBackgroundLogo.png" />
+  <img src="client/src/asset/images/AcesBarbershopLogo-removebg-preview.png" />
 </p>
 
 ---
@@ -32,6 +32,10 @@
 ## Team Members
 
 ---
+
+<p align="center">
+  <img src="client/src/asset/images/"A Cup of Java Team Logo.png" />
+</p>
 
 - [@Valentin Bakalor](https://github.com/Val2049)
 - [@Bunpheng Chhay](https://github.com/Bunphengchhay)
@@ -72,7 +76,7 @@ As part of our designing phase, we developed a figma clickable prototype that sh
 ---
 
 <p align="center">
-<img src="https://raw.githubusercontent.com/Vib1240n/A-Cup-Of-Java/8538fde5ca9a74c3b2e5aea240dd365454112c43/Assets/images/COJ%20Timeline.png" />
+<img src="client/src/asset/images/A Cup of Java Timeline.png" />
 </p>
 
 
@@ -80,6 +84,10 @@ As part of our designing phase, we developed a figma clickable prototype that sh
 
 ---
 
+<p align="center">
+<img src="client/src/asset/images/Aces Barbershop Website Walkthrough.gif" />
+</p>                                                             
+                                                             
 <br>
 This section will provide GIF that showcases a walkthrough the deployed Ace's Barbershop Website.
 
