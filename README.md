@@ -68,8 +68,6 @@ Creating a website with all the barbers listed with their schedules and speciali
 <img src="https://raw.githubusercontent.com/Vib1240n/A-Cup-Of-Java/679be5bf5e9b81798a197d8d811308971d246954/Assets/images/PrototypeGif.gif" />
 </p>
 
-<h4>FIGMA PROTOTYPE</h4>
-<hr>
 <br>
 As part of our designing phase, we developed a figma clickable prototype that showcases all the views of Ace’s Barbershop website. When designing our prototype, we wanted to make sure we included all the features the client requested. To achieve this, we developed each feature as a view for the website. For example, we created an appointments view that will allow customers with an account to schedule an appointment which is one the features the client wishes to have. Another feature that was incorporated into a view of the website was the sign in feature. We created a view that would allow customers to sign in to their account so that they can schedule their appointment. They are also giving the option to sign up if they are new. To implement all these views together, we incorporated a navigation bar on the top of the website that links all the views of the website. Within our prototype, we were able to make the navigation bar clickable so that our client will be able to see all the views and experience the flow of the website. The goal of this prototype was to present an idea of the website to our client and then receive feedback on things they liked and disliked.
 
@@ -140,7 +138,7 @@ The last set of tests we did for Ace’s Barbershop Website were unit testing sp
 - While still in “My workspace”, click on the new tab to begin a request. The requests will be either GET or POST. Then follow the steps to follow each test in section 4.0 Unit Test: API Testing.
 - An example test case would be Sign In API where the steps are:
   - First selecting POST in the drop down menu. 
-  - Then the tester will provide “https://www.acesbarber.shop/api/login” in the request URL text field. 
+  - Then the tester will provide **“https://www.acesbarber.shop/api/login”** in the request URL text field. 
   - Next the tester will click on the “body” text option. 
   - Then select on the “raw” option and select “JSON” for the language in the drop down menu.
   - Then type the following in the body:
