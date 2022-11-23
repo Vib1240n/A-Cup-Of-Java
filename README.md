@@ -2,11 +2,13 @@
   <img src="client/src/asset/images/AcesBarbershopLogo-removebg-preview.png" />
 </p>
 
----
+<p align="center">
+<strong>Ace's Barbershop Website by Team A Cup of Java</strong>
+</p>
 
----
+## Table of Contents
 
-***Ace's Barbershop Website by Team A Cup of Java***
+--- 
 
 - [Team Members](#team-members)
 - [Background](#background)
@@ -34,7 +36,7 @@
 ---
 
 <p align="center">
-  <img src="client/src/asset/images/"A Cup of Java Team Logo.png" />
+  <img src="client/src/asset/images/A Cup of Java Team Logo.png" />
 </p>
 
 - [@Valentin Bakalor](https://github.com/Val2049)
@@ -78,7 +80,6 @@ As part of our designing phase, we developed a figma clickable prototype that sh
 <p align="center">
 <img src="client/src/asset/images/A Cup of Java Timeline.png" />
 </p>
-
 
 ## Website Demo
 
