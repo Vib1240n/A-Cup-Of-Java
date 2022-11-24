@@ -24,12 +24,14 @@
   - [Unit Test: API Testing](#unit-test-api-testing)
     - [Unit Test: API Testing Tools](#unit-test-api-testing-tools)
     - [Unit Test: API Testing Setup](#unit-test-api-testing-setup)
-- [Developer Instructions](#developer-instructions)
-  - [**Terminal**](#terminal)
-  - [**Command Prompt**](#command-prompt)
-  - [**Run Server**](#run-server)
-    - [To run using Nodemon and have Developer control run](#to-run-using-nodemon-and-have-developer-control-run)
-    - [To launch the app run](#to-launch-the-app-run)
+- [Run and Deploy](#run-and-deploy)
+  - [Run](#run)
+    - [**Terminal**](#terminal)
+    - [**Command Prompt**](#command-prompt)
+    - [**Run Server**](#run-server)
+      - [To run using Nodemon and have Developer control run](#to-run-using-nodemon-and-have-developer-control-run)
+      - [To launch the app run](#to-launch-the-app-run)
+  - [Deploy](#deploy)
 
 ## Team Members
 
@@ -40,19 +42,27 @@
 </p>
 
 - [@Valentin Bakalor](https://github.com/Val2049)
+  - **Email:** ValBakalor@gmail.com
 - [@Bunpheng Chhay](https://github.com/Bunphengchhay)
+  - **Email:** bunphengchhay@gmail.com
 - [@Faizan Ul Islam](https://github.com/FizzyPop007)
+  - **Email:** faizan.khan.gr8@gmail.com
 - [@Theo McDonald](https://github.com/TheoMcDonald)
+  - **Email:** mcdonaldtheo7@gmail.com
 - [@Kenny Nguyen](https://github.com/Kennypnguyen)
+  - **Email:** kennyypnguyen@gmail.com
 - [@Thomas Nguyen](https://github.com/NguyenSt3r)
+  - **Email:** ThomasDuyNguyenViet@gmail.com
 - [@Vibhore Sagar](https://github.com/Vib1240n)
+  - **Email:** vibhorsgr@gmail.com
 - [@Alex Smith](https://github.com/arsmith97)
+  - **Email:** alex@s3v.us
 
 ## Background
 
 ---
 
-Ace’s Barbershop – Fairly new barbershop in West Sacramento, Now that they have developed their clients relations they want to take their barbershop into new direction. They are finally going online for bookings, pricings and services available.
+Ace’s Barbershop – Fairly new barbershop in West Sacramento, Now that they have developed their clients relations they want to take their barbershop into a new direction. They are finally going online for bookings, pricings and services available.
 
 ## Solution
 
@@ -88,7 +98,7 @@ As part of our designing phase, we developed a figma clickable prototype that sh
 </p>                                                             
                                                              
 <br>
-This section will provide GIF that showcases a walkthrough the deployed Ace's Barbershop Website.
+This section will provide GIF that showcases a walkthrough of the deployed Ace's Barbershop Website.
 
 ## Testing
 
@@ -153,9 +163,18 @@ The last set of tests we did for Ace’s Barbershop Website were unit testing sp
   - The result will be provided in the response field at the bottom. The response will be a in a form of status code (Example: 200 series OK, 300 series REDIRECTION,   400 series BAD REQUEST, and 500 series INTERNAL SERVER ERROR)
     - For this test, the user/tester should expect a status code 200 OK code and should return a **“Login Successful”** in the response body.
     
-## Developer Instructions
+## Run and Deploy
 
-<hr>
+---
+
+<br>
+This section will inform the reader how to run the website locally and how the team deployed Ace's Barbershop Website.
+
+### Run
+
+<br>
+This subsection will provide instructions on how to run the website locally.
+<br>
 <br>
 Clone the repository to run the project locally using
 
@@ -163,31 +182,31 @@ Clone the repository to run the project locally using
 
 After Cloning the repository, make sure you have Node installed, to check for Node
 
-### **Terminal**
+#### **Terminal**
 
     Node --v
     npm --v
 
-### **Command Prompt**
+#### **Command Prompt**
 
     Node -v
 
-After making sure you are up and running the latest version of Node, Open up the Project in the IDE/Code editor of choice to install dependancies. To install Dependancies run
-` npm install` from the Terminal/Command prompt.<br> Make sure you are installing dependancies in the Project directory and not globally.
+After making sure you are up and running the latest version of Node, Open up the Project in the IDE/Code editor of choice to install dependencies. To install Dependencies run
+` npm install` from the Terminal/Command prompt.<br> Make sure you are installing dependencies in the Project directory and not globally.
 <br>
 <br>
 
-### **Run Server**
+#### **Run Server**
 
-After installing dependancies run<br>
+After installing dependencies run<br>
 
-#### To run using Nodemon and have Developer control run
+##### To run using Nodemon and have Developer control run
 
 ```
 npm run devStart
 ```
 
-#### To launch the app run
+##### To launch the app run
 
 ```
 node server.js
@@ -196,3 +215,8 @@ node server.js
 As of right now the server will run the website on
 
 > http://localhost:5500
+
+
+### Deploy
+
+<br> This subsection will provide a description on how the team deployed Ace's Barbershop Website.
