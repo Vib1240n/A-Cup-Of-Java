@@ -134,7 +134,7 @@ The last set of tests we did for Ace’s Barbershop Website were unit testing sp
 #### Unit Test: API Testing Tools
 
 - Windows Operating System (Windows 10 or above) or MacOS 
-- Google Chrome Browser (Latest version) or Safari (Any version)
+- Any web browser is okay (Google Chrome was used to perform these tests in the System Test Report)
 - Postman
   - Link: https://www.postman.com/ 
 - Ace’s Barbershop Website Link: https://www.acesbarber.shop 
