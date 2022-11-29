@@ -26,12 +26,10 @@
     - [Unit Test: API Testing Setup](#unit-test-api-testing-setup)
 - [Run and Deploy](#run-and-deploy)
   - [Run](#run)
-    - [**Terminal**](#terminal)
-    - [**Command Prompt**](#command-prompt)
-    - [**Run Server**](#run-server)
-      - [To run using Nodemon and have Developer control run](#to-run-using-nodemon-and-have-developer-control-run)
-      - [To launch the app run](#to-launch-the-app-run)
+    - [Run the Website Locally Steps](#run-the-website-locally-steps)
   - [Deploy](#deploy)
+    - [Deployment of Website Tools](#deployment-of-website-tools)
+    - [Deployment of Website Steps](#deployment-of-website-steps)
 
 ## Team Members
 
@@ -173,50 +171,89 @@ This section will inform the reader how to run the website locally and how the t
 ### Run
 
 <br>
-This subsection will provide instructions on how to run the website locally.
+This subsection will provide instructions on how to run the website locally. The steps to run the website locally are below.
 <br>
-<br>
-Clone the repository to run the project locally using
 
+#### Run the Website Locally Steps
+
+1. Clone the repository to run the project locally using:
+    ```
     git clone git@github.com:Vib1240n/A-Cup-Of-Java.git
-
-After Cloning the repository, make sure you have Node installed, to check for Node
-
-#### **Terminal**
-
+    ```
+2. After Cloning the repository, make sure you have Node installed, to check for Node in terminal:
+    ```
     Node --v
     npm --v
-
-#### **Command Prompt**
-
-    Node -v
-
-After making sure you are up and running the latest version of Node, Open up the Project in the IDE/Code editor of choice to install dependencies. To install Dependencies run
-` npm install` from the Terminal/Command prompt.<br> Make sure you are installing dependencies in the Project directory and not globally.
-<br>
-<br>
-
-#### **Run Server**
-
-After installing dependencies run<br>
-
-##### To run using Nodemon and have Developer control run
-
-```
-npm run devStart
-```
-
-##### To launch the app run
-
-```
-node server.js
-```
-
-As of right now the server will run the website on
-
-> http://localhost:5500
-
+    ```
+3. After making sure you are up and running the latest version of Node, Open up the Project in Visual Studio Code
+4. First navigate to app directory by typing in terminal:
+    ```
+    cd app
+    ```
+    and then install the dependencies by typing in terminal:
+    ```
+    npm install
+    ``` 
+5. Then navigate to client directory by typing in terminal: 
+    ```
+    cd ..
+    cd client
+    ```
+    and then install the dependencies by typing in terminal:
+    ```
+    npm install
+    ```
+6. Now that the dependencies are installed, the user must now can run the server by first opening up two split terminals
+7. In the first terminal navigate to app directory by typing in terminal: 
+    ```
+    cd app
+    ```
+    and then to run the server side of the website in localhost, type this in terminal:
+    ```
+    npm run dev
+    ``` 
+8. In the second terminal, navigate to client directory by typing in terminal:
+    ```
+    cd client
+    ```
+    and then to run the client side of the website in localhost, type this in terminal:
+    ```
+    npm run start
+9. Once to two terminals are done setting up the website locally, it will launch the website on 
+    > http://localhost:3000
 
 ### Deploy
 
-<br> This subsection will provide a description on how the team deployed Ace's Barbershop Website.
+<br> This subsection will provide instructions on how the team deployed Ace's Barbershop Website. The team used AWS to deploy Ace's Barbershop Website. To deploy the website:
+
+#### Deployment of Website Tools
+
+- Commmand Prompt/Terminal
+- Private Key File
+  - Note: Client was provided this file
+  
+#### Deployment of Website Steps: 
+
+1. First the user opens up Command Prompt/Terminal on local desktop
+2. To launch SSH client, user types in terminal:
+    ```
+    ssh -i alex-ace-key.pem  ubuntu@ec2-3-226-119-86.compute-1.amazonaws.com 
+    ```
+3. Locate the private key file (provided to client)
+4. To ensure key is not publicly viewable, user types in terminal: 
+    ```
+    chmod 400 alex-ace-key.pem
+    ```
+5. To connect the instance to its public DNS, user types in terminal:
+    ```
+    ec2-3-226-119-86.compute-1.amazonaws.com
+    ```
+6. Now that user is connected to instance, user must get to website’s directory by typing in terminal:
+    ```
+    cd /opt/A-Cup-Of-Java/ 
+    ``` 
+7. Finally to start the entire website, user types in terminal:
+    ```
+    sudo ./start.sh
+    ```
+  - Note: Loading the entire website will take a couple of minutes
