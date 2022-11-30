@@ -143,7 +143,7 @@ The last set of tests we did for Ace’s Barbershop Website were unit testing sp
 - After the website is running, navigate to the Postman browser (link in tools) and create an account.
 - Once signed in, navigate to your workspace by clicking on workspaces on the top left. Then click on “My workspace”.
 - Once at “My Workspace”, select your postman agent to “Desktop Agent” on the bottom right. The tester must download “Desktop Agent” to perform these tests.
-- While still in “My workspace”, click on the new tab to begin a request. The requests will be either GET or POST. Then follow the steps to follow each test in section 4.0 Unit Test: API Testing.
+- While still in “My workspace”, click on the new tab to begin a request. The requests will be either GET or POST. Then follow the steps to follow each test in the System Test Report section 4.0 Unit Test: API Testing.
 - An example test case would be Sign In API where the steps are:
   - First selecting POST in the drop down menu. 
   - Then the tester will provide **“https://www.acesbarber.shop/api/login”** in the request URL text field. 
@@ -224,11 +224,11 @@ This subsection will provide instructions on how to run the website locally. The
 
 ### Deploy
 
-<br> This subsection will provide instructions on how the team deployed Ace's Barbershop Website. The team used AWS to deploy Ace's Barbershop Website. To deploy the website:
+<br> This subsection will provide instructions on how the team deployed Ace's Barbershop Website. The team used AWS to deploy Ace's Barbershop Website. Frontend and backend calls are handled via Nginx. The database is handled via cloud using MongoDB Atlas. To deploy the website, the team followed these tools and steps:
 
 #### Deployment of Website Tools
 
-- Commmand Prompt/Terminal
+- Command Prompt/Terminal
 - Private Key File
   - Note: Client was provided this file
   
