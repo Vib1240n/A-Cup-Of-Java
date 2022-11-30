@@ -224,11 +224,11 @@ This subsection will provide instructions on how to run the website locally. The
 
 ### Deploy
 
-<br> This subsection will provide instructions on how the team deployed Ace's Barbershop Website. The team used AWS to deploy Ace's Barbershop Website. To deploy the website:
+<br> This subsection will provide instructions on how the team deployed Ace's Barbershop Website. The team used AWS to deploy Ace's Barbershop Website. Frontend and backend calls are handled via Nginx. The database is handled via cloud using MongoDB Atlas. To deploy the website, the team followed these tools and steps:
 
 #### Deployment of Website Tools
 
-- Commmand Prompt/Terminal
+- Command Prompt/Terminal
 - Private Key File
   - Note: Client was provided this file
   
