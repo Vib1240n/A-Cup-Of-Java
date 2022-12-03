@@ -182,52 +182,24 @@ This subsection will provide instructions on how to run the website locally. The
 #### Run the Website Locally Steps
 
 1. Clone the repository to run the project locally using:
-   ```
-   git clone git@github.com:Ace-s-Barbershop/A-Cup-Of-Java.git
-   ```
+   > git clone git@github.com:Ace-s-Barbershop/A-Cup-Of-Java.git
 2. After Cloning the repository, make sure you have Node installed, to check for Node in terminal/command prompt type:
-   ```
-   node --v
-   npm --v
-   ```
+   > node --v && npm --v
 3. After making sure you are up and running the latest version of Node, Open up the Project in Visual Studio Code or any other IDE.
 4. First navigate to app directory by typing in terminal:
-   ```
-   cd app
-   ```
-   and then install the dependencies by typing in terminal:
-   ```
-   npm install
-   ```
-5. Then navigate to client directory by typing in terminal:
-   ```
-   cd ..
-   cd client
-   ```
-   and then install the dependencies by typing in terminal:
-   ```
-   npm install
-   ```
+   > cd app && npm install
+5. Then navigate to client directory and install the dependencies by typing in terminal:
+   > cd ../client && npm install
 6. Now that the dependencies are installed, the user must now can run the server by first opening up two split terminals
-7. In the first terminal navigate to app directory by typing in terminal:
-   ```
-   cd app
-   ```
-   and then to run the server side of the website in localhost, type this in terminal:
-   ```
-   npm run dev
-   ```
+7. In the first terminal navigate to app directory and run the server by typing in terminal:
+   > cd ./app && npm run dev
 8. In the second terminal, navigate to client directory by typing in terminal:
-   ```
-   cd client
-   ```
-   and then to run the client side of the website in localhost, type this in terminal:
-   ```
-   npm run start
-   ```
+   > cd client
+   > and then to run the client side of the website in localhost, type this in terminal:
+   > npm run start
 9. Once to two terminals are done setting up the website locally, it will launch the website on
    > http://localhost:3000
-   and the server will be running on
+   > and the server will be running on
    > http://localhost:5500
 10. The user can now interact with the website locally.
 
@@ -247,28 +219,16 @@ This subsection will provide instructions on how to run the website locally. The
 
 1. First the user opens up Command Prompt/Terminal on local desktop
 2. To launch SSH client, user types in terminal:
-   ```
-   ssh -i alex-ace-key.pem ubuntu@ec2-3-226-119-86.compute-1.amazonaws.com
-   ```
+   > ssh -i alex-ace-key.pem ubuntu@ec2-3-226-119-86.compute-1.amazonaws.com
 3. Locate the private key file (provided to client)
 4. To ensure key is not publicly viewable, user types in terminal:
-   ```
-   chmod 600 alex-ace-key.pem
-   ```
+   > chmod 600 alex-ace-key.pem
 5. To connect the instance to its public DNS, type in terminal:
-
-   ```
-   ec2-3-226-119-86.compute-1.amazonaws.com
-  ```
+   > ec2-3-226-119-86.compute-1.amazonaws.com
 6. Now that user is connected to instance, user must get to website’s directory by typing in terminal:
-   ```
-   cd /opt/A-Cup-Of-Java/
-   ```
+   > cd /opt/A-Cup-Of-Java/
 7. Finally to start the launch the website, type in terminal:
-   ```
-   sudo ./start.sh
-   ``
-   ```
+   > sudo ./start.sh
 
 - Note: The website can take upto 24-48 hours to update on the AWS server.
 - Note: Loading the entire website will take a couple of minutes
