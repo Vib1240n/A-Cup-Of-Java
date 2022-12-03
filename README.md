@@ -256,13 +256,10 @@ This subsection will provide instructions on how to run the website locally. The
    chmod 600 alex-ace-key.pem
    ```
 5. To connect the instance to its public DNS, type in terminal:
-   ```
 
    ```
    ec2-3-226-119-86.compute-1.amazonaws.com
-   ```
-
-   ```
+  ```
 6. Now that user is connected to instance, user must get to website’s directory by typing in terminal:
    ```
    cd /opt/A-Cup-Of-Java/
