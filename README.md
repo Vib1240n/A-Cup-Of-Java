@@ -211,7 +211,7 @@ This subsection will provide instructions on how to run the website locally. The
 
 - Command Prompt/Terminal
 - Private Key File
-  - Note: Client was provided this filent
+  - Note: Client was provided this file
   - Note: Client can generate their own private key file by following the steps in the link below
     - Link: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html
 
@@ -230,5 +230,5 @@ This subsection will provide instructions on how to run the website locally. The
 7. Finally to start the launch the website, type in terminal:
    > sudo ./start.sh
 
-- Note: The website can take upto 24-48 hours to update on the AWS server.
+- Note: The website can take up to 24-48 hours to update on the AWS server.
 - Note: Loading the entire website will take a couple of minutes
