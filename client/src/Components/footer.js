@@ -1,5 +1,5 @@
-import React from "react";
 import * as m from "@mui/material";
+import React from "react";
 
 export default function footer() {
   return (
@@ -30,7 +30,7 @@ export default function footer() {
           height: "100%",
         }}
       >
-        {/** 
+        {/**
         TODO: Re-write footer for website
         TODO: Add social media links
         TODO: Add contact information
@@ -42,8 +42,8 @@ export default function footer() {
           sx={{
             mr: 1,
             m: 1,
-            display:"flex",
-            justifyContent:"flex-start",
+            display: "flex",
+            justifyContent: "flex-start",
             fontFamily: "monospace",
             fontWeight: 700,
             letterSpacing: ".1rem",

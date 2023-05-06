@@ -9,8 +9,6 @@ function createData(date, time) {
   return { date, time };
 }
 
-const rows = [];
-
 const config = {
   headers: {
     "Access-Control-Allow-Origin": "http://localhost:3000",
@@ -31,7 +29,6 @@ const MyProfile = () => {
     background: {
       background: `url(${ace})`,
       backgroundRepeat: "no-repeat",
-      // backgroundSize: "cover",
       backgroundPosition: "center",
       display: "flex",
       justifyContent: "center",
@@ -195,16 +192,3 @@ const MyProfile = () => {
 };
 
 export default MyProfile;
-
-/**
- * {data.map((row) => (
-           <TableRow key={row.id}>
-             <m.TableCell component="th" scope="row">
-               {row.name}
-             </m.TableCell>
-             <m.TableCell align="right">{row.username}</TableCell>
-             <TableCell align="right">{row.email}</TableCell>
-             <TableCell align="right">{row.phone}</TableCell>
-             <TableCell align="right">{row.website}</TableCell>
-           </TableRow>
- */

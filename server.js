@@ -12,7 +12,6 @@ const cookieParser = require("cookie-parser");
 dotenv.config({ path: "../app/Private/.env" });
 let port = process.env.PORT;
 
-app.use(express.static("../client/build"));
 app.use(bodyparser.json());
 app.use(bodyparser.urlencoded({ extended: true }));
 app.use(
@@ -47,10 +46,5 @@ mongoose
 
 //Route creation
 app.use("/api", indexRouter);
-app.get("*", (req, res) => {
-  res.sendFile(
-    require("path").join(__dirname, "..", "..", "client", "build", "index.html")
-  );
-});
 
 app.listen(port, () => console.log("Server connected and running: " + port));
