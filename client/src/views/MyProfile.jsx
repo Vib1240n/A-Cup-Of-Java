@@ -1,19 +1,17 @@
-import React, { useEffect, useState } from "react";
 import * as m from "@mui/material";
 import axios from "axios";
-import "../asset/css/myProfile.css";
+import React, { useEffect, useState } from "react";
 import "../asset/css/barbers.css";
+import "../asset/css/myProfile.css";
 import ace from "../asset/images/aboutbackground.jpg";
 
 function createData(date, time) {
   return { date, time };
 }
 
-const rows = [];
-
 const config = {
   headers: {
-    "Access-Control-Allow-Origin": "https://www.acesbarber.shop",
+    "Access-Control-Allow-Origin": process.env.REACT_APP_LOCALDEVURL,
     "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS",
     "Access-Control-Allow-Credentials": "true",
   },
@@ -51,7 +49,7 @@ const MyProfile = () => {
 
   const fetchUserData = () => {
     axios
-      .get("https://www.acesbarber.shop/api/profile", config)
+      .get(process.env.REACT_APP_localDevServerURL + "/api/profile", config)
       .then((res) => {
         console.log("res: " + res);
         console.log("User: " + res.data);
@@ -65,7 +63,10 @@ const MyProfile = () => {
 
   const fetchApointments = () => {
     axios
-      .get("https://www.acesbarber.shop/api/getappointments", config)
+      .get(
+        process.env.REACT_APP_localDevServerURL + "/api/getappointments",
+        config
+      )
       .then((res) => {
         setUserAppointments(res.data);
         console.log(res.data);

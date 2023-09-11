@@ -1,9 +1,9 @@
-import React from "react";
 import * as m from "@mui/material";
+import Alert from "@mui/material/Alert";
 import axios from "axios";
+import React from "react";
 import { useNavigate } from "react-router-dom";
 import background from "../asset/images/background_cornerLong.jpg";
-import Alert from "@mui/material/Alert";
 
 export default function loginPage() {
   React.useEffect(() => {
@@ -12,7 +12,7 @@ export default function loginPage() {
 
   const config = {
     headers: {
-      "Access-Control-Allow-Origin": "https://www.acesbarber.shop",
+      "Access-Control-Allow-Origin": process.env.REACT_APP_LOCALDEVURL,
       "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS",
       "Access-Control-Allow-Credentials": "true",
     },
@@ -54,10 +54,11 @@ export default function loginPage() {
 
   const isLoggedIn = () => {
     axios
-      .get("https://www.acesbarber.shop/api/profile", config)
+      .get(process.env.REACT_APP_localDevServerURL + "/api/profile", config)
       .then((res) => {
         console.log("Is user logged in status: " + res.status);
         console.log(res.data);
+        console.lof(res.request);
         if (res.status === 200) {
           navigate("/MyProfile");
         }
@@ -77,7 +78,11 @@ export default function loginPage() {
       password: password,
     };
     axios
-      .post("https://www.acesbarber.shop/api/login", user, config)
+      .post(
+        process.env.REACT_APP_localDevServerURL + "/api/login",
+        user,
+        config
+      )
       .then((res) => {
         console.log(res.data);
         if (res.status === 200) {

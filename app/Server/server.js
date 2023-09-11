@@ -9,14 +9,14 @@ const dotenv = require("dotenv");
 const passport = require("./Authentication/passportConfig");
 const session = require("express-session");
 const cookieParser = require("cookie-parser");
-dotenv.config({ path: "../app/Private/.env" });
+dotenv.config({ path: "../app/Private/.env.local" });
 let port = process.env.PORT;
 
 app.use(bodyparser.json());
 app.use(bodyparser.urlencoded({ extended: true }));
 app.use(
   cors({
-    origin: "https://www.acesbarber.shop",
+    origin: "*",
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     credentials: true,
   })

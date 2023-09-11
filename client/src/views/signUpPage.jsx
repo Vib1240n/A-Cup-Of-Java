@@ -1,12 +1,10 @@
-import React from "react";
 import * as m from "@mui/material";
-import { useNavigate } from "react-router-dom";
-import axios from "axios";
-import background from "../asset/images/background_cornerLong.jpg";
 import Alert from "@mui/material/Alert";
+import axios from "axios";
+import React from "react";
+import { useNavigate } from "react-router-dom";
 import valid from "validator";
-import AccountCircle from "@mui/icons-material/AccountCircle";
-import InputAdornment from "@mui/material/InputAdornment";
+import background from "../asset/images/background_cornerLong.jpg";
 
 function isValidNumber(value) {
   const phoneNumber = value.replace(/[^\d]/g, "");
@@ -186,7 +184,7 @@ export default function loginPage() {
 
   const isLoggedIn = () => {
     axios
-      .get("https://www.acesbarber.shop/api/profile", config)
+      .get(process.env.REACT_APP_localDevServerURL + "/api/profile", config)
       .then((res) => {
         console.log("Is user logged in status: " + res.status);
         if (res.status === 200) {
@@ -317,7 +315,7 @@ export default function loginPage() {
 
   const config = {
     headers: {
-      "Access-Control-Allow-Origin": "https://www.acesbarber.shop",
+      "Access-Control-Allow-Origin": process.env.REACT_APP_LOCALDEVURL,
       "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS",
       "Access-Control-Allow-Credentials": "true",
     },
@@ -349,7 +347,11 @@ export default function loginPage() {
         phoneNumber: phoneNumber,
       };
       axios
-        .post("https://www.acesbarber.shop/api/signup", user, config)
+        .post(
+          process.env.REACT_APP_localDevServerURL + "/api/signup",
+          user,
+          config
+        )
         .then((res) => {
           console.log(res.data);
           if (res.status === 200) {

@@ -2,16 +2,16 @@ const express = require("express");
 const router = express.Router();
 const passport = require("../Authentication/passportConfig");
 const dotenv = require("dotenv");
-dotenv.config({ path: "../app/Private/.env" });
+dotenv.config({ path: "../app/Private/.env.local" });
 const nodemailer = require("nodemailer");
 const User = require("../model/user");
 const hash = require("../Authentication/passwordHash");
 const validator = require("node-email-validation");
 const Appointment = require("../model/appointment");
-const log4js = require("log4js")
+const log4js = require("log4js");
 //makes a Log file to amke logs just do the logger.debug or logger.error
 log4js.configure({
-  appenders: { node: { type: "file", filename:"node.log" } },
+  appenders: { node: { type: "file", filename: "node.log" } },
   categories: { default: { appenders: ["node"], level: "debug" } },
 });
 
@@ -42,7 +42,9 @@ router.post("/login", passport.authenticate("local"), (req, res) => {
   );
   if (req.user) {
     logger.debug("Session ID after @ /login route: " + req.sessionID);
-    logger.debug(req.user.username+" Authenticated: " + req.isAuthenticated());
+    logger.debug(
+      req.user.username + " Authenticated: " + req.isAuthenticated()
+    );
     logger.debug("/login 200 Login Successful");
     res.status(200).json({ message: "Login successful" });
   } else {
@@ -121,7 +123,9 @@ router.get("/profile", function (req, res) {
       req.sessionID
   );
   if (req.isAuthenticated()) {
-    logger.debug(req.user.username+" Authenticated: " + req.isAuthenticated());
+    logger.debug(
+      req.user.username + " Authenticated: " + req.isAuthenticated()
+    );
     return res.status(200).json(req.user);
     num = num + 1;
   } else {
@@ -138,7 +142,7 @@ router.get("/logout", function (req, res, next) {
       ": " +
       req.sessionID
   );
-  logger.debug(req.user.username+" Authenticated: " + req.isAuthenticated());
+  logger.debug(req.user.username + " Authenticated: " + req.isAuthenticated());
   if (req.isAuthenticated()) {
     req.logout(function (err) {
       if (err) {
@@ -162,7 +166,9 @@ router.get("/getappointments", async (req, res) => {
       req.sessionID
   );
   if (req.isAuthenticated()) {
-    logger.debug(req.user.username+" Authenticated: " + req.isAuthenticated());
+    logger.debug(
+      req.user.username + " Authenticated: " + req.isAuthenticated()
+    );
     const { username } = req.user;
     const appointments = await Appointment.find({ username }).lean().exec();
     logger.debug(username);
@@ -178,9 +184,11 @@ router.post("/appointment", async function (req, res) {
       time.toLocaleTimeString() +
       ": " +
       req.sessionID
-  );  
+  );
   if (req.isAuthenticated()) {
-    logger.debug(req.user.username+" Authenticated: " + req.isAuthenticated());
+    logger.debug(
+      req.user.username + " Authenticated: " + req.isAuthenticated()
+    );
 
     const { date, time, username, message } = req.body;
     const newAppointment = new Appointment({

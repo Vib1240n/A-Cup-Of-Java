@@ -1,14 +1,13 @@
-import React from "react";
-import axios from "axios";
-import { useNavigate } from "react-router-dom";
 import * as mui from "@mui/material";
-import dayjs from "dayjs";
+import Alert from "@mui/material/Alert";
+import { DatePicker, TimePicker } from "@mui/x-date-pickers";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
-import { DatePicker, TimePicker } from "@mui/x-date-pickers";
+import axios from "axios";
+import dayjs from "dayjs";
+import React from "react";
+import { useNavigate } from "react-router-dom";
 import Background from "../asset/images/appointment_background.jpg";
-import Alert from "@mui/material/Alert";
-
 export default function Appointment() {
   let navigate = useNavigate();
   const [date, setDate] = React.useState(new Date());
@@ -36,7 +35,7 @@ export default function Appointment() {
   }, []);
   const config = {
     headers: {
-      "Access-Control-Allow-Origin": "https://www.acesbarber.shop",
+      "Access-Control-Allow-Origin": process.env.REACT_APP_LOCALDEVURL,
       "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS",
       "Access-Control-Allow-Credentials": "true",
     },
@@ -45,7 +44,7 @@ export default function Appointment() {
 
   const isLoggedIn = () => {
     axios
-      .get("https://www.acesbarber.shop/api/profile", config)
+      .get(process.env.REACT_APP_localDevServerURL + "/api/profile", config)
       .then((res) => {
         console.log("Is user logged in status: " + res.status);
         if (res.status === 200) {
@@ -59,7 +58,7 @@ export default function Appointment() {
 
   const fetchUserData = () => {
     axios
-      .get("https://www.acesbarber.shop/api/profile", config)
+      .get(process.env.REACT_APP_localDevServerURL + "/api/profile", config)
       .then((res) => {
         setUserData(res.data);
       })
@@ -73,11 +72,11 @@ export default function Appointment() {
       minute: "2-digit",
     });
     e.preventDefault();
-    let message = `Hello ${userData.firstname} ${userData.lastname},\n\nThank you for requesting an appointment with us at Ace’s Barbershop. Your appointment is requested for ${realDate} at 
+    let message = `Hello ${userData.firstname} ${userData.lastname},\n\nThank you for requesting an appointment with us at Ace’s Barbershop. Your appointment is requested for ${realDate} at
     ${realTime}.\nWe are located at 1049 Jefferson Blvd West Sacramento, CA 95691. For any questions please contact us at  (916) 956-0670. We look forward to seeing you!`;
     axios
       .post(
-        "https://www.acesbarber.shop/api/appointment",
+        process.env.REACT_APP_localDevServerURL + "/api/appointment",
         {
           date: realDate,
           time: realTime,

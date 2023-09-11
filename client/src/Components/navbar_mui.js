@@ -1,29 +1,32 @@
-import * as React from "react";
-import { BrowserRouter, useNavigate } from "react-router-dom";
-import axios from "axios";
-import AppBar from "@mui/material/AppBar";
-import Box from "@mui/material/Box";
-import Drawer from "@mui/material/Drawer";
-import Toolbar from "@mui/material/Toolbar";
-import Menu from "@mui/material/Menu";
-import MenuIcon from "@mui/icons-material/Menu";
-import Container from "@mui/material/Container";
-import Button from "@mui/material/Button";
-import MenuItem from "@mui/material/MenuItem";
-import { List, ListItem, ListItemButton, ListItemText } from "@mui/material";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
-import LogoutIcon from "@mui/icons-material/Logout";
-import ManageAccountsIcon from "@mui/icons-material/ManageAccounts";
 import AppRegistrationIcon from "@mui/icons-material/AppRegistration";
-import ListItemIcon from "@mui/material/ListItemIcon";
-import LoginIcon from "@mui/icons-material/Login";
-import HomeIcon from "@mui/icons-material/Home";
-import Person2Icon from "@mui/icons-material/Person2";
 import CleaningServicesOutlinedIcon from "@mui/icons-material/CleaningServicesOutlined";
 import ContactPhoneOutlinedIcon from "@mui/icons-material/ContactPhoneOutlined";
+import HomeIcon from "@mui/icons-material/Home";
 import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
-import { Grid } from "@mui/material";
-
+import LoginIcon from "@mui/icons-material/Login";
+import LogoutIcon from "@mui/icons-material/Logout";
+import MenuIcon from "@mui/icons-material/Menu";
+import Person2Icon from "@mui/icons-material/Person2";
+import {
+  Grid,
+  List,
+  ListItem,
+  ListItemButton,
+  ListItemText,
+} from "@mui/material";
+import AppBar from "@mui/material/AppBar";
+import Box from "@mui/material/Box";
+import Button from "@mui/material/Button";
+import Container from "@mui/material/Container";
+import Drawer from "@mui/material/Drawer";
+import ListItemIcon from "@mui/material/ListItemIcon";
+import Menu from "@mui/material/Menu";
+import MenuItem from "@mui/material/MenuItem";
+import Toolbar from "@mui/material/Toolbar";
+import axios from "axios";
+import * as React from "react";
+import { useNavigate } from "react-router-dom";
 //fix navigation and implement logout login function with navvbar and drawer
 
 function ResponsiveAppBar() {
@@ -34,7 +37,7 @@ function ResponsiveAppBar() {
 
   const config = {
     headers: {
-      "Access-Control-Allow-Origin": "https://www.acesbarber.shop",
+      "Access-Control-Allow-Origin": `${process.env.LOCALDEVURL}`,
       "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS",
       "Access-Control-Allow-Credentials": "true",
     },
@@ -62,7 +65,10 @@ function ResponsiveAppBar() {
 
   const isLoggedIn = () => {
     axios
-      .get("https://www.acesbarber.shop/api/profile", config)
+      .get(
+        `${process.env.REACT_APP_localDevServerURL}` + "/api/profile",
+        config
+      )
       .then((res) => {
         console.log("Is user logged in status: " + res.status);
         console.log(res.data);
@@ -78,7 +84,7 @@ function ResponsiveAppBar() {
 
   const logout = () => {
     axios
-      .get("https://www.acesbarber.shop/api/logout", config)
+      .get(`${process.env.REACT_APP_localDevServerURL}` + "/api/logout", config)
       .then((res) => {
         if (res.status === 200) {
           handleClick("/home");
