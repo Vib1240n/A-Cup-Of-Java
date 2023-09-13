@@ -1,16 +1,16 @@
 import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import MyProfile from "../views/MyProfile";
 import About from "../views/about";
 import Appointment from "../views/appointment";
-import Services from "../views/services";
-import Login from "../views/login";
 import Barber from "../views/barber";
-import MyProfile from "../views/MyProfile";
+import Login from "../views/login";
 import LoginPage from "../views/loginPage";
+import Services from "../views/services";
 
 class AppRouter extends React.Component {
   render() {
-return (
+    return (
       <BrowserRouter>
         <Routes>
           <Route path="/" component={<Home />} />

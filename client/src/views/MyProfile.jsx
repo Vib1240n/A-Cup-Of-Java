@@ -11,7 +11,7 @@ function createData(date, time) {
 
 const config = {
   headers: {
-    "Access-Control-Allow-Origin": process.env.REACT_APP_LOCALDEVURL,
+    "Access-Control-Allow-Origin": "http://localhost:8080",
     "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS",
     "Access-Control-Allow-Credentials": "true",
   },
@@ -49,7 +49,7 @@ const MyProfile = () => {
 
   const fetchUserData = () => {
     axios
-      .get(process.env.REACT_APP_localDevServerURL + "/api/profile", config)
+      .get("http://localhost:5500/api/profile", config)
       .then((res) => {
         console.log("res: " + res);
         console.log("User: " + res.data);
@@ -63,10 +63,7 @@ const MyProfile = () => {
 
   const fetchApointments = () => {
     axios
-      .get(
-        process.env.REACT_APP_localDevServerURL + "/api/getappointments",
-        config
-      )
+      .get("http://localhost:5500/api/getappointments", config)
       .then((res) => {
         setUserAppointments(res.data);
         console.log(res.data);

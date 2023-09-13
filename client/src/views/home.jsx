@@ -1,20 +1,18 @@
-import React from "react";
-import { useRef } from "react";
 import * as m from "@mui/material";
-import * as i from "@mui/icons-material";
+import React, { useRef } from "react";
 //import "../asset/css/style.css";
-import { useNavigate } from "react-router-dom";
-import Background from "../asset/images/BarbershopBackground.png";
-import logo from "../asset/images/AcesBarbershopLogo-removebg-preview.png";
-import servicesbg from "../asset/images/servicesbackground1.jpg";
-import wallBg from "../asset/images/wall-bg-up.jpg";
+import AlternateEmailIcon from "@mui/icons-material/AlternateEmail";
+import ContactPhoneIcon from "@mui/icons-material/ContactPhone";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import InstagramIcon from "@mui/icons-material/Instagram";
+import { useNavigate } from "react-router-dom";
+import logo from "../asset/images/AcesBarbershopLogo-removebg-preview.png";
+import Background from "../asset/images/BarbershopBackground.png";
 import marco from "../asset/images/barber101.png";
 import barber2 from "../asset/images/barber102.png";
 import barber3 from "../asset/images/barber103.png";
-import ContactPhoneIcon from "@mui/icons-material/ContactPhone";
-import InstagramIcon from "@mui/icons-material/Instagram";
-import AlternateEmailIcon from "@mui/icons-material/AlternateEmail";
+import servicesbg from "../asset/images/servicesbackground1.jpg";
+import wallBg from "../asset/images/wall-bg-up.jpg";
 
 function createData(service, price, time) {
   return { service, price, time };

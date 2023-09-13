@@ -35,7 +35,7 @@ export default function Appointment() {
   }, []);
   const config = {
     headers: {
-      "Access-Control-Allow-Origin": process.env.REACT_APP_LOCALDEVURL,
+      "Access-Control-Allow-Origin": "http://localhost:8080",
       "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS",
       "Access-Control-Allow-Credentials": "true",
     },
@@ -44,7 +44,7 @@ export default function Appointment() {
 
   const isLoggedIn = () => {
     axios
-      .get(process.env.REACT_APP_localDevServerURL + "/api/profile", config)
+      .get("http://localhost:5500/api/profile", config)
       .then((res) => {
         console.log("Is user logged in status: " + res.status);
         if (res.status === 200) {
@@ -58,7 +58,7 @@ export default function Appointment() {
 
   const fetchUserData = () => {
     axios
-      .get(process.env.REACT_APP_localDevServerURL + "/api/profile", config)
+      .get("http://localhost:5500/api/profile", config)
       .then((res) => {
         setUserData(res.data);
       })
@@ -76,7 +76,7 @@ export default function Appointment() {
     ${realTime}.\nWe are located at 1049 Jefferson Blvd West Sacramento, CA 95691. For any questions please contact us at  (916) 956-0670. We look forward to seeing you!`;
     axios
       .post(
-        process.env.REACT_APP_localDevServerURL + "/api/appointment",
+        "http://localhost:5500/api/appointment",
         {
           date: realDate,
           time: realTime,

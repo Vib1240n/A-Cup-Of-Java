@@ -12,7 +12,7 @@ export default function loginPage() {
 
   const config = {
     headers: {
-      "Access-Control-Allow-Origin": process.env.REACT_APP_LOCALDEVURL,
+      "Access-Control-Allow-Origin": "http://localhost:8080",
       "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS",
       "Access-Control-Allow-Credentials": "true",
     },
@@ -54,7 +54,7 @@ export default function loginPage() {
 
   const isLoggedIn = () => {
     axios
-      .get(process.env.REACT_APP_localDevServerURL + "/api/profile", config)
+      .get("http://localhost:5500/api/profile", config)
       .then((res) => {
         console.log("Is user logged in status: " + res.status);
         console.log(res.data);
@@ -78,11 +78,7 @@ export default function loginPage() {
       password: password,
     };
     axios
-      .post(
-        process.env.REACT_APP_localDevServerURL + "/api/login",
-        user,
-        config
-      )
+      .post("http://localhost:5500/api/login", user, config)
       .then((res) => {
         console.log(res.data);
         if (res.status === 200) {
@@ -120,6 +116,7 @@ export default function loginPage() {
       paddingLeft: "3px",
       paddingRight: "4px",
       paddingBottom: "10px",
+      marginTop: "0px",
       "& .MuiInputBase-input": {
         color: "white",
         textAlign: "center",
@@ -175,7 +172,7 @@ export default function loginPage() {
         spacing={7}
         height="100%"
         width="100%"
-        marginTop={{ xl: "5%", xs: "20%" }}
+        marginTop={{ xl: "5%", xs: "20%", lg: "0%", md: "10%", sm: "10%" }}
       >
         <m.TextField
           id="loginpage-username"
@@ -251,10 +248,10 @@ export default function loginPage() {
         component="div"
         id="loginpage-box-outer"
         margin={{ xl: "auto" }}
-        marginTop={{ xs: "20%" }}
+        marginTop={{ xs: "20%", lg: "0%", md: "10%", sm: "10%" }}
         overflow="revert"
         sx={{
-          height: { md: "80%", sm: "100%", lg: "50%", xs: "75%" },
+          height: { md: "80%", sm: "100%", lg: "60%", xs: "75%" },
           width: { md: "70%", sm: "100%", lg: "40%", xs: "90%" },
           backdropFilter: "blur(50px)",
           boxShadow:

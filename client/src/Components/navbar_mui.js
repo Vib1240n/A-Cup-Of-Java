@@ -37,7 +37,7 @@ function ResponsiveAppBar() {
 
   const config = {
     headers: {
-      "Access-Control-Allow-Origin": `${process.env.LOCALDEVURL}`,
+      "Access-Control-Allow-Origin": "http://localhost:8080",
       "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS",
       "Access-Control-Allow-Credentials": "true",
     },
@@ -65,10 +65,7 @@ function ResponsiveAppBar() {
 
   const isLoggedIn = () => {
     axios
-      .get(
-        `${process.env.REACT_APP_localDevServerURL}` + "/api/profile",
-        config
-      )
+      .get("http://localhost:5500/api/profile", config)
       .then((res) => {
         console.log("Is user logged in status: " + res.status);
         console.log(res.data);
@@ -84,7 +81,7 @@ function ResponsiveAppBar() {
 
   const logout = () => {
     axios
-      .get(`${process.env.REACT_APP_localDevServerURL}` + "/api/logout", config)
+      .get("http://localhost:5500/api/logout", config)
       .then((res) => {
         if (res.status === 200) {
           handleClick("/home");
@@ -278,6 +275,13 @@ function ResponsiveAppBar() {
     </Box>
   );
 
+  const check = () => {
+    const page = window.location.pathname;
+    if (page === "/") {
+      return true;
+    }
+  };
+
   return (
     <AppBar
       className="appbar"
@@ -286,7 +290,9 @@ function ResponsiveAppBar() {
         boxShadow: "20",
         backdropFilter: "blur(40px)",
         position: "stactic",
-        display: "flex",
+        display: {
+          xs: check() ? "none" : "flex",
+        },
       }}
     >
       <Container maxWidth="xl" className="appbar-container">

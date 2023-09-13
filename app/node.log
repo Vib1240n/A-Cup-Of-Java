@@ -1113,3 +1113,70 @@
 [2023-09-11T12:19:35.975] [DEBUG] default - vibhorsgr@gmail.com Authenticated: true
 [2023-09-11T12:21:52.600] [DEBUG] default - Session ID @ /profile route: 12:21:52 PM: DpPDPoHWxyOjCTclRjhILYZ6WNkJwfSO
 [2023-09-11T12:21:52.600] [DEBUG] default - vibhorsgr@gmail.com Authenticated: true
+[2023-09-13T12:15:54.797] [DEBUG] default - Session ID before @ /login route: 12:15:54 PM: Cq4lo6ZAQClOoPybuj53ehlZQ_OBplcc
+[2023-09-13T12:15:54.797] [DEBUG] default - Session ID after @ /login route: Cq4lo6ZAQClOoPybuj53ehlZQ_OBplcc
+[2023-09-13T12:15:54.797] [DEBUG] default - vibhorsgr@gmail.com Authenticated: true
+[2023-09-13T12:15:54.797] [DEBUG] default - /login 200 Login Successful
+[2023-09-13T12:15:54.883] [DEBUG] default - Session ID @ /profile route: 12:15:54 PM: Cq4lo6ZAQClOoPybuj53ehlZQ_OBplcc
+[2023-09-13T12:15:54.883] [DEBUG] default - vibhorsgr@gmail.com Authenticated: true
+[2023-09-13T12:15:57.330] [DEBUG] default - Session ID @ /profile route: 12:15:57 PM: Cq4lo6ZAQClOoPybuj53ehlZQ_OBplcc
+[2023-09-13T12:15:57.330] [DEBUG] default - vibhorsgr@gmail.com Authenticated: true
+[2023-09-13T12:15:57.425] [DEBUG] default - Session ID @ /profile route: 12:15:57 PM: Cq4lo6ZAQClOoPybuj53ehlZQ_OBplcc
+[2023-09-13T12:15:57.426] [DEBUG] default - vibhorsgr@gmail.com Authenticated: true
+[2023-09-13T12:15:57.519] [DEBUG] default - Session ID @ /profile route: 12:15:57 PM: Cq4lo6ZAQClOoPybuj53ehlZQ_OBplcc
+[2023-09-13T12:15:57.519] [DEBUG] default - vibhorsgr@gmail.com Authenticated: true
+[2023-09-13T12:15:57.532] [DEBUG] default - Session ID @ /profile route: 12:15:57 PM: Cq4lo6ZAQClOoPybuj53ehlZQ_OBplcc
+[2023-09-13T12:15:57.533] [DEBUG] default - vibhorsgr@gmail.com Authenticated: true
+[2023-09-13T12:15:57.567] [DEBUG] default - vibhorsgr@gmail.com
+[2023-09-13T12:15:57.567] [DEBUG] default - [
+  {
+    _id: new ObjectId("642305bbac9058e46adfac60"),
+    date: '3/28/2023',
+    time: '08:20 AM',
+    username: 'vibhorsgr@gmail.com',
+    __v: 0
+  }
+]
+[2023-09-13T12:15:57.670] [DEBUG] default - Session ID @ /profile route: 12:15:57 PM: Cq4lo6ZAQClOoPybuj53ehlZQ_OBplcc
+[2023-09-13T12:15:57.670] [DEBUG] default - vibhorsgr@gmail.com Authenticated: true
+[2023-09-13T12:15:57.707] [DEBUG] default - Session ID @ /profile route: 12:15:57 PM: Cq4lo6ZAQClOoPybuj53ehlZQ_OBplcc
+[2023-09-13T12:15:57.707] [DEBUG] default - vibhorsgr@gmail.com Authenticated: true
+[2023-09-13T12:15:57.746] [DEBUG] default - vibhorsgr@gmail.com
+[2023-09-13T12:15:57.746] [DEBUG] default - [
+  {
+    _id: new ObjectId("642305bbac9058e46adfac60"),
+    date: '3/28/2023',
+    time: '08:20 AM',
+    username: 'vibhorsgr@gmail.com',
+    __v: 0
+  }
+]
+[2023-09-13T12:16:04.513] [DEBUG] default - Session ID @ /profile route: 12:16:04 PM: Cq4lo6ZAQClOoPybuj53ehlZQ_OBplcc
+[2023-09-13T12:16:04.513] [DEBUG] default - vibhorsgr@gmail.com Authenticated: true
+[2023-09-13T12:16:04.591] [DEBUG] default - /logout 200 Logout Successful
+[2023-09-13T12:16:04.678] [DEBUG] default - Session ID @ /profile route: 12:16:04 PM: Id4NodcFfc8LgVJxHxwa083HO1DhVmSV
+[2023-09-13T12:16:04.678] [ERROR] default - /profile 302 Not Authenticated
+[2023-09-13T12:16:13.432] [DEBUG] default - Session ID @ /profile route: 12:16:13 PM: Id4NodcFfc8LgVJxHxwa083HO1DhVmSV
+[2023-09-13T12:16:13.432] [ERROR] default - /profile 302 Not Authenticated
+[2023-09-13T12:16:13.468] [DEBUG] default - Session ID @ /profile route: 12:16:13 PM: Id4NodcFfc8LgVJxHxwa083HO1DhVmSV
+[2023-09-13T12:16:13.468] [ERROR] default - /profile 302 Not Authenticated
+[2023-09-13T12:16:30.202] [DEBUG] default - Session ID @ /profile route: 12:16:30 PM: Id4NodcFfc8LgVJxHxwa083HO1DhVmSV
+[2023-09-13T12:16:30.203] [ERROR] default - /profile 302 Not Authenticated
+[2023-09-13T12:16:30.239] [DEBUG] default - Session ID @ /profile route: 12:16:30 PM: Id4NodcFfc8LgVJxHxwa083HO1DhVmSV
+[2023-09-13T12:16:30.239] [ERROR] default - /profile 302 Not Authenticated
+[2023-09-13T12:18:19.598] [DEBUG] default - Session ID @ /profile route: 12:18:19 PM: Id4NodcFfc8LgVJxHxwa083HO1DhVmSV
+[2023-09-13T12:18:19.598] [ERROR] default - /profile 302 Not Authenticated
+[2023-09-13T12:18:19.627] [DEBUG] default - Session ID @ /profile route: 12:18:19 PM: Id4NodcFfc8LgVJxHxwa083HO1DhVmSV
+[2023-09-13T12:18:19.627] [ERROR] default - /profile 302 Not Authenticated
+[2023-09-13T12:18:23.346] [DEBUG] default - Session ID @ /profile route: 12:18:23 PM: Id4NodcFfc8LgVJxHxwa083HO1DhVmSV
+[2023-09-13T12:18:23.346] [ERROR] default - /profile 302 Not Authenticated
+[2023-09-13T12:18:23.394] [DEBUG] default - Session ID @ /profile route: 12:18:23 PM: Id4NodcFfc8LgVJxHxwa083HO1DhVmSV
+[2023-09-13T12:18:23.394] [ERROR] default - /profile 302 Not Authenticated
+[2023-09-13T12:19:07.837] [DEBUG] default - Session ID @ /profile route: 12:19:07 PM: Id4NodcFfc8LgVJxHxwa083HO1DhVmSV
+[2023-09-13T12:19:07.837] [ERROR] default - /profile 302 Not Authenticated
+[2023-09-13T12:19:07.881] [DEBUG] default - Session ID @ /profile route: 12:19:07 PM: Id4NodcFfc8LgVJxHxwa083HO1DhVmSV
+[2023-09-13T12:19:07.881] [ERROR] default - /profile 302 Not Authenticated
+[2023-09-13T12:19:08.467] [DEBUG] default - Session ID @ /profile route: 12:19:08 PM: Id4NodcFfc8LgVJxHxwa083HO1DhVmSV
+[2023-09-13T12:19:08.467] [ERROR] default - /profile 302 Not Authenticated
+[2023-09-13T12:19:08.527] [DEBUG] default - Session ID @ /profile route: 12:19:08 PM: Id4NodcFfc8LgVJxHxwa083HO1DhVmSV
+[2023-09-13T12:19:08.529] [ERROR] default - /profile 302 Not Authenticated
